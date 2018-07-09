@@ -13,7 +13,7 @@ Blah blah
 
 ```{r setup, include=FALSE}
 library(tidyverse)
-library(leaflet)
+library(leaflet) 
 ```
 
 Load in the data:
