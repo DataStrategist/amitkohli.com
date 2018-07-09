@@ -18,28 +18,25 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     useSessionStorage = false
 
 [Author]
-    name = "My Name"
-    profile = "https://google.com/+XXX"
+    name = "Amit"
+    profile = "https://www.linkedin.com/in/akohli"
 
 [Taxonomies]
     tag = "tags"
 
 [Params]
     intro = true
-    headline = "Ghostwriter example"
-    description = "Ghostwriter example description"
-    github = "https://github.com/XXX"
-    gitlab = "https://gitlab.com/XXX"
-    linkedin = "https://linkedin.com/in/XXX/"
-    gplus = "https://google.com/+XXX"
-    twitter = "https://twitter.com/XXX"
-    stackoverflow = "https://stackoverflow.com/users/XXX/YYY"
-    email = "XXX@example.com"
+    headline = "AmitKohli.com"
+    description = "... because I can and I want to and you can't stop me."
+    github = "https://github.com/datastrategist"
+    linkedin = "https://www.linkedin.com/in/akohli"
+    twitter = "https://twitter.com/VizMonkey"
+    stackoverflow = "https://stackoverflow.com/users/2883603/amit-kohli"
     opengraph = true
     shareTwitter = true
     shareFacebook = true
     shareGooglePlus = true
-    shareLinkedIn = false
+    shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
     highlightJsUrl = ""
     highlightJsLocalUrl = ""
@@ -56,10 +53,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "Projects"
     url = "/project/"
     weight = 2
-
+    
 [[menu.main]]
-    name = "Contact"
-    url = "/page/contact/"
+    name = "Categories"
+    url = "/tags/"
     weight = 3
 
 [[menu.main]]
