@@ -1,0 +1,125 @@
+<html><head></head><body><h1>Best Dashborde!!!1!</h1> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TableID13ac755050b6</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style type="text/css">
+body {
+  color: #444444;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 75%;
+  }
+  a {
+  color: #4D87C7;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+ <!-- Table generated in R 3.2.3 by googleVis 0.5.8 package -->
+<!-- Tue Feb 02 20:36:06 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataTableID13ac755050b6 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "A",
+12,
+"<img src=\"https://media.giphy.com/media/Vmunw0k7q12Ks/giphy.gif\" width=\"50px\">" 
+],
+[
+ "B",
+3,
+"<img src=\"https://cdn2.scratch.mit.edu/get_image/gallery/1434108_200x130.png\" width=\"50px\">" 
+],
+[
+ "C",
+4.5,
+null 
+],
+[
+ "D",
+17,
+"<img src=\"https://media.giphy.com/media/Vmunw0k7q12Ks/giphy.gif\" width=\"50px\">" 
+] 
+];
+data.addColumn('string','thing');
+data.addColumn('number','measure');
+data.addColumn('string','graphic');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartTableID13ac755050b6() {
+var data = gvisDataTableID13ac755050b6();
+var options = {};
+options["allowHtml"] = true;
+
+
+    var chart = new google.visualization.Table(
+    document.getElementById('TableID13ac755050b6')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "table";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartTableID13ac755050b6);
+})();
+function displayChartTableID13ac755050b6() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID13ac755050b6"></script>
+ 
+<!-- divChart -->
+  
+<div id="TableID13ac755050b6" 
+  style="width: 500; height: automatic;">
+</div>
+ </body></html>
