@@ -4,7 +4,7 @@ theme = "ghostwriter"
 languageCode = "en-us"
 copyright = "My Name"
 disqusShortname = "amitkohli-com"
-googleAnalytics = "XXX"
+googleAnalytics = "UA-39057488-1"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [Privacy]
