@@ -23,6 +23,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [Taxonomies]
     tag = "tags"
+    category = "categories"
 
 [Params]
     intro = true
@@ -56,7 +57,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     
 [[menu.main]]
     name = "Categories"
-    url = "/tags/"
+    url = "/categories/"
     weight = 3
 
 [[menu.main]]
