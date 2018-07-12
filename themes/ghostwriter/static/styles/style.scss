@@ -2,7 +2,7 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #F03838;
+$primary: #4D648D;
 $secondary: #303030;
 $background: #FEFEFE;
 
@@ -319,6 +319,16 @@ table {
         margin: 40px auto 0;
         width: 100px;
     }
+}
+
+.post-wordsMins {
+    color: #AEADAD;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    a { color: #AEADAD; }
+    a:hover { color: $primary; }
 }
 
 .post-content {
