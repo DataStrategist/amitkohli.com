@@ -7,7 +7,7 @@ categories: [Data,R]
 tags: []
 description: ''
 output: html_document
-draft: no
+draft: yes
 ---
 
 Blah blah
@@ -36,7 +36,7 @@ df <- df_large %>%
 
 
 First Map:
-```{r}
+```{r out.width='100%'}
 leaflet(data = head(df)) %>%
   addTiles() %>%
   addMarkers(lng = ~Longitude, lat = ~Latitude)
@@ -116,7 +116,7 @@ head(PlotDF)
 
 
 Now plot these:
-```{r}
+```{r  out.width='100%'}
 pal <- colorFactor(c("red", "green", "blue"),domain = unique(PlotDF$Crime.type2))
 
 leaflet(PlotDF) %>%
