@@ -5,6 +5,10 @@ type: page
 date: 2013-02-07T16:35:57+00:00
 
 ---
+Firstly, thanks to the following for aggragating and extending my content:
+ - https://rweekly.org 
+ - https://www.r-bloggers.com
+
 Greetings! I&#8217;m an environmental engineer that changed focus from remediation and design to data analysis, dissemination and visualization. Now I&#8217;m focusing on data for decisionmaking, so dashboards, adaptive management, KPIs and the like. My interests:
 
   * water resources and national level water use
