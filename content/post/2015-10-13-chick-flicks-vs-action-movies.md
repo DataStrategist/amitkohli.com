@@ -29,7 +29,7 @@ tags:
 </div>
 
 <div class="repository-description">
-  Anyway, the analysis is here: <a href="http://amitkohli.com/movieSentiments/index.html" rel="nofollow">http://amitkohli.com/movieSentiments/index.html</a>
+  Anyway, the analysis is here: <a href="https://amitkohli.com/movieSentiments/index.html" rel="nofollow">https://amitkohli.com/movieSentiments/index.html</a>
 </div>
 
 <div class="repository-description">

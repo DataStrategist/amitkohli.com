@@ -144,7 +144,7 @@ And voilà! Here&#8217;s our KPI with a flashing red light for the real underper
 
 <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ -->
 
-(The link also here: >><a href="http://amitkohli.com/wp-content/uploads/2016/02/AnimatedKPIdashboard-1.html" rel="">AnimatedKPIdashboard</a><<)
+(The link also here: >><a href="https://amitkohli.com/wp-content/uploads/2016/02/AnimatedKPIdashboard-1.html" rel="">AnimatedKPIdashboard</a><<)
 
 And from here the sky is the limit! Enjoy re-discovering animated gifs! There&#8217;s a few gems out there.
 

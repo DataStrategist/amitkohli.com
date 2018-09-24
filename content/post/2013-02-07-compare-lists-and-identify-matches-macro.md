@@ -25,7 +25,7 @@ This macro provides an alternative to vlookup (which looks at two lists and prov
 
 Additionally, it let&#8217;s you decide whether to identify the matches and move them to the top (useful for quickly working with data), or not (useful in identifying holes in each list and working with that).
 
-And here is the macro itself. Copy/paste the code, or <a title="Compare lists macro file" href="http://www.amitkohli.com/excel/compare_lists.bas" target="_blank">download the file here</a> (if it opens as text, right click and &#8220;Save link as&#8221;).
+And here is the macro itself. Copy/paste the code, or <a title="Compare lists macro file" href="https://www.amitkohli.com/excel/compare_lists.bas" target="_blank">download the file here</a> (if it opens as text, right click and &#8220;Save link as&#8221;).
 
 <pre>Sub compare_lists()
 ' Author: Amit Kohli
@@ -92,4 +92,4 @@ ActiveCell.Offset(1 - ActiveCell.Row, 0).Activate
 End Sub
 </pre>
 
-I uploaded a video tutorial, you can see it here (please view in fullscreen mode, or watch the video in youtube by clicking on the logo):[youtube=http://www.youtube.com/watch?v=4lcEB28JpJg]
+I uploaded a video tutorial, you can see it here (please view in fullscreen mode, or watch the video in youtube by clicking on the logo):[youtube=https://www.youtube.com/watch?v=4lcEB28JpJg]

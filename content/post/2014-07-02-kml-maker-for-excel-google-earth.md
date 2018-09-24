@@ -39,6 +39,6 @@ And resulting maps can have this much variety, all controllable from the form:
   
 [<img class="alignnone size-medium wp-image-58" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2014/07/GEMaker1.png?resize=216%2C300" alt="GEMaker1" width="216" height="300" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2014/07/GEMaker1.png?resize=216%2C300 216w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2014/07/GEMaker1.png?w=270 270w" sizes="(max-width: 216px) 100vw, 216px" data-recalc-dims="1" />][3]
 
- [1]: http://amitkohli.com/wp-content/uploads/2014/07/Google-earth-kml-maker.v.1.3.xlsm
+ [1]: https://amitkohli.com/wp-content/uploads/2014/07/Google-earth-kml-maker.v.1.3.xlsm
  [2]: https://i2.wp.com/amitkohli.com/wp-content/uploads/2014/07/GEMaker.png
  [3]: https://i2.wp.com/amitkohli.com/wp-content/uploads/2014/07/GEMaker1.png

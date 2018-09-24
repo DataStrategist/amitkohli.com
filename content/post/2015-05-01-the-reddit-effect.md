@@ -31,9 +31,9 @@ What is interesting is how quickly reddit and ycombinator traffic falls below th
 
 Quick question for anyone that knows about logging and WordPress: These are my top 3 &#8220;referrers&#8221;:
 
-  * http://amitkohli.com/?p=246
-  * http://amitkohli.com/wp-content/themes/pinboard/style.css
-  * http://amitkohli.com/wp-content/themes/pinboard/styles/colorbox.css
+  * https://amitkohli.com/?p=246
+  * https://amitkohli.com/wp-content/themes/pinboard/style.css
+  * https://amitkohli.com/wp-content/themes/pinboard/styles/colorbox.css
 
 The first link is the article itself, and the other two are css files on the theme that I&#8217;m currently using on my blog. How are these &#8220;referrers&#8221;? And why can&#8217;t I see any of the Twitter traffic that I expect?
 
@@ -45,7 +45,7 @@ All in all&#8230;It was a fun thing to happen to me, even though forevermore my 
 
 &nbsp;
 
- [1]: http://amitkohli.com/?p=246
+ [1]: https://amitkohli.com/?p=246
  [2]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/05/ChordProgressionsNotes.png
  [3]: https://github.com/mexindian/logReffererTS
  [4]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/05/hits.jpg

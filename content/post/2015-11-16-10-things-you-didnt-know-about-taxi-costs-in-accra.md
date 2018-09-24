@@ -145,6 +145,6 @@ Many, many thanks to Amit Kohli for content and data advice, comments and sugges
  [4]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/11/Average-cost-per-km-by-time-of-day-and-day-of-the-week1.jpg
  [5]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/11/Average-cost-per-km-based-on-length-of-stay.jpg
  [6]: https://docs.google.com/forms/d/1e0YS-qDQmozLl3zdoklzjBbzYNFIRzb-8BXndyUX3_Q/edit
- [7]: http://amitkohli.com/wp-content/uploads/2015/11/accraTaxiCostProject.csv
+ [7]: https://amitkohli.com/wp-content/uploads/2015/11/accraTaxiCostProject.csv
  [8]: https://docs.google.com/spreadsheets/d/1Qf-6v3a_FK9gdrudDRkjR1iml_wqbOg_jnt1bMAj_2k/edit#gid=1885672296
  [9]: https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/11/Respondent-phenotype-by-gender.jpg

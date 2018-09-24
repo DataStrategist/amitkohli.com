@@ -5,7 +5,7 @@ type: post
 date: 2016-09-27T03:53:07+00:00
 url: /heart-shaped-wordcloud-celebrating-colombia-peace-treaty/
 arcade_basic_custom_image:
-  - http://amitkohli.com/wp-content/uploads/2016/09/colombia.png
+  - https://amitkohli.com/wp-content/uploads/2016/09/colombia.png
 categories:
   - Big data
   - Data

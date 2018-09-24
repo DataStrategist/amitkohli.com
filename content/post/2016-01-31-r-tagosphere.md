@@ -93,7 +93,7 @@ _(edited by [Laure Belotti][10])_
 
 ## Update:
 
-After some discussions, I figured it would be more fun to think about what the R-Taggosphere looks like WITHOUT the top tags which muck up the picture by being too popular and having too many relationships. What&#8217;s left is an easier to read network of weaker connections, which do paint a very interesting albeit unexpected picture. <a href="http://amitkohli.com/wp-content/uploads/2016/01/LS3withoutTop35.html" rel="">Check out the interactive version</a>! Or iframed below:
+After some discussions, I figured it would be more fun to think about what the R-Taggosphere looks like WITHOUT the top tags which muck up the picture by being too popular and having too many relationships. What&#8217;s left is an easier to read network of weaker connections, which do paint a very interesting albeit unexpected picture. <a href="https://amitkohli.com/wp-content/uploads/2016/01/LS3withoutTop35.html" rel="">Check out the interactive version</a>! Or iframed below:
 
 <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ -->
 
@@ -103,9 +103,9 @@ After some discussions, I figured it would be more fun to think about what the 
  [2]: http://StackOverflow.com
  [3]: http://stackoverflow.com/
  [4]: http://data.stackexchange.com
- [5]: http://amitkohli.com/wp-content/uploads/2016/01/Simple10.html
- [6]: http://amitkohli.com/wp-content/uploads/2016/01/Complex1.html
- [7]: http://amitkohli.com/wp-content/uploads/2016/01/Complex10.html
- [8]: http://amitkohli.com/wp-content/uploads/2016/01/Complex100.html
- [9]: http://amitkohli.com/wp-content/uploads/2016/01/Simple1.4k.html
+ [5]: https://amitkohli.com/wp-content/uploads/2016/01/Simple10.html
+ [6]: https://amitkohli.com/wp-content/uploads/2016/01/Complex1.html
+ [7]: https://amitkohli.com/wp-content/uploads/2016/01/Complex10.html
+ [8]: https://amitkohli.com/wp-content/uploads/2016/01/Complex100.html
+ [9]: https://amitkohli.com/wp-content/uploads/2016/01/Simple1.4k.html
  [10]: https://www.linkedin.com/in/laure-belotti-6b301218

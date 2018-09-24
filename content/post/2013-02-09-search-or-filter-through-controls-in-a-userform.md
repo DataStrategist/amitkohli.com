@@ -40,4 +40,4 @@ End Sub
 
 </pre>
 
- [1]: http://amitkohli.com/wp-content/uploads/2013/02/Search-on-vba.xls "Download"
+ [1]: https://amitkohli.com/wp-content/uploads/2013/02/Search-on-vba.xls "Download"

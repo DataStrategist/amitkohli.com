@@ -38,4 +38,4 @@ Based on FAO data
 
  [1]: https://www.linkedin.com/pulse/excel-map-hack-john-nelson
  [2]: https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/07/ET0.png
- [3]: http://amitkohli.com/wp-content/uploads/2015/07/Reference-Evapotranspiration-Map.xlsx
+ [3]: https://amitkohli.com/wp-content/uploads/2015/07/Reference-Evapotranspiration-Map.xlsx

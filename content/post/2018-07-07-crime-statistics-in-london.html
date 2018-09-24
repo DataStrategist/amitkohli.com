@@ -11,7 +11,7 @@ tags:
   - Map
 slug: crime-statistics-in-london
 output: html_document
-draft: yes
+draft: no
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
@@ -112,18 +112,18 @@ df %&gt;% pull(LatDelta) %&gt;% unique %&gt;% length; df %&gt;% pull(LongDelta) 
 
 UIDCrimes %&gt;%  sample_n(10)</code></pre>
 <pre><code>## # A tibble: 10 x 5
-##    UID     Crime.type                       n   sc_n total_crime
-##    &lt;chr&gt;   &lt;chr&gt;                        &lt;int&gt;  &lt;dbl&gt;       &lt;int&gt;
-##  1 1.2|4.1 Vehicle crime                   78 0.957          704
-##  2 1.3|6.2 Violence and sexual offences    68 0.371          237
-##  3 3.3|7.4 Robbery                          5 0.118          323
-##  4 2.8|1.2 Other crime                      4 0.208          307
-##  5 0.4|4.3 Burglary                         3 0.0463          45
-##  6 2.6|6.4 Bicycle theft                    2 0.0627         486
-##  7 2.3|5.8 Violence and sexual offences   207 1.13           766
-##  8 2.4|1.5 Other crime                      7 0.363          432
-##  9 3|6.4   Anti-social behaviour           30 0.146           88
-## 10 3.1|6.9 Other theft                     11 0.0736         246</code></pre>
+##    UID     Crime.type                    n    sc_n total_crime
+##    &lt;chr&gt;   &lt;chr&gt;                     &lt;int&gt;   &lt;dbl&gt;       &lt;int&gt;
+##  1 1.6|1.6 Robbery                       6  0.141          273
+##  2 1.9|0.3 Other crime                 464 24.1           1531
+##  3 1.6|3.8 Other theft                  25  0.167          520
+##  4 3|0.5   Public order                  2  0.0421           9
+##  5 3.3|2.7 Shoplifting                  17  0.172          451
+##  6 3.2|5.2 Other theft                  57  0.381          622
+##  7 2|3.3   Vehicle crime               147  1.80          1226
+##  8 2.5|1.3 Other theft                  44  0.294          875
+##  9 3.2|7.5 Public order                 31  0.652          473
+## 10 1.3|5.5 Criminal damage and arson     3  0.0639          27</code></pre>
 <p>OK, so now we more or less know how each crime type stacks up against others in London… and perhaps this is the information we wanted to know… because let’s take a look at one random area:</p>
 <pre class="r"><code>UIDCrimes %&gt;% filter(UID == &quot;2.1|5.8&quot;) </code></pre>
 <pre><code>## # A tibble: 14 x 5

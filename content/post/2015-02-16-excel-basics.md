@@ -68,10 +68,10 @@ Available through the **Developer** tab on the ribbon. If you don&#8217;t see 
       From the <strong>File</strong> menu, select <strong>Import file</strong>, and select the file you just downloaded.
     </li>
     <li>
-      done! Now you need a way to run the macro&#8230; see for example <a title="Macro form – a good visual way to organize macros" href="http://macrosforexcel.wordpress.com/2012/10/03/macro-form-a-good-visual-way-to-organize-macros/" target="_blank">this post</a>.
+      done! Now you need a way to run the macro&#8230; see for example <a title="Macro form – a good visual way to organize macros" href="https://macrosforexcel.wordpress.com/2012/10/03/macro-form-a-good-visual-way-to-organize-macros/" target="_blank">this post</a>.
     </li>
   </ol>
 </div>
 
- [1]: http://grok.lsu.edu/Image.aspx?imageId=6011
- [2]: http://grok.lsu.edu/Image.aspx?imageId=6043
+ [1]: https://grok.lsu.edu/Image.aspx?imageId=6011
+ [2]: https://grok.lsu.edu/Image.aspx?imageId=6043

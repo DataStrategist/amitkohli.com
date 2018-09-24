@@ -23,7 +23,7 @@ At a certain point it can become challenging to quickly find and run the macro w
 
 A pop-up menu looks like this:
 
-[<img title="pop-up example" src="http://macrosforexcel.files.wordpress.com/2012/08/pop-up-example.jpg?resize=497%2C503" alt="" width="497" height="503" data-recalc-dims="1" />][1]
+[<img title="pop-up example" src="https://macrosforexcel.files.wordpress.com/2012/08/pop-up-example.jpg?resize=497%2C503" alt="" width="497" height="503" data-recalc-dims="1" />][1]
 
 **How to make your own Macro menu form:**
 
@@ -61,9 +61,9 @@ End Sub
 
 **Other options:**
 
-  * **Buttons**: Use buttons on the quicklaunch bar or a custom toolbar.  This is cool for a few macros, but after 10 or so macros, it gets a bit heavy. The buttons look like this:[<img title="custom_buttons" src="http://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97" alt="" width="497" height="97" data-recalc-dims="1" />][2]
+  * **Buttons**: Use buttons on the quicklaunch bar or a custom toolbar.  This is cool for a few macros, but after 10 or so macros, it gets a bit heavy. The buttons look like this:[<img title="custom_buttons" src="https://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97" alt="" width="497" height="97" data-recalc-dims="1" />][2]
 
   * **Drop-down menu**: Ron DeBruin created an<a title="Menu for favorite macros in Excel 2007-2010 (for one workbook)" href="http://www.rondebruin.nl/qat2.htm" target="_blank"> excellent method</a> through which you can create a drop-down list with the macros you so desire, in any hierarchy that you specify. It&#8217;s pretty great, if it works for you.
 
- [1]: http://macrosforexcel.files.wordpress.com/2012/08/pop-up-example.jpg?resize=497%2C503
- [2]: http://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97
+ [1]: https://macrosforexcel.files.wordpress.com/2012/08/pop-up-example.jpg?resize=497%2C503
+ [2]: https://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97

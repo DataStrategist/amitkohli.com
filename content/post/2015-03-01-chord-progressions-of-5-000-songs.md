@@ -29,7 +29,7 @@ Check it out!
 
 [<img class="alignnone size-medium wp-image-247" src="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/02/chord.prog_.sankey.png?resize=288%2C300" alt="chord.prog.sankey" width="288" height="300" srcset="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/02/chord.prog_.sankey.png?resize=288%2C300 288w, https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/02/chord.prog_.sankey.png?w=677 677w" sizes="(max-width: 288px) 100vw, 288px" data-recalc-dims="1" />][1]
 
-(If you prefer the dynamic version where you can play with the data, have a look at the following link: <a title="Interactive version" href="http://amitkohli.com/wp-content/uploads/2015/02/InteractiveChordProgression.html" target="_blank">Click here!</a>).
+(If you prefer the dynamic version where you can play with the data, have a look at the following link: <a title="Interactive version" href="https://amitkohli.com/wp-content/uploads/2015/02/InteractiveChordProgression.html" target="_blank">Click here!</a>).
 
 Explaining the figure a little bit: What interests us here is the type of chords used, regardless of the song&#8217;s scale, so that 1->5->6 in the figure above includes songs in key of C major that have the chord progression C->G->Am and songs in the key of A major that have A->E->F#m (if the songs have the same Roman numerals and are in the same relative major.  In reality, the API blends songs into rough categories regardless of the song&#8217;s mode, so it&#8217;s impossible to know for sure what we&#8217;re dealing with).
 

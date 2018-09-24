@@ -197,4 +197,4 @@ End Sub
 </pre>
 
  [1]: http://www.amitkohli.com/uploads/Dim_changer.frm
- [2]: http://amitkohli.com/wp-content/uploads/2013/03/Dim_changer.xlsm
+ [2]: https://amitkohli.com/wp-content/uploads/2013/03/Dim_changer.xlsm

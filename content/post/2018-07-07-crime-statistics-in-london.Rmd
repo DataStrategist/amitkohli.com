@@ -11,7 +11,7 @@ tags:
   - Map
 slug: crime-statistics-in-london
 output: html_document
-draft: yes
+draft: no
 ---
 
 Anyone that has ever looked at local crime statistics has the same initial reaction: "Daaaaaamn there is a ton of crime right outside my house, I can't ever leave again!" But a good data scientist understands priors, which is to say if we see some crime in the area, it probably has to do with the fact that there's a huge number of people walking around, and even a small small amount of crime would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's a small amount of crime everywhere, how much _relative_ crime exists in each area? Let's explore that!
