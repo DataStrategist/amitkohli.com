@@ -1,48 +1,110 @@
 ---
-title: Crime Statistics in London
+title: Relative Crime Map, London
 author: Amit
-date: '2018-07-07'
+date: '2018-09-23'
+categories:
+  - Data
+  - Tutorials
+tags:
+  - London
+  - Crime
+  - Map
 slug: crime-statistics-in-london
-categories: [Data,R]
-tags: []
-description: ''
 output: html_document
 draft: yes
 ---
 
-Blah blah
+Anyone that has ever looked at local crime statistics has the same initial reaction: "Daaaaaamn there is a ton of crime right outside my house, I can't ever leave again!" But a good data scientist understands priors, which is to say if we see some crime in the area, it probably has to do with the fact that there's a huge number of people walking around, and even a small small amount of crime would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's a small amount of crime everywhere, how much _relative_ crime exists in each area? Let's explore that!
 
-
-
+(private 4th wall breaking note: with this exercise I also am trying something new. I from [@JennyBryan](https://twitter.com/JennyBryan) and [@hspter](https://twitter.com/hspter) the myth of "the perfect analyst", ie when one shares blogposts like this, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more... iterative... to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes and everything! You can find them [here](https://www.youtube.com/watch?v=aQ955LDYLGQ) and [here](https://www.youtube.com/watch?v=jpaj9PEqAbY). Please be nice! )
 
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(leaflet)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Load in the data:
-```{r warning=FALSE}
-### Digest London crime data and create a visual by neighbourhood
-FileNames <- list.files(path = "../data/LondonCrime",recursive = T, full.names = T)
+## Getting the data:
 
-df <- FileNames %>% map_dfr(read.csv)
+The UK has excellent data reporting services, including https://data.police.uk/ from which we will obtain our data. After a bit of iterating, I think the data we need is in the **Metropolitan Police Service**, and I am downloading a year worth of data. I am only "Including crime data" because that's all we are interested in for now. I have downloaded these files into a local folder called `data`.
 
-df_large <- df
-names(df)
+Now let's read them in. By convention when I work w/ large datasets like this, I import it in once and then right away I load a smaller subset of the data to play around with for agility. 
 
+``` {r}
+FileNames <- list.files(path = "../blogdata",recursive = T, full.names = T)
+
+df_large <- FileNames %>% map_dfr(read.csv, stringsAsFactors = FALSE)
+
+df <- df_large %>% select(LSOA.name,Crime.type) %>% mutate_all(as.character())
+
+df <- df %>%
+  mutate(LSOA = gsub(pattern = " \\d.+", "", LSOA.name))
+
+```
+
+## Work it... Work it good
+
+Ok, perfect, so let's calculate what the average amount of each kind of crime we can experience.
+
+```{r}
+AveCrime <- df %>% group_by(Crime.type,LSOA) %>% 
+  summarize(CrimesPerArea = n()) %>%
+  group_by(Crime.type) %>%
+  summarize(AveCrime = mean(CrimesPerArea))
+
+```
+
+Now let's only study the 20 most violent neighbourhoods.
+
+```{r}
+WhiteList <- df$LSOA %>% table %>% as.data.frame %>%  arrange(desc(Freq)) %>% head(20) %>% pull(1) %>% as.character()
+
+df <- df %>% filter(LSOA %in% WhiteList)
+
+```
+
+## Plot!
+
+OK, now let's see how each of the 20 most violent areas stand up to the average amount of crime:
+
+```{r}
+p <- df %>% ggplot(aes(x = Crime.type, fill = Crime.type)) + geom_histogram(stat = "count") +
+  facet_wrap("LSOA") + 
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) + 
+  scale_shape_identity() +
+  geom_point(data = AveCrime, aes(x = Crime.type, y = AveCrime, shape = 45, size = 2))
+
+p
+
+```
+
+OK, so that's great and all, but isn't veeery useful because these areas are huge, and not necessarily representative of each area... we need to dig a bit deeper, perhaps a geo-analysis....
+
+# Create a clustered crime map
+
+OK, so perhaps a good idea would be to break up london into I don't know, 1600 boxes, 40 by 40 and then I could figure out what's the prevailing crime type in each region, after scaling the crime type in each area against the norm... this would give us a map where for example, we could tell that in a particular area, the prevailing crime type is "Shoplifting", which ocurrs 2x more often than a normal neighbourhood. I also feel like (after inspecting the above), working with scaled traits will smooth out the fact that some crime types are more common than others. Let's start messing around!
+
+Let's create a new data frame, this time w/ coordinates and crime type.
+
+```{r}
 df <- df_large %>%
-  select(Longitude,Latitude,Crime.type)
-```
+  select(Longitude,Latitude,Crime.type) 
 
+```
 
 First Map:
-```{r out.width='100%'}
-leaflet(data = head(df)) %>%
+
+```{r}
+head(df,100) %>% 
+leaflet() %>%
   addTiles() %>%
   addMarkers(lng = ~Longitude, lat = ~Latitude)
 ```
 
-Truncate ds to London only:
+OK, so clearly the dataset contains some non-London entries! Let's Truncate ds to London only. I grabbed the London coordinates from google maps using the M25 ring road as the limits:
+![](/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png)
 
 ```{r}
 df <- df %>% 
@@ -52,62 +114,62 @@ df <- df %>%
          Longitude > -0.527704)
 ```
 
-Create tiles for London
+OK, let's create tiles. Very unscientificially, I figured out that if I divide the coords by 0.1, that should more or less do it...
 
 ```{r}
 df <- df %>% 
-  mutate(LatDelta = round((Latitude  - min(Latitude))/.2,1)) %>% 
-  mutate(LongDelta = round((Longitude  - min(Longitude))/.2,1)) %>% 
+  mutate(LatDelta = round((Latitude  - min(Latitude))/.1,1)) %>% 
+  mutate(LongDelta = round((Longitude  - min(Longitude))/.1,1)) %>% 
   mutate(UID = paste0(LatDelta,"|", LongDelta))
-  
-df %>% head
-```
+ 
+df %>% pull(LatDelta) %>% unique %>% length; df %>% pull(LongDelta) %>% unique %>% length
 
-How much crime per UID?
+```
+Yup ^  I get about 44 squares wide by 82 squares long. This is very clearly almost exactly the 40 x 40 grid, so let's go with that :). (Extra credit to those that are wondering how a more or less square can be 44 x 82. Extra extra credit to those that know why).
+
+## Average crime
+
+I'm actually not sure what's the best way to figure out the average amount of crime per area. Maybe after we figure out how many of each type of crime has occurred in a tile we can scale it to compare against the general amount of each crime. I did something similar in the video... just more inefficiently (remember, we aren't judging!). Lastly, let's just grab a general number of crimes per tile, to show a scale of general criminality in each area:
+
 ```{r}
 UIDCrimes <- df %>% 
   select(UID,Crime.type) %>%
   group_by(UID, Crime.type) %>%
-  summarize(n = n())
+  summarize(n = n()) %>%
+  group_by(Crime.type) %>% 
+  mutate(sc_n = scale(n,center = FALSE)) %>% 
+  group_by(UID) %>% 
+  mutate(total_crime = sum(n)) %>% 
+  # ungroup %>% mutate(total_crime = scale(total_crime ))
+  ungroup
+
+UIDCrimes %>%  sample_n(10)
 ```
 
-What's the average amount of crime per thingie:
+OK, so now we more or less know how each crime type stacks up against others in London... and perhaps this is the information we wanted to know... because let's take a look at one random area:
+
 ```{r}
-AveCr <- UIDCrimes %>%
-  group_by(Crime.type) %>% select(-UID) %>%
-  summarize(AveCrime = mean(n))
-  
-
+UIDCrimes %>% filter(UID == "2.1|5.8") 
 ```
+We can see from above that even though in sheer numbers, "Violence and sexual offences" is the most prominent type, we can see that when we consider this within the general perspective of greater London, we see that "Public Order" is a much more anomolous result... OK, knowing this, let's pick highest crime type for each area:
 
-
-Normalize Crime amount per UID
 ```{r}
-NormCrime <- UIDCrimes %>% 
-  left_join(AveCr, by = "Crime.type") %>%
-  mutate(NormalizedCrime = n - AveCrime) %>%
-  select(-n, -AveCrime) %>%  
-  group_by(UID) %>%
-  mutate(MaxC = max(NormalizedCrime)) %>%
-  filter(NormalizedCrime == MaxC) %>% 
-  select(-MaxC)
-
-NormCrime %>% head
-  
+UIDCrimes <- UIDCrimes %>% 
+  group_by(UID) %>% 
+  filter(sc_n == max(sc_n))
 ```
 
-Add back in the Mean Lat & Long
+Let's add back in the mean Lat & Long for each tile, since that's going to be each tile's centeroid, and get it ready for printing by adding a more informative note for mouseover.
+
 ```{r}
 PlotDF <- df %>%
   group_by(UID) %>%
   summarize(AveLong = mean(Longitude),
             AveLat = mean(Latitude)) %>%
-  full_join(NormCrime,by = "UID") %>%
-  mutate(N2Crime = scale(NormalizedCrime)) %>%
-  mutate(N2Crime = N2Crime - min(N2Crime)) %>%
-  mutate(N2Crimelog = log(N2Crime)) %>%
-  mutate(Crime.typeBR = gsub(" ","<br>",Crime.type)) %>%
-  mutate(Crime.type2 = Crime.typeBR %>% as.factor)
+  full_join(UIDCrimes,by = "UID") %>% 
+  # mutate(Crime.type = gsub(" ","<br>",Crime.type)) %>% 
+  mutate(Note = paste0(UID, " - Total crimes: ", total_crime, "<br>",
+                       "Number of specific crimes: ", n, "<br>", Crime.type ))
 
 head(PlotDF)
 
@@ -115,24 +177,37 @@ head(PlotDF)
 ```
 
 
-Now plot these:
-```{r  out.width='100%'}
-pal <- colorFactor(c("red", "green", "blue"),domain = unique(PlotDF$Crime.type2))
+And here we go, let's map it, using a different color for each crime type, and the intensity of each dot being the scaled prevalence of total crime!
+
+```{r}
+
+
+
+Try1 <- c("red", "green", "blue")
+Try2 <- c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000')
+Try3 <- c('#808080', '#800000', '#800000', '#FF0000', '#808000', '#FFFF00', '#008000', '#00FF00', '#008080', '#00FFFF', '#000080', '#0000FF', '#800080', '#FF00FF','#000000')
+
+pal <- colorFactor(Try3, domain = unique(PlotDF$Crime.type))
 
 leaflet(PlotDF) %>%
   addTiles() %>%
-  addCircleMarkers(lng = ~AveLong, lat = ~AveLat,fillColor = ~pal(Crime.type2), stroke = FALSE, fillOpacity = ~N2Crimelog,
-                   label = lapply(PlotDF$Crime.typeBR, htmltools::HTML)) %>% #  labelOptions = labelOptions(permanent = TRUE)
-  addLegend("topright", pal = pal, values = ~Crime.typeBR,
-    title = "Crime Type",
-    opacity = 1
+  addCircleMarkers(lng = ~AveLong, lat = ~AveLat,
+                   fillColor = ~pal(Crime.type), 
+                   stroke = FALSE, 
+                   fillOpacity = ~total_crime/max(total_crime)*3,
+                   label = lapply(PlotDF$Note, htmltools::HTML)) %>% #  labelOptions = labelOptions(permanent = TRUE)
+  addLegend("topright", pal = pal, values = ~Crime.type,
+            title = "Crime Type",
+            opacity = 1
   )
 
-#   addCircleMarkers(lng = ~AveLong, lat = ~AveLat,fillColor = ~pal(Crime.type2), stroke = FALSE, label = lapply(PlotDF$Crime.type, htmltools::HTML))
+#   addCircleMarkers(lng = ~AveLong, lat = ~AveLat,fillColor = ~pal(Crime.type), stroke = FALSE, label = lapply(PlotDF$Crime.type, htmltools::HTML))
 #   
 # addLabelOnlyMarkers(~AveLong, ~AveLat, label =  lapply(PlotDF$Crime.type, htmltools::HTML),#~as.character(Crime.type),    
-#                       labelOptions = labelOptions(style = "color:red", noHide = T, direction = 'center', opacity = ~N2Crime, textOnly = T))
+#                       labelOptions = labelOptions(style = "color:red", noHide = T, direction = 'center', opacity = ~sc_n, textOnly = T))
 
 ```
 
-
+A few observations... 
+ 1) if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime. 
+ 2) The color choice is a bit unfortunate when I am also modifying the opacity of each dot... I have tried after a bit of messing around to find the color scale that stands up to identification as best as possible, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
