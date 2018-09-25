@@ -14,9 +14,9 @@ output: html_document
 draft: no
 ---
 
-Anyone that has ever looked at local crime statistics has the same initial reaction: "Daaaaaamn there is a ton of crime right outside my house, I can't ever leave again!" But a good data scientist understands priors, which is to say if we see some crime in the area, it probably has to do with the fact that there's a huge number of people walking around, and even a small small amount of crime would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's a small amount of crime everywhere, how much _relative_ crime exists in each area? Let's explore that!
+Anyone that has ever looked at local crime statistics has probably had the same initial reaction: "wow this neighbourhood has become so violent, I can't ever leave the house again!" But a good data scientist understands priors, which is to say that it probably has more to do with the fact that there's a huge number of people walking around, and even a small amount of criminal behavior would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's _some_ crime everywhere, how much _relative_ crime exists in each area? Let's explore that!
 
-(private 4th wall breaking note: with this exercise I also am trying something new. I from [@JennyBryan](https://twitter.com/JennyBryan) and [@hspter](https://twitter.com/hspter) the myth of "the perfect analyst", ie when one shares blogposts like this, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more... iterative... to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes and everything! You can find them [here](https://www.youtube.com/watch?v=aQ955LDYLGQ) and [here](https://www.youtube.com/watch?v=jpaj9PEqAbY). Please be nice! )
+(private 4th wall breaking note: with this exercise I also am trying something new. I first heard from [Jenny](https://twitter.com/JennyBryan) and [Hilary](https://twitter.com/hspter) the myth of "the perfect analyst", ie when one shares blogposts like this one, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more... iterative... to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes, dead ends, google searching and everything! It's a bit embarassing, but I think important. You can find them [here](https://www.youtube.com/watch?v=aQ955LDYLGQ) and [here](https://www.youtube.com/watch?v=jpaj9PEqAbY). Please be nice! )
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -26,9 +26,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Getting the data:
 
-The UK has excellent data reporting services, including https://data.police.uk/ from which we will obtain our data. After a bit of iterating, I think the data we need is in the **Metropolitan Police Service**, and I am downloading a year worth of data. I am only "Including crime data" because that's all we are interested in for now. I have downloaded these files into a local folder called `data`.
+The UK has excellent data reporting services, including https://data.police.uk/ from which we will obtain our data. After a bit of iterating, I think the data we need is in the **Metropolitan Police Service**, and I am downloading the latest data, a years worth. I am only "Including crime data" because that's all we are interested in for now. I have downloaded these files into a local folder called `blogdata`. (in case anyone tries to run this Rmd but didn't clone the repo... pls let me know if the relative referencing works correctly, still getting used to blogdown and hugo).
 
-Now let's read them in. By convention when I work w/ large datasets like this, I import it in once and then right away I load a smaller subset of the data to play around with for agility. 
+Now let's read them in. By convention when I work w/ large datasets like this, I import it in once and then right away I create a smaller subset of the data to play around with, that way when I inevitably mess up I don't have to load it all again. 
 
 ``` {r}
 FileNames <- list.files(path = "../blogdata",recursive = T, full.names = T)
@@ -42,7 +42,7 @@ df <- df %>%
 
 ```
 
-## Work it... Work it good
+## Let's get to work!
 
 Ok, perfect, so let's calculate what the average amount of each kind of crime we can experience.
 
@@ -57,7 +57,8 @@ AveCrime <- df %>% group_by(Crime.type,LSOA) %>%
 Now let's only study the 20 most violent neighbourhoods.
 
 ```{r}
-WhiteList <- df$LSOA %>% table %>% as.data.frame %>%  arrange(desc(Freq)) %>% head(20) %>% pull(1) %>% as.character()
+WhiteList <- df$LSOA %>% table %>% as.data.frame %>%  
+  arrange(desc(Freq)) %>% head(20) %>% pull(1) %>% as.character()
 
 df <- df %>% filter(LSOA %in% WhiteList)
 
@@ -80,11 +81,11 @@ p
 
 ```
 
-OK, so that's great and all, but isn't veeery useful because these areas are huge, and not necessarily representative of each area... we need to dig a bit deeper, perhaps a geo-analysis....
+OK, so that's great and all, but isn't veeery useful because these LSOA areas are huge, and each contains so much variety in terms of "neighbo0urhood feels"", we clearly need greater granularity... so let's dig a bit deeper, perhaps a map would do us better....
 
 # Create a clustered crime map
 
-OK, so perhaps a good idea would be to break up london into I don't know, 1600 boxes, 40 by 40 and then I could figure out what's the prevailing crime type in each region, after scaling the crime type in each area against the norm... this would give us a map where for example, we could tell that in a particular area, the prevailing crime type is "Shoplifting", which ocurrs 2x more often than a normal neighbourhood. I also feel like (after inspecting the above), working with scaled traits will smooth out the fact that some crime types are more common than others. Let's start messing around!
+OK, so perhaps a good idea would be to break up london into I don't know, 1600 boxes, 40 by 40 and then I could figure out what's the prevailing crime type in each region, after scaling the crime type in each area against the normal amount of that crime family in all London... this would give us a map where for example, we could tell that in a particular area, the prevailing crime type is "Shoplifting", which ocurrs 2x more often than a normal neighbourhood. I also feel like (after inspecting the above), working with scaled traits will smooth out the fact that some crime types are more common than others overall. Let's start messing around!
 
 Let's create a new data frame, this time w/ coordinates and crime type.
 
@@ -103,7 +104,7 @@ leaflet() %>%
   addMarkers(lng = ~Longitude, lat = ~Latitude)
 ```
 
-OK, so clearly the dataset contains some non-London entries! Let's Truncate ds to London only. I grabbed the London coordinates from google maps using the M25 ring road as the limits:
+OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? _Metropoli?_)! Let's Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn't an accurate representation of London:
 ![](/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png)
 
 ```{r}
@@ -114,7 +115,7 @@ df <- df %>%
          Longitude > -0.527704)
 ```
 
-OK, let's create tiles. Very unscientificially, I figured out that if I divide the coords by 0.1, that should more or less do it...
+OK, let's create tiles. Very unscientificially, I figured out that if I divide the coords by 0.1, that should more or less do it. Also we create an ID that concatenates the relative positions so that we can more easily refer to each tile by it's "Unique IDentifier" (UID).
 
 ```{r}
 df <- df %>% 
@@ -125,7 +126,7 @@ df <- df %>%
 df %>% pull(LatDelta) %>% unique %>% length; df %>% pull(LongDelta) %>% unique %>% length
 
 ```
-Yup ^  I get about 44 squares wide by 82 squares long. This is very clearly almost exactly the 40 x 40 grid, so let's go with that :). (Extra credit to those that are wondering how a more or less square can be 44 x 82. Extra extra credit to those that know why).
+Yup ^  I get about 44 squares wide by 82 squares long. This is very clearly almost exactly the 40 x 40 grid, so let's go with that :-). (Extra credit to those that are wondering how a more or less square can be 44 x 82. Extra extra credit to those that know why).
 
 ## Average crime
 
@@ -135,23 +136,26 @@ I'm actually not sure what's the best way to figure out the average amount of cr
 UIDCrimes <- df %>% 
   select(UID,Crime.type) %>%
   group_by(UID, Crime.type) %>%
-  summarize(n = n()) %>%
+  ## Just the count per crime type and area
+  summarize(n = n()) %>% 
   group_by(Crime.type) %>% 
+  ## Scaling n against the overall amount of each crime
   mutate(sc_n = scale(n,center = FALSE)) %>% 
   group_by(UID) %>% 
+  ## Just a total sum of all crime in each area
   mutate(total_crime = sum(n)) %>% 
-  # ungroup %>% mutate(total_crime = scale(total_crime ))
-  ungroup
+  ungroup # %>% mutate(total_crime = scale(total_crime )) 
+  ## ^ commented out part is experimenting w/ scaled totals... don't like it
 
 UIDCrimes %>%  sample_n(10)
 ```
 
-OK, so now we more or less know how each crime type stacks up against others in London... and perhaps this is the information we wanted to know... because let's take a look at one random area:
+OK, so now we more or less know how each crime type in each area stacks up against other areas in London... and perhaps this is the information we wanted to know... let's take a look at one random area:
 
 ```{r}
 UIDCrimes %>% filter(UID == "2.1|5.8") 
 ```
-We can see from above that even though in sheer numbers, "Violence and sexual offences" is the most prominent type, we can see that when we consider this within the general perspective of greater London, we see that "Public Order" is a much more anomolous result... OK, knowing this, let's pick highest crime type for each area:
+We can see from above that even though in sheer numbers, "Violence and sexual offences" is the most prominent type (`n = 55`), we can see that when we consider this within the general perspective of greater London, we see that "Public Order" is a much more anomolous result (`sc_n = 1.51`)... OK, knowing this, let's pick highest crime type for each area:
 
 ```{r}
 UIDCrimes <- UIDCrimes %>% 
@@ -175,7 +179,6 @@ head(PlotDF)
 
 # PlotDF$N2Crime %>% plot
 ```
-
 
 And here we go, let's map it, using a different color for each crime type, and the intensity of each dot being the scaled prevalence of total crime!
 
@@ -209,5 +212,12 @@ leaflet(PlotDF) %>%
 ```
 
 A few observations... 
- 1) if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime. 
- 2) The color choice is a bit unfortunate when I am also modifying the opacity of each dot... I have tried after a bit of messing around to find the color scale that stands up to identification as best as possible, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
+
+ 1. if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime. 
+ 2. The color choice is a bit unfortunate for 2 reasons. 1) there's just too man categories, and 2) I am also modifying the opacity of each dot with additional information... I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
+ 3. It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area.
+ 4. This analysis also doesn't consider the effect of the police or the legal reaction to crime, so I just want to be very clear that this analysis probably shouldn't be used for any REAL purpose.
+ 5. And this one is a biggie. When working with large datasets it can be easy to forget that we are dealing with people's lives. Every single number in this analysis represents a negative moment, some of which will be leaving permanent scars. Behind every single number there is also a criminal, which represents a failure on society's part to properly socialize the individual. I understand that zero crime is impossible, but we, as a society should be holding ourselves responsible and at least asking questions from our regulators about how they are not addressing criminality, but the underlying causes of hopelessness and criminal behavior.
+ 
+ As a final note, and in consideration of point 5 above, I would like to say, if anyone has any concerns about this analysis for any reason, please reach out to me and I will be happy to listen.
+ 
