@@ -25,12 +25,12 @@ draft: no
 <script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 
 
-<p>Anyone that has ever looked at local crime statistics has the same initial reaction: “Daaaaaamn there is a ton of crime right outside my house, I can’t ever leave again!” But a good data scientist understands priors, which is to say if we see some crime in the area, it probably has to do with the fact that there’s a huge number of people walking around, and even a small small amount of crime would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there’s a small amount of crime everywhere, how much <em>relative</em> crime exists in each area? Let’s explore that!</p>
-<p>(private 4th wall breaking note: with this exercise I also am trying something new. I from <a href="https://twitter.com/JennyBryan">Jenny</a> and <a href="https://twitter.com/hspter">Hilary</a> the myth of “the perfect analyst”, ie when one shares blogposts like this, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more… iterative… to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes and everything! You can find them <a href="https://www.youtube.com/watch?v=aQ955LDYLGQ">here</a> and <a href="https://www.youtube.com/watch?v=jpaj9PEqAbY">here</a>. Please be nice! )</p>
+<p>Anyone that has ever looked at local crime statistics has probably had the same initial reaction: “wow this neighbourhood has become so violent, I can’t ever leave the house again!” But a good data scientist understands priors, which is to say that it probably has more to do with the fact that there’s a huge number of people walking around, and even a small amount of criminal behavior would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there’s <em>some</em> crime everywhere, how much <em>relative</em> crime exists in each area? Let’s explore that!</p>
+<p>(private 4th wall breaking note: with this exercise I also am trying something new. I first heard from <a href="https://twitter.com/JennyBryan">Jenny</a> and <a href="https://twitter.com/hspter">Hilary</a> the myth of “the perfect analyst”, ie when one shares blogposts like this one, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more… iterative… to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes, dead ends, google searching and everything! It’s a bit embarassing, but I think important. You can find them <a href="https://www.youtube.com/watch?v=aQ955LDYLGQ">here</a> and <a href="https://www.youtube.com/watch?v=jpaj9PEqAbY">here</a>. Please be nice! )</p>
 <div id="getting-the-data" class="section level2">
 <h2>Getting the data:</h2>
 <p>The UK has excellent data reporting services, including <a href="https://data.police.uk/" class="uri">https://data.police.uk/</a> from which we will obtain our data. After a bit of iterating, I think the data we need is in the <strong>Metropolitan Police Service</strong>, and I am downloading the latest data, a years worth. I am only “Including crime data” because that’s all we are interested in for now. I have downloaded these files into a local folder called <code>blogdata</code>. (in case anyone tries to run this Rmd but didn’t clone the repo… pls let me know if the relative referencing works correctly, still getting used to blogdown and hugo).</p>
-<p>Now let’s read them in. By convention when I work w/ large datasets like this, I import it in once and then right away I load a smaller subset of the data to play around with for agility, that way when I inevitably mess up I don’t have to load it all again.</p>
+<p>Now let’s read them in. By convention when I work w/ large datasets like this, I import it in once and then right away I create a smaller subset of the data to play around with, that way when I inevitably mess up I don’t have to load it all again.</p>
 <pre class="r"><code>FileNames &lt;- list.files(path = &quot;../blogdata&quot;,recursive = T, full.names = T)
 
 df_large &lt;- FileNames %&gt;% map_dfr(read.csv, stringsAsFactors = FALSE)
@@ -48,7 +48,8 @@ df &lt;- df %&gt;%
   group_by(Crime.type) %&gt;%
   summarize(AveCrime = mean(CrimesPerArea))</code></pre>
 <p>Now let’s only study the 20 most violent neighbourhoods.</p>
-<pre class="r"><code>WhiteList &lt;- df$LSOA %&gt;% table %&gt;% as.data.frame %&gt;%  arrange(desc(Freq)) %&gt;% head(20) %&gt;% pull(1) %&gt;% as.character()
+<pre class="r"><code>WhiteList &lt;- df$LSOA %&gt;% table %&gt;% as.data.frame %&gt;%  
+  arrange(desc(Freq)) %&gt;% head(20) %&gt;% pull(1) %&gt;% as.character()
 
 df &lt;- df %&gt;% filter(LSOA %in% WhiteList)</code></pre>
 </div>
@@ -65,11 +66,11 @@ df &lt;- df %&gt;% filter(LSOA %in% WhiteList)</code></pre>
 <pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
 <pre class="r"><code>p</code></pre>
 <p><img src="/post/2018-07-07-crime-statistics-in-london_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>OK, so that’s great and all, but isn’t veeery useful because these areas are huge, and each contains so much variety in terms of neighbourhood feels, we clearly need greater granularity… so let’s dig a bit deeper, perhaps a geo-analysis….</p>
+<p>OK, so that’s great and all, but isn’t veeery useful because these LSOA areas are huge, and each contains so much variety in terms of “neighbo0urhood feels”“, we clearly need greater granularity… so let’s dig a bit deeper, perhaps a map would do us better….</p>
 </div>
 <div id="create-a-clustered-crime-map" class="section level1">
 <h1>Create a clustered crime map</h1>
-<p>OK, so perhaps a good idea would be to break up london into I don’t know, 1600 boxes, 40 by 40 and then I could figure out what’s the prevailing crime type in each region, after scaling the crime type in each area against the norm… this would give us a map where for example, we could tell that in a particular area, the prevailing crime type is “Shoplifting”, which ocurrs 2x more often than a normal neighbourhood. I also feel like (after inspecting the above), working with scaled traits will smooth out the fact that some crime types are more common than others. Let’s start messing around!</p>
+<p>OK, so perhaps a good idea would be to break up london into I don’t know, 1600 boxes, 40 by 40 and then I could figure out what’s the prevailing crime type in each region, after scaling the crime type in each area against the normal amount of that crime family in all London… this would give us a map where for example, we could tell that in a particular area, the prevailing crime type is “Shoplifting”, which ocurrs 2x more often than a normal neighbourhood. I also feel like (after inspecting the above), working with scaled traits will smooth out the fact that some crime types are more common than others overall. Let’s start messing around!</p>
 <p>Let’s create a new data frame, this time w/ coordinates and crime type.</p>
 <pre class="r"><code>df &lt;- df_large %&gt;%
   select(Longitude,Latitude,Crime.type) </code></pre>
@@ -80,13 +81,13 @@ leaflet() %&gt;%
   addMarkers(lng = ~Longitude, lat = ~Latitude)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[51.210698,52.000179,51.587336,51.587336,51.589112,51.589112,51.582311,51.588063,51.588442,51.590873,51.584898,51.595164,51.595164,51.590873,51.589112,51.595164,51.595164,51.588063,51.588063,51.589112,51.589215,51.584985,51.584985,51.588063,51.593835,51.587336,51.584898,51.588214,51.593835,51.584898,51.587336,51.583695,51.583695,51.584191,51.584656,51.583414,51.584656,51.584656,51.586024,51.586196,51.579743,51.579743,51.577881,51.578492,51.581622,51.581059,51.582376,51.581154,51.578883,51.579543,51.578503,51.581154,51.579705,51.579664,51.586154,51.583781,51.584159,51.584449,51.580941,51.584449,51.584449,51.580941,51.581101,51.585287,51.585287,51.585287,51.583762,51.585287,51.583762,51.583781,51.584111,51.585287,51.584111,51.583762,51.584111,51.577112,51.577846,51.575956,51.577115,51.575187,51.576567,51.575601,51.575187,51.574779,51.574779,51.574779,51.573996,51.577478,51.575394,51.571604,51.577817,51.571806,51.573289,51.571806,51.571806,51.571647,51.571343,51.571855,51.574127,51.574876],[0.763024,1.185594,0.135866,0.135866,0.140035,0.140035,0.140192,0.134947,0.13586,0.141143,0.13643,0.148434,0.148434,0.141143,0.140035,0.148434,0.148434,0.134947,0.134947,0.140035,0.136387,0.135554,0.135554,0.134947,0.145888,0.135866,0.13643,0.136513,0.145888,0.13643,0.135866,0.129344,0.129344,0.127794,0.128927,0.128479,0.128927,0.128927,0.128384,0.130789,0.139479,0.139479,0.132608,0.135119,0.128655,0.133378,0.131173,0.135071,0.133362,0.133206,0.138439,0.135071,0.138121,0.136921,0.133602,0.132062,0.140466,0.135384,0.136908,0.135384,0.135384,0.136908,0.140452,0.132811,0.132811,0.132811,0.133591,0.132811,0.133591,0.132062,0.13814,0.132811,0.13814,0.133591,0.13814,0.139269,0.138481,0.141509,0.138114,0.139799,0.140066,0.137827,0.139799,0.135551,0.135551,0.135551,0.135067,0.13448,0.134339,0.132603,0.136112,0.134864,0.136853,0.134864,0.134864,0.135174,0.148854,0.14693,0.14711,0.142541],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.210698,52.000179],"lng":[0.127794,1.185594]}},"evals":[],"jsHooks":[]}</script>
-<p>OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? Metropoli?)! Let’s Truncate these to London only. I grabbed the London coordinates from google maps using the M25 ring road as the limits: <img src="/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png" /></p>
+<p>OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? <em>Metropoli?</em>)! Let’s Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn’t an accurate representation of London: <img src="/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png" /></p>
 <pre class="r"><code>df &lt;- df %&gt;% 
   filter(Latitude &lt; 51.715036,
          Latitude &gt; 51.282286,
          Longitude &lt; 0.296875,
          Longitude &gt; -0.527704)</code></pre>
-<p>OK, let’s create tiles. Very unscientificially, I figured out that if I divide the coords by 0.1, that should more or less do it…</p>
+<p>OK, let’s create tiles. Very unscientificially, I figured out that if I divide the coords by 0.1, that should more or less do it. Also we create an ID that concatenates the relative positions so that we can more easily refer to each tile by it’s “Unique IDentifier” (UID).</p>
 <pre class="r"><code>df &lt;- df %&gt;% 
   mutate(LatDelta = round((Latitude  - min(Latitude))/.1,1)) %&gt;% 
   mutate(LongDelta = round((Longitude  - min(Longitude))/.1,1)) %&gt;% 
@@ -95,36 +96,39 @@ leaflet() %&gt;%
 df %&gt;% pull(LatDelta) %&gt;% unique %&gt;% length; df %&gt;% pull(LongDelta) %&gt;% unique %&gt;% length</code></pre>
 <pre><code>## [1] 44</code></pre>
 <pre><code>## [1] 82</code></pre>
-<p>Yup ^ I get about 44 squares wide by 82 squares long. This is very clearly almost exactly the 40 x 40 grid, so let’s go with that :). (Extra credit to those that are wondering how a more or less square can be 44 x 82. Extra extra credit to those that know why).</p>
+<p>Yup ^ I get about 44 squares wide by 82 squares long. This is very clearly almost exactly the 40 x 40 grid, so let’s go with that :-). (Extra credit to those that are wondering how a more or less square can be 44 x 82. Extra extra credit to those that know why).</p>
 <div id="average-crime" class="section level2">
 <h2>Average crime</h2>
 <p>I’m actually not sure what’s the best way to figure out the average amount of crime per area. Maybe after we figure out how many of each type of crime has occurred in a tile we can scale it to compare against the general amount of each crime. I did something similar in the video… just more inefficiently (remember, we aren’t judging!). Lastly, let’s just grab a general number of crimes per tile, to show a scale of general criminality in each area:</p>
 <pre class="r"><code>UIDCrimes &lt;- df %&gt;% 
   select(UID,Crime.type) %&gt;%
   group_by(UID, Crime.type) %&gt;%
-  summarize(n = n()) %&gt;%
+  ## Just the count per crime type and area
+  summarize(n = n()) %&gt;% 
   group_by(Crime.type) %&gt;% 
+  ## Scaling n against the overall amount of each crime
   mutate(sc_n = scale(n,center = FALSE)) %&gt;% 
   group_by(UID) %&gt;% 
+  ## Just a total sum of all crime in each area
   mutate(total_crime = sum(n)) %&gt;% 
-  # ungroup %&gt;% mutate(total_crime = scale(total_crime ))
-  ungroup
+  ungroup # %&gt;% mutate(total_crime = scale(total_crime )) 
+  ## ^ commented out part is experimenting w/ scaled totals... don&#39;t like it
 
 UIDCrimes %&gt;%  sample_n(10)</code></pre>
 <pre><code>## # A tibble: 10 x 5
-##    UID     Crime.type                n  sc_n total_crime
-##    &lt;chr&gt;   &lt;chr&gt;                 &lt;int&gt; &lt;dbl&gt;       &lt;int&gt;
-##  1 2.6|3.5 Drugs                    17 0.449        1138
-##  2 3|6.1   Other crime               2 0.104          83
-##  3 2.7|6.5 Possession of weapons     7 0.756         704
-##  4 1.9|4.2 Vehicle crime           108 1.33         1740
-##  5 2|4.2   Robbery                  70 1.65         2126
-##  6 1.5|2   Robbery                   6 0.141         285
-##  7 3.2|2.7 Possession of weapons     7 0.756         898
-##  8 2.6|0.7 Other theft              19 0.127         263
-##  9 2.2|3.8 Public order             58 1.22         1993
-## 10 1.3|2   Bicycle theft             7 0.220         246</code></pre>
-<p>OK, so now we more or less know how each crime type stacks up against others in London… and perhaps this is the information we wanted to know… because let’s take a look at one random area:</p>
+##    UID     Crime.type                       n   sc_n total_crime
+##    &lt;chr&gt;   &lt;chr&gt;                        &lt;int&gt;  &lt;dbl&gt;       &lt;int&gt;
+##  1 1.1|4.2 Other theft                     96 0.642         1247
+##  2 1.4|5   Criminal damage and arson       40 0.852          522
+##  3 2.4|6.3 Anti-social behaviour          162 0.791          678
+##  4 2.1|4.1 Violence and sexual offences   346 1.89          1653
+##  5 2.6|0.5 Robbery                          2 0.0472         120
+##  6 0.9|3.6 Burglary                        25 0.386          235
+##  7 1.2|6.6 Vehicle crime                    3 0.0368          54
+##  8 2.2|5.7 Burglary                        13 0.201          377
+##  9 2.6|5.5 Other crime                     17 0.882         1649
+## 10 3.2|3   Anti-social behaviour           11 0.0537          73</code></pre>
+<p>OK, so now we more or less know how each crime type in each area stacks up against other areas in London… and perhaps this is the information we wanted to know… let’s take a look at one random area:</p>
 <pre class="r"><code>UIDCrimes %&gt;% filter(UID == &quot;2.1|5.8&quot;) </code></pre>
 <pre><code>## # A tibble: 14 x 5
 ##    UID     Crime.type                       n  sc_n total_crime
@@ -143,7 +147,7 @@ UIDCrimes %&gt;%  sample_n(10)</code></pre>
 ## 12 2.1|5.8 Theft from the person           53 0.384        1796
 ## 13 2.1|5.8 Vehicle crime                   59 0.724        1796
 ## 14 2.1|5.8 Violence and sexual offences   337 1.84         1796</code></pre>
-<p>We can see from above that even though in sheer numbers, “Violence and sexual offences” is the most prominent type, we can see that when we consider this within the general perspective of greater London, we see that “Public Order” is a much more anomolous result… OK, knowing this, let’s pick highest crime type for each area:</p>
+<p>We can see from above that even though in sheer numbers, “Violence and sexual offences” is the most prominent type (<code>n = 55</code>), we can see that when we consider this within the general perspective of greater London, we see that “Public Order” is a much more anomolous result (<code>sc_n = 1.51</code>)… OK, knowing this, let’s pick highest crime type for each area:</p>
 <pre class="r"><code>UIDCrimes &lt;- UIDCrimes %&gt;% 
   group_by(UID) %&gt;% 
   filter(sc_n == max(sc_n))</code></pre>
@@ -192,6 +196,14 @@ leaflet(PlotDF) %&gt;%
 #   
 # addLabelOnlyMarkers(~AveLong, ~AveLat, label =  lapply(PlotDF$Crime.type, htmltools::HTML),#~as.character(Crime.type),    
 #                       labelOptions = labelOptions(style = &quot;color:red&quot;, noHide = T, direction = &#39;center&#39;, opacity = ~sc_n, textOnly = T))</code></pre>
-<p>A few observations… 1) if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime. 2) The color choice is a bit unfortunate when I am also modifying the opacity of each dot… I have tried after a bit of messing around to find the color scale that stands up to identification as best as possible, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.</p>
+<p>A few observations…</p>
+<ol style="list-style-type: decimal">
+<li>if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime.</li>
+<li>The color choice is a bit unfortunate for 2 reasons. 1) there’s just too man categories, and 2) I am also modifying the opacity of each dot with additional information… I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.</li>
+<li>It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area.</li>
+<li>This analysis also doesn’t consider the effect of the police or the legal reaction to crime, so I just want to be very clear that this analysis probably shouldn’t be used for any REAL purpose.</li>
+<li>And this one is a biggie. When working with large datasets it can be easy to forget that we are dealing with people’s lives. Every single number in this analysis represents a negative moment, some of which will be leaving permanent scars. Behind every single number there is also a criminal, which represents a failure on society’s part to properly socialize the individual. I understand that zero crime is impossible, but we, as a society should be holding ourselves responsible and at least asking questions from our regulators about how they are not addressing criminality, but the underlying causes of hopelessness and criminal behavior.</li>
+</ol>
+<p>As a final note, and in consideration of point 5 above, I would like to say, if anyone has any concerns about this analysis for any reason, please reach out to me and I will be happy to listen.</p>
 </div>
 </div>
