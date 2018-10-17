@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Finding out once and for all if there's a difference between chick flicks and action movies!</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+        <!-- Custom Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+        <!-- Plugin CSS -->
+        <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+        <!-- Bootstrap lightbox -->
+        <link rel="stylesheet" href="css/bootstrap-lightbox.css">
+        <link href="css/lightbox.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+<meta property="og:url"           content="http://amitkohli.com/movieSentiments/index.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Chick flicks vs Action Movies" />
+    <meta property="og:description"   content="Can we see any difference between chick flicks and action movies? This page goes through wordclouds, feeling charts, and sentiment analysis to determine the answer" />
+    <meta property="og:image"      content="http://amitkohli.com/movieSentiments/img/header.jpg" />
+
+    </head>
+
+    <body id="page-top">
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=819689351387938";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="navbar-brand page-scroll" href="#page-top" >Top</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#intro" >Intro</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#analysis" >Analysis</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#wc" >wordclouds</a></li>
+						<li><a class="navbar-brand page-scroll" href="#feel" >feelings</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#sd" >squiggles</a></li>
+						<li><a class="navbar-brand page-scroll" href="#plot" >Lines</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#hist" >histograms</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#emoMo" >EmoMo</a></li>
+                        <li><a class="navbar-brand page-scroll" href="#conc" >Conclusion</a></li>
+						<li><a class="navbar-brand page-scroll" href="http://amitkohli.com/chick-flicks-vs-action-movies/">@</a></li>
+					</ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1 style="color:red">Chick flicks</h1>
+                    <h2 style="color:red">vs</h2>
+                    <h1 style="color:red">Action movies</h1>
+                    <hr>
+                    <h2 style="color:red">Is there any difference?</h2>
+					<hr>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-primary" id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">It's the age old question...</h2>
+                        <hr class="light">
+                        <p class="text-centered">What's better... chick flicks or action movies? A discussion we have all had a thousand times but here's a better question: <i>Is there any observable difference between them?</i> Let's pick out 10 movie scripts, 5 action movies and 5 chick flicks. These movie scripts are our champions, battling it out once and for all... the spoils? <b>IMMORTALITY</b>. Nah, just kidding, let's just see if there's any difference.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="moobies">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">The Chick Flicks:</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+
+                <div class="row no-gutter">
+                    <div class="col-lg-2 col-sm-6  text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="img/poster.png" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Chick Flicks
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>                    
+                    <div class="col-lg-2 col-sm-6  text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="http://www.lshseaglesquill.com/wp-content/uploads/2015/01/Breakfast-at-Tiffanys-promo.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Breakfast at Tiffany's
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="http://3frv6u1v2mj849vr7q3cqa8yfy1.wpengine.netdna-cdn.com/wp-content/uploads/2015/01/Bridget-Jones-Diary_320.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Bridget Jones
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="http://filmmakeriq.com/wp-content/uploads/2013/06/Casablanca-Two-Shot.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Casablanca
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRXSu1dlbWODdxcisM__iq-TlSY3xPbZ83U54CCzkcJECgCVBFK7Q" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Notting Hill
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT_3GAOlQI6boBmTjH8B5qViZkZBhahnoS5iidli-zHDiRXSbNd" class="movie-poster"  alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        When Harry met Sally
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">The Action Movies:</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+                <div class="row no-gutter">
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="img/poster.png" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Action movies
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>                    
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="https://vlizz.files.wordpress.com/2013/02/john-mcclane-die-hard.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Die Hard
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQiEI8RLiLX6LWROyj0XlQSi8fUzs33oIkR_C41Sz-_g--czWIwCw" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Machete
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="http://cdn.screenrant.com/wp-content/uploads/Predator-Reboot-Shane-Black.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Predator
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="http://s3.amazonaws.com/rapgenius/filepicker%2FfzUHMPVoSMmUSmQA2Qly_rambo.jpg" class="movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Rambo
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 text-center">
+                        <a  class="portfolio-box movie-poster">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8-1PFBcce3n5kY4X1giv8hBhf4n7CaZ2wFWH90WOgzPtzY12A" class=" movie-poster" alt="" >
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        The Last Dragon
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="text-centered">Analysis preview</h2>
+                        <p class="text-faded">So let's see how far we get with traditional charts, then let's do sentiment analysis and see what comes out. If you're impatient, jump ahead using the images below. If you're REALLY impatient, go to the conclusion (but since I don't approve, you get no hyperlink):</p>
+                    </div>
+                </div>
+            </div>
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 text-center block-menu">
+                        <a class="navbar-brand page-scroll item" href="#wc">
+                            <i class="fa fa-4x fa-cloud wow bounceIn text-faded" data-wow-delay=".6s"></i>
+                            <h3 class="text-faded">Wordclouds</h3>
+                            <p class="text-faded"> Showing simple word counts </p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 text-center block-menu">
+                        <a class="navbar-brand page-scroll item" href="#feel">
+                            <i class="fa fa-4x fa-sliders wow bounceIn text-faded" data-wow-delay=".4s"></i>
+                            <h3 class="text-faded"> Feelings</h3>
+                            <p class="text-faded">Showing the prevailing feelings in each movie</p>
+                        </a>
+                    </div>
+					
+					<div class="col-lg-4 col-md-6 text-center block-menu">
+                        <a class="navbar-brand page-scroll item" href="#sd">
+                            <i class="fa fa-4x fa-life-ring wow bounceIn text-faded" data-wow-delay=".5s"></i>
+                            <h3 class="text-faded">Sentence art</h3>
+                            <p class="text-faded">A sentiment colored squiggle per movie! #art</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center block-menu">
+                        <a class="navbar-brand page-scroll item" href="#plot">
+                            <i class="fa fa-4x fa-line-chart wow bounceIn text-faded" data-wow-delay=".1s"></i>
+                            <h3 class="text-faded">Sentiment lines</h3>
+                            <p class="text-faded">Showing plot trajectory using Percentage-Based Means</p>
+                        </a>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center block-menu">
+                        <a class="navbar-brand page-scroll item" href="#hist">
+                            <i class="fa fa-4x fa-bar-chart wow bounceIn text-faded" data-wow-delay=".2s"></i>
+                            <h3 class="text-faded">Sentiment histograms</h3>
+                            <p class="text-faded">Plot trajectory using transformed values</p>
+                        </a>					
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 text-center block-menu">					
+                        <a class="navbar-brand page-scroll item" href="#emoMo">
+                            <i class="fa fa-4x fa-heart wow bounceIn text-faded" data-wow-delay=".3s"></i>
+                            <h3 class="text-faded">emoMo</h3>
+                            <p class="text-faded">Introducing emoMo, the emotional momentum line-chart!</p>
+                        </a>					
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <p  class="bg-dark">Check out the entire analysis <a href="https://github.com/mexindian/Movie-sentiment-analyzer" target="_blank">on github</a>!</p>
+					</div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+		<section >
+        <aside class="bg-dark">
+            <div id="analysis" class="container text-center">
+                <div class="call-to-action text-center">
+                    <h2>Analysis</h2>
+					<p> For each section, click on the image to see the movie name in the caption.</p>
+				</div>
+            </div>
+        </aside>
+		
+		<aside>
+            <h2><a id="general">General analysis</a></h2>
+			<p>OK, so let's start from square one... the expectations. I expect the action movies to have less words and shorter sentences because it takes fewer words to blow something up than to describe how you feel when you see your man prioritize work over a romantic date... 
+			<a data-lightbox="Movie pace.png" href="./output/Movie pace.png" data-title="./output/Movie pace.png"/>
+			<img src="./output/Movie pace.png" width="75%" class="img-responsive" /></a></p>
+			<p> As we can see, THAT stereotype does hold up. In fact, chick flicks contain about 50% more words than action movies, on average. Movie lengths vary for both, and are comparable on average. That being said, look at the difference in word rate between Rambo and Predator, and between Casablanca and Breakfast at Tiffany's. Let's look further...
+		</aside>
+		<aside>
+            <h2><a id="wc">Wordcloud: What words are most said?</a></h2>
+            <p class="bg-light">
+            <p><b>Background/Methods:</b> R was used here to create word clouds made up of the most frequently said words in the film. Main character names were excluded from the word cloud because they are likely to be repeated many times in a film but this doesn't tell us much. We played around with removing stopwords or not, ultimately, we left them in because it is also interesting to see if the different movie types use stopwords more or less frequently.</p>
+			
+			<div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-wordcloud.png" href="./output/Breakfast at Tiffany's-wordcloud.png" data-title="Breakfast at Tiffany's-wordcloud.png"/><img src="./output/Breakfast at Tiffany's-wordcloud.png" class="img-responsive"/>
+							</a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-wordcloud.png" href="./output/Bridget Jones-wordcloud.png" data-title="Bridget Jones-wordcloud.png"/><img src="./output/Bridget Jones-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-wordcloud.png" href="./output/casablanca-wordcloud.png" data-title="casablanca-wordcloud.png"/><img src="./output/casablanca-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-wordcloud.png" href="./output/Notting Hill-wordcloud.png" data-title="Notting Hill-wordcloud.png"/><img src="./output/Notting Hill-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-wordcloud.png" href="./output/When Harry met sally-wordcloud.png" data-title="When Harry met sally-wordcloud.png"/><img src="./output/When Harry met sally-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-wordcloud.png" href="./output/Die Hard-wordcloud.png" data-title="Die Hard-wordcloud.png"/><img src="./output/Die Hard-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-wordcloud.png" href="./output/Machete-wordcloud.png" data-title="Machete-wordcloud.png"/><img src="./output/Machete-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-wordcloud.png" href="./output/Predator-wordcloud.png" data-title="Predator-wordcloud.png"/><img src="./output/Predator-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-wordcloud.png" href="./output/Rambo-wordcloud.png" data-title="Rambo-wordcloud.png"/><img src="./output/Rambo-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-wordcloud.png" href="./output/The last dragon-wordcloud.png" data-title="The last dragon-wordcloud.png"/><img src="./output/The last dragon-wordcloud.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>
+			</div>
+			
+            <p><br><b>Analysis and discussion:</b> Here, some of the same words come up in both chick flicks and action movies. In particular, the verb "get" comes up all the time. "Get" happens to be one of <a href="https://www.englishclub.com/vocabulary/common-verbs-25.htm"> the most frequently used verbs</a> in English and is often used to show a change in situation. Think of "get married/divorced", "get down!", "get over here!" "get a call" etc. Out of all the movies, "get/got" seems to be more prevalent in the action movies. </p>
+            <p> The other dominant word in all films is "you". Of course, in any film, the point is usually some kind of interaction between characters. </p>
+            <p> Interestingly, Machete is dominated by "will", at the expense of "get/got". This is probably because Machete WILL skin you alive, he doesn't GOT to do it. Machete don't got to do anything. </p> 
+            <p> Coming back to chick flicks, there's a lot of "just", a word used to either clarify or say what happened a minute ago (for example,"I just mean that..." or "I just saw him"). The former could be seen as a way of saying things more gently and/or apologetically, perhaps trying to bridge a gap between the two people who are supposed to be together by the end of the movie. Notice that this word is not prevalent in action movies. </p>  
+            
+			<p><br>Still, nothing here is the "AHA!" moment we were after, let's continue...</p>
+
+        </aside>
+		
+		<aside>
+            <h2><a id="feel"> Feelings: What are the characters feeling?</a></h2>
+            <p class="bg-light"><b>Background/Methods:</b> Movies convey dominant emotions just as we do in our interactions with others. Here's a look at how the following emotions play into chick flicks and action movies: trust, disgust, sadness, joy, fear, anticipation, anger, surprise.</p>
+			
+			<p> To accomplish this, we used the get_nrc_sentiment() function from the excellent package <a href="https://github.com/mjockers/syuzhet" target="_blank">syuzhet</a>, and then plotted the bars using ggplot. For this whole analysis, I'm using the Bing method of sentiment analysis.</p>
+			
+			<div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-feelings.png" href="./output/Breakfast at Tiffany's-feelings.png" data-title="Breakfast at Tiffany's-feelings.png"/><img src="./output/Breakfast at Tiffany's-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-feelings.png" href="./output/Bridget Jones-feelings.png" data-title="Bridget Jones-feelings.png"/><img src="./output/Bridget Jones-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-feelings.png" href="./output/casablanca-feelings.png" data-title="casablanca-feelings.png"/><img src="./output/casablanca-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-feelings.png" href="./output/Notting Hill-feelings.png" data-title="Notting Hill-feelings.png"/><img src="./output/Notting Hill-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-feelings.png" href="./output/When Harry met sally-feelings.png" data-title="When Harry met sally-feelings.png"/><img src="./output/When Harry met sally-feelings.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-feelings.png" href="./output/Die Hard-feelings.png" data-title="Die Hard-feelings.png"/><img src="./output/Die Hard-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-feelings.png" href="./output/Machete-feelings.png" data-title="Machete-feelings.png"/><img src="./output/Machete-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-feelings.png" href="./output/Predator-feelings.png" data-title="Predator-feelings.png"/><img src="./output/Predator-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-feelings.png" href="./output/Rambo-feelings.png" data-title="Rambo-feelings.png"/><img src="./output/Rambo-feelings.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-feelings.png" href="./output/The last dragon-feelings.png" data-title="The last dragon-feelings.png"/><img src="./output/The last dragon-feelings.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>            
+            </div>          
+			
+            <p><br><b>Analysis:</b> Overall, all movies display dominant feelings of trust (although perhaps this is a vocabulary calibration issue?). For all chick flicks, the three dominant feelings are trust, joy and anticipation while disgust and anger are the least prevalent. The above is not true of any of the action movies as they focus much more on anger, fear and anticipation, except for The Last Dragon which is behaving... strangely.</p>            
+			
+            <p><b>Discussion:</b> So "trust" looks to be the dominant feeling in both chick flicks and action movies, although we're not sure that it's well balanced with say, "disgust" as a feeling. Assuming the result is reliable, one could imagine that this is due to the necessary building of relationships in both scenarios. In other words, this data could be telling us that brotherhood and sisterhood are equally important! </p>
+			
+			<p>With trust, joy and anticipation being the dominant emotions in chick flicks, one could imagine that this is supposed to be the winning emotional combination in the quest for everlasting love and companionship!</p>
+			
+			<p>On the other hand, our action movie heroes and villains face a "healthy" dose of fear, anger and anticipation. This combination makes sense if we imagine the plot of any action movie, where the good guy hoards off constant threats (scary) and attacks (anger) until all the bad guys are dead (we are in anticipation of this moment). 
+            </p>		
+		</aside>
+		
+		<aside>
+
+            <h2><a id="sd">Sentence art: MODERN ART... but more feelingsy</a></h2>
+            <p class="bg-light">
+            <p><b>Background/Methods:</b> I saw this 'squiggle' on <a href="http://vallandingham.me/sentence_drawings/#farewell">Jan Vallandingham's blog</a>, who in turn took it from <a href="http://www.stefanieposavec.co.uk/">Stefanie Posavec</a>. The concept is simple: use the number of characters per sentence as the line length, then turn right and draw the next line, until you have this crazy knot of squiggles! As soon as I saw it, I thought it would be a great tool for this analysis, if I could add a sentiment element to it. Or at least hella fun. I got so excited that I didn't even see that code to accomplish this in R had already been developed by <a href="https://trinkerrstuff.wordpress.com/2013/12/08/sentence-drawing-function-vs-art/">TRinker</a>. Oh well, it was fun to construct another algorithm to accomplish the same task (and mine colors each sentence using the sentiment for each sentence using get_sentiment() from syuzhet, so green = positive, grey = neutral, red = negative). For what it's worth, it's in my <a href="https://github.com/mexindian/Movie-sentiment-analyzer" target="_blank">github repo</a>. Black dot is the start, blue dot is the end of the script.</p>
+			
+            <div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-sDrawing.png" href="./output/Breakfast at Tiffany's-sDrawing.png" data-title="Breakfast at Tiffany's-sDrawing.png"/><img src="./output/Breakfast at Tiffany's-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-sDrawing.png" href="./output/Bridget Jones-sDrawing.png" data-title="Bridget Jones-sDrawing.png"/><img src="./output/Bridget Jones-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-sDrawing.png" href="./output/casablanca-sDrawing.png" data-title="casablanca-sDrawing.png"/><img src="./output/casablanca-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-sDrawing.png" href="./output/Notting Hill-sDrawing.png" data-title="Notting Hill-sDrawing.png"/><img src="./output/Notting Hill-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-sDrawing.png" href="./output/When Harry met sally-sDrawing.png" data-title="When Harry met sally-sDrawing.png"/><img src="./output/When Harry met sally-sDrawing.png" class="img-responsive"/>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-sDrawing.png" href="./output/Die Hard-sDrawing.png" data-title="Die Hard-sDrawing.png"/><img src="./output/Die Hard-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-sDrawing.png" href="./output/Machete-sDrawing.png" data-title="Machete-sDrawing.png"/><img src="./output/Machete-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-sDrawing.png" href="./output/Predator-sDrawing.png" data-title="Predator-sDrawing.png"/><img src="./output/Predator-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-sDrawing.png" href="./output/Rambo-sDrawing.png" data-title="Rambo-sDrawing.png"/><img src="./output/Rambo-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-sDrawing.png" href="./output/The last dragon-sDrawing.png" data-title="The last dragon-sDrawing.png"/><img src="./output/The last dragon-sDrawing.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>            
+
+            </div>            
+			
+			<p><br><b>Analysis:</b> At a glance, it appears that there's more density in chick flicks and more sparsity in action movies. More importantly however, it seems like the chick flicks have clusters of green. Which means there are a lot of positive short sentences that cluster together. If there is any clustering evident in action movies, it would be red, so a negative valence. For action movies there's more grey overall, suggesting there might be more neutral sentences whereas it appears that most sentences in chick flicks are charged one way or the other. The big exception is "The Last Dragon" which ... ok, I'll say it, is acting like a chick flick again... hrm.</p>
+			
+			<p>It should be said that there are lots of VERY long lines in the scripts above. These are songs, or monologues and the like, which were not broken up by the function get_sentences() of syuzhet. We could change the delimiting to force the sentences to be smaller, but we're not gigantically bothered.</p>
+			
+            <p><b>Discussion:</b> It seems like the overall trend in chick flicks is that they tend to be more positive than negative. These drawings also tell us to expect more overall emotion in chick flicks than in action movies. Intuitively this makes sense as chick flicks tend to be about relationships which are emotional in nature. As we say, action movies have more negative sentences (indeed more overall negative things tend to happen in these types of movies) but they also have neutral sentences conveying no emotion at all. Perhaps these sentences are "process-oriented", as in "Pass me that rope", "Get on the elevator", "Hide behind that tree" etc... </p>
+			
+			<p>In conclusion, sentences are more emotional overall and more positive in chick flicks than in action movies, but we can prolly do better...</p> 
+            
+
+        </aside>
+		
+        <aside>
+            <h2><a id="plot">Plot line: What does the plot look like?</a></h2>
+            <p class="bg-light">
+            <p>  <b>Background/Methods:</b> So a German TV producer I met on a plane got me thinking about sentiments in movies, and how quickly they can make characters feel good then bad again. That led me to mess around with this kind of thing, where up is "good", and down is "bad". For example, for the movie Shrek, I drew out the perceived sentimental valence for each character:</p>
+			
+			<p><a data-lightbox="./img/lineD.png" href="./img/lineD.png" data-title="Early attempt at mapping sentiments in movies"/><img src="./img/lineD.png" width="25%" class="img-responsive"/></a></p>
+			
+			<p>This is what started this whole analysis, what would happen if we plot the sentiment of each sentence in the movie. Again we used the syuzhet package, this time the get_percentage_values() function to figure out the average sentiment per minute of movie.</p>
+            
+			<div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-perc.png" href="./output/Breakfast at Tiffany's-perc.png" data-title="./output/Breakfast at Tiffany's-perc.png"/><img src="./output/Breakfast at Tiffany's-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-perc.png" href="./output/Bridget Jones-perc.png" data-title="Bridget Jones-perc.png"><img src="./output/Bridget Jones-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-perc.png" href="./output/casablanca-perc.png" data-title="casablanca-perc.png"><img src="./output/casablanca-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-perc.png" href="./output/Notting Hill-perc.png" data-title="Notting Hill-perc.png"><img src="./output/Notting Hill-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-perc.png" href="./output/When Harry met sally-perc.png" data-title="When Harry met sally-perc.png"><img src="./output/When Harry met sally-perc.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-perc.png" href="./output/Die Hard-perc.png" data-title="Die Hard-perc.png"><img src="./output/Die Hard-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-perc.png" href="./output/Machete-perc.png" data-title="Machete-perc.png"><img src="./output/Machete-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-perc.png" href="./output/Predator-perc.png" data-title="Predator-perc.png"><img src="./output/Predator-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-perc.png" href="./output/Rambo-perc.png" data-title="Rambo-perc.png"><img src="./output/Rambo-perc.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-perc.png" href="./output/The last dragon-perc.png" data-title="The last dragon-perc.png"><img src="./output/The last dragon-perc.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>            
+            </div>
+			
+			<p><br><b>Analysis:</b> In both chick flicks and action movies, the sentiments generally appear erratic. In chick flicks, the emotions vary from very positive to a bit negative, whereas action movies are kinda the opposite.
+			
+			In action movies, the emotions seem to vary a lot more. The two that stick out most are The Last Dragon and Predator where feelings run very low indeed (-1 for Predator where frankly one could understand how being hunted could get you down) compared to only -0.2 in Breakfast at Tiffany's. In addition, some movies like Die Hard are incredibly erratic and the emotions go up and down very quickly! Die Hard and Notting Hill have slight "U" shapes, which would mean that stuff was good, got bad, but ended good.... which isn't necessarily correct?</p>
+			
+            <p><b>Discussion:</b> Stereotypically, we would imagine that there's more emotion in chick flicks, and therefore, more ups and downs... however, we see that whether you're a chick flick or an action movie, your emotional charge will vary throughout the film (makes for a more interesting movie), but it seems more important for some action movies like Die Hard with fast-paced action to vary the emotion between positive and negative very quickly indeed (perhaps contributing to the "on the edge of your seat" effect). 
+			One thing's for sure, chick flicks tend to favour higher levels of positive emotion than negative emotion, and overall, there are no more ups and downs in chick flicks than in action movies. </p>
+            
+        </aside>
+
+        <aside>
+            <h2><a id="hist">Sentiment histograms: closest to what I'd expect the plot to be (kinda)</a></h2>
+            <p class="bg-light">
+            <p><b>Background/Methods:</b> So since the lines were too sharp and pointy, we used syuzhet::get_transformed_values() to soften up the lines a bit more and provide something that's more intuitive, like "first it was good, then it was bad". This kind of plot has been described by<a href="https://www.youtube.com/watch?v=oP3c1h8v2ZQ"> people smarter than me</a>. The function  takes inputs and applies a standardized set of filtered and reverse-transformed values by specifying the movie length as the number of bins. </p>
+            
+			<div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-tran.png" href="./output/Breakfast at Tiffany's-tran.png" data-title="Breakfast at Tiffany's-tran.png"><img src="./output/Breakfast at Tiffany's-tran.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-tran.png" href="./output/Bridget Jones-tran.png" data-title="Bridget Jones-tran.png"/><img src="./output/Bridget Jones-tran.png"/ class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-tran.png" href="./output/casablanca-tran.png" data-title="casablanca-tran.png"/><img src="./output/casablanca-tran.png"/ class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-tran.png" href="./output/Notting Hill-tran.png" data-title="Notting Hill-tran.png"/><img src="./output/Notting Hill-tran.png"/ class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-tran.png" href="./output/When Harry met sally-tran.png" data-title="When Harry met sally-tran.png"/><img src="./output/When Harry met sally-tran.png"/ class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-tran.png" href="./output/Die Hard-tran.png" data-title="Die Hard-tran.png"/><img src="./output/Die Hard-tran.png" class="img-responsive" /></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-tran.png" href="./output/Machete-tran.png" data-title="Machete-tran.png"/><img src="./output/Machete-tran.png" class="img-responsive" /></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-tran.png" href="./output/Predator-tran.png" data-title="Predator-tran.png"/><img src="./output/Predator-tran.png" class="img-responsive" /></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-tran.png" href="./output/Rambo-tran.png" data-title="Rambo-tran.png"/><img src="./output/Rambo-tran.png" class="img-responsive" /></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-tran.png" href="./output/The last dragon-tran.png" data-title="The last dragon-tran.png"/><img src="./output/The last dragon-tran.png" class="img-responsive" /></a>
+                        </td>
+                    </tr>
+                </table>            
+            </div>            
+			
+			<p><br><b>Analysis:</b> We get something that makes a bit more sense! </p>
+			
+			<p>Three chick flicks start badly and two start well, whereas all action movies start well.  There's something to be said about the number of ups and downs:</p>
+			
+			<table><tr><td width="50%">Ups and downs</td>
+			<td width="25%">Chick flicks</td>
+			<td width="25%">Action movies</td>
+			</tr><tr>
+			<td>Has five ups and downs</td>
+			<td>3</td>
+			<td>1</td></tr><tr>
+			<td>Has four ups and downs</td>
+			<td>1</td>
+			<td>1</td></tr><tr>
+			<td>Has three ups and downs</td>
+			<td>1</td>
+			<td>3</td></tr></table>
+			<br>
+			<p>Also interesting that Predator and The Last Dragon manage to "stay afloat" so to speak. In other words, they go from good to slightly less good but not bad. No chick flick does that.</p> 
+			
+			<p><b>Discussion:</b> There is no discernible pattern differentiating chick flicks and action movies. They all behave in their own way and have their own set of good and bad moments. Perhaps each individual story dictates the frequency and severity of ups and downs rather than whether it's a chick flick or an action movie. </p>
+			
+			<p>Of all the movies, two sets of movies behave similarly: Bridget Jones and Machete, then Rambo and Notting Hill! For these, the movie sentiment goes very evenly from good to bad, to good. Then, in the case of Machete and Bridget Jones, there's another bad segment. The only difference there is that about 5 minutes before the end of Bridget Jones, things get good again (she gets her man Darcy, FINALLY). In Machete, things just end badly...</p>
+			
+			<p>Anyway, since this doesn't differentiate chick flicks from action movies, this is not the analysis we are looking for.</p>
+		</aside>
+
+        <aside>
+            <h2><a id="emoMo">EmoMo: The emotional momentum chart</a></h2>
+            <p class="bg-light">
+            <p><b>Background/Methods:</b> It occurred to me that one of the weaknesses of sentiment analysis is that all phrases "stand on their own". Sure, averages and trends can be identified, but I think that in life (and maybe in movies), what came before must surely affect the emotional sentiment that comes next. Take the following conversation:</p>
+            <ol>
+                <li>Person 1: I love you (+1)
+                <li>Person 2: aw... I love you too! (+1)
+                <li>Person 1: Actually, I hate you, you're destroying my life. (-1)
+                <li>Person 2: ... what? (+0)
+                <li>Person 1: Just kidding! You're awesome. (+1)
+                <li>Person 2: Lol... you so crazy! (-1)
+            </ol>
+			
+            <p> This kind of discussion would alternate between positive and negative in traditional emotional analysis, if anything, there's somewhat of a negative trend. However, in life, this is a goodish conversation (although person 1 is a bit playful and inconsistent...). So how can we capture that and keep track of the sentiment history?</p>
+			
+			<p>Introducing <i>EmoMo</i>, the emotional momentum chart! Instead of simply plotting the emotional valence of each new sentence starting from zero, we keep adding the emotional valence to that of the preceding sentence. That way we can sort of come up with the emotional momentum. The following shows the impact of the EmoMo chart considering the example conversation from above (fancy highlighter use costs extra):</p>
+			
+			<p><a data-lightbox="EmoMo ex" href="./img/emoMo.PNG" data-title="EmoMo explanation"/><img src="./img/emoMo.PNG"/ class="img-responsive"/></a></p>
+			
+			<p> So the basic mechanic is go up the valence amount, and then go right, and then go up/down/neutral depending on the next sentence. Another variant is multiply the valence by the number of letters in the sentence, but it was a bit exaggerated and didn't add anything to these charts, so we didn't do that. BTW, the fastest way to do this is to simply plot the dplyr::summarize(cumsum(thingie)), but we wanted to plot showing the color of each line (green is positive, red is negative), so we made our own function. Anyway, without further ado, here are the emoMos for each movie:</p>
+			
+			<div class="flick-panel">
+                <div class="flick-panel-heading"><h3 style="margin:  0px !important;">Chick flicks</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Breakfast at Tiffany's-emoMo.png" href="./output/Breakfast at Tiffany's-emoMo.png" data-title="Breakfast at Tiffany's-emoMo.png"/><img src="./output/Breakfast at Tiffany's-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Bridget Jones-emoMo.png" href="./output/Bridget Jones-emoMo.png" data-title="Bridget Jones-emoMo.png"/><img src="./output/Bridget Jones-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="casablanca-emoMo.png" href="./output/casablanca-emoMo.png" data-title="casablanca-emoMo.png"/><img src="./output/casablanca-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Notting Hill-emoMo.png" href="./output/Notting Hill-emoMo.png" data-title="Notting Hill-emoMo.png"/><img src="./output/Notting Hill-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="When Harry met sally-emoMo.png" href="./output/When Harry met sally-emoMo.png" data-title="When Harry met sally-emoMo.png"/><img src="./output/When Harry met sally-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+            <br>
+            <div class="man-panel">
+                <div class="man-panel-heading"><h3 style="margin:  0px !important;">Action movies</h3></div>
+                <table class="table table-responsive table-condensed border-no">
+                    <tr>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Die Hard-emoMo.png" href="./output/Die Hard-emoMo.png" data-title="Die Hard-emoMo.png"/><img src="./output/Die Hard-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Machete-emoMo.png" href="./output/Machete-emoMo.png" data-title="Machete-emoMo.png"/><img src="./output/Machete-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Predator-emoMo.png" href="./output/Predator-emoMo.png" data-title="Predator-emoMo.png"/><img src="./output/Predator-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="Rambo-emoMo.png" href="./output/Rambo-emoMo.png" data-title="Rambo-emoMo.png"/><img src="./output/Rambo-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                        <td class="img_container1 border-no">
+                            <a data-lightbox="The last dragon-emoMo.png" href="./output/The last dragon-emoMo.png" data-title="The last dragon-emoMo.png"/><img src="./output/The last dragon-emoMo.png" class="img-responsive"/></a>
+                        </td>
+                    </tr>
+                </table>            
+            </div>
+
+            <br>
+			<p><b>Analysis:</b> The trends here are pretty clear: in chick flicks, positive emotions increase over the course of the movie with only a few negative bits in between. In action movies, the trend is the opposite in all cases except "The Last Dragon" which, for some reason, is behaving like a chick flick again. Other than this film, all action movies tend to start with positive words and emotions and progress to a darker, more sinister place as the movie goes on...</p>
+            
+			<p><b>Discussion:</b> Because chick flicks tend to end well and not have that many negative emotions in them, it makes sense that the trend would be upwards with just a few little hiccups on the way. In action movies, the problem-solving, suspense/shock value involved and all the obstacles being put in the way of the hero must surely make the film increasingly negative as one event compounds another. For instance, in Die Hard poor John McClane has to deal with the increasingly elaborate problems created by Hans Gruber's hostage-taking. Luckily for him and other action movie heroes, the movie does have a little positive moment at the end, even if it never comes back to the original level of positivity at the beginning of the movie. Hell, we're just happy the hero got out alive! Not so for the heroes in Predator however...in this film, the film goes unrelentingly downhill from the beginning until the end and Dutch, the main character, is the only man standing after barely surviving the predator. Oh, spoiler alert btw.</p>
+
+        </aside>
+	</section>
+	
+	
+	<section id="conc" class="container bg-dark">
+		<div class="call-to-action text-center">
+			<h2 class="section-heading">Conclusion</h2>
+		</div>
+	</section>
+	<aside>
+		<p>First off, let's just go ahead and say it... 10 movies picked quite arbitrarily do NOT trends make... so grain of salt here... Also, some people will find "chick flick" to be a borderline derogatory meaningless term, others might think that "RomComs" might be a better adversary to action movies, or that all three are stupid categories. No offence is intended anywhere, we're just using generalish categories that people would recognize easily.</p>
+		
+		<p>Anyway, that out of the way, we see here that chick flicks and action movies ARE probably different. They peddle different feelings at us. Chick flicks have more ups and downs than action movies but most importantly, the emoMo shows us that chick flicks tend towards the positive throughout the movie. On the other hand, action movies hesitate more, but tend towards the negative pretty consistently. We also conclude that The Last Dragon is a chick flick which I think is the most interesting conclusion of all! Keep this in mind the next time that your significant other wants to watch a chick flick! </p>
+					
+		<p>I just want to be clear that all the sentiment analysis part of this analysis was using Bing method... results may vary for other methods (see how much they change in the image below).</p>
+					
+		<p>For further analysis (I might get around to them, but if I don't, geeks of the world, you do it!):</p>
+		<ul>
+			<li> It would be interesting to analyze movies of other cultures... I'm not sure how good the sentiment analysis libraries are though...	
+			<li> Another fun-sounding analysis would be to do emoMos for each character in a movie... maybe in the future... to anyone interested, here's a teaser trailer, showing the results for the movie Shrek under each sentiment analysis method:
+		</ul>
+		<a data-lightbox="Character sents.png" href="./output/Character sents.png" data-title="Character sents.png"/><img src="./output/Character sents.png" width="75%" class="img-responsive"/></a>						
+		
+		<p><i>Analysis and writeup: Amit Kohli and <a href="https://www.linkedin.com/pub/laure-belotti/18/12/6b3" target="_blank">Laure Belotti</a>. Thanks to <a href="https://www.linkedin.com/in/keithgonzales" target="_blank">Keith Gonzales</a> for being such a tech guru!</i></p>
+	</aside>
+	
+	<section class="bg-secondary">
+		<div class="call-to-action text-center">
+			<h2>Tell your friends!</h2>
+			
+			<div class="call-to-action text-center">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="amitkohli.com/movieSentiments/index.html" data-text="CHICK FLICKS vs ACTION #MOVIES Is there any difference?" data-via="theMexIndian">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				
+				<script src="https://apis.google.com/js/platform.js" async defer></script>
+				<g:plusone></g:plusone>
+				
+				<div class="fb-like" data-href="http://amitkohli.com/movieSentiments/index.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+				
+				<iframe src="https://ghbtns.com/github-btn.html?user=mexindian&repo=Movie-sentiment-analyzer&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+				
+			</div>
+		</div>	
+	</section>
+
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Bootstrap lightbox -->
+
+<script src="js/bootstrap-lightbox.js"></script>
+<script src="js/lightbox.min.js"></script>
+</body>
+
+</html>
