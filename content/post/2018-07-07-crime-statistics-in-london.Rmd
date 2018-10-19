@@ -75,7 +75,8 @@ p <- df %>% ggplot(aes(x = Crime.type, fill = Crime.type)) + geom_histogram(stat
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank()) + 
   scale_shape_identity() +
-  geom_point(data = AveCrime, aes(x = Crime.type, y = AveCrime, shape = 45, size = 2))
+  geom_point(data = AveCrime, aes(x = Crime.type, y = AveCrime, shape = 45, size = 2)) +
+  ggtitle("Crime in the top 20 London boroughs")
 
 p
 
