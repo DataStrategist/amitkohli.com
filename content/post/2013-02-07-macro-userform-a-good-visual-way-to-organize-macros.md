@@ -29,7 +29,7 @@ A pop-up menu looks like this:
 
 Please see this video tutorial (full-screen or go to youtube):
 
-[youtube=http://www.youtube.com/watch?v=NHxGqt3Dr4k]
+[youtube=https://www.youtube.com/watch?v=sgMEMNJjrKY]
 
 &#8230;or follow these instructions:
 
@@ -63,7 +63,7 @@ End Sub
 
   * **Buttons**: Use buttons on the quicklaunch bar or a custom toolbar.  This is cool for a few macros, but after 10 or so macros, it gets a bit heavy. The buttons look like this:[<img title="custom_buttons" src="https://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97" alt="" width="497" height="97" data-recalc-dims="1" />][2]
 
-  * **Drop-down menu**: Ron DeBruin created an<a title="Menu for favorite macros in Excel 2007-2010 (for one workbook)" href="http://www.rondebruin.nl/qat2.htm" target="_blank"> excellent method</a> through which you can create a drop-down list with the macros you so desire, in any hierarchy that you specify. It&#8217;s pretty great, if it works for you.
+  * **Drop-down menu**: Ron DeBruin created a "Menu for favorite macros in Excel 2007-2010 (for one workbook)" but it seems to not be operational anymore) through which you can create a drop-down list with the macros you so desire, in any hierarchy that you specify. It&#8217;s pretty great, if it works for you.
 
  [1]: https://macrosforexcel.files.wordpress.com/2012/08/pop-up-example.jpg?resize=497%2C503
  [2]: https://macrosforexcel.files.wordpress.com/2012/08/custom_buttons.png?resize=497%2C97
