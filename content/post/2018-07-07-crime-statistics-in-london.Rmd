@@ -1,5 +1,5 @@
 ---
-title: Relative Crime Map, London
+title: Is there more violent crime in my hood than in the rest of London?
 author: Amit
 date: '2018-09-23'
 categories:
@@ -14,7 +14,7 @@ output: html_document
 draft: no
 ---
 
-Anyone that has ever looked at local crime statistics has probably had the same initial reaction: "wow this neighbourhood has become so violent, I can't ever leave the house again!" But a good data scientist understands priors, which is to say that it probably has more to do with the fact that there's a huge number of people walking around, and even a small amount of criminal behavior would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's _some_ crime everywhere, how much _relative_ crime exists in each area? Let's explore that!
+Anyone that has ever looked at local crime statistics has probably had the same initial reaction: "wow this neighbourhood has become so violent, I can't ever leave the house again!" But a good data scientist understands priors, which is to say that it probably has more to do with the fact that there's a huge number of people walking around, and even a small amount of criminal behavior would logically result in a small bit of crime anywhere. Therefore the question shifts: Considering that there's _some_ crime everywhere, are there more _insert crime type here_ in my neighbourhood than in the rest of London? Let's explore that!
 
 (private 4th wall breaking note: with this exercise I also am trying something new. I first heard from [Jenny](https://twitter.com/JennyBryan) and [Hilary](https://twitter.com/hspter) the myth of "the perfect analyst", ie when one shares blogposts like this one, it can be a bit intimidating to junior data scientists in that they feel their experience using R is much more... iterative... to be kind. Therefore I have filmed my experience in creating this blog post in two videos, showing all my ugly mistakes, dead ends, google searching and everything! It's a bit embarassing, but I think important. You can find them [here](https://www.youtube.com/watch?v=aQ955LDYLGQ) and [here](https://www.youtube.com/watch?v=jpaj9PEqAbY). Please be nice! )
 
@@ -105,7 +105,7 @@ leaflet() %>%
   addMarkers(lng = ~Longitude, lat = ~Latitude)
 ```
 
-OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? _Metropoli?_)! Let's Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn't an accurate representation of London:
+OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? _Metropoli?_ [Edit: yes, this is confirmed. Also, there are 2 other forces not included in this analysis: City of London police City of London and British Transport Police police do anything to do with railways overground underground or DLR.])! Let's Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn't an accurate representation of London:
 ![](/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png)
 
 ```{r}
@@ -214,9 +214,9 @@ leaflet(PlotDF) %>%
 
 A few observations... 
 
- 1. if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime. 
+ 1. if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime (EDIT: it's been brought to my attention that amount of crime really does depend on oportunity, so it's much more frequent when discussing crime data to divide by a specific denominator (for example, number of pedestrians). Read more about denominators [here](https://t.co/w0xAhDTt5a)). 
  2. The color choice is a bit unfortunate for 2 reasons. 1) there's just too man categories, and 2) I am also modifying the opacity of each dot with additional information... I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
- 3. It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area.
+ 3. It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area. There are  crime surveys that contain excellent data for England and Wales, as well as public attitudes surveys that are useful to read if you're interested in how crime is being percieved. Also important to mention that you can't track crime that isn't being reported, so please do take into consideration and bring to your awareness how much crime is missing from here, so called the 'dark figure of crime').
  4. This analysis also doesn't consider the effect of the police or the legal reaction to crime, so I just want to be very clear that this analysis probably shouldn't be used for any REAL purpose.
  5. And this one is a biggie. When working with large datasets it can be easy to forget that we are dealing with people's lives. Every single number in this analysis represents a negative moment, some of which will be leaving permanent scars. Behind every single number there is also a criminal, which represents a failure on society's part to properly socialize the individual. I understand that zero crime is impossible, but we, as a society should be holding ourselves responsible and at least asking questions from our regulators about how they are not addressing criminality, but the underlying causes of hopelessness and criminal behavior.
  
