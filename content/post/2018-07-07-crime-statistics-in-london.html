@@ -67,7 +67,7 @@ df &lt;- df %&gt;% filter(LSOA %in% WhiteList)</code></pre>
 <pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
 <pre class="r"><code>p</code></pre>
 <p><img src="/post/2018-07-07-crime-statistics-in-london_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>OK, so that’s great and all, but isn’t veeery useful because these LSOA areas are huge, and each contains so much variety in terms of “neighbo0urhood feels”“, we clearly need greater granularity… so let’s dig a bit deeper, perhaps a map would do us better….</p>
+<p>OK, so that’s great and all, but isn’t veeery useful because these LSOA areas are huge, and each contains so much variety in terms of “neighbourhood feels”“, we clearly need greater granularity… so let’s dig a bit deeper, perhaps a map would do us better….</p>
 </div>
 <div id="create-a-clustered-crime-map" class="section level1">
 <h1>Create a clustered crime map</h1>
@@ -82,7 +82,7 @@ leaflet() %&gt;%
   addMarkers(lng = ~Longitude, lat = ~Latitude)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[51.210698,52.000179,51.587336,51.587336,51.589112,51.589112,51.582311,51.588063,51.588442,51.590873,51.584898,51.595164,51.595164,51.590873,51.589112,51.595164,51.595164,51.588063,51.588063,51.589112,51.589215,51.584985,51.584985,51.588063,51.593835,51.587336,51.584898,51.588214,51.593835,51.584898,51.587336,51.583695,51.583695,51.584191,51.584656,51.583414,51.584656,51.584656,51.586024,51.586196,51.579743,51.579743,51.577881,51.578492,51.581622,51.581059,51.582376,51.581154,51.578883,51.579543,51.578503,51.581154,51.579705,51.579664,51.586154,51.583781,51.584159,51.584449,51.580941,51.584449,51.584449,51.580941,51.581101,51.585287,51.585287,51.585287,51.583762,51.585287,51.583762,51.583781,51.584111,51.585287,51.584111,51.583762,51.584111,51.577112,51.577846,51.575956,51.577115,51.575187,51.576567,51.575601,51.575187,51.574779,51.574779,51.574779,51.573996,51.577478,51.575394,51.571604,51.577817,51.571806,51.573289,51.571806,51.571806,51.571647,51.571343,51.571855,51.574127,51.574876],[0.763024,1.185594,0.135866,0.135866,0.140035,0.140035,0.140192,0.134947,0.13586,0.141143,0.13643,0.148434,0.148434,0.141143,0.140035,0.148434,0.148434,0.134947,0.134947,0.140035,0.136387,0.135554,0.135554,0.134947,0.145888,0.135866,0.13643,0.136513,0.145888,0.13643,0.135866,0.129344,0.129344,0.127794,0.128927,0.128479,0.128927,0.128927,0.128384,0.130789,0.139479,0.139479,0.132608,0.135119,0.128655,0.133378,0.131173,0.135071,0.133362,0.133206,0.138439,0.135071,0.138121,0.136921,0.133602,0.132062,0.140466,0.135384,0.136908,0.135384,0.135384,0.136908,0.140452,0.132811,0.132811,0.132811,0.133591,0.132811,0.133591,0.132062,0.13814,0.132811,0.13814,0.133591,0.13814,0.139269,0.138481,0.141509,0.138114,0.139799,0.140066,0.137827,0.139799,0.135551,0.135551,0.135551,0.135067,0.13448,0.134339,0.132603,0.136112,0.134864,0.136853,0.134864,0.134864,0.135174,0.148854,0.14693,0.14711,0.142541],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.210698,52.000179],"lng":[0.127794,1.185594]}},"evals":[],"jsHooks":[]}</script>
-<p>OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? <em>Metropoli?</em> [Edit: yes, this is confirmed. Also, there are 2 other forces not included in this analysis: City of London police City of London and British Transport Police police do anything to do with railways overground underground or DLR.])! Let’s Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn’t an accurate representation of London: <img src="/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png" /></p>
+<p>OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? [Edit: yes, Metro Police is responsible for other <em>Metropoli (don’t care if that’s not the plural… it’s awesome and I’m sticking to it)</em>. Also, there are 2 other forces not included in this analysis: City of London police City of London and British Transport Police police do anything to do with railways overground underground or DLR.])! Let’s Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn’t an accurate representation of London: <img src="/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png" /></p>
 <pre class="r"><code>df &lt;- df %&gt;% 
   filter(Latitude &lt; 51.715036,
          Latitude &gt; 51.282286,
@@ -117,18 +117,18 @@ df %&gt;% pull(LatDelta) %&gt;% unique %&gt;% length; df %&gt;% pull(LongDelta) 
 
 UIDCrimes %&gt;%  sample_n(10)</code></pre>
 <pre><code>## # A tibble: 10 x 5
-##    UID     Crime.type                    n   sc_n total_crime
-##    &lt;chr&gt;   &lt;chr&gt;                     &lt;int&gt;  &lt;dbl&gt;       &lt;int&gt;
-##  1 1.8|5.4 Public order                  8 0.168          234
-##  2 0.1|3.6 Criminal damage and arson     1 0.0213           6
-##  3 2.4|5   Public order                121 2.55          2140
-##  4 2.5|2.9 Anti-social behaviour       141 0.688          759
-##  5 1.9|3.2 Other crime                  16 0.830         1364
-##  6 2.4|1.3 Possession of weapons         4 0.432          743
-##  7 0.7|5   Anti-social behaviour       133 0.649          686
-##  8 2.2|3.2 Public order                 86 1.81          1813
-##  9 2.9|4.1 Shoplifting                   2 0.0203         776
-## 10 3.2|4.2 Theft from the person        15 0.109          561</code></pre>
+##    UID     Crime.type                       n   sc_n total_crime
+##    &lt;chr&gt;   &lt;chr&gt;                        &lt;int&gt;  &lt;dbl&gt;       &lt;int&gt;
+##  1 2.3|1.4 Burglary                        63 0.973         1719
+##  2 3.9|3.9 Criminal damage and arson        2 0.0426          14
+##  3 3.1|6.6 Violence and sexual offences     9 0.0491          37
+##  4 3.2|7.1 Anti-social behaviour            3 0.0146          12
+##  5 2.2|1.6 Vehicle crime                   23 0.282          675
+##  6 1.3|5.2 Bicycle theft                    1 0.0314         345
+##  7 2.7|6.1 Bicycle theft                    3 0.0941         697
+##  8 1.9|0.3 Bicycle theft                   11 0.345         1531
+##  9 1.7|3   Anti-social behaviour           61 0.298          329
+## 10 1.1|2.6 Other theft                     23 0.154          297</code></pre>
 <p>OK, so now we more or less know how each crime type in each area stacks up against other areas in London… and perhaps this is the information we wanted to know… let’s take a look at one random area:</p>
 <pre class="r"><code>UIDCrimes %&gt;% filter(UID == &quot;2.1|5.8&quot;) </code></pre>
 <pre><code>## # A tibble: 14 x 5
@@ -164,14 +164,14 @@ UIDCrimes %&gt;%  sample_n(10)</code></pre>
 
 head(PlotDF)</code></pre>
 <pre><code>## # A tibble: 6 x 8
-##   UID     AveLong AveLat Crime.type       n    sc_n total_crime Note      
-##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt;   &lt;dbl&gt;       &lt;int&gt; &lt;chr&gt;     
-## 1 0.1|2.9  -0.225   51.3 Vehicle cri~     1 0.0123            1 0.1|2.9 -~
-## 2 0.1|3.3  -0.189   51.3 Other theft      1 0.00669           1 0.1|3.3 -~
-## 3 0.1|3.6  -0.155   51.3 Criminal da~     1 0.0213            6 0.1|3.6 -~
-## 4 0.1|3.7  -0.143   51.3 Drugs            1 0.0264            3 0.1|3.7 -~
-## 5 0.1|3.9  -0.124   51.3 Other crime      2 0.104            36 0.1|3.9 -~
-## 6 0.1|4    -0.115   51.3 Possession ~     2 0.216            40 0.1|4 - T~</code></pre>
+##   UID    AveLong AveLat Crime.type      n    sc_n total_crime Note         
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;   &lt;dbl&gt;       &lt;int&gt; &lt;chr&gt;        
+## 1 0.1|2~  -0.225   51.3 Vehicle cr~     1 0.0123            1 0.1|2.9 - To~
+## 2 0.1|3~  -0.189   51.3 Other theft     1 0.00669           1 0.1|3.3 - To~
+## 3 0.1|3~  -0.155   51.3 Criminal d~     1 0.0213            6 0.1|3.6 - To~
+## 4 0.1|3~  -0.143   51.3 Drugs           1 0.0264            3 0.1|3.7 - To~
+## 5 0.1|3~  -0.124   51.3 Other crime     2 0.104            36 0.1|3.9 - To~
+## 6 0.1|4   -0.115   51.3 Possession~     2 0.216            40 0.1|4 - Tota~</code></pre>
 <pre class="r"><code># PlotDF$N2Crime %&gt;% plot</code></pre>
 <p>And here we go, let’s map it, using a different color for each crime type, and the intensity of each dot being the scaled prevalence of total crime!</p>
 <pre class="r"><code>Try1 &lt;- c(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;)
@@ -200,7 +200,7 @@ leaflet(PlotDF) %&gt;%
 <p>A few observations…</p>
 <ol style="list-style-type: decimal">
 <li>if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime (EDIT: it’s been brought to my attention that amount of crime really does depend on oportunity, so it’s much more frequent when discussing crime data to divide by a specific denominator (for example, number of pedestrians). Read more about denominators <a href="https://t.co/w0xAhDTt5a">here</a>).</li>
-<li>The color choice is a bit unfortunate for 2 reasons. 1) there’s just too man categories, and 2) I am also modifying the opacity of each dot with additional information… I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.</li>
+<li>The color choice is a bit unfortunate for 2 reasons. 1) there’s just too many categories, and 2) I am also modifying the opacity of each dot with additional information… I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.</li>
 <li>It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area. There are crime surveys that contain excellent data for England and Wales, as well as public attitudes surveys that are useful to read if you’re interested in how crime is being percieved. Also important to mention that you can’t track crime that isn’t being reported, so please do take into consideration and bring to your awareness how much crime is missing from here, so called the ‘dark figure of crime’).</li>
 <li>This analysis also doesn’t consider the effect of the police or the legal reaction to crime, so I just want to be very clear that this analysis probably shouldn’t be used for any REAL purpose.</li>
 <li>And this one is a biggie. When working with large datasets it can be easy to forget that we are dealing with people’s lives. Every single number in this analysis represents a negative moment, some of which will be leaving permanent scars. Behind every single number there is also a criminal, which represents a failure on society’s part to properly socialize the individual. I understand that zero crime is impossible, but we, as a society should be holding ourselves responsible and at least asking questions from our regulators about how they are not addressing criminality, but the underlying causes of hopelessness and criminal behavior.</li>

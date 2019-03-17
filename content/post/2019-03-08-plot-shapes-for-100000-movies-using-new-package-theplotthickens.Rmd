@@ -1,0 +1,107 @@
+---
+title: plot shapes for 100000 movies using new package thePlotThickens
+author: Amit
+date: '2019-03-08'
+slug: plot-shapes-for-100000-movies-using-new-package-theplotthickens
+categories:
+  - Movies
+  - Data
+  - R
+tags:
+  - plot
+  - shape
+  - Vonnigut
+description: ''
+---
+
+```{r}
+
+# library(tidyverse)
+# library(thePlotThickens)
+# 
+# a <- file("K:/Dropbox/Dropbox/Data/movie data/plots/plots")
+# stories_all <- read_lines(a)
+# 
+# aa <- file("K:/Dropbox/Dropbox/Data/movie data/plots/titles")
+# titles_all <- read_lines(aa)
+# 
+# close(a);close(aa)
+```
+
+
+```{r}
+
+## EXPERIMENTS HERE----------
+## Find end of 28th story
+
+# HowMany <- 1000
+# xx <- stories_all %>% grep(x = ., "<EOS") %>% head(HowMany) %>% tail(1)
+# stories <- head(stories_all,xx) %>% paste(collapse = "") %>% str_split("<EOS>")
+# stories <- stories[[1]]
+# titles <- titles_all %>% head(length(stories))
+#
+# # dataset <- read_csv(file("http://bit.ly/2uhqjJE?.csv"))
+# # stories <- dataset$texts
+# # titles <- dataset %>% unite(name, FirstName, President) %>% pull
+#
+# ## OK get emotional valences for ALL thingies... but test purrr vs furrr
+# t <- Sys.time()
+# listOfEmos <- stories %>% map(emoDataframeMaker, addColor = TRUE)
+# Sys.time() - t
+# ## ^ 36.4 secs for 1000 entries... let's try furrr
+#
+# library(furrr)
+# plan(multiprocess)
+#
+# t <- Sys.time()
+# listOfEmos <- stories %>% future_map(emoDataframeMaker, addColor = TRUE)
+# Sys.time() - t
+# ## ^ 13.8 seconds. Much better. So for 100 000 stories it should take 1380 seconds or 23 minutes
+#
+#
+## NOW FOR REAL ----
+# stories <- stories_all %>% paste(collapse = "") %>% str_split("<EOS>")
+# stories <- stories[[1]]
+# titles <- titles_all %>% head(length(stories))
+# library(furrr)
+# plan(multiprocess)
+#
+# t <- Sys.time()
+# listOfEmos <- stories %>% future_map(emoDataframeMaker, addColor = TRUE, .progress = TRUE)
+# Sys.time() - t
+#
+# saveRDS(listOfEmos,"ALL.RDS")
+
+## Load in data post run--
+# listOfEmos <- readRDS("ALL.RDS")
+
+
+
+# ## Now map these through the function:
+# ## Slope
+# slopeFinder <- safely(slopeFinder)
+#
+# slopes <- listOfEmos %>% future_map(slopeFinder)
+# saveRDS(slopes,"slopes.RDS")
+
+# ## Load in data
+# slopes <- readRDS("slopes.RDS")
+# errors <- slopes %>% map("error")
+# errors <- errors %>% keep(errors %>% map(class) %>% map(1) %>% map_lgl(~.!='NULL'))
+# saveRDS(errors,"slope.errors.RDS")
+# 
+# slopes <- slopes %>% map_dfr("result")
+# saveRDS(slopes,"slopes.RDS")
+
+#
+# ## Plot 1
+# emoDF %>% emoPlotter(showTrends = emoDF %>% slopeFinder, color = TRUE, title = "Test")
+#
+# ## Plot all
+# emoMultiPlotter(listOfEmos = listOfEmos, showTrends = slopes, titles = titles,  color = F)
+#
+#
+# nrcMultiPlotter(listOfEmos = listOfEmos, titles = titles)
+
+```
+

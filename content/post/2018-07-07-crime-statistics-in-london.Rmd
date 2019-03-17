@@ -82,7 +82,7 @@ p
 
 ```
 
-OK, so that's great and all, but isn't veeery useful because these LSOA areas are huge, and each contains so much variety in terms of "neighbo0urhood feels"", we clearly need greater granularity... so let's dig a bit deeper, perhaps a map would do us better....
+OK, so that's great and all, but isn't veeery useful because these LSOA areas are huge, and each contains so much variety in terms of "neighbourhood feels"", we clearly need greater granularity... so let's dig a bit deeper, perhaps a map would do us better....
 
 # Create a clustered crime map
 
@@ -105,7 +105,7 @@ leaflet() %>%
   addMarkers(lng = ~Longitude, lat = ~Latitude)
 ```
 
-OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? _Metropoli?_ [Edit: yes, this is confirmed. Also, there are 2 other forces not included in this analysis: City of London police City of London and British Transport Police police do anything to do with railways overground underground or DLR.])! Let's Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn't an accurate representation of London:
+OK, so clearly the dataset contains some non-London entries (so perhaps Metropolitan Police is for several metropolises? [Edit: yes, Metro Police is responsible for other _Metropoli (don't care if that's not the plural... it's awesome and I'm sticking to it)_. Also, there are 2 other forces not included in this analysis: City of London police City of London and British Transport Police police do anything to do with railways overground underground or DLR.])! Let's Truncate these to London only. I manually estimated the London limit coordinates from google maps using the M25 ring road as the limits, apologies if this isn't an accurate representation of London:
 ![](/post/2018-07-07-crime-statistics-in-london_files/londoncrimelimits.png)
 
 ```{r}
@@ -215,7 +215,7 @@ leaflet(PlotDF) %>%
 A few observations... 
 
  1. if we take a look, the center of London is MUCH more violent than the peripheries, in terms of sheer numbers of crime (EDIT: it's been brought to my attention that amount of crime really does depend on oportunity, so it's much more frequent when discussing crime data to divide by a specific denominator (for example, number of pedestrians). Read more about denominators [here](https://t.co/w0xAhDTt5a)). 
- 2. The color choice is a bit unfortunate for 2 reasons. 1) there's just too man categories, and 2) I am also modifying the opacity of each dot with additional information... I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
+ 2. The color choice is a bit unfortunate for 2 reasons. 1) there's just too many categories, and 2) I am also modifying the opacity of each dot with additional information... I have tried after a bit of messing around to find the color scale that maximizes identifiability, but unfortunately the result is a fairly ugly map. Ideally we should collapse all these into fewer categories, but considering I have NO knowledge of this subject matter, probably I should leave well enough alone.
  3. It also needs to be said, that not all crime types are the same, and this might affect the perception of criminality in each area. There are  crime surveys that contain excellent data for England and Wales, as well as public attitudes surveys that are useful to read if you're interested in how crime is being percieved. Also important to mention that you can't track crime that isn't being reported, so please do take into consideration and bring to your awareness how much crime is missing from here, so called the 'dark figure of crime').
  4. This analysis also doesn't consider the effect of the police or the legal reaction to crime, so I just want to be very clear that this analysis probably shouldn't be used for any REAL purpose.
  5. And this one is a biggie. When working with large datasets it can be easy to forget that we are dealing with people's lives. Every single number in this analysis represents a negative moment, some of which will be leaving permanent scars. Behind every single number there is also a criminal, which represents a failure on society's part to properly socialize the individual. I understand that zero crime is impossible, but we, as a society should be holding ourselves responsible and at least asking questions from our regulators about how they are not addressing criminality, but the underlying causes of hopelessness and criminal behavior.
