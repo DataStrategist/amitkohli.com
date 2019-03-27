@@ -9,6 +9,7 @@ tags:
   - linux
   - task
 description: ''
+draft: true
 ---
 
 Steps:
