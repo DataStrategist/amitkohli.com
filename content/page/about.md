@@ -3,7 +3,8 @@ title: About
 author: Amit
 type: page
 date: 2013-02-07T16:35:57+00:00
----
+
+---
 
 Greetings! I'm an environmental engineer that changed focus from remediation and design to data analysis, dissemination and visualization. Now I'm focusing on data for decision-making, so dashboards, adaptive management, KPIs and the like, specializing in the international development sector.
 
