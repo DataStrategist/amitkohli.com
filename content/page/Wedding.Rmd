@@ -11,11 +11,11 @@ output:
 library(flexdashboard)
 ```
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
-</style>
+<!-- <style> -->
+<!-- @import url('https://fonts.googleapis.com/css?family=Great+Vibes'); -->
+<!-- </style> -->
 
-<span style="font-family: 'Great Vibes', cursive">Laure and Amit Wedding</span>
+<!-- <span style="font-family: 'Great Vibes', cursive">Laure and Amit Wedding</span> -->
 
 
 # Home
