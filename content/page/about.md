@@ -71,10 +71,8 @@ I guess maybe "who I am" is best answered with quotations that have held meaning
 
 
 > "Na maré mansa já sei remar
-
-Na maré brava meu barco
-
-Não vai virar"
+> Na maré brava meu barco
+> Não vai virar"
 -Esquilo e Bobô.
 
 
@@ -119,7 +117,6 @@ Não vai virar"
 
 
 > "If your plan is for one year plant rice. If your plan is for ten years plant trees. If your plan is for one hundred years educate children. "
-
 — Confucius
 
 
@@ -161,16 +158,12 @@ Therell be time enough for countin when the dealins done."
 
 
 > "Every morning in Africa, a gazelle wakes up.
+> It knows that it must run faster than the fastest lion or it will be killed.
+> Every morning a lion wakes up.
+> It knows it must outrun the slowest gazelle or it will starve to death.
+> It doesn't matter whether you are a lion or a gazelle.
+> When the sun comes up, you better start running."
 
-It knows that it must run faster than the fastest lion or it will be killed.
-
-Every morning a lion wakes up.
-
-It knows it must outrun the slowest gazelle or it will starve to death.
-
-It doesn't matter whether you are a lion or a gazelle.
-
-When the sun comes up, you better start running."
 -African proverb
 
 
