@@ -3,13 +3,8 @@ title: " "
 output: 
   html_document:
     toc: true
-    toc_float: true
-    smart: false
 ---
 
-```{r setup, include=FALSE}
-library(flexdashboard)
-```
 
 <!-- <style> -->
 <!-- @import url('https://fonts.googleapis.com/css?family=Great+Vibes'); -->
