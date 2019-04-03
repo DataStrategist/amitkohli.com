@@ -8,6 +8,10 @@ output:
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+} 
 </style>
 
 <span style="font-family: 'Great Vibes', cursive; font-size:70px; text-align:center">Laure and Amit Wedding</span>
@@ -24,7 +28,6 @@ Our wedding doesn't have a theme but we are aiming to make it as sustainable as 
 We will be sending out Google forms shortly on accommodation and catering. 
 
 ![](/page/Wedding_files/divider.jpg)
-
 
 # Logistics
 
@@ -75,6 +78,8 @@ Taxi companies:
 > Castle Cars <br>
 > Tonbridge <br>
 > 01732 363637 <br>
+
+![](/page/Wedding_files/divider.jpg)
 
 # Accomodation
 
