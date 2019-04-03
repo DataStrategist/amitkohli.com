@@ -1,7 +1,7 @@
 ---
 title: " "
 output: 
-  html_page:
+  blogdown::html_page:
     toc: true
 ---
 
@@ -10,7 +10,7 @@ output:
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 </style>
 
-<span style="font-family: 'Great Vibes', cursive">Laure and Amit Wedding</span>
+<span style="font-family: 'Great Vibes', cursive; font-size:52">Laure and Amit Wedding</span>
 
 
 # Home

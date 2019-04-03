@@ -22,6 +22,7 @@ Anyone that has ever looked at local crime statistics has probably had the same 
 library(tidyverse)
 library(leaflet)
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(1337)
 ```
 
 ## Getting the data:
