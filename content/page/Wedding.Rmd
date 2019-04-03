@@ -9,8 +9,9 @@ output:
 <style>
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 
-h2 {
+h1 {
   font-family: 'Great Vibes', cursive;
+  font-size:36px;
 } 
 </style>
 
