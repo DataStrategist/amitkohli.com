@@ -10,7 +10,7 @@ output:
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 </style>
 
-<span style="font-family: 'Great Vibes', cursive; font-size:52">Laure and Amit Wedding</span>
+<span style="font-family: 'Great Vibes', cursive; font-size:52px; text-align: center">Laure and Amit Wedding</span>
 
 
 # Home
@@ -23,16 +23,16 @@ Our wedding doesn't have a theme but we are aiming to make it as sustainable as 
 
 We will be sending out Google forms shortly on accommodation and catering. 
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 
 # Logistics
 
 We will be able to confirm our finalised schedule very soon, but this is the general idea:
 
-![](Wedding/Wedding_files/weddingLogicalFlow.png)
+![](/Wedding/Wedding_files/weddingLogicalFlow.png)
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Transport
 
@@ -159,7 +159,7 @@ The following has been recommended by  the Wedding Venue owners:
 > 01892 870701 <br> 
 > www.watstockbarns.co.uk <br>
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Location 
 
@@ -175,20 +175,20 @@ It was originally a Tudor farm and now boasts beautiful gardens. Colonel Sir Hen
 
 https://hoathhouse.com/
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Catering
 
 As you have no doubt noticed, we are only offering vegetarian or vegan options. This decision has been received to mixed reviews ???. We would like to explain very quickly why we believe that vegetarianism is important. 
  
-![](Wedding/Wedding_files/image005.png)
+![](/Wedding/Wedding_files/image005.png)
 
 https://ourworldindata.org/meat-and-seafood-production-consumption
 The world's "poor" are getting less poor. As they get less poor, they want to eat more meat (because that's what rich people do and that's what they wanted to do when they were poor). As the demand for meat increases, so does the demand for its feed, mainly soybean. This creates a situation where farmers that used to grow other food now grow soybean for export because it makes the most money. This means the price of the stuff they USED to grow goes up (because production goes down), making food for humans more expensive. This also creates a double-danger. not only is population increasing, but each person's meat consumption is also increasing, a wonderful double-punch. Everyone who studies this phenomenon has said that this will create problems in the future. 
 
 Everyone attending this wedding is the global elite. Regardless of your religious, ethical, or moral convictions, we should be dispelling the myth that rich people eat meat every day because it's the right thing for our planet. 
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 #Dress code
 
@@ -202,7 +202,7 @@ If you do want to buy something and are interested in being sustainable, you hav
 "Ethical consumer" explains what to look out for when shopping for clothes (chemicals used in production, fabric used, labour practices) and gives a rating to regular high street brands.  https://www.ethicalconsumer.org/fashion-clothing/shopping-guide/clothes-shops
 "Good on you" is a great website for ethical brands https://goodonyou.eco/  
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Bridal registry
 
@@ -215,12 +215,12 @@ Here are our bank details below:
 
 However, please do NOT feel obliged to do this, you are already dedicating time, money and energy to be with us on our special day. 
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Our Story
 We met in Rome in 2011, but as often happens in life, it was difficult to see the true value of people in a crowd. It wasn’t until Laure left Rome and posted this picture on Facebook in January 2013 that the universe began to conspire:
 
-![](Wedding/Wedding_files/shoop.jpg)
+![](/Wedding/Wedding_files/shoop.jpg)
  
 Which started an excellent conversation that went something like this:
 Amit: Where are you?
@@ -238,7 +238,7 @@ How to not screw up a new relationship
 Laure and Amit knew that unmet expectations are one of the main challenges of starting off relationships… for example, "should I call her? I don’t know that I want to call her, but if she wants me to call her I want to call her". This led to the first smart thing they decided, a very strict rule "we only see each other once per week". That’s it. No obligation to call or text during any other time. This ensured that whenever they met up, there was nothing but fun and positive energy to share. Eventually, organically 1 date per week became 2… then 3… until eventually the rule flipped to where they HAD TO spend 1 day per week away from eachother. By this point it was clear that this was a long term thing. From that point on, let’s just hit the highlights!
 1 year anniversary gift:
 
-![](Wedding/Wedding_files/image003.png)
+![](/Wedding/Wedding_files/image003.png)
  
 
 Second year anniversary
@@ -255,15 +255,15 @@ The world’s "poor" are getting less poor. As they get less poor, they want to 
 
 Everyone attending this wedding is the global elite. Regardless of your religious, ethical, or moral convictions, we should be dispelling the myth that rich people eat meat every day because it’s the right thing for our planet. 
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # About Photography
 
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # Our song
 
-![](Wedding/Wedding_files/image007.png)
+![](/Wedding/Wedding_files/image007.png)
 
 Laure has played the piano since she was seven years old and by sheer coincidence, some of her favourite pieces are ones that Amit loves to hear. It became part of our weekends to have some piano playing going on with Amit listening in the background. She had also written a few short pieces in the past but it had been a while…
 One morning in Accra, she had the idea to compose a piece for their second-year anniversary and after a few days of thinking about the concept behind the piece, it came to her as she woke up. She knew it should sound "fragile" at first, as that was how their relationship started. At the start of the piece, the right and left hand are further apart and sound a bit out of sync, to symbolize some of the doubt they felt about each other.   
@@ -271,10 +271,10 @@ The same theme repeats with the right and left hand closer this time, to symboli
 We declared our love to each other and then began a steady period of starting to live together, creating a little "nest" of music, creative projects and little routines on the weekends like their Saturday brunch and frequent visit to the organic food market. 
 The left and right then become more in sync with each other as the song progresses until a final section in which we have become confident and secure as a couple. The piece ends peacefully. 
  
-![](Wedding/Wedding_files/divider.jpg)
+![](/Wedding/Wedding_files/divider.jpg)
 
 # RSVP
  
 Please complete the RSVP here: http://bit.ly/Laure_Amit 
 
-![](Wedding/Wedding_files/image008.png)
+![](/Wedding/Wedding_files/image008.png)
