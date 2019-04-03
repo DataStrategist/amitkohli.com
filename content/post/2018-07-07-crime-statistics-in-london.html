@@ -117,18 +117,18 @@ df %&gt;% pull(LatDelta) %&gt;% unique %&gt;% length; df %&gt;% pull(LongDelta) 
 
 UIDCrimes %&gt;%  sample_n(10)</code></pre>
 <pre><code>## # A tibble: 10 x 5
-##    UID     Crime.type                    n  sc_n total_crime
-##    &lt;chr&gt;   &lt;chr&gt;                     &lt;int&gt; &lt;dbl&gt;       &lt;int&gt;
-##  1 1.9|5.6 Other crime                  12 0.623         568
-##  2 3.7|4.7 Robbery                      37 0.873         793
-##  3 2.8|7   Robbery                      14 0.330         605
-##  4 2|6.4   Possession of weapons         1 0.108         256
-##  5 1.7|1.6 Public order                 30 0.631         558
-##  6 0.9|2.8 Burglary                     23 0.355         247
-##  7 2.7|3.8 Anti-social behaviour       264 1.29         1453
-##  8 3.1|2.5 Criminal damage and arson    33 0.703         498
-##  9 2.8|2.6 Robbery                      20 0.472         850
-## 10 3|1.4   Drugs                         8 0.212         230</code></pre>
+##    UID     Crime.type                    n   sc_n total_crime
+##    &lt;chr&gt;   &lt;chr&gt;                     &lt;int&gt;  &lt;dbl&gt;       &lt;int&gt;
+##  1 2.3|4.9 Other theft                 149 0.997         2095
+##  2 2.9|1.7 Burglary                     23 0.355          338
+##  3 1.3|5   Drugs                         1 0.0264         241
+##  4 3|1.3   Public order                  4 0.0842         115
+##  5 0.9|3.8 Burglary                     24 0.371          122
+##  6 3.1|1.3 Criminal damage and arson    14 0.298          241
+##  7 1.8|5.3 Robbery                       2 0.0472         408
+##  8 0.6|6.2 Vehicle crime                 1 0.0123           5
+##  9 2.9|4.3 Anti-social behaviour       242 1.18          1008
+## 10 3.4|2.3 Theft from the person         2 0.0145         252</code></pre>
 <p>OK, so now we more or less know how each crime type in each area stacks up against other areas in London… and perhaps this is the information we wanted to know… let’s take a look at one random area:</p>
 <pre class="r"><code>UIDCrimes %&gt;% filter(UID == &quot;2.1|5.8&quot;) </code></pre>
 <pre><code>## # A tibble: 14 x 5
