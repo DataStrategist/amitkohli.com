@@ -30,7 +30,6 @@ Lastly, I also [blog at work](https://www.acdivoca.org/data-digest).
   * the maker movement
 
 Please see my >><a href="http://resumup.com/25069962/visual_infographic_resume" target="_blank">Visual resume</a><<.
-
 <a href="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png" rel="attachment wp-att-577"><img class="alignnone size-medium wp-image-577" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=300%2C97" alt="Infographic resume" width="300" height="97" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=300%2C97 300w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=768%2C249 768w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=1024%2C333 1024w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=700%2C227 700w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?w=1500 1500w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>
 
 ## roll-call
@@ -167,7 +166,6 @@ Therell be time enough for countin when the dealins done."
 > It knows it must outrun the slowest gazelle or it will starve to death.
 > It doesn't matter whether you are a lion or a gazelle.
 > When the sun comes up, you better start running."
-
 -African proverb
 
 
