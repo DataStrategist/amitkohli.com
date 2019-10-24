@@ -555,11 +555,33 @@
           return;
         el.className = el.className + " html-widget-static-bound";
 
+        var localStorageKey = 'htmlwidget.'+el.id+'.state'
+        var widgetStateChanged = function(state) {
+          if (window.HTMLWidgets.stateChangedHook) {
+            window.HTMLWidgets.stateChangedHook(state)
+          } else {
+            if (window.localStorage) {
+              if (state)
+                window.localStorage.setItem(localStorageKey, JSON.stringify(state))
+              else
+                window.localStorage.removeItem(localStorageKey)
+            }
+          }
+        }
+        var initialState = window.localStorage ? JSON.parse(window.localStorage.getItem(localStorageKey)) : null;
+        if (!initialState) {
+          // No locally-stored state.  Use anything provided in a script tag as a default.
+          var initialStateData = document.querySelector("script[data-for='" + el.id + "'][type='application/htmlwidget-state']");
+          if (initialStateData)
+            initialState = JSON.parse(initialStateData.textContent || initialStateData.text);
+        }
+
         var initResult;
         if (binding.initialize) {
           initResult = binding.initialize(el,
             sizeObj ? sizeObj.getWidth() : el.offsetWidth,
-            sizeObj ? sizeObj.getHeight() : el.offsetHeight
+            sizeObj ? sizeObj.getHeight() : el.offsetHeight,
+            widgetStateChanged
           );
           elementData(el, "init_result", initResult);
         }
@@ -625,7 +647,7 @@
           for (var k = 0; data.evals && k < data.evals.length; k++) {
             window.HTMLWidgets.evaluateStringMember(data.x, data.evals[k]);
           }
-          binding.renderValue(el, data.x, initResult);
+          binding.renderValue(el, data.x, initResult, initialState);
           evalAndRun(data.jsHooks.render, initResult, [el, data.x]);
         }
       });
@@ -815,11 +837,11 @@
     var result = {
       name: defn.name,
       type: defn.type,
-      initialize: function(el, width, height) {
-        return defn.factory(el, width, height);
+      initialize: function(el, width, height, stateChanged) {
+        return defn.factory(el, width, height, stateChanged);
       },
-      renderValue: function(el, x, instance) {
-        return instance.renderValue(x);
+      renderValue: function(el, x, instance, state) {
+        return instance.renderValue(x, state);
       },
       resize: function(el, width, height, instance) {
         return instance.resize(width, height);

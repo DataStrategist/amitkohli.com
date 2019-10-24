@@ -37,13 +37,17 @@ Here is the finalized schedule!
 <b>Saturday, 10 August</b>
 
 14:30 - Transportation from London -> Hoath House
+
 16:30 - Wedding ceremony! 
+
 18:30 - Buffet style dinner
+
 20:30 - Party continues on the dance floor
 
 <b>Sunday, 11 August</b>
 
 11:00 - Post-Wedding Buffet Brunch
+
 12:00 - Enjoyment and togetherness!
 
 ... and here is the general idea:
@@ -102,21 +106,6 @@ Taxi companies:
 # Accommodation
 
 Unless we tell you otherwise, please handle your own reservations. Here are some locations you might be interested in, depending on your travel arrangements.
-
-## Woolwich, London (Aug 9)
-
-> Premier Inn London Woolwich (Royal Arsenal) Hotel <br>
-> Address: 91 Beresford St, Woolwich, London SE18 6BG <br>
-> Phone: 0871 097 1087
-
-> Travelodge London Woolwich <br> 
-> Address: 129 Powis St, Woolwich,London SE18 6LQ <br>
-> Phone: 0871 984 6510
-
-There are also some great Air BnB options in Woolwich Arsenal, the residential complex we live in: [check it out!]( 
-https://www.airbnb.co.uk/s/Woolwich--Greater-London--United-Kingdom/homes?refinement_paths%5B%5D=%2Fhomes&adults=2&children=0&checkin=2019-08-09&checkout=2019-08-10&allow_override%5B%5D=&zoom=15&search_by_map=true&sw_lat=51.4849939726893&sw_lng=0.05779944015314132&ne_lat=51.49787156523216&ne_lng=0.08488709427063267&search_type=UNKNOWN&s_tag=WEVRquBj)
-
-## Countryside (Aug 10/11)
 
 (See updated options in email sent 2019/07/10 by Amit)
 

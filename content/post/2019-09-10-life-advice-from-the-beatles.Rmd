@@ -1,0 +1,119 @@
+---
+title: Life advice from the Beatles
+author: Amit
+date: '2019-09-10'
+slug: life-advice-from-the-beatles
+categories:
+  - Music
+  - Data
+  - Art
+tags:
+  - Beatles
+  - Markov
+  - Text
+  - NLP
+draft: true
+description: ''
+---
+
+```{r echo = FALSE}
+library(tidyverse)
+# devtools::install_github("dmi3kno/polite")
+library(polite)
+library(rvest)
+```
+
+
+What would the Beatles say?
+
+First, let's get the data. https://www.azlyrics.com/b/beatles.html looks promising, but can we take their data? Let's use polite to see if we can.
+
+
+```{r}
+session <- bow("https://www.azlyrics.com/b/beatles.html", force = TRUE)
+session
+```
+
+We can! They say use crawl delay of 5 seconds... so that's cool.
+
+Go ahead and grab the full page
+
+```{r}
+result <- scrape(session) 
+
+mainPage <- result %>%
+  html_nodes(".album , #listAlbum a")
+```
+
+Now we have albumnames, songnames and links in a dirty mess... let's clean it up
+
+```{r}
+df <- tibble(text = mainPage %>% html_text(),
+       link = mainPage %>% html_attr("href")) %>% 
+  ## albumnames don't have links, let's use this:
+  mutate(album = ifelse(is.na(link),text, NA)) %>% 
+  ## drag down from above:
+  fill(album) %>% 
+  ## and finally remove entries w/out link since we already have the album
+  filter(!is.na(link)) %>% 
+  ## repair the link
+  mutate(link = gsub("\\.\\.", "https://www.azlyrics.com/", link))
+
+sample_n(df,3)
+```
+
+Cool! Now we can visit each page and grab the lyrics. A little more selectorgadgeting and we know what to look for. Let's start small
+
+```{r}
+lyricsRaw <- sample_n(df, 1) %>% pull(link) %>% 
+  bow %>% scrape() %>% html_nodes("br+ div") %>% 
+  ## only need first row
+  head(1) %>% html_text
+lyricsRaw
+```
+
+Cool! Let's construct a function that'll get this for multiple files
+
+```{r}
+lyricsGetter <- function(x){
+  print(x)
+  Sys.sleep(5)
+  x %>% bow %>% scrape %>% html_nodes("br+ div") %>% 
+  ## only need first row
+  head(1) %>% html_text
+}
+
+sample_n(df, 2) %>% pull(link) %>% map_chr(lyricsGetter)
+```
+
+Works! Let's get for the rest now, but wrap in safely because it seems some links in there are broken:
+
+```{r}
+lyricsList <- df %>% pull(link) %>% map(safely(lyricsGetter))
+df <- df %>% 
+  mutate(lyrics = lyricsList %>% map("result"),
+         error = lyricsList %>% map("error"))
+
+## let's save the dataset so that we don't have to hit the website again:
+saveRDS(df,"lyrics.RDS")
+
+head(df)
+```
+
+OK, now let's clean things up:
+
+```{r}
+finalDF <- readRDS("C:/Users/Amit/Dropbox/My projects/amitkohli.com/lyrics.RDS")
+
+finalDF <- finalDF %>% mutate(lyrics = as.character(lyrics),
+                   error = as.character(error)) %>% 
+  filter(lyrics != "NULL")
+
+finalDF <- finalDF %>% bind_cols(
+  finalDF %>% pull(lyrics) %>% map(syuzhet::get_sentences) %>% enframe
+)
+
+finalDF
+
+```
+

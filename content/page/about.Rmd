@@ -45,6 +45,10 @@ And to [Blogdown](https://bookdown.org/yihui/blogdown) and [Netlify](https://www
 
 I guess maybe "who I am" is best answered with quotations that have held meaning for me, starting from my main life motivation below:
 
+> "El pasado nunca se va, le gusta esconderse en la musica, en la calle, en los sueños, en los recuerdos, en la vida."
+-Mario Benedetti
+
+
 > "**I will do strongly, before the sun and the moon, what inly rejoices me and the heart appoints**."
 -R. W. Emerson
 
