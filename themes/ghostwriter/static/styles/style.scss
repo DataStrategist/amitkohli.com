@@ -2,7 +2,7 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #4D648D;
+$primary: #F03838;
 $secondary: #303030;
 $background: #FEFEFE;
 
@@ -302,6 +302,7 @@ table {
 .page-title { margin: 15px 40px; }
 
 .post-date,
+.post-reading,
 .blog-description {
     color: #AEADAD;
     font-size: 14px;
@@ -311,7 +312,9 @@ table {
 
     a { color: #AEADAD; }
     a:hover { color: $primary; }
+}
 
+.post-line {
     &:after {
         border-bottom: 1px dotted $secondary;
         content: "";
@@ -319,16 +322,6 @@ table {
         margin: 40px auto 0;
         width: 100px;
     }
-}
-
-.post-wordsMins {
-    color: #AEADAD;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-
-    a { color: #AEADAD; }
-    a:hover { color: $primary; }
 }
 
 .post-content {
