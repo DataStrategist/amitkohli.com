@@ -28,7 +28,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [Params]
     intro = true
     headline = "AmitKohli.com"
-    description = "... because I can and I want to and you can't stop me."
+    description = "hey look!! that's data!! let's see what it's trying to say!"
     github = "https://github.com/datastrategist"
     linkedin = "https://www.linkedin.com/in/akohli"
     twitter = "https://twitter.com/VizMonkey"
