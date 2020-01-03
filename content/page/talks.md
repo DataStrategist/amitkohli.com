@@ -1,18 +1,16 @@
 ---
-title: Talks & Shows
+title: Talks & Leadership
 author: Amit
 type: page
 date: 2019-10:24T16:35:57+00:00
 
 ---
 
-I have presented at multiple venues internationally. It's true that I do like the sound of my own voice :), but I like speaking because it provides a good opportunity to make a statement about something I know about, and then to see what other views exist. In some cases, the people that come up to speak to me after the talk are introverted and wouldn't quite feel comfortable asking questions in public, but I have learned great things from the contacts and friends I've earned by public speaking. You should present as well!
+I have presented at multiple venues internationally. I like speaking and providing leadership because it provides a good opportunity to make a statement about something I know about, and then to see what other views exist. I have learned great things from the contacts and friends I've earned by public speaking. You should present as well!
 
   - Talks
     -  EARL London 2019 - [event](https://earlconf.com/)  
       *  R is for Reconciliation: how machine learning is helping Colombia move forward - [slides](https://earlconf.com/assets/slides/Thurs%2012%20Sept/Session%201/Amit%20Kohli.pptx) - [video](https://www.youtube.com/watch?v=j2Vr26vIbnY)
-    -  Society for International Development (SID) 2019 - [event](https://sidw.org/2019-sid-w-innovation-competition)  
-      *  Innovation competition finalist - DBBUDDY - Offline data collection for impact- [slides](/page/SID DB Buddy presentation.pptx) - [video](https://youtu.be/Nb5yL3bihAA)
     -  Social Data Society - 2018 
       *  ACDI/VOCA toolset - [slides](/page/Social Data Society 2018b.pptx)
       *  Why should we care about Social Network Analysis? - [slides](/page/AK - Why should we care about Social Network Analysis.pptx)
@@ -30,5 +28,12 @@ I have presented at multiple venues internationally. It's true that I do like th
       *  Understanding Phase 3 of Data Processing
       *  Ethiopia Viz & modelling
       *  Spatial Analysis 1 pager 
--  EARL London 2017 - [event](https://earlconf.com/2017/london/)
+    -  EARL London 2017 - [event](https://earlconf.com/2017/london/)
       *  Making International Development Data Not Useless - [slides](https://slides.com/amitkohli/earl)    -  [video](https://www.youtube.com/watch?v=vxIVs7VtRFY)
+
+  - Competitions:
+    - Society for International Development (SID) 2019 - [event](https://sidw.org/2019-sid-w-innovation-competition)  
+      *  Innovation competition finalist - DBBUDDY - Offline data collection for impact- [slides](/page/SID DB Buddy presentation.pptx) - [video](https://youtu.be/Nb5yL3bihAA)
+    
+  - Officiator:
+    - Ukrainian Open Data Hackathon - [Event](https://www.londontechukraine.com/)
