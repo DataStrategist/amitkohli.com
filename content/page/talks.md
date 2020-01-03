@@ -35,4 +35,4 @@ I have presented at multiple venues internationally. I like speaking and providi
     - As competitor:
       - Society for International Development (SID) 2019 - [event](https://sidw.org/2019-sid-w-innovation-competition) - Innovation competition finalist - DBBUDDY - Offline data collection for impact- [slides](/page/SID DB Buddy presentation.pptx) - [video](https://youtu.be/Nb5yL3bihAA)
     - As Judge:
-      - Ukrainian Open Data Hackathon - [Event](https://www.londontechukraine.com/)
+      - Ukrainian Open Data Hackathon - [event](https://www.londontechukraine.com/)
