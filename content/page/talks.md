@@ -32,8 +32,7 @@ I have presented at multiple venues internationally. I like speaking and providi
       *  Making International Development Data Not Useless - [slides](https://slides.com/amitkohli/earl)    -  [video](https://www.youtube.com/watch?v=vxIVs7VtRFY)
 
   - Competitions:
-    - Society for International Development (SID) 2019 - [event](https://sidw.org/2019-sid-w-innovation-competition)  
-      *  Innovation competition finalist - DBBUDDY - Offline data collection for impact- [slides](/page/SID DB Buddy presentation.pptx) - [video](https://youtu.be/Nb5yL3bihAA)
-    
-  - Officiator:
-    - Ukrainian Open Data Hackathon - [Event](https://www.londontechukraine.com/)
+    - As competitor:
+      - Society for International Development (SID) 2019 - [event](https://sidw.org/2019-sid-w-innovation-competition) - Innovation competition finalist - DBBUDDY - Offline data collection for impact- [slides](/page/SID DB Buddy presentation.pptx) - [video](https://youtu.be/Nb5yL3bihAA)
+    - As Judge:
+      - Ukrainian Open Data Hackathon - [Event](https://www.londontechukraine.com/)
