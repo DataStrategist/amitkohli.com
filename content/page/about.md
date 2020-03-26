@@ -8,14 +8,7 @@ date: 2013-02-07T16:35:57+00:00
 
 Greetings! I'm an environmental engineer that changed focus from remediation and design to data analysis, dissemination and visualization. Now I'm focusing on data for decision-making, so dashboards, adaptive management, KPIs and the like, specializing in the international development sector.
 
-R is my main weapon of choice and the main tool discussed in this blog. I think its the best thing since sliced bread and present about it frequently. My latest talks are:
-
- - [Data4Good 2018]()
- - [Humentum Annual Conference 2018](https://www.humentum.org/sites/default/files/Full agenda single pages_0.pdf)
- - [MERL Tech London 2018](http://merltech.org/merl-tech-london-2018-agenda/)
- - [EARL London 2017](https://earlconf.com/2017/london/)
-
-I also have released some libraries for R:
+R is my main weapon of choice and the main tool discussed in this blog. I also have released some libraries for R:
  - [ShinyTester](https://cran.r-project.org/web/packages/ShinyTester/index.html) 
  - [TileMaker](https://github.com/DataStrategist/TileMaker)
  - [BulletChartR](https://github.com/ACDIVOCATech/bulletchartr)

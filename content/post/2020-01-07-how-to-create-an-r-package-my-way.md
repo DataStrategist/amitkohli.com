@@ -11,9 +11,12 @@ tags:
   - library
   - R
 description: ''
+
+draft: yes
 ---
 
 creates packages their own way... but here's a conclusive guide of the steps I follow. I'll be coming back to this frequently, so watch this space.
+
 
 ## Do once stuff: 
    - Download R and Rstudio, but you should alreay know that :)
@@ -79,3 +82,4 @@ https://github.com/mikldk/roxytest
  - `use_vignette` if you're building something cool that other people are supposed to use, then you should probably show them HOW to use it. That's what a vignette is for.
  - Travis-CI & Codecov It's super useful but can be tough to set up.  
  
+
