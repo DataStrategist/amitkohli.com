@@ -96,8 +96,8 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
 
   c. Now build the documentation for each function. To do so:
   
-    - select the entire function and click `Run` (to commit it into the global environment).
-    - select JUST the function title and run `sinew`'s `createOxygen` add-in (from the add-ins menu). It will automatically add all the guts required for documentation. Go ahead and fill these out. If you followed step 2b above, exported functions will automatically be added as `@importFrom` blocks. 
+  - select the entire function and click `Run` (to commit it into the global environment).
+  - select JUST the function title and run `sinew`'s `createOxygen` add-in (from the add-ins menu). It will automatically add all the guts required for documentation. Go ahead and fill these out. If you followed step 2b above, exported functions will automatically be added as `@importFrom` blocks. 
 
   d. If you have dependencies, make sure that the `DESCRIPTION` file knows about all the packages that you need. So go to that file and put the package name under a new `Imports:` section. The function `sinew::makeImport("R", format = "description")` does this, but it can be a bit wonky, so just keep an eye out.
 
@@ -141,10 +141,10 @@ Every time you make a modification you'll have to repeat these steps.
 ## 7. Final Steps:
   a. OK, we're almost done!!!! SO EXCITING! Now, remember to check all your documentation. We have 4 places to check: 
   
-    - In the documentation for each function's **Roxygen**, 
-    - in **`README.Rmd`**, 
-    - and in the **DESCRIPTION**. 
-    - (for major changes, the `NEWS` file too)
+  - In the documentation for each function's **Roxygen**, 
+  - in **`README.Rmd`**, 
+  - and in the **DESCRIPTION**. 
+  - (for major changes, the `NEWS` file too)
     
   Make sure you update these whenever you make changes to the code. 
 
