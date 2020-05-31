@@ -52,9 +52,11 @@ OK! Now you're ready to rock and roll!
   
   b. You are going to start from scratch, creating a package using Rstudio's wizard. To do so, click on `File >> new project >> new directory >> R package`, and make sure to enable git:
  
-  [](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package1.png)
-  [](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
-  [](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
+  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package1.png)
+  
+  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
+  
+  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
  
 CONGRATULATIONS! You have officially created a package! No, of course not... this package doesn't do any of your stuff... it's just the default stuff. But still, small victories, right? Anyway, let's delete all the default stuff and start adding your functions. 
 
@@ -176,4 +178,4 @@ As your package becomes more tested, this is refered to as the maturity of the p
 
 Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! The cheatsheet with the overall kind of mental flow that I go through when I develop packages. Hope it's useful!
 
-  [](/post/2020-01-07-how-to-create-an-r-package-my-way_files/create R package.png)
+![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/create R package.png)  
