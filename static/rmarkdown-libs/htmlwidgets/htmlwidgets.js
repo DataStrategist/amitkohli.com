@@ -233,13 +233,38 @@
           theseArgs = theseArgs.concat([task.data]);
           task = task.code;
         }
-        var taskFunc = eval("(" + task + ")");
+        var taskFunc = tryEval(task);
         if (typeof(taskFunc) !== "function") {
           throw new Error("Task must be a function! Source:\n" + task);
         }
         taskFunc.apply(target, theseArgs);
       });
     }
+  }
+
+  // Attempt eval() both with and without enclosing in parentheses.
+  // Note that enclosing coerces a function declaration into
+  // an expression that eval() can parse
+  // (otherwise, a SyntaxError is thrown)
+  function tryEval(code) {
+    var result = null;
+    try {
+      result = eval(code);
+    } catch(error) {
+      if (!error instanceof SyntaxError) {
+        throw error;
+      }
+      try {
+        result = eval("(" + code + ")");
+      } catch(e) {
+        if (e instanceof SyntaxError) {
+          throw error;
+        } else {
+          throw e;
+        }
+      }
+    }
+    return result;
   }
 
   function initSizing(el) {
@@ -555,33 +580,11 @@
           return;
         el.className = el.className + " html-widget-static-bound";
 
-        var localStorageKey = 'htmlwidget.'+el.id+'.state'
-        var widgetStateChanged = function(state) {
-          if (window.HTMLWidgets.stateChangedHook) {
-            window.HTMLWidgets.stateChangedHook(state)
-          } else {
-            if (window.localStorage) {
-              if (state)
-                window.localStorage.setItem(localStorageKey, JSON.stringify(state))
-              else
-                window.localStorage.removeItem(localStorageKey)
-            }
-          }
-        }
-        var initialState = window.localStorage ? JSON.parse(window.localStorage.getItem(localStorageKey)) : null;
-        if (!initialState) {
-          // No locally-stored state.  Use anything provided in a script tag as a default.
-          var initialStateData = document.querySelector("script[data-for='" + el.id + "'][type='application/htmlwidget-state']");
-          if (initialStateData)
-            initialState = JSON.parse(initialStateData.textContent || initialStateData.text);
-        }
-
         var initResult;
         if (binding.initialize) {
           initResult = binding.initialize(el,
             sizeObj ? sizeObj.getWidth() : el.offsetWidth,
-            sizeObj ? sizeObj.getHeight() : el.offsetHeight,
-            widgetStateChanged
+            sizeObj ? sizeObj.getHeight() : el.offsetHeight
           );
           elementData(el, "init_result", initResult);
         }
@@ -647,7 +650,7 @@
           for (var k = 0; data.evals && k < data.evals.length; k++) {
             window.HTMLWidgets.evaluateStringMember(data.x, data.evals[k]);
           }
-          binding.renderValue(el, data.x, initResult, initialState);
+          binding.renderValue(el, data.x, initResult);
           evalAndRun(data.jsHooks.render, initResult, [el, data.x]);
         }
       });
@@ -656,17 +659,56 @@
     invokePostRenderHandlers();
   }
 
-  // Wait until after the document has loaded to render the widgets.
+
+  function has_jQuery3() {
+    if (!window.jQuery) {
+      return false;
+    }
+    var $version = window.jQuery.fn.jquery;
+    var $major_version = parseInt($version.split(".")[0]);
+    return $major_version >= 3;
+  }
+
+  /*
+  / Shiny 1.4 bumped jQuery from 1.x to 3.x which means jQuery's
+  / on-ready handler (i.e., $(fn)) is now asyncronous (i.e., it now
+  / really means $(setTimeout(fn)).
+  / https://jquery.com/upgrade-guide/3.0/#breaking-change-document-ready-handlers-are-now-asynchronous
+  /
+  / Since Shiny uses $() to schedule initShiny, shiny>=1.4 calls initShiny
+  / one tick later than it did before, which means staticRender() is
+  / called renderValue() earlier than (advanced) widget authors might be expecting.
+  / https://github.com/rstudio/shiny/issues/2630
+  /
+  / For a concrete example, leaflet has some methods (e.g., updateBounds)
+  / which reference Shiny methods registered in initShiny (e.g., setInputValue).
+  / Since leaflet is privy to this life-cycle, it knows to use setTimeout() to
+  / delay execution of those methods (until Shiny methods are ready)
+  / https://github.com/rstudio/leaflet/blob/18ec981/javascript/src/index.js#L266-L268
+  /
+  / Ideally widget authors wouldn't need to use this setTimeout() hack that
+  / leaflet uses to call Shiny methods on a staticRender(). In the long run,
+  / the logic initShiny should be broken up so that method registration happens
+  / right away, but binding happens later.
+  */
+  function maybeStaticRenderLater() {
+    if (shinyMode && has_jQuery3()) {
+      window.jQuery(window.HTMLWidgets.staticRender);
+    } else {
+      window.HTMLWidgets.staticRender();
+    }
+  }
+
   if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", function() {
       document.removeEventListener("DOMContentLoaded", arguments.callee, false);
-      window.HTMLWidgets.staticRender();
+      maybeStaticRenderLater();
     }, false);
   } else if (document.attachEvent) {
     document.attachEvent("onreadystatechange", function() {
       if (document.readyState === "complete") {
         document.detachEvent("onreadystatechange", arguments.callee);
-        window.HTMLWidgets.staticRender();
+        maybeStaticRenderLater();
       }
     });
   }
@@ -754,7 +796,7 @@
       if (o !== null && typeof o === "object" && part in o) {
         if (i == (l - 1)) { // if we are at the end of the line then evalulate
           if (typeof o[part] === "string")
-            o[part] = eval("(" + o[part] + ")");
+            o[part] = tryEval(o[part]);
         } else { // otherwise continue to next embedded object
           o = o[part];
         }
@@ -837,11 +879,11 @@
     var result = {
       name: defn.name,
       type: defn.type,
-      initialize: function(el, width, height, stateChanged) {
-        return defn.factory(el, width, height, stateChanged);
+      initialize: function(el, width, height) {
+        return defn.factory(el, width, height);
       },
-      renderValue: function(el, x, instance, state) {
-        return instance.renderValue(x, state);
+      renderValue: function(el, x, instance) {
+        return instance.renderValue(x);
       },
       resize: function(el, width, height, instance) {
         return instance.resize(width, height);
