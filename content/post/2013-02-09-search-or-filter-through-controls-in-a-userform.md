@@ -5,14 +5,12 @@ type: post
 date: 2013-02-09T18:30:30+00:00
 url: /search-or-filter-through-controls-in-a-userform/
 categories:
-  - Excel
+  - Excel/VBA
   - Tutorials
-  - Userform
-  - VBA
 tags:
   - filter
   - form
-  - macro
+  - Macro
   - userform
 
 ---

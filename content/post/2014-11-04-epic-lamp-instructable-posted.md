@@ -7,7 +7,6 @@ url: /epic-lamp-instructable-posted/
 categories:
   - Art
   - Maker
-  - Photography
   - Tutorials
 tags:
   - art

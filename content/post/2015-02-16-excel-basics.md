@@ -5,9 +5,8 @@ type: post
 date: 2015-02-16T18:32:22+00:00
 url: /excel-basics/
 categories:
-  - Excel
+  - Excel/VBA
   - Tutorials
-  - VBA
 
 ---
 Most of the things posted on this page will make reference to Visual Basic for Applications (VBA).

@@ -10,7 +10,6 @@ categories:
   - Art
   - Big data
   - Data
-  - Databases
   - R
   - Visualizations
 tags:

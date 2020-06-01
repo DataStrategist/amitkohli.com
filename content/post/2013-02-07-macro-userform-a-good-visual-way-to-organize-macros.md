@@ -5,13 +5,11 @@ type: post
 date: 2013-02-07T16:22:10+00:00
 url: /macro-userform-a-good-visual-way-to-organize-macros/
 categories:
-  - Excel
+  - Excel/VBA
   - Tutorials
-  - Userform
-  - VBA
 tags:
   - excel
-  - macro
+  - Macro
   - organization
   - tutorial
   - userform

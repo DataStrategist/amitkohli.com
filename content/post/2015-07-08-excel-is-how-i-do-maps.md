@@ -6,7 +6,7 @@ date: 2015-07-08T15:15:55+00:00
 url: /excel-is-how-i-do-maps/
 categories:
   - Data
-  - Excel
+  - Excel/VBA
   - Tutorials
   - Visualizations
 tags:

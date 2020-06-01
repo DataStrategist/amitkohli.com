@@ -5,12 +5,11 @@ type: post
 date: 2013-03-29T15:04:29+00:00
 url: /change-lists-into-tables-and-tables-into-lists/
 categories:
-  - Excel
+  - Excel/VBA
   - Macro
   - Tutorials
+tags:
   - Userform
-  - VBA
-
 ---
 Designed a userform that converts dimension formats, i.e. information from tabular format to list (or flat) format, and viceversa. Some options include preserving formatting or not, as well as including blank cells or not.
 

@@ -9,7 +9,7 @@ xyz_smap:
 switch_like_status:
   - 1
 categories:
-  - Photography
+  - Art
 tags:
   - cover
   - facebook

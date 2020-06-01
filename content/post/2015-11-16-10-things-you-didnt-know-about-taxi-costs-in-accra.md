@@ -6,8 +6,7 @@ date: 2015-11-16T16:46:47+00:00
 url: /10-things-you-didnt-know-about-taxi-costs-in-accra/
 categories:
   - Data
-  - Excel
-  - Uncategorized
+  - Excel/VBA
   - Visualizations
 tags:
   - Accra

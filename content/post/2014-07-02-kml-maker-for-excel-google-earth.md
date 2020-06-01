@@ -5,14 +5,13 @@ type: post
 date: 2014-07-02T12:36:43+00:00
 url: /kml-maker-for-excel-google-earth/
 categories:
-  - Excel
+  - Excel/VBA
   - Tutorials
-  - Userform
-  - VBA    
 tags:
   - Earth
   - excel
   - map
+  - Userform
 
 ---
 I made a userform that quickly and easily allows you to make a kml file that&#8217;s readable by google earth based on some excel dataset that has coordinates.
