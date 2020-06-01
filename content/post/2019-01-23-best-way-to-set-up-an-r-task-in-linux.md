@@ -5,6 +5,7 @@ date: '2019-01-23'
 slug: best-way-to-set-up-an-r-task-in-linux
 categories:
   - Data
+  - R
 tags:
   - linux
   - task

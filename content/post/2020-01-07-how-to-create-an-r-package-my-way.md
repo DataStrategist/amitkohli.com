@@ -6,10 +6,10 @@ slug: how-to-create-an-r-package-easy-mode
 categories:
   - Data
   - Tutorials
+  - R
 tags:
   - package
   - library
-  - R
 
 draft: no
 ---
