@@ -11,11 +11,11 @@ switch_like_status:
 categories:
   - Art
 tags:
-  - cover
-  - facebook
-  - google+
-  - photography
-  - picture
+  - Cover
+  - Facebook
+  - Google+
+  - Photography
+  - Picture
 
 ---
 So I guess everybody let&#8217;s you upload a &#8220;cover picture&#8221;&#8230;. something that should be beautiful, emblematic of you, deep, thoughtful etc. Well&#8230; I found a bunch of my pics that fit the wide format nicely.

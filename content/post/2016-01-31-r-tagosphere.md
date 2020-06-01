@@ -12,15 +12,16 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - chart
+  - Chart
   - d3
   - d3Network
-  - network
+  - Network
   - network3d
   - StackOverflow
-  - tag
-  - visualization
+  - Tag
+  - Visualization
 
 ---
 This post explores the inter-relationships of StackOverflow Tags for R-related questions. So I grabbed all the questions tagged with &#8220;r&#8221;, took the other tags in each question and made some network charts that show how often each tag is seen with the other tags. The point is to see the empirical relationships that develop as people organically describe their problems with R. [Full analysis on GitHub][1], as always.

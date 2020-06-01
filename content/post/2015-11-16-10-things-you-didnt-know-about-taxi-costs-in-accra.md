@@ -8,6 +8,7 @@ categories:
   - Data
   - Excel/VBA
   - Visualizations
+  - Analysis
 tags:
   - Accra
   - Ghana

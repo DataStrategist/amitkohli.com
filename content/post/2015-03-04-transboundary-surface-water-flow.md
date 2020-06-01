@@ -11,16 +11,17 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - border
-  - chart
-  - flow
-  - network
-  - plot
-  - sankey
-  - trans-boundary
-  - transboundary
-  - water
+  - Border
+  - Chart
+  - Flow
+  - Network
+  - Plot
+  - Sankey
+  - Trans-boundary
+  - Transboundary
+  - Water
 
 ---
 A visualization generated for AQUASTAT of FAO.

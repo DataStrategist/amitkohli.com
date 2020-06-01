@@ -6,10 +6,11 @@ slug: plot-shapes-for-100000-movies-using-new-package-theplotthickens
 categories:
   - Movies
   - Data
+  - Analysis
   - R
 tags:
-  - plot
-  - shape
+  - Plot
+  - Shape
   - Vonnigut
 description: ''
 draft: true

@@ -9,14 +9,15 @@ switch_like_status:
 categories:
   - R
   - Visualizations
+  - Analysis
 tags:
-  - renewable water resources
-  - sankey
-  - simple
-  - source
-  - visualization
-  - water
-  - water flows
+  - Renewable water resources
+  - Sankey
+  - Simple
+  - Source
+  - Visualization
+  - Water
+  - Water flows
 
 ---
 A visualization prepared for FAO AQUASTAT:

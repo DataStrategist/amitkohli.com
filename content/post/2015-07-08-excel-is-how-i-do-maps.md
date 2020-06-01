@@ -10,11 +10,11 @@ categories:
   - Tutorials
   - Visualizations
 tags:
-  - conditional formatting
-  - evapotranspiration
-  - excel
-  - map
-  - reference
+  - Conditional formatting
+  - Evapotranspiration
+  - Excel
+  - Map
+  - Reference
 
 ---
 Following the footsteps of [this cool post I saw][1] by <a href="https://www.twitter.com/JohnNelsonIDV" target="_blank" rel="nofollow">JohnNelsonIDV</a>, I wanted to try to and make a map using Excel.

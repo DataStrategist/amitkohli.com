@@ -8,16 +8,17 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - drip
-  - global
-  - groundwater
-  - irrigation
-  - localized
-  - sprinkler
-  - surface
-  - tree-map
-  - treemap
+  - Drip
+  - Global
+  - Groundwater
+  - Irrigation
+  - Localized
+  - Sprinkler
+  - Surface
+  - Tree-map
+  - Treemap
 
 ---
 These visualizations were performed for FAO AQUASTAT.

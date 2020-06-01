@@ -9,12 +9,13 @@ switch_like_status:
 categories:
   - R
   - Visualizations
+  - Analysis
 tags:
   - Crop Calendar
   - Crops
   - Irrigated Crop Calendar
-  - irrigation
-  - visualization
+  - Irrigation
+  - Visualization
 
 ---
 Visualizations made for FAO AQUASTAT:

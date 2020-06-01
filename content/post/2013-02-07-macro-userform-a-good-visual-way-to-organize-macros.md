@@ -8,12 +8,12 @@ categories:
   - Excel/VBA
   - Tutorials
 tags:
-  - excel
+  - Excel
   - Macro
-  - organization
-  - tutorial
-  - userform
-  - vba
+  - Organization
+  - Tutorial
+  - Userform
+  - VBA
   - Visual Basic
 
 ---

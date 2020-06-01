@@ -5,17 +5,16 @@ type: post
 date: 2013-02-07T16:24:52+00:00
 url: /compare-lists-and-identify-matches-macro/
 categories:
-  - Excel
+  - Excel/VBA
   - Tutorials
-  - VBA
 tags:
-  - compare
-  - excel
-  - list
+  - Compare
+  - Excel
+  - List
   - Macro
-  - matches
-  - tutorial
-  - vba
+  - Matches
+  - Tutorial
+  - Vba
   - Visual Basic
   - vlookup
 

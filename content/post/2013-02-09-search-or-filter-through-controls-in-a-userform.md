@@ -8,10 +8,10 @@ categories:
   - Excel/VBA
   - Tutorials
 tags:
-  - filter
-  - form
+  - Filter
+  - Form
   - Macro
-  - userform
+  - Userform
 
 ---
 This bit might be useful if you have a lot of controls on a form, and need a quick way to highlight them. This post supports the video:

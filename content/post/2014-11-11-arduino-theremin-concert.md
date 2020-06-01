@@ -9,13 +9,12 @@ xyz_smap:
 switch_like_status:
   - 1
 categories:
-  - Arduino
   - Art
   - Maker
   - Music
 tags:
-  - arduino
-  - theremin
+  - Arduino
+  - Theremin
 
 ---
 One of the arduino tutorials was for a theremin. With a few modifications I was able to properly express my sophisticated musical abilities.

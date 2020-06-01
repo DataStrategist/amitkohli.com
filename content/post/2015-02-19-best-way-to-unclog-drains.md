@@ -8,12 +8,12 @@ categories:
   - Maker
   - Tutorials
 tags:
-  - bottle
-  - clear
-  - clog
-  - drain
-  - reuse
-  - snake
+  - Bottle
+  - Clear
+  - Clog
+  - Drain
+  - Reuse
+  - Snake
 
 ---
 Check out my new instructable on how to clear clogs without using chemicals.

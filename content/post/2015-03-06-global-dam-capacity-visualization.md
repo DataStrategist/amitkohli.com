@@ -9,13 +9,14 @@ switch_like_status:
 categories:
   - Data
   - Visualizations
+  - Analysis
 tags:
-  - bar
-  - chart
-  - dam
-  - globe
-  - google+
-  - reservoir
+  - Bar
+  - Chart
+  - Dam
+  - Globe
+  - Google+
+  - Reservoir
   - WebGL
 
 ---

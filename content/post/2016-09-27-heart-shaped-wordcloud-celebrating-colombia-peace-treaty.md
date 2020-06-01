@@ -11,10 +11,10 @@ categories:
   - Data
   - R
 tags:
-  - colombia
-  - paz
-  - peace
-  - wordcloud
+  - Colombia
+  - Paz
+  - Peace
+  - Wordcloud
   - wordcloud2
 
 ---

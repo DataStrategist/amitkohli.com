@@ -11,12 +11,13 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - analysis
-  - anniversary
-  - data
-  - love
-  - sentiment
+  - Analysis
+  - Anniversary
+  - Data
+  - Love
+  - Sentiment
 
 ---
 When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah&#8230; well&#8230; CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:

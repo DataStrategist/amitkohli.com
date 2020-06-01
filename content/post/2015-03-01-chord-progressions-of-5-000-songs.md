@@ -13,12 +13,12 @@ categories:
   - Music
   - R
   - Visualizations
+  - Analysis
 tags:
-  - analysis
   - Chords
-  - progressions
-  - sankey
-  - western music
+  - Progressions
+  - Sankey
+  - Western music
 
 ---
 Update: Full analysis and everything you need at my github <https://github.com/mexindian/Musical-chord-progressions>

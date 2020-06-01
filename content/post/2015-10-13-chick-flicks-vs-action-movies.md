@@ -10,16 +10,16 @@ categories:
   - Art
   - Data
   - Movies
+  - Analysis
   - R
 tags:
-  - action movie
-  - art
-  - chick flick
-  - emotion
-  - feelings
-  - movie
-  - script
-  - sentiment analysis
+  - Action movie
+  - Chick flick
+  - Emotion
+  - Feelings
+  - Movie
+  - Script
+  - Sentiment analysis
 
 ---
 <div class="repository-description">

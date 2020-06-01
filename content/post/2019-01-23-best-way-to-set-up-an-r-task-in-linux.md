@@ -7,8 +7,8 @@ categories:
   - Data
   - R
 tags:
-  - linux
-  - task
+  - Linux
+  - Tasks
 description: ''
 draft: true
 ---

@@ -9,10 +9,9 @@ categories:
   - R
   - Shiny
 tags:
-  - helper
-  - hierarchy
-  - shiny
-  - syntax
+  - Helper
+  - Hierarchy
+  - Syntax
 
 ---
 Shiny is awesome, but can be a bit daunting and easy to make mistakes in. I recently came back to Shiny after a hiatus of a few years and it was much more challenging than I feel comfortable admitting. I was making bonehead mistakes like writing `something` instead of `output$something`, confusing where to put `Output` commands vs `Render` commands, etc. I would eventually find my mistake, curse myself and move on with a crumpled ego. Then I had the realization that maybe if I was a beginner, I wouldn&#8217;t even know what I was doing wrong. Thusly did I conclude that I was in a unique position to help out the R community: Dumb enough to make mistakes, but experienced enough to eventually remember how to resolve them. So naturally, I wrote an R package that tests the code of the Shiny app itself.

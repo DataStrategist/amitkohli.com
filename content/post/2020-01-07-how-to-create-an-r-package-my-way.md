@@ -8,8 +8,8 @@ categories:
   - Tutorials
   - R
 tags:
-  - package
-  - library
+  - Package
+  - Library
 
 draft: no
 ---

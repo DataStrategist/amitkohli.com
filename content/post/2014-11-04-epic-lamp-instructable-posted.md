@@ -9,11 +9,10 @@ categories:
   - Maker
   - Tutorials
 tags:
-  - art
-  - lamp
+  - Lamp
   - Maker
-  - photography
-  - tutorial
+  - Photography
+  
 
 ---
 What do you do with a box of 100 slides that you&#8217;ve had for 10 years?

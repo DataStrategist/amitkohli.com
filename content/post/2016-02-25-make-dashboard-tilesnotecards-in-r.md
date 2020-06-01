@@ -12,10 +12,10 @@ categories:
   - Tutorials
   - Visualizations
 tags:
-  - bootstrap
-  - dashboard
+  - Bootstrap
+  - Dashboard
   - html
-  - tile
+  - Tile
 
 ---
 # Update!!

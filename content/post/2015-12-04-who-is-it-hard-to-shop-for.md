@@ -7,8 +7,8 @@ url: /who-is-it-hard-to-shop-for/
 categories:
   - Visualizations
 tags:
-  - google+
-  - shopping
+  - Google+
+  - Shopping
 
 ---
 So people look up what to buy for mom most, wife second, husband third, and finally poor dad last&#8230;

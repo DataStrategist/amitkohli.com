@@ -10,11 +10,11 @@ categories:
   - Tutorials
   - Visualizations
 tags:
-  - color
-  - colorpicker
-  - colour
+  - Color
+  - Colorpicker
+  - Colour
   - ggplot2
-  - manual
+  - Manual
 
 ---
 <!-- saved from url=(0014)about:internet -->

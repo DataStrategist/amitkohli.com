@@ -9,17 +9,18 @@ switch_like_status:
 categories:
   - Big data
   - Data
+  - Analysis
 tags:
-  - barrage
+  - Barrage
   - csv
-  - dam
-  - database
+  - Dam
+  - Database
   - Earth
-  - kml
-  - location
-  - map
-  - prensa
-  - reservoir
+  - Kml
+  - Location
+  - Map
+  - Prensa
+  - Reservoir
 
 ---
 The last task I performed for <a href="http://www.fao.org/nr/aquastat" target="_blank">AQUASTAT</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. There will be a paper coming out soon, but in the meantime, I provide one of the fun outputs, a map of 75000 dams!

@@ -9,9 +9,9 @@ categories:
   - Shiny
 tags:
   - R
-  - shiny
-  - shinyapps
-  - wordcloud
+  - Shiny
+  - Shinyapps
+  - Wordcloud
 
 ---
 <img class="alignleft" src="https://i0.wp.com/www.fao.org/nr/water/aquastat/common/Rploteng.png?resize=211%2C208" alt="" width="211" height="208" data-recalc-dims="1" />Using Shiny and R, we made a super-customizable wordcloud maker that takes any .txt file you feed it, and creates a wordcloud just how you like it (without needing to give your email to creepy people). <a title="Wordcloud maker!" href="https://amit.shinyapps.io/WordCloudMaker/" target="_blank">Check it out!</a>

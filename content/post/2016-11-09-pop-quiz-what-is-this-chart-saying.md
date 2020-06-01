@@ -8,11 +8,12 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - quiz
+  - Quiz
   - R
-  - scatter plot
-  - test
+  - Scatter plot
+  - Test
 
 ---
 I have been reading more and more about how people can&#8217;t interpret charts&#8230; which kinda never occurred to me, if I&#8217;m gonna be very honest.  Anyway, it kind of made me think of actually testing people informally, to see for myself. So I&#8217;ve been doing just that: showing colleagues, friends, etc a chart that we created interactively during the [first Accra R-Users session][1] with tons of detail, and asking them to analyze it at length. The results have been staggering! I&#8217;m still trying to generalize my conclusions, but thought it would be fun to open up this test to the community, so here it goes! If you feel like sharing, post your observations in the comments section.

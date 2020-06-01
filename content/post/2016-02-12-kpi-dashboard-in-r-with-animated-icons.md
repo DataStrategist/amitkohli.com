@@ -9,14 +9,14 @@ categories:
   - R
   - Tutorials
 tags:
-  - animated
-  - animated gif
-  - dashboard
-  - googleVis
+  - Animated
+  - Animated gif
+  - Dashboard
+  - GoogleVis
   - KPI
-  - measure
-  - table
-  - target
+  - Measure
+  - Table
+  - Target
 
 ---
 So Key Performance Indicators (KPIs) are all the rage in the dashboarding community&#8230; well [So Key Performance Indicators (KPIs) are all the rage in the dashboarding community&#8230; well][1] really. The premise is simple&#8230; check a list of measurements against targets and show how they compare using some kind of visualization. I haven&#8217;t yet seen, however, a version that can utilize animated icons to display indicators that REALLY need attention. So here you go, a tutorial on how to make your very own animated icon KPI, using the googleVis library.

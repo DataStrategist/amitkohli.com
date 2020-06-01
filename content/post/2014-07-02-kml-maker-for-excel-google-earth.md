@@ -9,8 +9,8 @@ categories:
   - Tutorials
 tags:
   - Earth
-  - excel
-  - map
+  - Excel
+  - Map
   - Userform
 
 ---

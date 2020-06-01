@@ -8,10 +8,10 @@ categories:
   - R
   - Tutorials
 tags:
-  - linux
-  - server
-  - service
-  - twitter
+  - Linux
+  - Server
+  - Service
+  - Twitter
 
 ---
 I am working on a **super-secret** project for which I am harvesting a highly confidential source of data: twitter 🙂 The idea is to gather a small amount of twitter data, but for a long time&#8230; maybe a year. I tried to use the package [TwitteR][1], but it can only  grab up to a week of tweets&#8230; it&#8217;s not really good for a set-it-and-forget-it ongoing capture since it requires user-based authentication, which means (I guess) that a machine can’t authenticate for it. Tangibly this means a human needs to start the process every time. So I could run the script weekly, but of course there&#8217;s days you miss, or run at different times&#8230; plus it&#8217;s just plain annoying&#8230;

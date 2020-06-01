@@ -8,11 +8,12 @@ categories:
   - Data
   - R
   - Visualizations
+  - Analysis
 tags:
-  - hug of death
-  - log
-  - parsing
-  - reddit
+  - Hug of death
+  - Log
+  - Parsing
+  - Reddit
 
 ---
 So I had a happy little blog&#8230; no one really paid attention, but I didn&#8217;t much care because I was happy.

@@ -9,16 +9,16 @@ categories:
   - Data
   - Movies
   - R
+  - Analysis
 tags:
-  - animation
-  - cartoon
-  - data analysis
-  - movie
-  - R
-  - scraping
-  - search engine
-  - short film
-  - string matching
+  - Animation
+  - Cartoon
+  - Data analysis
+  - Movie
+  - Scraping
+  - Search engine
+  - Short film
+  - String matching
 
 ---
 [<img class="alignnone wp-image-420" src="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/images.jpg?resize=138%2C106" alt="images" width="138" height="106" srcset="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/images.jpg?zoom=2&resize=138%2C106 276w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/images.jpg?zoom=3&resize=138%2C106 414w" sizes="(max-width: 138px) 100vw, 138px" data-recalc-dims="1" />][1][<img class="alignnone wp-image-423" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/2.jpg?resize=137%2C105" alt="2" width="137" height="105" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/2.jpg?zoom=2&resize=137%2C105 274w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/2.jpg?zoom=3&resize=137%2C105 411w" sizes="(max-width: 137px) 100vw, 137px" data-recalc-dims="1" /><img class="alignnone wp-image-422" src="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/3.jpg?resize=139%2C104" alt="3" width="139" height="104" srcset="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/3.jpg?zoom=2&resize=139%2C104 278w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/3.jpg?zoom=3&resize=139%2C104 417w" sizes="(max-width: 139px) 100vw, 139px" data-recalc-dims="1" /><img class="alignnone wp-image-421" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/4.jpg?resize=158%2C105" alt="4" width="158" height="105" data-recalc-dims="1" />][2]

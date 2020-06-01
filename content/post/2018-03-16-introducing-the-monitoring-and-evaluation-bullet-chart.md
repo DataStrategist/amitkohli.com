@@ -8,10 +8,10 @@ categories:
   - Data
   - R
 tags:
-  - bullet chart
+  - Bullet chart
   - KPI
   - 'M&amp;E'
-  - visualization
+  - Visualization
 
 ---
 _Cross-posted from: <http://www.acdivoca.org/2018/03/introducing-the-monitoring-and-evaluation-bullet-chart/>_.
