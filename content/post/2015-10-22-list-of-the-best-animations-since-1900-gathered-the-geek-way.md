@@ -7,14 +7,13 @@ url: /list-of-the-best-animations-since-1900-gathered-the-geek-way/
 categories:
   - Big data
   - Data
-  - Movies
   - R
   - Analysis
 tags:
+  - Movies
   - Animation
   - Cartoon
   - Data analysis
-  - Movie
   - Scraping
   - Search engine
   - Short film

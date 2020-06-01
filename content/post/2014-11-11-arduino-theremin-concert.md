@@ -11,8 +11,8 @@ switch_like_status:
 categories:
   - Art
   - Maker
-  - Music
 tags:
+  - Music
   - Arduino
   - Theremin
 

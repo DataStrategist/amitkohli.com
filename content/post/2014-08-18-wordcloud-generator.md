@@ -6,7 +6,6 @@ date: 2014-08-18T21:23:34+00:00
 url: /wordcloud-generator/
 categories:
   - R
-  - Shiny
 tags:
   - R
   - Shiny

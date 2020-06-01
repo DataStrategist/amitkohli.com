@@ -10,11 +10,11 @@ categories:
   - Art
   - Big data
   - Data
-  - Music
   - R
   - Visualizations
   - Analysis
 tags:
+  - Music
   - Chords
   - Progressions
   - Sankey

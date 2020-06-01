@@ -7,8 +7,8 @@ url: /announcing-shinytester-a-package-that-helps-you-build-shiny-apps/
 categories:
   - Data
   - R
-  - Shiny
 tags:
+  - Shiny
   - Helper
   - Hierarchy
   - Syntax

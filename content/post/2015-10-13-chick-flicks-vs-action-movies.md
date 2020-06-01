@@ -9,7 +9,6 @@ switch_like_status:
 categories:
   - Art
   - Data
-  - Movies
   - Analysis
   - R
 tags:
@@ -17,7 +16,7 @@ tags:
   - Chick flick
   - Emotion
   - Feelings
-  - Movie
+  - Movies
   - Script
   - Sentiment analysis
 
