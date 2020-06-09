@@ -14,7 +14,7 @@ tags:
 draft: no
 ---
 
-Creating an R package can be a daunting task, but there are several tools to facilitate this process immensely. Of course, each approach has a series of advantages and drawbacks, so it is very much a subjective thing. Since I have changed my mind and worked on this task frequently, here's a conclusive* guide of the steps I follow. (* This guide will never be finished, so watch this space, I'll be coming back to make edits as they seem appropriate.
+Creating an R package can be a daunting task, but there are several tools to facilitate this process immensely. Of course, each approach has a series of advantages and drawbacks, so it is very much a subjective thing. Since I have changed my mind and worked on this task frequently, here's a conclusive* guide of the steps I follow. (* This guide will never be finished, so watch this space, I'll be coming back to make edits as they seem appropriate).
 
 By the end of this tutorial you will have a highly functional and well documented package, like [this](https://github.com/DataStrategist/syllableR), suitable for even more advanced operations like continuous integration and advanced testing. 
 
@@ -78,9 +78,9 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
   
   Anyway, read what the readme is saying, fill in some details here and there, and comment out or delete the part about installing from CRAN... we aren't there yet (commenting out in markdown is different than in R code, but the shortcuts still work). 
 
-  f. `usethis::use_lifecycle_badge(stage = "Experimental")` to show that this is a brand new package. Eventually you'll be moving to "Maturing" and eventually to "Stable". This function will spit out some markdown code, copy it into your `README.Rmd` in the *badges* section at the top (it should have been done for you, but just double-check).
+  f. `usethis::use_lifecycle_badge(stage = "Experimental")` to show that this is a brand new package. Eventually you'll be moving to "Maturing" and eventually to "Stable". This function will generate some markdown code and copied it into your `README.Rmd` in the *badges* section at the top (it should have been done for you, but just double-check, and if not, copy-paste it in yourself).
 
-  g. `use_cran_badge()` to show how if you're on CRAN or not (you're not, but edventually that may change!). Like above, Copy the markdown into your `README.Rmd`.
+  g. `use_cran_badge()` to show how if you're on CRAN or not (you're not, but edventually that may change!). Like above, it should have copied for you, but if not, copy the markdown into your `README.Rmd`.
 
   h. Add a license. Depending on your needs, `usethis` has a variety of functions to help you with that, but if you don't know what to pick, `usethis::use_mit_license("YOUR NAME")` is the easy-peesy one if you don't really care.
 
@@ -90,7 +90,7 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
    
 ## 4. OK, you're ready to start working on your package! 
  
-  a. Create a new file in the `/R` folder (it doesn't trully matter what you call this file, I just call the file `funcs.R` and paste all inside, although sometimes it is useful to have one file per function. For now, just start with one file). Write or copypaste your functions into this file (_ ProTip: in case you are starting from a tangled mess of functions + function_running_code, maybe `sinew::untangle()` and `sinew::pretty_namespace()` can be really useful)_.
+  a. Create a new file in the `/R` folder (It doesn't trully matter what you call this file, I just call the file `funcs.R` and paste all inside, although sometimes it is useful to have one file per function. For now, just start with one file). Write or copypaste your functions into this file (_ ProTip: in case you are starting from a tangled mess of functions + function-running-code, maybe `sinew::untangle()` and `sinew::pretty_namespace()` can be really useful)_.
 
   b. Presumably, you've added some functions from other libraries. These are called dependencies, and you need to be explicit about what they are. In order to save time, it's better to use explicit `package::function` notation (for example, `dplyr::select`) at least once per function, as this will be picked up by sinew in the next step, read on.
 
