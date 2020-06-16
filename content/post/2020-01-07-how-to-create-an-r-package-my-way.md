@@ -87,6 +87,8 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
   i. `use_pkgdown()` to have a nice website for your package. Ignore the yml file for now.
 
   j. `usethis::use_news_md()` to create a `NEWS` file which you can use to keep track of modifications. For now the first announcement can just be "First release!" or some such.
+  
+  k. `usethis::use_pipe()` will create all the necessary stuff for you to use the magrittr `%>%` pipe.
    
 ## 4. OK, you're ready to start working on your package! 
  
