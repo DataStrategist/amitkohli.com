@@ -80,7 +80,7 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
 
   f. `usethis::use_lifecycle_badge(stage = "Experimental")` to show that this is a brand new package. Eventually you'll be moving to "Maturing" and eventually to "Stable". This function will generate some markdown code and copied it into your `README.Rmd` in the *badges* section at the top (it should have been done for you, but just double-check, and if not, copy-paste it in yourself).
 
-  g. `use_cran_badge()` to show how if you're on CRAN or not (you're not, but edventually that may change!). Like above, it should have copied for you, but if not, copy the markdown into your `README.Rmd`.
+  g. `use_cran_badge()` to show how if you're on CRAN or not (you're not, but eventually that may change!). Like above, it should have copied for you, but if not, copy the markdown into your `README.Rmd`.
 
   h. Add a license. Depending on your needs, `usethis` has a variety of functions to help you with that, but if you don't know what to pick, `usethis::use_mit_license("YOUR NAME")` is the easy-peesy one if you don't really care.
 
@@ -92,7 +92,7 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
    
 ## 4. OK, you're ready to start working on your package! 
  
-  a. Create a new file in the `/R` folder (It doesn't trully matter what you call this file, I just call the file `funcs.R` and paste all inside, although sometimes it is useful to have one file per function. For now, just start with one file). Write or copypaste your functions into this file (_ ProTip: in case you are starting from a tangled mess of functions + function-running-code, maybe `sinew::untangle()` and `sinew::pretty_namespace()` can be really useful)_.
+  a. Create a new file in the `/R` folder (It doesn't trully matter what you call this file, I just call the file `funcs.R` and paste all inside, although sometimes it is useful to have one file per function. For now, just start with one file). Write or copypaste your functions into this file ( _ProTip: in case you are starting from a tangled mess of functions + function-running-code, maybe `sinew::untangle()` and `sinew::pretty_namespace()` can be really useful_ ).
 
   b. Presumably, you've added some functions from other libraries. These are called dependencies, and you need to be explicit about what they are. In order to save time, it's better to use explicit `package::function` notation (for example, `dplyr::select`) at least once per function, as this will be picked up by sinew in the next step, read on.
 
@@ -150,7 +150,7 @@ Every time you make a modification you'll have to repeat these steps.
     
   Make sure you update these whenever you make changes to the code. 
 
-  b. Run `goodpractice::gp()`, which will check for things that aren't technically wrong, but are probably not goodpractice. The package's maintainer is also a lovely person. 
+  b. Run `goodpractice::gp()`, which will check for things that aren't technically wrong, but are probably not goodpractice. The package's maintainer is also a [lovely person](https://twitter.com/hfcfrick). 
   
   c. `pkgdown::build_site()` will build the website for your package. Remember to redo this everytime you want to do add text to the site!
   
@@ -159,7 +159,7 @@ Every time you make a modification you'll have to repeat these steps.
   e. Help users find your website. Go into the Repository's Settings page (careful to not enter _github settings_, but *the settings for that repository*), and under Github Pages, mark the `Master Branch - docs` folder as the source. This will pop up a URL (you're going to have to scroll back down to get it... annoying). Anyway, it's the one that says something about `github.io`. Copy it.
    [](/post/2020-01-07-how-to-create-an-r-package-my-way_files/Settings.PNG)
    
-  f. Now go back back to the Repo's main page and click on the `Edit` button on the top right hand side of your your Repo's title, and paste that URL into the Website textbox.
+  f. Now go back back to the Repo's main page and click on the `About` thingie on the top right hand side of your your Repo's title, and paste that URL into the Website textbox.
 
 ## 8. Coming back to your package later
 
@@ -171,13 +171,13 @@ As your package becomes more tested, this is refered to as the maturity of the p
  
 ## 9. Extra stuff to consider 
 
-  a. The best way to explain how the various functions of your package are to be used with one-another, is to use a vignette. It's more or less like an extended example, or case-study.  Use `use_vignette` to build the backup files for you.
+  a. The best way to explain how the various functions of your package are to be used with one-another, is to use a vignette. It's more or less like an extended example, or case-study.  Use `use_this::use_vignette` to build the backup files for you.
 
-  b. Travis-CI & Codecov... but that's for another time...
+  b. Testing, Travis-CI & Codecov... but that's for another time... for the moment if you're curious... [check this out](youthttps://youtu.be/MxW0EfgD_wo?t=3490).
  
 
 ## 10. Extra-credit
 
 Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! The cheatsheet with the overall kind of mental flow that I go through when I develop packages. Hope it's useful!
 
-![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/create R package.png)  
+![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png)  
