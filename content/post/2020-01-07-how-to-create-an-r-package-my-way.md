@@ -24,7 +24,7 @@ There IS however a youtube tutorial that covers the steps of this guide, you can
 
 [![How to create an R package using usethis, sinew,  pkgdown and goodpractice](https://img.youtube.com/vi/UqbldUQ4XGs/0.jpg)](https://www.youtube.com/watch?v=UqbldUQ4XGs)
 
-I have also taken the liberty of creating a function in my package `amitFuncs`, which is a bit of a random package of assorted goodness, but anyway, it's the `amitFuncs::packageMakerList()` function in there. You can install the package using: `remotes::install_github("DataStrategist/amitFuncs")`.
+I have also taken the liberty of creating a function that spits out a checklist of steps to follow in my package `amitFuncs` (which is a bit of a random package of assorted goodness). Anyway, it's the `amitFuncs::packageMakerList()` function in there. You can install the package using: `remotes::install_github("DataStrategist/amitFuncs")`.
 
 ## 1. Setting the scene (only do once in your entire life)
 
