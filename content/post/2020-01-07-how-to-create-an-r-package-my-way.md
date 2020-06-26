@@ -52,11 +52,11 @@ OK! Now you're ready to rock and roll!
   
   b. You are going to start from scratch, creating a package using Rstudio's wizard. To do so, click on `File >> new project >> new directory >> R package`, and make sure to enable git:
  
-  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package1.png)
+  ![](./post/2020-01-07-how-to-create-an-r-package-my-way_files/package1.png)
   
-  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
+  ![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
   
-  ![](/post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
+  ![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
  
 CONGRATULATIONS! You have officially created a package! No, of course not... this package doesn't do any of your stuff... it's just the default stuff. But still, small victories, right? Anyway, let's delete all the default stuff and start adding your functions. 
 
