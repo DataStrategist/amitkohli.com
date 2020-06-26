@@ -30,7 +30,7 @@ I have also taken the liberty of creating a function that spits out a checklist 
 
 So there's some stuff you have to do before getting started authoring libraries. You will only have to do these steps once (unless you change your laptop or so). These steps are:
  
-  a. Download R and Rstudio, but you should alreay know that :)
+  a. Download R and Rstudio, but you should alreay know that :) On the off chance that you don't, hello! Welcome to the R community! [Read this](https://moderndive.netlify.com/1-getting-started.html) to learn how to install and get started with R and Rstudio, and if u want just a quick primer, [here u go](https://resources.rstudio.com/webinars/a-gentle-introduction-to-tidy-statistics-in-r).
 
   b. You will be [version controlling](https://nicercode.github.io/git/why.html) through [github](https://github.com/), so let's download [git](https://git-scm.com/downloads). Install it and set it up w/ your name and email. To do so, open up a console or a `git bash`, and type:
   
