@@ -1,0 +1,17 @@
+---
+title: Introducing CarbonFootprintR, the cool way to figure out the carbon footprint
+  of your in-person event
+author: Amit
+date: '2020-07-31'
+slug: introducing-carbonfootprintr-the-cool-way-to-figure-out-the-carbon-footprint-of-your-in-person-event
+categories:
+  - R
+  - library
+tags:
+  - carbon footprint
+  - climate change
+  - climate crisis
+  - events
+  - travel
+description: ''
+---

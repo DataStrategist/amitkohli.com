@@ -1,5 +1,6 @@
 # Ignore all files in this directory
-*
+/*
+*.zip
 # Except this file
+!/consulting
 !.gitignore
-!*/
