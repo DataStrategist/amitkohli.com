@@ -178,7 +178,6 @@ As your package becomes more tested, this is refered to as the maturity of the p
 
 ## 10. Extra-credit
 
-Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! The cheatsheet with the overall kind of mental flow that I go through when I develop packages. Hope it's useful!
-
-![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png)  
+Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! [The cheatsheet with the overall kind of mental flow](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png) that I go through when I develop packages. Hope it's useful!
+  
     
