@@ -3,4 +3,5 @@
 *.zip
 # Except this file
 !/consulting
+!/out_manchester
 !.gitignore
