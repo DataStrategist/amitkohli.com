@@ -6,9 +6,21 @@ date: 2013-02-07T16:35:57+00:00
 
 ---
 
-Greetings! I'm an environmental engineer that changed focus from remediation and design to data analysis, dissemination and visualization. Now I'm focusing on data for decision-making, so dashboards, adaptive management, KPIs and the like, specializing in the international development sector.
+Greetings! 
 
-R is my main weapon of choice and the main tool discussed in this blog. I also have released some libraries for R:
+My name is Amit Kohli. I'm a Mexican/Indian that grew up hopping around South America and then settled in USA where I became an environmental engineer. In 2005 I "wanted more", so after a 6-month world trip, I got my MSc which landed me a job with the UN in Rome. There I became much more interested in systems building and data management. That led me to a Data Director job with a large NGO in Ghana and the UK, and now I'm settled in London where I am a data freelancer.
+
+I like systems. I also hate systems. Anyway, the older I get the more I see systems-thinking as a filter we can apply to just about anything: politics, health-care, gossip, dating, and so on. If something doesn't have an official system, there is for sure an unofficial one lurking around and I'm having a lot of fun trying to find them. 
+
+I believe in helping and minimizing suffering worldwide. I have spent my entire professional life trying to do this via UN/NGOs and by teaching. If you know of a way I can help more, please do get in touch.
+
+I am addicted to learning and want to do everything and am "writing a book"" about that.
+
+## about this blog
+
+One definition of art is "everything done for self-expression". I like that definition. Using that definition, this blog is my artwork. Some posts are analyses, some are providing tools for analysis, and a bunch of other topics. 
+
+[R](https://www.r-project.org/) is my main weapon of choice and the main tool discussed in this blog. I also have released some libraries for R:
  - [ShinyTester](https://cran.r-project.org/web/packages/ShinyTester/index.html) 
  - [TileMaker](https://github.com/DataStrategist/TileMaker)
  - [BulletChartR](https://github.com/ACDIVOCATech/bulletchartr)
@@ -34,17 +46,15 @@ Thanks to the following for aggregating and extending my content:
 
 And to [Blogdown](https://bookdown.org/yihui/blogdown) and [Netlify](https://www.netlify.com) For making this blog possible and free! 
 
-## Quotes
+## quotes
 
 I guess maybe "who I am" is best answered with quotations that have held meaning for me, starting from my main life motivation below:
-
-> "El pasado nunca se va, le gusta esconderse en la musica, en la calle, en los sueños, en los recuerdos, en la vida."
--Mario Benedetti
-
 
 > "**I will do strongly, before the sun and the moon, what inly rejoices me and the heart appoints**."
 -R. W. Emerson
 
+> "El pasado nunca se va, le gusta esconderse en la musica, en la calle, en los sueños, en los recuerdos, en la vida."
+-Mario Benedetti
 
 > Life doesn’t have to reflect your potential or abilities; instead it should reflect your priorities and values.
 -T. Kohli
@@ -67,7 +77,7 @@ I guess maybe "who I am" is best answered with quotations that have held meaning
 
 
 > "Beware of the half truth. You may have gotten hold of the wrong half."
--unknown
+-?
 
 
 > "Na maré mansa já sei remar

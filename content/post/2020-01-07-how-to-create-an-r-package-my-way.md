@@ -22,7 +22,7 @@ This blog post is not intended to be a complete guide to packages. For that, ple
 
 There IS however a youtube tutorial that covers the steps of this guide, you can find it here:
 
-[![How to create an R package using usethis, sinew,  pkgdown and goodpractice](https://img.youtube.com/vi/UqbldUQ4XGs/0.jpg)](https://www.youtube.com/watch?v=UqbldUQ4XGs)
+[![How to create an R package using usethis, sinew,  pkgdown and goodpractice](https://i.ytimg.com/vi/wf7YFIQnD-g/hqdefault.jpg)](https://www.youtube.com/watch?v=wf7YFIQnD-g)
 
 I have also taken the liberty of creating a function that spits out a checklist of steps to follow in my package `amitFuncs` (which is a bit of a random package of assorted goodness). Anyway, it's the `amitFuncs::packageMakerList()` function in there. You can install the package using: `remotes::install_github("DataStrategist/amitFuncs")`.
 
@@ -175,11 +175,11 @@ As your package becomes more tested, this is refered to as the maturity of the p
 
   a. The best way to explain how the various functions of your package are to be used with one-another, is to use a vignette. It's more or less like an extended example, or case-study.  Use `use_this::use_vignette` to build the backup files for you.
 
-  b. Testing, Travis-CI & Codecov... but that's for another time... for the moment if you're curious... [check this out](youthttps://youtu.be/MxW0EfgD_wo?t=3490).
+  b. Testing, Travis-CI & Codecov... but that's for another time... for the moment if you're curious... [check this out](https://youtu.be/MxW0EfgD_wo?t=3490).
  
 
 ## 10. Extra-credit
 
-Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! The cheatsheet with the overall kind of mental flow that I go through when I develop packages. Hope it's useful!
-
-![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png)  
+Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! [The cheatsheet with the overall kind of mental flow](https://raw.githubusercontent.com/DataStrategist/amitkohli.com/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png) that I go through when I develop packages. Hope it's useful!
+  
+    

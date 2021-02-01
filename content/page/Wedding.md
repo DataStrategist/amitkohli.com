@@ -1,5 +1,5 @@
 ---
-title: " "
+title: Wedding
 output: 
   blogdown::html_page:
     toc: true

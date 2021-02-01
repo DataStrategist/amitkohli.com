@@ -28,7 +28,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [Params]
     intro = true
     headline = "AmitKohli.com"
-    description = "hey look!! that's data!! let's see what it's trying to say!"
+    description = "you are data"
     github = "https://github.com/datastrategist"
     linkedin = "https://www.linkedin.com/in/akohli"
     twitter = "https://twitter.com/VizMonkey"
@@ -65,10 +65,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/page/about/"
     weight = 4
     
-[[menu.main]]
-    name = "Talks"
-    url = "/page/talks/"
-    weight = 5
+#[[menu.main]]
+#    name = "Talks"
+#    url = "/page/talks/"
+#    weight = 5
 	
 [[menu.main]]
     name = "Consulting"
