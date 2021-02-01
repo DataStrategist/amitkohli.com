@@ -101,7 +101,7 @@ to set one up, but the `usethis` instructions are kinda clear, follow them.
   - select the entire function and click `Run` (to commit it into the global environment).
   - select JUST the function title and run `sinew`'s `createOxygen` add-in (from the add-ins menu). It will automatically add all the guts required for documentation. Go ahead and fill these out. If you followed step 2b above, exported functions will automatically be added as `@importFrom` blocks. 
 
-  d. If you have dependencies, make sure that the `DESCRIPTION` file knows about all the packages that you need. So go to that file and put the package name under a new `Imports:` section. The function `sinew::makeImport("R", format = "description")` does this, but it can be a bit wonky, so just keep an eye out.
+  d. If you have dependencies, make sure that the `DESCRIPTION` file knows about all the packages that you need. So go to that file and put the package name under a new `Imports:` section. The function `sinew::makeImport("R", format = "description")` does this, but it can be a bit wonky, so just keep an eye out. (❕❕Update: Another newcomer to this area is the package [attachment](https://rtask.thinkr.fr/attachment-cran-v0-2-0-find-dependencies/), which apparently simplies the process pretty significantly. Give it a try!)
 
   e. Under the build menu, go to `more` and `Configure Build tools` to `Generate Documentation` each time every time you `Install and Restart`. This way you don't have to ever think of it again. Eventually if you have tons of documentation you might want to remove that.
   
@@ -139,6 +139,8 @@ Every time you make a modification you'll have to repeat these steps.
   b. You will have more than likely forgotten to include some references to packages in the `DESCRIPTION` file, that's typical... just fix it up.
 
   c. When trying to CHECK your package, R will build some artifacts that sometimes don't get deleted. These are a .Rcheck folder and a `.tar` file. Make sure to delete these everytime you try to `check` your package. If you suspect that something wonky is happening, use this: `amitFuncs::pleaseForTheLoveOfGodLetMeBuild()`
+  d. (❕❕ Update:) The package [flow]( https://moodymudskipper.github.io/flow/index.html) allows the creation of some pretty cool flowcharts that visualize the functions in your package. Install the package (`remotes::install_github("moodymudskipper/flow")`), and then try out `flow_view(YOUR_FUNCTION_HERE)` to visualize your function. Or use `flow_run` to visualize the path that the inputs take through your package. See the documentation on the above page.
+  
      
 ## 7. Final Steps:
   a. OK, we're almost done!!!! SO EXCITING! Now, remember to check all your documentation. We have 4 places to check: 
