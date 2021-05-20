@@ -14,4 +14,9 @@ tags:
   - events
   - travel
 description: ''
+draft:yes
 ---
+
+## Introduction
+
+In this era of COVID19 digital explosions, people are noticing how much of our work CAN be done digitally, as well as the benefits of adopting an online way of life. 

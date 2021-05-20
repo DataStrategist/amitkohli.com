@@ -252,7 +252,7 @@ save that as `chek.sh` and assign it to the cron with the output to your home p
 
  [1]: https://cran.r-project.org/web/packages/twitteR/index.html
  [2]: https://cran.r-project.org/web/packages/streamR/index.html
- [3]: https://github.com/mexindian/linuxRstuff
+ [3]: https://github.com/datastrategist/linuxRstuff
  [4]: deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/
  [5]: https://m.do.co/c/d925aae2d09f
  [6]: https://apps.twitter.com/

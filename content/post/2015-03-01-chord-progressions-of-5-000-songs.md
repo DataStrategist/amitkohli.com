@@ -1,8 +1,8 @@
 ---
-title: Chord progressions of 5 000 songs!
+title: Chord progressions of 5000 songs!
 author: Amit
 type: post
-date: 2015-03-01T19:18:54+00:00
+date: '2015-03-01'
 url: /chord-progressions-of-5-000-songs/
 switch_like_status:
   - 1
@@ -21,7 +21,7 @@ tags:
   - Western music
 
 ---
-Update: Full analysis and everything you need at my github <https://github.com/mexindian/Musical-chord-progressions>
+Update: Full analysis and everything you need at my github <https://github.com/datastrategist/Musical-chord-progressions>
 
 The <a href="http://www.hooktheory.com/trends" target="_blank">Hooktheory.com</a> database contains analyses of over 5000 songs*. These analyses are uploaded by users and allow for all these songs to be analyzed in bulk, as well as individually. One of these &#8216;all song&#8217; analyses enables users to gather chord progressions on ALL songs (see the analysis file to see how i did it, using the hooktheory API and R). This allowed us to  create a Sankey visualization of all chord progressions in the Hooktheory database.
 
@@ -105,7 +105,7 @@ EDIT: I&#8217;ve been getting great feedback on this post. Please check out the�
 *EDIT2: Originally I was under the impression that the hooktheory database contained over 25000 songs&#8230; but a hooktheory admin clarified that in fact there&#8217;s just over 5000.
 
  [1]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/02/chord.prog_.sankey.png
- [2]: https://github.com/mexindian/Musical-chord-progressions
+ [2]: https://github.com/datastrategist/Musical-chord-progressions
  [3]: https://www.youtube.com/watch?v=5pidokakU4I
  [4]: http://www.reddit.com/r/dataisbeautiful/comments/32ol86/chord_progressions_of_25_000_songs_oc/
  [5]: https://news.ycombinator.com/item?id=9394176

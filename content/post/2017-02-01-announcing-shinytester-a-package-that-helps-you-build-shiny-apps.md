@@ -35,7 +35,7 @@ It is my hope that both of these combined minimize the intrinsic boneheadedness 
 
 ### Examples for `ShinyDummyCheck`:
 
-    ShinyTester::ShinyDummyCheck("https://raw.githubusercontent.com/mexindian/ShinyServer/master/LineSelector")
+    ShinyTester::ShinyDummyCheck("https://raw.githubusercontent.com/datastrategist/ShinyServer/master/LineSelector")
     
 
 Provides this table:
@@ -74,7 +74,7 @@ Which shows one of the weaknesses of the function&#8230; it assumes all Item nam
 
 A more complex example:
 
-    ShinyTester::ShinyHierarchy("https://raw.githubusercontent.com/mexindian/ShinyServer/master/LineSelector")
+    ShinyTester::ShinyHierarchy("https://raw.githubusercontent.com/datastrategist/ShinyServer/master/LineSelector")
     
 
 Yields:
@@ -111,7 +111,7 @@ Enjoy!
 (Thanks to my [rusers community][4], especially to [Joshua Kunst][1] and [Colin Phillips][5] for discussion, help and encouragement required to push this through to CRAN).
 
  [1]: http://jkunst.com
- [2]: https://github.com/mexindian/ShinyTester/issues
+ [2]: https://github.com/datastrategist/ShinyTester/issues
  [3]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2017/02/shinyDummyCheck.png
  [4]: http://rusers.co
  [5]: http://www.pivotsciences.com

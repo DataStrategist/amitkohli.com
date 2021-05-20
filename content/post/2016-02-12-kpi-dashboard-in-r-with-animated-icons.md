@@ -155,4 +155,4 @@ As always, full code is in my [github account][2].
 (Editing by <a href="http://Www.linkedin.com/laure.belotti" target="_blank">Laure Belotti</a>)
 
  [1]: https://www.google.com.gh/search?q=KPI+dashboard&prmd=ivns&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwiR_aygzOvKAhWCcRQKHdNjB-MQsAQICg&biw=1278&bih=683&dpr=1&gws_rd=ssl
- [2]: https://github.com/mexindian/KPI
+ [2]: https://github.com/datastrategist/KPI

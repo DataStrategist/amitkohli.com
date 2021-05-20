@@ -22,7 +22,7 @@ tags:
 
 _Due to the popularity of this script, I released it as a package. To install it, use:_ 
 
-<pre>devtools::install_github("mexindian/TileMaker")
+<pre>devtools::install_github("datastrategist/TileMaker")
 </pre>
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
@@ -52,7 +52,7 @@ Value3 = 1.22
 Value4 = 30
 Value5 = 42
 ## Install the package, and call the library
-devtools::install_github("mexindian/TileMaker")
+devtools::install_github("datastrategist/TileMaker")
 library(TileMaker)
 ## Make the buttons how you like
 Button1 &lt;- ButtonMaker(Value = Value1,
@@ -107,7 +107,7 @@ _Edited by: [# Update!!
 
 _Due to the popularity of this script, I released it as a package. To install it, use:_ 
 
-<pre>devtools::install_github("mexindian/TileMaker")
+<pre>devtools::install_github("datastrategist/TileMaker")
 </pre>
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
@@ -137,7 +137,7 @@ Value3 = 1.22
 Value4 = 30
 Value5 = 42
 ## Install the package, and call the library
-devtools::install_github("mexindian/TileMaker")
+devtools::install_github("datastrategist/TileMaker")
 library(TileMaker)
 ## Make the buttons how you like
 Button1 &lt;- ButtonMaker(Value = Value1,
@@ -192,7 +192,7 @@ _Edited by:][6] . Just a quick note, she has been editing my blog forever, and h
 
  [1]: https://rstudio.github.io/shinydashboard/
  [2]: http://getbootstrap.com/
- [3]: https://github.com/mexindian/TileMaker
+ [3]: https://github.com/datastrategist/TileMaker
  [4]: http://demo.bootcards.org/dashboard
  [5]: http://themes.getbootstrap.com/products/dashboard
  [6]: https://www.upwork.com/freelancers/~0110aec48fff897b57

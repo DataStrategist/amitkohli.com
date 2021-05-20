@@ -107,6 +107,6 @@ So clearly, this is a very rough first-pass attempt to keep track of scheduled t
  [4]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2016/05/Capture.png
  [5]: https://i2.wp.com/amitkohli.com/wp-content/uploads/2016/05/diagram-1.png
  [6]: https://trinkerrstuff.wordpress.com/2015/02/11/scheduling-r-tasks-via-windows-task-scheduler/
- [7]: https://github.com/mexindian/CommandCenter
+ [7]: https://github.com/datastrategist/CommandCenter
  [8]: https://xkcd.com/1638/
  [9]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2016/05/dd.png

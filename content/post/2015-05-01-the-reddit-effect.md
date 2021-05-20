@@ -48,5 +48,5 @@ All in all&#8230;It was a fun thing to happen to me, even though forevermore my 
 
  [1]: https://amitkohli.com/?p=246
  [2]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/05/ChordProgressionsNotes.png
- [3]: https://github.com/mexindian/logReffererTS
+ [3]: https://github.com/datastrategist/logReffererTS
  [4]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/05/hits.jpg

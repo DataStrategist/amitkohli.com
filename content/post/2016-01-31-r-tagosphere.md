@@ -99,7 +99,7 @@ After some discussions, I figured it would be more fun to think about what the 
 
 (Incedentally, the top tags are (from popularest to least): ggplot2|plot|data.frame|matrix|shiny|knitr|loops|function|for-loop|list|rstudio|time-series|statistics|data.table|python|subset|apply|xts|plyr|rmarkdown|regression|graph|dplyr|latex|vector|csv|merge|lapply|legend|date|dataframes|rcpp|regex|string|zoo)
 
- [1]: https://github.com/mexindian/StackOverflow-tag-Network-R
+ [1]: https://github.com/datastrategist/StackOverflow-tag-Network-R
  [2]: http://StackOverflow.com
  [3]: http://stackoverflow.com/
  [4]: http://data.stackexchange.com
