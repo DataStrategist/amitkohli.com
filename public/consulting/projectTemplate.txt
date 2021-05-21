@@ -1,0 +1,26 @@
+						<div class="element-item TOPICS">
+                            <a class="popup-with-move-anim" href="#ELEMENTNAME"><div class="element-item-overlay"><span>MAINTITLE</span></div>
+							<img src="IMAGELINK" alt="ELEMENTNAME"></a>
+                        </div>
+						
+						
+	<!-- Lightbox -->
+    <div id="ELEMENTNAME" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="IMAGELINK" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>MAINTITLE</h3>
+                <hr class="line-heading">
+                <h6>SUBTITLE</h6>
+                <p>DESCRIPTION</br></br>
+				
+				<a target = "_blank" href="LINKLINK"><img  alt="more" height="30px" src="images/more.png"></a></p>
+                <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+	

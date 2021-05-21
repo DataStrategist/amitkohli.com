@@ -24,7 +24,7 @@ tags:
 
 In the midst of our random data exploration, Laure and I started playing around with Hadley&#8217;s movies dataset and noticed that there were a lot of old cartoon animations&#8230; I mean REALLY old. So we got excited and wondered if we could find Youtube links for all these old animations. Indeed we could! Here&#8217;s how we did it. As always, the full analysis <a href="https://github.com/datastrategist/Search-engine-scraping-and-stringmatching" target="_blank">is on github</a>.
 
-  1. In R, Load in ggplot2::hadley, which has something like 60 000 movies
+  1. In R, Load in `ggplot2movies::movies`, which has something like 60 000 movies
   2. Reduce this dataset to animations of only 10 minutes or less and then arrange by year and descending rating, then select only <del>1 best animation per year</del>. Hrm&#8230; actually, select each year&#8217;s 3 best-rated cartoons. You&#8217;ll see why later. This reduced dataset has <300 rows&#8230; much more manageable. Of this, only keep the title and year, you don&#8217;t need the rest.
   3. Now let&#8217;s create a column that will give us good search results&#8230; in order to do that, prepend with cartoon and put the year between parentheses so that each row looks like this: &#8220;Cartoon \&#8221;It&#8217;s the Cat\&#8221; (2004)&#8221; (the backslashes escape the quotes inside the string&#8230; dontworriboutem).
   4. Now feed each one of these lines into bing.com (google/yahoo don&#8217;t let us!) and capture the results using httr::GET()

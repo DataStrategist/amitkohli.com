@@ -23,7 +23,7 @@ tags:
   - Reservoir
 
 ---
-The last task I performed for <a href="http://www.fao.org/nr/aquastat" target="_blank">AQUASTAT</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. There will be a paper coming out soon, but in the meantime, I provide one of the fun outputs, a map of 75000 dams!
+The last task I performed for <a href="http://www.fao.org/nr/aquastat" target="_blank">AQUASTAT</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. The paper can be found [here]("http://www.fao.org/3/bc814e/bc814e.pdf"), but here I provide one of the fun outputs, a map of 75000 dams!
 
 [<img class="alignnone size-medium wp-image-401" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?resize=300%2C263" alt="dams" width="300" height="263" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?resize=300%2C263 300w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?w=624 624w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
 
