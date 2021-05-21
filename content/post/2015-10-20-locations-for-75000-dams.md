@@ -23,11 +23,11 @@ tags:
   - Reservoir
 
 ---
-The last task I performed for <a href="http://www.fao.org/nr/aquastat" target="_blank">AQUASTAT</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. The paper can be found [here]("http://www.fao.org/3/bc814e/bc814e.pdf"), but here I provide one of the fun outputs, a map of 75000 dams!
+The last task I performed for <a href="http://www.fao.org/nr/aquastat" target="_blank">AQUASTAT</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. The paper can be found <a href ="http://www.fao.org/3/bc814e/bc814e.pdf">here</a>, but here I provide one of the fun outputs, a map of 75000 dams!
 
 [<img class="alignnone size-medium wp-image-401" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?resize=300%2C263" alt="dams" width="300" height="263" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?resize=300%2C263 300w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2015/10/dams.png?w=624 624w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
 
-ok okok&#8230; it&#8217;s not REALLY 75000 dams, this is an duplicate-containing amalgam of:
+ok, ok, ok... it's not REALLY 75000 dams, this is an duplicate-containing amalgam of:
 
   * <a href="http://www.fao.org/nr/water/aquastat/dams/index.stm" target="_blank">AQUASTAT </a>dams with known location (green up arrow)
   * AQUASTAT dams with guessed location, estimated by City if known, else by State if known, else by Country (green diagonal arrow)
