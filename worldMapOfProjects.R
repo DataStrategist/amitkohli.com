@@ -6,12 +6,12 @@ library(htmltools)
 
 # Download the map -------------------------------------------------------
 # download.file("http://thematicmapping.org/downloads/TM_WORLD_BORDERS_SIMPL-0.3.zip" , 
-#               destfile="data/world_shape_file.zip")
+#               destfile="data_mine/world_shape_file.zip")
 # 
-# system("unzip -o data/world_shape_file.zip -d data")
+# system("unzip -o data_mine/world_shape_file.zip -d data_mine")
 
 world_spdf <- rgdal::readOGR( 
-  dsn= paste0(getwd(), "/data") , 
+  dsn= paste0(getwd(), "/data_mine") , 
   layer="TM_WORLD_BORDERS_SIMPL-0.3",
   verbose=FALSE
 )
@@ -23,7 +23,7 @@ visited_countries <- c("CHL", "USA", "COL", "HND", "URY", "PRY", "MEX",
                        "GHA", "ETH", "ZMB", "KEN", "TZA",
                        "BGD", "PHL", "IND")
 
-AVp <- readr::read_csv("data/ACDIVOCA projects") %>% 
+AVp <- readr::read_csv("data_mine/ACDIVOCA projects") %>% 
   mutate(Country = ifelse(Country == "Tanzania", "United Republic of Tanzania", Country)) %>% 
   left_join(world_spdf@data, by = c("Country" = "NAME")) %>% 
   ##Meh, some I didn't really do:
@@ -61,7 +61,7 @@ tag.map.title <- tags$style(HTML("
 "))
 
 title <- tags$div(
-  tag.map.title, HTML("Projects, postings, conferences")
+  tag.map.title, HTML("I have worked around the world")
 )  
 
 m %>%
