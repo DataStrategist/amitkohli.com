@@ -48,7 +48,7 @@ tag.map.title <- tags$style(HTML("
   .leaflet-control.map-title { 
     transform: translate(-50%,20%);
     position: fixed !important;
-    left: 14%;
+    left: 20%;
     text-align: center;
     padding-left: 10px; 
     padding-right: 10px; 
@@ -61,7 +61,7 @@ tag.map.title <- tags$style(HTML("
 "))
 
 title <- tags$div(
-  tag.map.title, HTML("Where have I worked")
+  tag.map.title, HTML("Projects, postings, conferences")
 )  
 
 m %>%
