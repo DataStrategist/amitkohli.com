@@ -1,0 +1,234 @@
+---
+title: How are SDG Indicators interconnected?
+author: Amit
+date: '2022-07-20'
+slug: []
+categories:
+  - Analysis
+  - Data
+  - R
+  - Visualizations
+tags:
+  - SDG
+  - UN
+  - Network
+description: ''
+draft: no
+---
+
+## Intro
+
+The Sustainable Development Goals (SDGs) are a set of 17 goals that were adopted by all United Nations Member States in 2015. The SDGs are a universal call to action to end poverty, protect the planet, and ensure that all people enjoy peace and prosperity. The SDGs are Goals (the "G" in SDG).
+
+The SDGs are interrelated, and each Goal has specific targets that need to be met in order to achieve the Goal. For example, Goal 1 is to “End poverty in all its forms everywhere” and Goal 2 is to “End hunger, achieve food security and improved nutrition, and promote sustainable agriculture”. Achieving Goal 1 will require progress on Goal 2, and vice versa. As you can imagine, "fixing the world" is pretty hard, especially when you consider that progress might need to manifest in a specific order to change the system. Still, the exact mappings of these causal relationships are hard to identify and even harder to intuit.
+
+## "Huh, that's interesting..."
+
+Under each Target, there are Indicators that provide the measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is "related indicators", but it's important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. Anyway, if we digest all the metadata sheets and harvest all the "related Indicators" for each Indicator, we have a list of "from's" and "to's", don't we? Hey, that's an edgelist and can be use it to plot these indicators as a network!
+
+## Start your engines...
+
+We can download all the indicator sheets at the same time, and then unzip the results. The contents are pdfs and word files, but we'll only work w/ the Word files because they are easier to parse from R using the `readtext` package.
+
+```{r}
+library(tidyverse)
+library(readtext)
+library(visNetwork)
+
+## create a small little loop to protect against downloading the file many times while I iterate. When I'm ready to publish, let's change this use_cache to FALSE.
+use_cache = TRUE
+
+if (!use_cache){
+  tempdir <- tempdir()
+  download.file("https://unstats.un.org/sdgs/metadata/files/SDG-indicator-metadata.zip",
+                destfile = paste0(tempdir, "/z.zip"))
+  unzip(paste0(tempdir, "/z.zip"), exdir = paste0(tempdir, "/data"))
+  
+  # ## Delete pdfs, but don't wait around
+  # list.files(paste0(tempdir, "/data"), pattern = "*.pdf", full.names = TRUE) %>% paste("rm", .)
+  #   system(., intern = FALSE, ignore.stdout = FALSE, ignore.stderr = FALSE, wait = FALSE)
+} else {
+  tempdir <- "c:/temp"
+}
+
+```
+
+OK, we need to harvest all the Indicators mentioned in section `0.f`, the "Related Indicators" section. Unfortunately, the indicators are intermingled with text. Luckily, they all have a similar structure... a number, separator, number|letter(s), separator, number|letter(s). Therefore, we can use regex to pull these out. Let's just identify section `0.f`, and `0.g`, grab everything in between, and then regex for the sections we need.
+
+We will construct a function, and then map that for all the indicator sheets.
+
+```{r}
+
+extractor <- function(specific_file){
+  this_one <- str_extract(specific_file, "[0-9]+\\-..\\-..") 
+  x <- readtext(specific_file)
+  all_text <- x$text %>% str_split("\n") %>% pluck(1)
+  top <- grep("0\\.f\\.", all_text)
+  bottom <- grep("0\\.g\\.", all_text)
+  
+  related <- all_text[(top + 1):(bottom - 1)] %>% 
+    str_extract_all("[0-9]+\\.[0-9a-zA-Z]+\\.[0-9a-zA-Z]+") %>% unlist
+  if(length(related) == 0) related = NA
+    return(data.frame(from = this_one, to = related))
+}
+
+all_indicators <- list.files(paste0(tempdir, "/data"), 
+                             "docx", full.names = TRUE) %>% 
+  discard(grepl("~", .))
+
+# extractor(all_indicators[15])
+
+all_data <- all_indicators %>% 
+  # head(10) %>% 
+  set_names %>%
+  map(safely(extractor))
+
+all_data %>% map("error") %>%  
+  map(as.character) %>% 
+  enframe %>% unnest(value)
+
+all_data <- all_data %>% map("result")
+
+```
+
+OK! Now we have everything we need! Let's just clean things up a bit to make the syntax the same whether indicators were lifted from section `0.f` or from the file name. Once we have that all cleaned up, we can use the [easynetwork](https://github.com/DataStrategist/easyNetwork) package by yours truly to create a nodes & edges object suitable for subsequent manipulation. 
+
+``` {r}
+## clean up
+g <- all_data %>%
+  bind_rows %>% 
+  mutate(from = gsub("\\-", "\\.", from)) %>% 
+  ## remove all leading zeros
+  mutate(from = gsub("\\.0", "\\.", from),
+         to = gsub("\\.0", "\\.", to)) %>% 
+  mutate(from = gsub("^0", "", from),
+         to = gsub("^0", "", to)) %>% 
+  ## and remove self connections, and connections to nowhere
+  filter(to != from | is.na(to),
+         !is.na(to)) %>% 
+  ## Use easymode from https://github.com/DataStrategist/easyNetwork
+  easyNetwork::edgeListToNodesEdges()
+```
+
+OK, let's take a quick look at what this looks like:
+
+``` {r}
+## let's take a look at a tiny bit of this network to see if it worked.
+small_edges <- g$edges %>% sample_n(20)
+small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges$to)
+
+visNetwork(small_nodes, small_edges)
+```
+
+It seems to work! But now, let's add the proper SDG colors (there is [very serious guidance](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf) about this). Unfortunately, it's not very machine readable. Fortunately for us, the nice people of [Our World in Data](https://ourworldindata.org) already created a "userfriendlier" list of these colors [here](https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss). Let's apply these groups and colors.
+
+```{r}
+sdg_cols <- c("no-poverty-color: #e5243b",
+"zero-hunger-color: #dda63a",
+"good-health-color: #4c9f38",
+"quality-education-color: #c5192d",
+"gender-equality-color: #ff3a21",
+"water-and-sanitation-color: #26bde2",
+"energy-color: #fcc30b",
+"economic-growth-color: #a21942",
+"infrastructure-industrialization-color: #fd6925",
+"inequality-color: #dd1367",
+"cities-color: #fd9d24",
+"sustainable-consumption-production-color: #bf8b2e",
+"climate-change-color: #3f7e44",
+"oceans-color: #0a97d9",
+"biodiversity-color: #56c02b",
+"peace-justice-color: #00689d",
+"global-partnerships-color: #19486a") %>% 
+  str_split(": ", simplify = TRUE) %>% as.data.frame %>% set_names(c("group_name", "color")) %>% 
+  rownames_to_column("sdg")
+
+sdg_cols
+```
+
+Cool, now let's join it up with the network and plot it!
+
+```{r}
+g$nodes <- g$nodes %>% 
+  mutate(sdg = gsub("\\..+", "", name)) %>% 
+  select(-color) %>% 
+  left_join(sdg_cols, by = "sdg")
+
+g$nodes
+```
+
+Cool, let's take another peek at what the network looks like:
+
+```{r}
+## let's take a look at a tiny bit of this network to see if it worked.
+small_edges <- g$edges %>% sample_n(20)
+small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges$to)
+
+visNetwork(small_nodes, small_edges)
+```
+We are getting there! We could add the legend, but that might be clunky. For sure we should add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract.
+
+```{r}
+ind_extractor <- function(specific_file){
+  this_one <- str_extract(specific_file, "[0-9]+\\-..\\-..") 
+  x <- readtext(specific_file)
+  all_text <- x$text %>% str_split("\n") %>% pluck(1)
+  ind <- grep("0\\.c\\.", all_text)
+  
+  related <- all_text[(ind + 1)] %>% unlist
+  if(length(related) == 0) related = NA
+    return(related)
+}
+
+# ind_extractor(all_indicators[120])
+
+all_names <- all_indicators %>% 
+  # head(10) %>% 
+  set_names %>%
+  map(ind_extractor)
+
+## clean up
+ind_names <- all_names %>% enframe %>% unnest(value) %>% mutate(name = gsub(".+Metadata-|\\.docx", "", name)) %>% 
+  set_names("ind_num", "ind_name") %>% 
+  mutate(ind_num = gsub("\\-", "\\.", ind_num)) %>% 
+  ## remove all leading zeros
+  mutate(ind_num = gsub("\\.0", "\\.", ind_num),
+         ind_name = gsub("\\.0", "\\.", ind_name)) %>% 
+  mutate(ind_num = gsub("^0", "", ind_num),
+         ind_name = gsub("^0", "", ind_name)) %>% 
+  ## keep only the first row (just in case) %>% 
+  group_by(ind_num) %>% slice(1) %>% ungroup
+
+ind_names
+```
+It's not perfect, but perhaps close enough. Let's join these back and have them show up on mouseover of the nodes:
+
+```{r}
+g$nodes <- g$nodes %>% left_join(ind_names, by = c("name" = "ind_num")) %>% 
+  rename(title = ind_name)
+```
+
+Let's take another look, maybe adding a legend?:
+
+```{r}
+## let's take a look at a tiny bit of this network to see if it worked.
+small_edges <- g$edges %>% sample_n(20)
+small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges$to)
+
+visNetwork(small_nodes, small_edges) %>% 
+  visLegend(addNodes = sdg_cols %>% rename(label=group_name) %>%  
+              mutate(shape = "box", font.color = "white", 
+                     label = gsub("-", " ", label), label = gsub("color", "", label)) %>% 
+              unite(label, sdg, label, sep = " "), useGroups = FALSE)
+```
+Kind of hate it, but whatever :) Let's take off the arrows (since the relationship is what matters, not the presumed direction), and view the full network!
+
+```{r}
+visNetwork(g$nodes, g$edges %>% select(-arrows))
+```
+
+Wonderful! It becomes very clear to see the relationships. The next logical step is execute some neighbourhood detection, to identify what are the "clusters" of indicators that perhaps explain a part of the system.
+
+
+
+
