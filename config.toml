@@ -55,10 +55,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$","\\.knit\\.md$", "\\.utf8\\
 #    url = "/project/"
 #    weight = 2
     
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 3
+#[[menu.main]]
+#    name = "Categories"
+#    url = "/categories/"
+#    weight = 3
 
 [[menu.main]]
     name = "About"
