@@ -1,0 +1,49 @@
+baseurl: /
+languageCode: en-us
+title: Blog by Amit Kohli 
+theme: hugo-lithium
+googleAnalytics: "UA-39057488-1"
+disqusShortname: "amitkohli-com"
+ignoreFiles:
+  - \.Rmd$
+  - \.Rmarkdown$
+  - _cache$
+  - \.knit\.md$
+  - \.utf8\.md$
+permalinks:
+  post: /:year/:month/:day/:slug/
+menu:
+  main:
+    - name: Blog
+      url: /
+    - name: About
+      url: /about/
+    - name: Consulting
+      url: https://www.amitkohli.com/consulting
+params:
+  intro: true
+  headline: "AmitKohli.com"
+  description: "you are data"
+  github: "https://github.com/datastrategist"
+  linkedin: "https://www.linkedin.com/in/akohli"
+  twitter: "https://twitter.com/_amitkohli_"
+  stackoverflow: "https://stackoverflow.com/users/2883603/amit-kohli"
+  MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
+  MathJaxVersion: 2.7.5
+  favicon: favicon.ico
+  highlightjsCDN: //cdnjs.cloudflare.com/ajax/libs
+  highlightjsLang:
+    - r
+    - yaml
+  highlightjsTheme: github
+  highlightjsVersion: 9.12.0
+  logo:
+    alt: Logo
+    height: 50
+    url: logo1.png
+    width: 50
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: yes
