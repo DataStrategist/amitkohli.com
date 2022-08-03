@@ -8,13 +8,11 @@ date: 2013-02-07T16:35:57+00:00
 
 Greetings! 
 
-My name is Amit Kohli. I'm a Mexican/Indian that grew up hopping around South America and then settled in USA where I became an environmental engineer. In 2005 I "wanted more", so after a 6-month world trip, I got my MSc which landed me a job with the UN in Rome. There I became much more interested in systems building and data management. That led me to a Data Director job with a large NGO in Ghana and the UK, and now I'm settled in London where I am a data freelancer.
-
-I like systems. I also hate systems. Anyway, the older I get the more I see systems-thinking as a filter we can apply to just about anything: politics, health-care, gossip, dating, and so on. If something doesn't have an official system, there is for sure an unofficial one lurking around and I'm having a lot of fun trying to find them. 
+My name is Amit Kohli. I'm a Mexican/Indian that grew up hopping around South America and then settled in USA where I became an environmental engineer. In 2005 I "wanted more", so after a 6-month world trip, I got my MSc which landed me a job with the UN in Rome. There I became much more interested in systems building and data management. That led me to a Data Director job with a large NGO in Ghana and the UK, and now I'm settled in London where I am a data freelancer in the #data4good space.
 
 I believe in helping and minimizing suffering worldwide. I have spent my entire professional life trying to do this via UN/NGOs and by teaching. If you know of a way I can help more, please do get in touch.
 
-I am addicted to learning and want to do everything and am "writing a book"" about that.
+I am addicted to learning and want to do everything and am "writing a book" about that.
 
 ## about this blog
 
@@ -25,17 +23,15 @@ One definition of art is "everything done for self-expression". I like that defi
  - [TileMaker](https://github.com/DataStrategist/TileMaker)
  - [BulletChartR](https://github.com/ACDIVOCATech/bulletchartr)
 
-Lastly, I also [blog at work](https://www.acdivoca.org/data-digest). 
+## Professionally, who am I?
 
- - My interests:
-  * water resources and national level water use
-  * development
-  * data-management
-  * art / music /movies
-  * the maker movement
+One way to understand who I am, is by tracking my professional expertise:
 
-Please see my >><a href="http://resumup.com/25069962/visual_infographic_resume" target="_blank">Visual resume</a><<.
-<a href="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png" rel="attachment wp-att-577"><img class="alignnone size-medium wp-image-577" src="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=300%2C97" alt="Infographic resume" width="300" height="97" srcset="https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=300%2C97 300w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=768%2C249 768w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=1024%2C333 1024w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?resize=700%2C227 700w, https://i2.wp.com/amitkohli.com/wp-content/uploads/2013/02/resumup.png?w=1500 1500w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>
+<img src = "notData/timeline.PNG">
+
+But perhaps more interestingly, this representation perhaps shows the _why_ of the changes:
+
+<iframe src = "notData/path.html">
 
 ## roll-call
 
@@ -50,11 +46,14 @@ And to [Blogdown](https://bookdown.org/yihui/blogdown) and [Netlify](https://www
 
 I guess maybe "who I am" is best answered with quotations that have held meaning for me, starting from my main life motivation below:
 
+
 > "**I will do strongly, before the sun and the moon, what inly rejoices me and the heart appoints**."
 -R. W. Emerson
 
+
 > "El pasado nunca se va, le gusta esconderse en la musica, en la calle, en los sueños, en los recuerdos, en la vida."
 -Mario Benedetti
+
 
 > Life doesn’t have to reflect your potential or abilities; instead it should reflect your priorities and values.
 -T. Kohli
