@@ -16,12 +16,16 @@ menu:
   main:
     - name: Home
       url: /landing/
+      weight: 1
     - name: Blog
       url: /
+      weight: 2
     - name: About
       url: /about/
+      weight: 3
     - name: Consulting
       url: https://www.amitkohli.com/consulting
+      weight: 4
 params:
   intro: true
   headline: "AmitKohli.com"
