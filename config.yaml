@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: https://www.amitkohli.com/
 languageCode: en-us
 title: Blog by Amit Kohli 
 theme: hugo-lithium
@@ -21,7 +21,7 @@ menu:
       url: /
       weight: 2
     - name: About
-      url: /about/
+      url: /aboutme/
       weight: 3
     - name: Consulting
       url: https://www.amitkohli.com/consulting
