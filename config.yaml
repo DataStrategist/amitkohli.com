@@ -15,7 +15,7 @@ permalinks:
 menu:
   main:
     - name: Home
-      url: /landing
+      url: /landing/
     - name: Blog
       url: /
     - name: About

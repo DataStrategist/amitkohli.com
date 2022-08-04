@@ -31,7 +31,7 @@ One way to understand who I am, is by tracking my professional expertise:
 
 But perhaps more interestingly, this representation perhaps shows the _why_ of the changes:
 
-<iframe src = "../notData/path.html"></iframe>
+<iframe src = "../notData/path.html" width = "600px" height = "600px"></iframe>
 
 ## roll-call
 
