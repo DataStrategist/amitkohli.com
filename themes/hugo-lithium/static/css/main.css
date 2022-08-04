@@ -25,6 +25,10 @@ a {
   outline: none;
 }
 
+pre {
+  background-color: #BBBBBB;
+}
+
 code {
   background-color: #BBBBBB;
 }
