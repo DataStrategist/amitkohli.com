@@ -21,7 +21,7 @@ One of the arduino tutorials was for a theremin. With a few modifications I was 
 
 Enjoy!
 
-
+[![Watch the video](https://i.imgur.com/oKbEwok25CE.png)](https://youtu.be/oKbEwok25CE)
 
 Arduino code follows (prolly doesn&#8217;t make TOO much sense without the wiring schematic&#8230; if there&#8217;s interest I&#8217;ll put up a picture).
 

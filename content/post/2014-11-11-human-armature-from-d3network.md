@@ -4,8 +4,22 @@ author: Amit
 type: post
 date: 2014-11-11T00:17:06+00:00
 url: /human-armature-from-d3network/
-0:
-  - |
+xyz_smap:
+  - 1
+categories:
+  - Art
+  - R
+  - Tutorials
+tags:
+  - armature
+  - d3Network
+  - frame
+  - human
+  - R
+
+---
+So a little bit of R, a little bit of d3Network and boom! Instant interactive html human!
+
     <style>
     .link {
     stroke: #666;
@@ -104,22 +118,7 @@ url: /human-armature-from-d3network/
     }
     
     </script>
-xyz_smap:
-  - 1
-categories:
-  - Art
-  - R
-  - Tutorials
-tags:
-  - armature
-  - d3Network
-  - frame
-  - human
-  - R
-
----
-So a little bit of R, a little bit of d3Network and boom! Instant interactive html human!
-
+    
 &nbsp;
 
 <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ -->
