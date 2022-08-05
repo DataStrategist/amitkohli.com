@@ -26,11 +26,15 @@ a {
 }
 
 pre {
-  background-color: #BBBBBB;
+  border-radius: 25px;
+  background: #F0F0F0;
+  padding: 20px;
 }
 
 code {
-  background-color: #BBBBBB;
+  border-radius: 25px;
+  background: #F0F0F0;
+  padding: 20px;
 }
 
 img {
