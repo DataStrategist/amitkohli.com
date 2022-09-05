@@ -6,32 +6,31 @@ date: 2013-02-07T16:35:57+00:00
 
 ---
 
-Greetings! 
+## Hello! Welcome!
 
-My name is Amit Kohli. I'm a Mexican/Indian that grew up hopping around South America and then settled in USA where I became an environmental engineer. In 2005 I "wanted more", so after a 6-month world trip, I got my MSc which landed me a job with the UN in Rome. There I became much more interested in systems building and data management. That led me to a Data Director job with a large NGO in Ghana and the UK, and now I'm settled in London where I am a data freelancer in the #data4good space.
+My name is Amit, and I'm one of those eternal learners. These days, I spend most of my work time (and a fair amount of my leisure time) playing around in the "data space". There is so much power available, it's truly incredible what we can do these days (and yet, it seems so many people are locked out of this transformation, but let's not get into that just yet). 
 
-I believe in helping and minimizing suffering worldwide. I have spent my entire professional life trying to do this via UN/NGOs and by teaching. If you know of a way I can help more, please do get in touch.
+I love [R](https://www.dataquest.io/blog/three-mighty-good-reasons-to-learn-r-for-data-science/), and use it to do all manner of things. I'm also paying close attention to "New AI", like LLMs (GPT-3, Bloom, etc) and image generators (mid Journey, DALL-E2, etc). If it's not data, it's either "maker stuff" (I'm currently infatuated with CNC mills and laser-cutters), or video games or trying to find someone to throw a frisbee at.
 
-I am addicted to learning and want to do everything and am "writing a book" about that.
+Professionally, it's hard to describe who I am. I tend to work for "for-good" initiatives like NGOs, governments, UN, and the like. As you can imagine, they don't have budgets for big data teams, so I tend to do a bit of everything... and as I mature in my career, I am not only the "tech person", but I'm also the person raising the human concerns about tech. I describe myself as a "Senior Data Scientist", or as a "data transformationalist", or as a "system builder". Bah, I don't know what I am. I fed my Resume to GPT-3 and this is what it thought I was:
+
+> This man has a resume that looks like he has a lot of experience in the field of data and technology. He has worked with various organizations, both in the private and public sectors, and has a lot of experience in managing and developing data strategies. He is also a skilled teacher and has experience in training others in data and technology.
+
+(let's step over the fact that I only fed it bullet-points and never said I was male, but it guessed my gender from my profile. Anyway). 
+
+Specifically, this is what I've done:
+
+<a href="notData/timeline.PNG"><img src = "notData/timeline.PNG"></a>
+
+But perhaps more interestingly, this representation perhaps shows the _why_ I became who I am (zoom in, click and play around... this viz is interactive!):
+
+<iframe src = "../notData/path.html" width = "600px" height = "900px"></iframe>
+
+If you're interested in working with me professionally, head on over to my [consulting](https://www.amitkohli.com/consulting/) page.
 
 ## about this blog
 
-One definition of art is "everything done for self-expression". I like that definition. Using that definition, this blog is my artwork. Some posts are analyses, some are providing tools for analysis, and a bunch of other topics. 
-
-[R](https://www.r-project.org/) is my main weapon of choice and the main tool discussed in this blog. I also have released some libraries for R:
- - [ShinyTester](https://cran.r-project.org/web/packages/ShinyTester/index.html) 
- - [TileMaker](https://github.com/DataStrategist/TileMaker)
- - [BulletChartR](https://github.com/ACDIVOCATech/bulletchartr)
-
-## Professionally, who am I?
-
-One way to understand who I am, is by tracking my professional expertise:
-
-<img src = "notData/timeline.PNG">
-
-But perhaps more interestingly, this representation perhaps shows the _why_ of the changes (zoom in, click and play around... this viz is interactive!):
-
-<iframe src = "../notData/path.html" width = "600px" height = "900px"></iframe>
+One definition of art is "everything done for self-expression". I like that definition. Using that definition, this blog is my artwork. Some posts are analyses, some are providing tools for analysis, and "a mishmash" of other stuff. 
 
 ## roll-call
 

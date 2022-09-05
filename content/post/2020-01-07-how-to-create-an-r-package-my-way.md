@@ -48,24 +48,34 @@ So there's some stuff you have to do before getting started authoring libraries.
 
 OK! Now you're ready to rock and roll!
 
-## 2. Let's create a new package!
+## 2. Let's create a new package! First steps:
 
   a. Before you get started, let's find a good name for your package. In order to help you see if the name you had thought up is already taken, use the package [available](https://github.com/r-lib/available). The instructions on how to use it are on that page. Once you have a good name, proceed.  
   
-  b. You are going to start from scratch, creating a package using Rstudio's wizard. To do so, click on `File >> new project >> new directory >> R package`, and make sure to enable git:
+  b. You are going to start from scratch. You can do this with `usethis`, or using Rstudio's wizard.
+  
+  **For usethis**:
+  
+   - Use RStudio's folder browser to figure out where you want to save your project, and then create a folder. Do so using: `rstudioapi::selectDirectory()` (or any other way if not inside Rstudio). You want something that looks like: `"C:/Projects/new_package"`.
+   - Type `usethis::create_package("packageNameAndPath")` (the output of the step above). This creates the package
+   - Once inside the new project, type `usethis::use_git()` to create the git repo, and create an initial commit.
+   
+   **For rstudio's wizard**:
+   
+   Click on `File >> new project >> new directory >> R package`, and make sure to enable git:
  
   ![](./post/2020-01-07-how-to-create-an-r-package-my-way_files/package1.png)
   
-  ![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
+  ![](./post/2020-01-07-how-to-create-an-r-package-my-way_files/package2.png)
   
-  ![](https://github.com/DataStrategist/amitkohli.com/blob/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
+  ![](./post/2020-01-07-how-to-create-an-r-package-my-way_files/package3.png)
  
 CONGRATULATIONS! You have officially created a package! No, of course not... this package doesn't do any of your stuff... it's just the default stuff. But still, small victories, right? Anyway, let's delete all the default stuff and start adding your functions. 
 
 ## 3. Housekeeping
-  a. Delete `hello.R` from the `/R` folder.
+  a. (If  you used the wizard) Delete `hello.R` from the `/R` folder.
 
-  b. Delete `hello.Rd` from the `/man` folder (btw this is where the documentation lives but don't worry you won't need to know that).
+  b. (If  you used the wizard) Delete `hello.Rd` from the `/man` folder (btw this is where the documentation lives but don't worry you won't need to know that).
 
   c. Modify the `DESCRIPTION` file to say what this package is and how to use it. Add in all the details you want (for author use this format: `person("First", "Last", email = "first.last@example.com",role = c("aut", "cre")))`. "aut" means "author", and "cre" means "creator".
 
@@ -186,3 +196,18 @@ As your package becomes more tested, this is refered to as the maturity of the p
 Since you're awesome and have made it to the end of the blog post, here's an extra surprise for you! The cheatsheet with the overall kind of mental flow that I go through when I develop packages. Hope it's useful!
 
 ![](https://raw.githubusercontent.com/DataStrategist/amitkohli.com/master/static/post/2020-01-07-how-to-create-an-r-package-my-way_files/create%20R%20package.png)  
+
+## 11. (Update!) Starting from a folder already set up
+
+What if you have already done a ton of work and just want to convert your work to a package? Well, Tan Ho presented in [a presentation](https://onedrive.live.com/view.aspx?resid=8A50824BF595C906!817&ithint=file%2cpptx&authkey=!AJhbqQtMtPSJ4SY) that we can easily capture everything using the `usethis` package:
+
+```
+## this code is verbatim from the presentation referenced above, go check it out!
+
+library(usethis)
+
+use_description() # use template
+use_mit_license() # add license of choice
+use_package() # add dependencies
+use_latest_dependencies() # specify version of dependencies you used
+```

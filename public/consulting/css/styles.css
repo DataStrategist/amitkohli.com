@@ -1116,18 +1116,33 @@ input[type='checkbox'] {
 	background: linear-gradient(to bottom right, #14bf98, #1bd1a7);
 }
 
-.tabs #tab-1 .progress-bar.first {
+.tabs #tab-1 .progress-bar.hundred {
 	width: 100%;
 }
 
-.tabs #tab-1 .progress-bar.second {
-	width: 75%;
-}
-
-.tabs #tab-1 .progress-bar.third {
+.tabs #tab-1 .progress-bar.ninety {
 	width: 90%;
 }
 
+.tabs #tab-1 .progress-bar.eighty {
+	width: 80%;
+}
+
+.tabs #tab-1 .progress-bar.seventy {
+	width: 70%;
+}
+
+.tabs #tab-1 .progress-bar.sixty {
+	width: 60%;
+}
+
+.tabs #tab-1 .progress-bar.fifty {
+	width: 50%;
+}
+
+.tabs #tab-1 .progress-bar.forty {
+	width: 40%;
+}
 .tabs #tab-2 .list-unstyled {
 	margin-top: 1.75rem;
 	margin-bottom: 0;

@@ -14,8 +14,8 @@ permalinks:
   post: /:year/:month/:day/:slug/
 menu:
   main:
-    - name: Home
-      url: /landing/
+    - name: A comforting message 
+      url: /comfort/
       weight: 1
     - name: Blog
       url: /
