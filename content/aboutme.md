@@ -20,7 +20,8 @@ Professionally, it's hard to describe who I am. I tend to work for "for-good" in
 
 Specifically, this is what I've done:
 
-<a href="notData/timeline.PNG"><img src = "notData/timeline.PNG"></a>
+<a href="notData/timeline.PNG"><img src = "../notData/timeline.PNG"></a>
+
 
 But perhaps more interestingly, this representation perhaps shows the _why_ I became who I am (zoom in, click and play around... this viz is interactive!):
 
