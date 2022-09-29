@@ -13,7 +13,7 @@ tags:
   - UN
   - Network
 description: ''
-draft: yes
+draft: no
 ---
 
 ## Intro
@@ -24,16 +24,16 @@ The SDGs are interrelated, and each Goal has specific targets that need to be me
 
 ## "Huh, that's interesting..."
 
-Under each Target, there are Indicators that provide the measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is "related indicators", but it's important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. Anyway, if we digest all the metadata sheets and harvest all the "related Indicators" for each Indicator, we have a list of "from's" and "to's", don't we? Hey, that's an edgelist and can be use it to plot these indicators as a network!
+Under each Target, there are Indicators that provide the measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is "related indicators", but it's important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. Anyway, if we digest all the metadata sheets and harvest all the "related Indicators" for each Indicator, we have a list of "from's" and "to's", don't we? Hey, that's an [edgelist](https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists) and can be use it to plot these indicators as a network!
 
 ## Start your engines...
 
 We can download all the indicator sheets at the same time, and then unzip the results. The contents are pdfs and word files, but we'll only work w/ the Word files because they are easier to parse from R using the `readtext` package.
 
-```{r}
-library(tidyverse)
-library(readtext)
-library(visNetwork)
+```{r warning=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(readtext))
+suppressPackageStartupMessages(library(visNetwork))
 
 ## create a small little loop to protect against downloading the file many times while I iterate. When I'm ready to publish, let's change this use_cache to FALSE.
 use_cache = TRUE
@@ -83,6 +83,7 @@ all_data <- all_indicators %>%
   set_names %>%
   map(safely(extractor))
 
+## are there any errors? If there are, we'll see them here:
 all_data %>% map("error") %>%  
   map(as.character) %>% 
   enframe %>% unnest(value)
@@ -91,7 +92,7 @@ all_data <- all_data %>% map("result")
 
 ```
 
-OK! Now we have everything we need! Let's just clean things up a bit to make the syntax the same whether indicators were lifted from section `0.f` or from the file name. Once we have that all cleaned up, we can use the [easynetwork](https://github.com/DataStrategist/easyNetwork) package by yours truly to create a nodes & edges object suitable for subsequent manipulation. 
+All good! Now we have everything we need! Let's just clean things up a bit to make the syntax the same whether indicators were lifted from section `0.f` or from the file name. Once we have that all cleaned up, we can use the [easynetwork](https://github.com/DataStrategist/easyNetwork) package by yours truly to create a nodes & edges object suitable for subsequent manipulation. 
 
 ``` {r}
 ## clean up
@@ -120,30 +121,30 @@ small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges
 visNetwork(small_nodes, small_edges)
 ```
 
-It seems to work! But now, let's add the proper SDG colors (there is [very serious guidance](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf) about this). Unfortunately, it's not very machine readable. Fortunately for us, the nice people of [Our World in Data](https://ourworldindata.org) already created a "userfriendlier" list of these colors [here](https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss). Let's apply these groups and colors.
+It seems to work! But now, let's add the proper SDG colors (there is [very serious guidance](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf) about this). Unfortunately, it's not very machine readable. Fortunately for us, the nice people of [Our World in Data](https://ourworldindata.org) already created a "userfriendlier" list of these colors [here](https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss). Let's apply these groups and colors (I have taken the liberty to add back in the official SDG names, which were abbreviated in OWiD).
 
 ```{r}
-sdg_cols <- c("no-poverty-color: #e5243b",
-"zero-hunger-color: #dda63a",
-"good-health-color: #4c9f38",
-"quality-education-color: #c5192d",
-"gender-equality-color: #ff3a21",
-"water-and-sanitation-color: #26bde2",
-"energy-color: #fcc30b",
-"economic-growth-color: #a21942",
-"infrastructure-industrialization-color: #fd6925",
-"inequality-color: #dd1367",
-"cities-color: #fd9d24",
-"sustainable-consumption-production-color: #bf8b2e",
-"climate-change-color: #3f7e44",
-"oceans-color: #0a97d9",
-"biodiversity-color: #56c02b",
-"peace-justice-color: #00689d",
-"global-partnerships-color: #19486a") %>% 
+sdg_cols <- c("no-poverty: #e5243b",
+"zero-hunger: #dda63a",
+"good-health-and-well-being: #4c9f38",
+"quality-education: #c5192d",
+"gender-equality: #ff3a21",
+"clean-water-and-sanitation: #26bde2",
+"affordable-and-clean-energy: #fcc30b",
+"decent-work-and-economic-growth: #a21942",
+"industry-innovation-and-infrastructure: #fd6925",
+"reduced-inequalities: #dd1367",
+"sustainable-sities-and-communities: #fd9d24",
+"responsible-consumption-and-production: #bf8b2e",
+"climate-change: #3f7e44",
+"life-below-water: #0a97d9",
+"life-on-land: #56c02b",
+"pease-justice-and-strong-institutions: #00689d",
+"partnerships-for-the-goals: #19486a") %>% 
   str_split(": ", simplify = TRUE) %>% as.data.frame %>% set_names(c("group_name", "color")) %>% 
   rownames_to_column("sdg")
 
-sdg_cols
+sdg_cols %>% sample_n(5) %>% gt::gt() 
 ```
 
 Cool, now let's join it up with the network and plot it!
@@ -154,7 +155,7 @@ g$nodes <- g$nodes %>%
   select(-color) %>% 
   left_join(sdg_cols, by = "sdg")
 
-g$nodes
+g$nodes %>% sample_n(5) %>% gt::gt() 
 ```
 
 Cool, let's take another peek at what the network looks like:
@@ -166,7 +167,7 @@ small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges
 
 visNetwork(small_nodes, small_edges)
 ```
-We are getting there! We could add the legend, but that might be clunky. For sure we should add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract.
+We are getting there! We could add the legend, but that might be clunky. For sure we should add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract. These will be visible on mouseover to not clutter the UI.
 
 ```{r}
 ind_extractor <- function(specific_file){
@@ -199,7 +200,7 @@ ind_names <- all_names %>% enframe %>% unnest(value) %>% mutate(name = gsub(".+M
   ## keep only the first row (just in case) %>% 
   group_by(ind_num) %>% slice(1) %>% ungroup
 
-ind_names
+ind_names %>% sample_n(5) %>% gt::gt() 
 ```
 It's not perfect, but perhaps close enough. Let's join these back and have them show up on mouseover of the nodes:
 
@@ -221,14 +222,58 @@ visNetwork(small_nodes, small_edges) %>%
                      label = gsub("-", " ", label), label = gsub("color", "", label)) %>% 
               unite(label, sdg, label, sep = " "), useGroups = FALSE)
 ```
-Kind of hate it, but whatever :) Let's take off the arrows (since the relationship is what matters, not the presumed direction), and view the full network!
+I hate the legend... let's turn it off. Other than that, voila, the full network!
 
 ```{r}
-visNetwork(g$nodes, g$edges %>% select(-arrows))
+visNetwork(g$nodes, g$edges %>% select(-value))
 ```
 
-Wonderful! It becomes very clear to see the relationships. The next logical step is execute some neighbourhood detection, to identify what are the "clusters" of indicators that perhaps explain a part of the system.
+It's cool for sure, but we have a few problems... it's a bit messy and we can see many one-way relationships (IE A->B, but not B->A). Let's check the "reciprocity" of these links.
 
+```{r}
+suppressPackageStartupMessages(library(igraph)) 
+ig <- g$edges %>% select(from, to) %>% unique %>% igraph::graph_from_adj_list()
 
+reciprocity(ig)
+
+```
+Oof... pretty low! Ok, so maybe we leave it as is...
+
+The other thing we can do is move the SDG category to the node, and aggregate at that point to come up with a visual representation of how the SDGs are related.
+
+```{r}
+g$nodes <- g$nodes %>% 
+  mutate(sdg = str_pad(sdg, width = 2,pad = "0"),
+         group_name = paste0(sdg, " - ", group_name))
+
+top_g <- g$edges %>% 
+  left_join(g$nodes %>% select(from = id, from_group = group_name), by = "from") %>% 
+  left_join(g$nodes %>% select(to = id, to_group = group_name), by = "to") %>% 
+  select(from = from_group, to = to_group) %>% 
+  # filter(from != to) %>% 
+  count(from, to) %>% 
+  pivot_wider(id_cols = from, names_from = to, values_from = n)  
+  
+## huh... climate action doesn't have a "from". Interesting! but let's create one for it or it'll get angry later cause the matrix isn't "square"
+top_g[17,1]  <- "13 - climate-change"
+
+suppressPackageStartupMessages(library(chorddiag)) ## devtools::install_github("mattflor/chorddiag")
+
+## now convert to the right format
+top_g_square <- top_g %>% select(-from) %>% as.data.frame %>% unname() %>% as.matrix()
+dimnames(top_g_square) <- list(from = top_g$from, to = top_g$from)
+  
+
+chorddiag(top_g_square, groupColors = sdg_cols$color)
+
+```
+
+Wonderful! It becomes very clear to see the relationships. 
+
+If this network data weren't subjective, the next logical step would be to just look at the network and run statistics... "What indicator has the highest Authority score? What about the highest PageRank centrality, or Betweenness? All these would help us identify identify some key take-aways. We could run some neighborhood detection to identify "clusters", but I'm not sure the quality of this data merits that level of rigor, let's not forget... this was all just text data.
+
+Of course... we _could_ actually measure the effects to see if "causal links" (in the loosest sense of the words) could be found... 
+
+But that's for another post.
 
 
