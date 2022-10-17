@@ -39,7 +39,7 @@ suppressPackageStartupMessages(library(readtext))
 suppressPackageStartupMessages(library(visNetwork))
 
 ## create a small little loop to protect against downloading the file many times while I iterate. When I'm ready to publish, let's change this use_cache to FALSE.
-use_cache = TRUE 
+use_cache = FALSE 
 
 if (!use_cache){
   tempdir <- tempdir()
