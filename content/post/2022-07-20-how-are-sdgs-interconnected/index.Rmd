@@ -18,13 +18,16 @@ draft: no
 
 ## Intro
 
-The Sustainable Development Goals (SDGs) are a set of 17 goals that were adopted by all United Nations Member States in 2015. The SDGs are a universal call to action to end poverty, protect the planet, and ensure that all people enjoy peace and prosperity. The SDGs are Goals (the "G" in SDG).
+The Sustainable Development Goals (SDGs) are a set of 17 goals that were adopted by all United Nations Member States in 2015. The SDGs are a universal call to action to end poverty, protect the planet, and ensure that all people enjoy peace and prosperity. The SDGs are Goals (the “G” in SDG).
 
-The SDGs are interrelated, and each Goal has specific targets that need to be met in order to achieve the Goal. For example, Goal 1 is to “End poverty in all its forms everywhere” and Goal 2 is to “End hunger, achieve food security and improved nutrition, and promote sustainable agriculture”. Achieving Goal 1 will require progress on Goal 2, and vice versa. As you can imagine, "fixing the world" is pretty hard, especially when you consider that progress might need to manifest in a specific order to change the system. Still, the exact mappings of these causal relationships are hard to identify and even harder to intuit.
+The SDGs are interrelated, and each goal has specific targets that need to be met in order to achieve the Goal. For example, Goal 1 is to “End poverty in all its forms everywhere” and Goal 2 is to “End hunger, achieve food security and improved nutrition, and promote sustainable agriculture”. Achieving Goal 1 will require progress on Goal 2, and vice versa. As you can imagine, “fixing the world” is pretty hard, especially when you consider that progress might need to manifest in a specific order to change the system. Still, the exact mapping of these causal relationships are hard to identify and even harder to intuit.
+
+
 
 ## "Huh, that's interesting..."
 
-Under each Target, there are Indicators that provide the measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is "related indicators", but it's important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. Anyway, if we digest all the metadata sheets and harvest all the "related Indicators" for each Indicator, we have a list of "from's" and "to's", don't we? Hey, that's an [edgelist](https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists) and can be use it to plot these indicators as a network!
+Under each target, there are indicators that provide measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is “related indicators”, but it’s important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. If we digest all the metadata sheets and harvest all the “related Indicators” for each Indicator, we have a list of “from’s” and “to’s”, don’t we? Hey, that’s an (edgelist)[https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists] and can be used to plot these indicators as a network!
+
 
 ## Start your engines...
 
@@ -36,7 +39,7 @@ suppressPackageStartupMessages(library(readtext))
 suppressPackageStartupMessages(library(visNetwork))
 
 ## create a small little loop to protect against downloading the file many times while I iterate. When I'm ready to publish, let's change this use_cache to FALSE.
-use_cache = TRUE
+use_cache = TRUE 
 
 if (!use_cache){
   tempdir <- tempdir()
@@ -123,6 +126,9 @@ visNetwork(small_nodes, small_edges)
 
 It seems to work! But now, let's add the proper SDG colors (there is [very serious guidance](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf) about this). Unfortunately, it's not very machine readable. Fortunately for us, the nice people of [Our World in Data](https://ourworldindata.org) already created a "userfriendlier" list of these colors [here](https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss). Let's apply these groups and colors (I have taken the liberty to add back in the official SDG names, which were abbreviated in OWiD).
 
+It seems to work! But now, let’s add the proper SDG colors (there is [very serious guidance](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf) about this). Unfortunately, it’s not very machine readable. Thankfully, the nice people of [Our World in Data](https://ourworldindata.org) already created a “userfriendlier” list of these colors [here](https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss). Let’s apply these groups and colors (I have taken the liberty of adding back in the official SDG names, which were abbreviated in OWiD).
+
+
 ```{r}
 sdg_cols <- c("no-poverty: #e5243b",
 "zero-hunger: #dda63a",
@@ -147,7 +153,7 @@ sdg_cols <- c("no-poverty: #e5243b",
 sdg_cols %>% sample_n(5) %>% gt::gt() 
 ```
 
-Cool, now let's join it up with the network and plot it!
+Great, now let's join it up with the network and plot it!
 
 ```{r}
 g$nodes <- g$nodes %>% 
@@ -158,7 +164,7 @@ g$nodes <- g$nodes %>%
 g$nodes %>% sample_n(5) %>% gt::gt() 
 ```
 
-Cool, let's take another peek at what the network looks like:
+That done, let's take another peek at what the network looks like:
 
 ```{r}
 ## let's take a look at a tiny bit of this network to see if it worked.
@@ -167,7 +173,7 @@ small_nodes <- g$nodes %>% filter(id %in% small_edges$from | id %in% small_edges
 
 visNetwork(small_nodes, small_edges)
 ```
-We are getting there! We could add the legend, but that might be clunky. For sure we should add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract. These will be visible on mouseover to not clutter the UI.
+We are getting there! We could add the legend, but that might be clunky. We should definitely add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract. These will be visible on mouseover to not clutter the UI.
 
 ```{r}
 ind_extractor <- function(specific_file){
@@ -222,9 +228,19 @@ visNetwork(small_nodes, small_edges) %>%
                      label = gsub("-", " ", label), label = gsub("color", "", label)) %>% 
               unite(label, sdg, label, sep = " "), useGroups = FALSE)
 ```
-I hate the legend... let's turn it off. Other than that, voila, the full network!
+I hate the legend... let's turn it off. Other than that, voila, the full network (might take some time to display in some computers, give it a sec)! Let's also create a [full html version](full_network.html) suitable to be viewed independently.
 
 ```{r}
+visNetwork(g$nodes, g$edges %>% select(-value), 
+           main = "Network of SDG indicators",
+           submain = "As inferred by 'related indicator' metadata tags. See bit.ly/sdg_network for more info.", width = "1200", height = "700") %>% 
+  visLegend(addNodes = sdg_cols %>% rename(label=group_name) %>%  
+              mutate(shape = "box", font.color = "white", 
+                     label = gsub("-", " ", label), label = gsub("color", "", label)) %>% 
+              unite(label, sdg, label, sep = " "), useGroups = FALSE) %>% 
+  visSave("full_network.html", selfcontained = TRUE)
+  
+
 visNetwork(g$nodes, g$edges %>% select(-value))
 ```
 
@@ -243,19 +259,20 @@ The other thing we can do is move the SDG category to the node, and aggregate at
 
 ```{r}
 g$nodes <- g$nodes %>% 
-  mutate(sdg = str_pad(sdg, width = 2,pad = "0"),
-         group_name = paste0(sdg, " - ", group_name))
+  mutate(sdg = str_pad(sdg, width = 2,pad = "0") %>% 
+           paste("SDG",.) 
+         )
 
 top_g <- g$edges %>% 
-  left_join(g$nodes %>% select(from = id, from_group = group_name), by = "from") %>% 
-  left_join(g$nodes %>% select(to = id, to_group = group_name), by = "to") %>% 
+  left_join(g$nodes %>% select(from = id, from_group = sdg), by = "from") %>% 
+  left_join(g$nodes %>% select(to = id, to_group = sdg), by = "to") %>% 
   select(from = from_group, to = to_group) %>% 
   # filter(from != to) %>% 
   count(from, to) %>% 
   pivot_wider(id_cols = from, names_from = to, values_from = n)  
   
 ## huh... climate action doesn't have a "from". Interesting! but let's create one for it or it'll get angry later cause the matrix isn't "square"
-top_g[17,1]  <- "13 - climate-change"
+top_g[17,1]  <- "SDG 13"
 
 suppressPackageStartupMessages(library(chorddiag)) ## devtools::install_github("mattflor/chorddiag")
 
@@ -264,15 +281,15 @@ top_g_square <- top_g %>% select(-from) %>% as.data.frame %>% unname() %>% as.ma
 dimnames(top_g_square) <- list(from = top_g$from, to = top_g$from)
   
 
-chorddiag(top_g_square, groupColors = sdg_cols$color)
+chorddiag(top_g_square, groupColors = sdg_cols$color )
 
 ```
 
 Wonderful! It becomes very clear to see the relationships. 
 
-If this network data weren't subjective, the next logical step would be to just look at the network and run statistics... "What indicator has the highest Authority score? What about the highest PageRank centrality, or Betweenness? All these would help us identify identify some key take-aways. We could run some neighborhood detection to identify "clusters", but I'm not sure the quality of this data merits that level of rigor, let's not forget... this was all just text data.
+If this network data weren't subjective, the next logical step would be to just look at the network and run statistics... "What indicator has the highest Authority score? What about the highest PageRank centrality, or Betweenness? All these would help us identify some key take-aways. We could run some neighborhood detection to identify "clusters", but I'm not sure the quality of this data merits that level of rigour. Let's not forget... this was all just text data.
 
-Of course... we _could_ actually measure the effects to see if "causal links" (in the loosest sense of the words) could be found... 
+Of course... we _could_ actually measure the effects to see if there are any "causal links" (in the loosest sense of the words)... 
 
 But that's for another post.
 

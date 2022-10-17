@@ -29,11 +29,11 @@ draft: no
 <div id="intro" class="section level2">
 <h2>Intro</h2>
 <p>The Sustainable Development Goals (SDGs) are a set of 17 goals that were adopted by all United Nations Member States in 2015. The SDGs are a universal call to action to end poverty, protect the planet, and ensure that all people enjoy peace and prosperity. The SDGs are Goals (the “G” in SDG).</p>
-<p>The SDGs are interrelated, and each Goal has specific targets that need to be met in order to achieve the Goal. For example, Goal 1 is to “End poverty in all its forms everywhere” and Goal 2 is to “End hunger, achieve food security and improved nutrition, and promote sustainable agriculture”. Achieving Goal 1 will require progress on Goal 2, and vice versa. As you can imagine, “fixing the world” is pretty hard, especially when you consider that progress might need to manifest in a specific order to change the system. Still, the exact mappings of these causal relationships are hard to identify and even harder to intuit.</p>
+<p>The SDGs are interrelated, and each goal has specific targets that need to be met in order to achieve the Goal. For example, Goal 1 is to “End poverty in all its forms everywhere” and Goal 2 is to “End hunger, achieve food security and improved nutrition, and promote sustainable agriculture”. Achieving Goal 1 will require progress on Goal 2, and vice versa. As you can imagine, “fixing the world” is pretty hard, especially when you consider that progress might need to manifest in a specific order to change the system. Still, the exact mapping of these causal relationships are hard to identify and even harder to intuit.</p>
 </div>
 <div id="huh-thats-interesting" class="section level2">
 <h2>“Huh, that’s interesting…”</h2>
-<p>Under each Target, there are Indicators that provide the measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is “related indicators”, but it’s important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. Anyway, if we digest all the metadata sheets and harvest all the “related Indicators” for each Indicator, we have a list of “from’s” and “to’s”, don’t we? Hey, that’s an <a href="https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists">edgelist</a> and can be use it to plot these indicators as a network!</p>
+<p>Under each target, there are indicators that provide measurable progress towards each goal. These Indicators have metadata sheets, with a bunch of methodological information and context. One of these bits of metadata is “related indicators”, but it’s important to remember that the agencies that are responsible for each Indicator create the metadata sheets, so there is some amount of subjectivity here. If we digest all the metadata sheets and harvest all the “related Indicators” for each Indicator, we have a list of “from’s” and “to’s”, don’t we? Hey, that’s an (edgelist)[<a href="https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists" class="uri">https://algodaily.com/lessons/implementing-graphs-edge-list-adjacency-list-adjacency-matrix/edge-lists</a>] and can be used to plot these indicators as a network!</p>
 </div>
 <div id="start-your-engines" class="section level2">
 <h2>Start your engines…</h2>
@@ -43,7 +43,7 @@ suppressPackageStartupMessages(library(readtext))
 suppressPackageStartupMessages(library(visNetwork))
 
 ## create a small little loop to protect against downloading the file many times while I iterate. When I&#39;m ready to publish, let&#39;s change this use_cache to FALSE.
-use_cache = TRUE
+use_cache = TRUE 
 
 if (!use_cache){
   tempdir &lt;- tempdir()
@@ -114,8 +114,9 @@ small_nodes &lt;- g$nodes %&gt;% filter(id %in% small_edges$from | id %in% small
 
 visNetwork(small_nodes, small_edges)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"nodes":{"name":["1.1.1","1.2.1","1.3.1","1.4.1","1.a.2","1.b.1","3.3.2","3.b.1","3.B.3","5.a.1","5.A.2","6.5.1","6.6.1","10.3.1","10.7.2","11.1.1","11.7.1","11.7.2","12.1.1","12.3.1","12.4.1","12.5.1","12.7.1","14.5.1","15.1.1","15.1.2","15.2.1","16.1.4","16.6.2","16.7.1","16.7.2","7.1.1","4.5.3","16.5.1","10.c.1","16.1.1"],"id":[1,2,3,4,6,7,19,27,28,39,40,45,47,64,66,68,73,74,75,78,79,81,82,86,88,89,90,96,98,99,100,115,120,153,167,169],"label":["1.1.1","1.2.1","1.3.1","1.4.1","1.a.2","1.b.1","3.3.2","3.b.1","3.B.3","5.a.1","5.A.2","6.5.1","6.6.1","10.3.1","10.7.2","11.1.1","11.7.1","11.7.2","12.1.1","12.3.1","12.4.1","12.5.1","12.7.1","14.5.1","15.1.1","15.1.2","15.2.1","16.1.4","16.6.2","16.7.1","16.7.2","7.1.1","4.5.3","16.5.1","10.c.1","16.1.1"],"value":[8,1,6,13,5,1,13,1,4,1,3,26,6,4,6,17,2,4,16,3,5,3,1,2,1,2,1,4,13,3,3,3,1,3,1,4],"color":["#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6"]},"edges":{"from":[4,2,45,88,19,64,6,68,68,40,100,3,66,28,82,78,89,45,96,79],"to":[115,1,153,90,68,98,120,73,74,39,99,7,167,27,75,81,86,47,169,81],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"nodes":{"name":["1.3.1","1.4.1","2.1.1","3.3.2","3.8.1","3.9.2","3.9.3","5.5.1","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","7.1.2","8.3.1","8.4.2","8.5.2","10.2.1","11.1.1","11.3.1","11.7.2","12.1.1","12.2.2","12.4.1","12.b.1","14.3.1","15.3.1","2.2.1","8.1.1","14.1.1","4.7.1","16.5.1","1.1.2","14.c.1","14.a.1"],"id":[3,4,8,19,21,24,25,35,43,44,45,46,47,48,50,52,54,63,68,70,74,75,77,79,83,84,91,125,134,142,145,153,168,176,180],"label":["1.3.1","1.4.1","2.1.1","3.3.2","3.8.1","3.9.2","3.9.3","5.5.1","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","7.1.2","8.3.1","8.4.2","8.5.2","10.2.1","11.1.1","11.3.1","11.7.2","12.1.1","12.2.2","12.4.1","12.b.1","14.3.1","15.3.1","2.2.1","8.1.1","14.1.1","4.7.1","16.5.1","1.1.2","14.c.1","14.a.1"],"value":[6,13,4,13,3,1,1,1,1,9,26,19,6,1,3,3,4,3,17,7,4,16,3,5,2,1,5,2,2,2,2,3,1,1,1],"color":["#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A58FAA","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6","#A6D6D6"]},"edges":{"from":[45,68,46,70,19,8,43,68,75,45,47,52,84,46,79,45,4,75,25,50],"to":[35,168,145,74,134,125,44,63,176,153,91,77,180,142,24,54,21,83,48,3],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <p>It seems to work! But now, let’s add the proper SDG colors (there is <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf">very serious guidance</a> about this). Unfortunately, it’s not very machine readable. Fortunately for us, the nice people of <a href="https://ourworldindata.org">Our World in Data</a> already created a “userfriendlier” list of these colors <a href="https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss">here</a>. Let’s apply these groups and colors (I have taken the liberty to add back in the official SDG names, which were abbreviated in OWiD).</p>
+<p>It seems to work! But now, let’s add the proper SDG colors (there is <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf">very serious guidance</a> about this). Unfortunately, it’s not very machine readable. Thankfully, the nice people of <a href="https://ourworldindata.org">Our World in Data</a> already created a “userfriendlier” list of these colors <a href="https://github.com/owid/sdg-tracker.org/blob/master/css/sdgs.scss">here</a>. Let’s apply these groups and colors (I have taken the liberty of adding back in the official SDG names, which were abbreviated in OWiD).</p>
 <pre class="r"><code>sdg_cols &lt;- c(&quot;no-poverty: #e5243b&quot;,
 &quot;zero-hunger: #dda63a&quot;,
 &quot;good-health-and-well-being: #4c9f38&quot;,
@@ -137,12 +138,12 @@ visNetwork(small_nodes, small_edges)</code></pre>
   rownames_to_column(&quot;sdg&quot;)
 
 sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
-<div id="qmvhmhgjmq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="szvpvheoku" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qmvhmhgjmq .gt_table {
+#szvpvheoku .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -167,7 +168,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_heading {
+#szvpvheoku .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -179,7 +180,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_title {
+#szvpvheoku .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -191,7 +192,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-width: 0;
 }
 
-#qmvhmhgjmq .gt_subtitle {
+#szvpvheoku .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -203,13 +204,13 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-width: 0;
 }
 
-#qmvhmhgjmq .gt_bottom_border {
+#szvpvheoku .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_col_headings {
+#szvpvheoku .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -224,7 +225,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_col_heading {
+#szvpvheoku .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -244,7 +245,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#qmvhmhgjmq .gt_column_spanner_outer {
+#szvpvheoku .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -256,15 +257,15 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 4px;
 }
 
-#qmvhmhgjmq .gt_column_spanner_outer:first-child {
+#szvpvheoku .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qmvhmhgjmq .gt_column_spanner_outer:last-child {
+#szvpvheoku .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qmvhmhgjmq .gt_column_spanner {
+#szvpvheoku .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -276,7 +277,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   width: 100%;
 }
 
-#qmvhmhgjmq .gt_group_heading {
+#szvpvheoku .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -301,7 +302,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#qmvhmhgjmq .gt_empty_group_heading {
+#szvpvheoku .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -316,15 +317,15 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#qmvhmhgjmq .gt_from_md > :first-child {
+#szvpvheoku .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qmvhmhgjmq .gt_from_md > :last-child {
+#szvpvheoku .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qmvhmhgjmq .gt_row {
+#szvpvheoku .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -343,7 +344,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#qmvhmhgjmq .gt_stub {
+#szvpvheoku .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -356,7 +357,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#qmvhmhgjmq .gt_stub_row_group {
+#szvpvheoku .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -370,11 +371,11 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: top;
 }
 
-#qmvhmhgjmq .gt_row_group_first td {
+#szvpvheoku .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qmvhmhgjmq .gt_summary_row {
+#szvpvheoku .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -384,16 +385,16 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#qmvhmhgjmq .gt_first_summary_row {
+#szvpvheoku .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_first_summary_row.thick {
+#szvpvheoku .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qmvhmhgjmq .gt_last_summary_row {
+#szvpvheoku .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -403,7 +404,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_grand_summary_row {
+#szvpvheoku .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -413,7 +414,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#qmvhmhgjmq .gt_first_grand_summary_row {
+#szvpvheoku .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,11 +424,11 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_striped {
+#szvpvheoku .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qmvhmhgjmq .gt_table_body {
+#szvpvheoku .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -436,7 +437,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_footnotes {
+#szvpvheoku .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -450,7 +451,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_footnote {
+#szvpvheoku .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -459,7 +460,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#qmvhmhgjmq .gt_sourcenotes {
+#szvpvheoku .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -473,7 +474,7 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qmvhmhgjmq .gt_sourcenote {
+#szvpvheoku .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -481,64 +482,64 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#qmvhmhgjmq .gt_left {
+#szvpvheoku .gt_left {
   text-align: left;
 }
 
-#qmvhmhgjmq .gt_center {
+#szvpvheoku .gt_center {
   text-align: center;
 }
 
-#qmvhmhgjmq .gt_right {
+#szvpvheoku .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qmvhmhgjmq .gt_font_normal {
+#szvpvheoku .gt_font_normal {
   font-weight: normal;
 }
 
-#qmvhmhgjmq .gt_font_bold {
+#szvpvheoku .gt_font_bold {
   font-weight: bold;
 }
 
-#qmvhmhgjmq .gt_font_italic {
+#szvpvheoku .gt_font_italic {
   font-style: italic;
 }
 
-#qmvhmhgjmq .gt_super {
+#szvpvheoku .gt_super {
   font-size: 65%;
 }
 
-#qmvhmhgjmq .gt_footnote_marks {
+#szvpvheoku .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#qmvhmhgjmq .gt_asterisk {
+#szvpvheoku .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qmvhmhgjmq .gt_indent_1 {
+#szvpvheoku .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qmvhmhgjmq .gt_indent_2 {
+#szvpvheoku .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qmvhmhgjmq .gt_indent_3 {
+#szvpvheoku .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qmvhmhgjmq .gt_indent_4 {
+#szvpvheoku .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qmvhmhgjmq .gt_indent_5 {
+#szvpvheoku .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -552,39 +553,39 @@ sdg_cols %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">1</td>
-<td class="gt_row gt_left">no-poverty</td>
-<td class="gt_row gt_left">#e5243b</td></tr>
-    <tr><td class="gt_row gt_right">13</td>
-<td class="gt_row gt_left">climate-change</td>
-<td class="gt_row gt_left">#3f7e44</td></tr>
+    <tr><td class="gt_row gt_right">6</td>
+<td class="gt_row gt_left">clean-water-and-sanitation</td>
+<td class="gt_row gt_left">#26bde2</td></tr>
+    <tr><td class="gt_row gt_right">15</td>
+<td class="gt_row gt_left">life-on-land</td>
+<td class="gt_row gt_left">#56c02b</td></tr>
     <tr><td class="gt_row gt_right">8</td>
 <td class="gt_row gt_left">decent-work-and-economic-growth</td>
 <td class="gt_row gt_left">#a21942</td></tr>
-    <tr><td class="gt_row gt_right">2</td>
-<td class="gt_row gt_left">zero-hunger</td>
-<td class="gt_row gt_left">#dda63a</td></tr>
     <tr><td class="gt_row gt_right">5</td>
 <td class="gt_row gt_left">gender-equality</td>
 <td class="gt_row gt_left">#ff3a21</td></tr>
+    <tr><td class="gt_row gt_right">14</td>
+<td class="gt_row gt_left">life-below-water</td>
+<td class="gt_row gt_left">#0a97d9</td></tr>
   </tbody>
   
   
 </table>
 </div>
-<p>Cool, now let’s join it up with the network and plot it!</p>
+<p>Great, now let’s join it up with the network and plot it!</p>
 <pre class="r"><code>g$nodes &lt;- g$nodes %&gt;% 
   mutate(sdg = gsub(&quot;\\..+&quot;, &quot;&quot;, name)) %&gt;% 
   select(-color) %&gt;% 
   left_join(sdg_cols, by = &quot;sdg&quot;)
 
 g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
-<div id="ijcakajzjh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="krrhlegniu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ijcakajzjh .gt_table {
+#krrhlegniu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -609,7 +610,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_heading {
+#krrhlegniu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -621,7 +622,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_title {
+#krrhlegniu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -633,7 +634,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-width: 0;
 }
 
-#ijcakajzjh .gt_subtitle {
+#krrhlegniu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -645,13 +646,13 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-width: 0;
 }
 
-#ijcakajzjh .gt_bottom_border {
+#krrhlegniu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_col_headings {
+#krrhlegniu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -666,7 +667,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_col_heading {
+#krrhlegniu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -686,7 +687,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#ijcakajzjh .gt_column_spanner_outer {
+#krrhlegniu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -698,15 +699,15 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 4px;
 }
 
-#ijcakajzjh .gt_column_spanner_outer:first-child {
+#krrhlegniu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ijcakajzjh .gt_column_spanner_outer:last-child {
+#krrhlegniu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ijcakajzjh .gt_column_spanner {
+#krrhlegniu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -718,7 +719,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   width: 100%;
 }
 
-#ijcakajzjh .gt_group_heading {
+#krrhlegniu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -743,7 +744,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#ijcakajzjh .gt_empty_group_heading {
+#krrhlegniu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -758,15 +759,15 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#ijcakajzjh .gt_from_md > :first-child {
+#krrhlegniu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ijcakajzjh .gt_from_md > :last-child {
+#krrhlegniu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ijcakajzjh .gt_row {
+#krrhlegniu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -785,7 +786,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#ijcakajzjh .gt_stub {
+#krrhlegniu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -798,7 +799,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#ijcakajzjh .gt_stub_row_group {
+#krrhlegniu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -812,11 +813,11 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: top;
 }
 
-#ijcakajzjh .gt_row_group_first td {
+#krrhlegniu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ijcakajzjh .gt_summary_row {
+#krrhlegniu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -826,16 +827,16 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#ijcakajzjh .gt_first_summary_row {
+#krrhlegniu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_first_summary_row.thick {
+#krrhlegniu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ijcakajzjh .gt_last_summary_row {
+#krrhlegniu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -845,7 +846,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_grand_summary_row {
+#krrhlegniu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -855,7 +856,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#ijcakajzjh .gt_first_grand_summary_row {
+#krrhlegniu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -865,11 +866,11 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_striped {
+#krrhlegniu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ijcakajzjh .gt_table_body {
+#krrhlegniu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -878,7 +879,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_footnotes {
+#krrhlegniu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -892,7 +893,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_footnote {
+#krrhlegniu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -901,7 +902,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#ijcakajzjh .gt_sourcenotes {
+#krrhlegniu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -915,7 +916,7 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijcakajzjh .gt_sourcenote {
+#krrhlegniu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -923,64 +924,64 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#ijcakajzjh .gt_left {
+#krrhlegniu .gt_left {
   text-align: left;
 }
 
-#ijcakajzjh .gt_center {
+#krrhlegniu .gt_center {
   text-align: center;
 }
 
-#ijcakajzjh .gt_right {
+#krrhlegniu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ijcakajzjh .gt_font_normal {
+#krrhlegniu .gt_font_normal {
   font-weight: normal;
 }
 
-#ijcakajzjh .gt_font_bold {
+#krrhlegniu .gt_font_bold {
   font-weight: bold;
 }
 
-#ijcakajzjh .gt_font_italic {
+#krrhlegniu .gt_font_italic {
   font-style: italic;
 }
 
-#ijcakajzjh .gt_super {
+#krrhlegniu .gt_super {
   font-size: 65%;
 }
 
-#ijcakajzjh .gt_footnote_marks {
+#krrhlegniu .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ijcakajzjh .gt_asterisk {
+#krrhlegniu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ijcakajzjh .gt_indent_1 {
+#krrhlegniu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ijcakajzjh .gt_indent_2 {
+#krrhlegniu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ijcakajzjh .gt_indent_3 {
+#krrhlegniu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ijcakajzjh .gt_indent_4 {
+#krrhlegniu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ijcakajzjh .gt_indent_5 {
+#krrhlegniu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -998,55 +999,55 @@ g$nodes %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">16.5.1</td>
-<td class="gt_row gt_right">153</td>
-<td class="gt_row gt_right">16.5.1</td>
-<td class="gt_row gt_right">3</td>
+    <tr><td class="gt_row gt_right">9.2.2</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">9.2.2</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_left">industry-innovation-and-infrastructure</td>
+<td class="gt_row gt_left">#fd6925</td></tr>
+    <tr><td class="gt_row gt_right">11.3.2</td>
+<td class="gt_row gt_right">148</td>
+<td class="gt_row gt_right">11.3.2</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_left">sustainable-sities-and-communities</td>
+<td class="gt_row gt_left">#fd9d24</td></tr>
+    <tr><td class="gt_row gt_right">17.14.1</td>
+<td class="gt_row gt_right">160</td>
+<td class="gt_row gt_right">17.14.1</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_left">partnerships-for-the-goals</td>
+<td class="gt_row gt_left">#19486a</td></tr>
+    <tr><td class="gt_row gt_right">16.1.3</td>
+<td class="gt_row gt_right">139</td>
+<td class="gt_row gt_right">16.1.3</td>
+<td class="gt_row gt_right">9</td>
 <td class="gt_row gt_right">16</td>
 <td class="gt_row gt_left">pease-justice-and-strong-institutions</td>
 <td class="gt_row gt_left">#00689d</td></tr>
-    <tr><td class="gt_row gt_right">14.6.1</td>
-<td class="gt_row gt_right">177</td>
-<td class="gt_row gt_right">14.6.1</td>
+    <tr><td class="gt_row gt_right">3.9.3</td>
+<td class="gt_row gt_right">25</td>
+<td class="gt_row gt_right">3.9.3</td>
 <td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_left">life-below-water</td>
-<td class="gt_row gt_left">#0a97d9</td></tr>
-    <tr><td class="gt_row gt_right">16.2.3</td>
-<td class="gt_row gt_right">140</td>
-<td class="gt_row gt_right">16.2.3</td>
 <td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_left">pease-justice-and-strong-institutions</td>
-<td class="gt_row gt_left">#00689d</td></tr>
-    <tr><td class="gt_row gt_right">1.4.2</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1.4.2</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_left">no-poverty</td>
-<td class="gt_row gt_left">#e5243b</td></tr>
-    <tr><td class="gt_row gt_right">10.3.1</td>
-<td class="gt_row gt_right">64</td>
-<td class="gt_row gt_right">10.3.1</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_left">reduced-inequalities</td>
-<td class="gt_row gt_left">#dd1367</td></tr>
+<td class="gt_row gt_left">good-health-and-well-being</td>
+<td class="gt_row gt_left">#4c9f38</td></tr>
   </tbody>
   
   
 </table>
 </div>
-<p>Cool, let’s take another peek at what the network looks like:</p>
+<p>That done, let’s take another peek at what the network looks like:</p>
 <pre class="r"><code>## let&#39;s take a look at a tiny bit of this network to see if it worked.
 small_edges &lt;- g$edges %&gt;% sample_n(20)
 small_nodes &lt;- g$nodes %&gt;% filter(id %in% small_edges$from | id %in% small_edges$to)
 
 visNetwork(small_nodes, small_edges)</code></pre>
 <div id="htmlwidget-2" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"nodes":{"name":["1.1.1","1.3.1","1.4.1","2.1.2","3.3.2","3.9.1","6.5.2","7.1.2","8.2.1","8.3.1","8.4.1","8.5.2","8.9.1","10.1.1","10.2.1","10.3.1","11.3.1","11.6.1","12.1.1","12.2.2","12.3.1","12.b.1","16.1.2","16.1.4","16.6.2","16.10.1","4.a.1","2.2.1","8.1.1","16.1.3","11.b.1","12.8.1"],"id":[1,3,4,9,19,23,46,48,49,50,51,54,57,62,63,64,70,71,75,77,78,83,95,96,98,102,123,125,134,139,171,173],"label":["1.1.1","1.3.1","1.4.1","2.1.2","3.3.2","3.9.1","6.5.2","7.1.2","8.2.1","8.3.1","8.4.1","8.5.2","8.9.1","10.1.1","10.2.1","10.3.1","11.3.1","11.6.1","12.1.1","12.2.2","12.3.1","12.b.1","16.1.2","16.1.4","16.6.2","16.10.1","4.a.1","2.2.1","8.1.1","16.1.3","11.b.1","12.8.1"],"value":[8,6,13,4,13,2,19,1,4,3,3,4,1,3,3,4,7,4,16,3,3,2,8,4,13,8,2,2,2,9,1,1],"sdg":["1","1","1","2","3","3","6","7","8","8","8","8","8","10","10","10","11","11","12","12","12","12","16","16","16","16","4","2","8","16","11","12"],"group_name":["no-poverty","no-poverty","no-poverty","zero-hunger","good-health-and-well-being","good-health-and-well-being","clean-water-and-sanitation","affordable-and-clean-energy","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","reduced-inequalities","reduced-inequalities","reduced-inequalities","sustainable-sities-and-communities","sustainable-sities-and-communities","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","quality-education","zero-hunger","decent-work-and-economic-growth","pease-justice-and-strong-institutions","sustainable-sities-and-communities","responsible-consumption-and-production"],"color":["#e5243b","#e5243b","#e5243b","#dda63a","#4c9f38","#4c9f38","#26bde2","#fcc30b","#a21942","#a21942","#a21942","#a21942","#a21942","#dd1367","#dd1367","#dd1367","#fd9d24","#fd9d24","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#00689d","#00689d","#00689d","#00689d","#c5192d","#dda63a","#a21942","#00689d","#fd9d24","#bf8b2e"]},"edges":{"from":[51,62,50,102,98,9,95,57,49,96,19,71,75,96,75,70,50,1,46,48],"to":[77,63,3,139,123,125,64,83,1,95,134,78,173,139,78,171,54,62,4,23],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["no-poverty","zero-hunger","good-health-and-well-being","clean-water-and-sanitation","affordable-and-clean-energy","decent-work-and-economic-growth","reduced-inequalities","sustainable-sities-and-communities","responsible-consumption-and-production","pease-justice-and-strong-institutions","quality-education"],"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
-<p>We are getting there! We could add the legend, but that might be clunky. For sure we should add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract. These will be visible on mouseover to not clutter the UI.</p>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"nodes":{"name":["1.1.1","1.2.1","1.3.1","1.4.2","2.4.1","5.2.1","5.2.2","5.5.1","5.a.1","6.3.2","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","8.4.1","8.4.2","8.9.1","11.1.1","11.2.1","11.3.1","11.7.2","12.b.1","14.3.1","15.9.1","16.1.2","16.1.4","16.6.2","16.7.2","17.13.1","1.a.1","4.a.1","16.1.3","16.1.1","14.a.1","17.3.2"],"id":[1,2,3,5,12,33,34,35,39,42,43,44,45,46,47,51,52,57,68,69,70,74,83,84,94,95,96,98,100,107,111,123,139,169,180,189],"label":["1.1.1","1.2.1","1.3.1","1.4.2","2.4.1","5.2.1","5.2.2","5.5.1","5.a.1","6.3.2","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","8.4.1","8.4.2","8.9.1","11.1.1","11.2.1","11.3.1","11.7.2","12.b.1","14.3.1","15.9.1","16.1.2","16.1.4","16.6.2","16.7.2","17.13.1","1.a.1","4.a.1","16.1.3","16.1.1","14.a.1","17.3.2"],"value":[8,1,6,5,3,4,4,1,1,3,1,9,26,19,6,3,3,1,17,3,7,4,2,1,2,8,4,13,3,7,1,2,9,4,1,2],"sdg":["1","1","1","1","2","5","5","5","5","6","6","6","6","6","6","8","8","8","11","11","11","11","12","14","15","16","16","16","16","17","1","4","16","16","14","17"],"group_name":["no-poverty","no-poverty","no-poverty","no-poverty","zero-hunger","gender-equality","gender-equality","gender-equality","gender-equality","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","responsible-consumption-and-production","life-below-water","life-on-land","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","partnerships-for-the-goals","no-poverty","quality-education","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","life-below-water","partnerships-for-the-goals"],"color":["#e5243b","#e5243b","#e5243b","#e5243b","#dda63a","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#26bde2","#26bde2","#26bde2","#26bde2","#26bde2","#26bde2","#a21942","#a21942","#a21942","#fd9d24","#fd9d24","#fd9d24","#fd9d24","#bf8b2e","#0a97d9","#56c02b","#00689d","#00689d","#00689d","#00689d","#19486a","#e5243b","#c5192d","#00689d","#00689d","#0a97d9","#19486a"]},"edges":{"from":[95,68,98,3,107,83,39,57,42,5,2,96,74,43,69,84,46,45,52,95],"to":[34,1,123,111,189,94,5,83,47,12,1,139,33,44,70,180,100,35,51,169],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["no-poverty","zero-hunger","gender-equality","clean-water-and-sanitation","decent-work-and-economic-growth","sustainable-sities-and-communities","responsible-consumption-and-production","life-below-water","life-on-land","pease-justice-and-strong-institutions","partnerships-for-the-goals","quality-education"],"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<p>We are getting there! We could add the legend, but that might be clunky. We should definitely add what the actual indicator names are, because unless you work very closely with this data, these indicator numbers can be a bit abstract. These will be visible on mouseover to not clutter the UI.</p>
 <pre class="r"><code>ind_extractor &lt;- function(specific_file){
   this_one &lt;- str_extract(specific_file, &quot;[0-9]+\\-..\\-..&quot;) 
   x &lt;- readtext(specific_file)
@@ -1078,12 +1079,12 @@ ind_names &lt;- all_names %&gt;% enframe %&gt;% unnest(value) %&gt;% mutate(name
   group_by(ind_num) %&gt;% slice(1) %&gt;% ungroup
 
 ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
-<div id="yqhpupygwd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xotjubwjia" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yqhpupygwd .gt_table {
+#xotjubwjia .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1108,7 +1109,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_heading {
+#xotjubwjia .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1120,7 +1121,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_title {
+#xotjubwjia .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1132,7 +1133,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-width: 0;
 }
 
-#yqhpupygwd .gt_subtitle {
+#xotjubwjia .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1144,13 +1145,13 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-width: 0;
 }
 
-#yqhpupygwd .gt_bottom_border {
+#xotjubwjia .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_col_headings {
+#xotjubwjia .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1165,7 +1166,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_col_heading {
+#xotjubwjia .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1185,7 +1186,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#yqhpupygwd .gt_column_spanner_outer {
+#xotjubwjia .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1197,15 +1198,15 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 4px;
 }
 
-#yqhpupygwd .gt_column_spanner_outer:first-child {
+#xotjubwjia .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yqhpupygwd .gt_column_spanner_outer:last-child {
+#xotjubwjia .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yqhpupygwd .gt_column_spanner {
+#xotjubwjia .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1217,7 +1218,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   width: 100%;
 }
 
-#yqhpupygwd .gt_group_heading {
+#xotjubwjia .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1242,7 +1243,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#yqhpupygwd .gt_empty_group_heading {
+#xotjubwjia .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1257,15 +1258,15 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: middle;
 }
 
-#yqhpupygwd .gt_from_md > :first-child {
+#xotjubwjia .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yqhpupygwd .gt_from_md > :last-child {
+#xotjubwjia .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yqhpupygwd .gt_row {
+#xotjubwjia .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1284,7 +1285,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   overflow-x: hidden;
 }
 
-#yqhpupygwd .gt_stub {
+#xotjubwjia .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1297,7 +1298,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#yqhpupygwd .gt_stub_row_group {
+#xotjubwjia .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1311,11 +1312,11 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   vertical-align: top;
 }
 
-#yqhpupygwd .gt_row_group_first td {
+#xotjubwjia .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yqhpupygwd .gt_summary_row {
+#xotjubwjia .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1325,16 +1326,16 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#yqhpupygwd .gt_first_summary_row {
+#xotjubwjia .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_first_summary_row.thick {
+#xotjubwjia .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yqhpupygwd .gt_last_summary_row {
+#xotjubwjia .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1344,7 +1345,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_grand_summary_row {
+#xotjubwjia .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1354,7 +1355,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#yqhpupygwd .gt_first_grand_summary_row {
+#xotjubwjia .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1364,11 +1365,11 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_striped {
+#xotjubwjia .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yqhpupygwd .gt_table_body {
+#xotjubwjia .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1377,7 +1378,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_footnotes {
+#xotjubwjia .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1391,7 +1392,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_footnote {
+#xotjubwjia .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1400,7 +1401,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#yqhpupygwd .gt_sourcenotes {
+#xotjubwjia .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1414,7 +1415,7 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqhpupygwd .gt_sourcenote {
+#xotjubwjia .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1422,64 +1423,64 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
   padding-right: 5px;
 }
 
-#yqhpupygwd .gt_left {
+#xotjubwjia .gt_left {
   text-align: left;
 }
 
-#yqhpupygwd .gt_center {
+#xotjubwjia .gt_center {
   text-align: center;
 }
 
-#yqhpupygwd .gt_right {
+#xotjubwjia .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yqhpupygwd .gt_font_normal {
+#xotjubwjia .gt_font_normal {
   font-weight: normal;
 }
 
-#yqhpupygwd .gt_font_bold {
+#xotjubwjia .gt_font_bold {
   font-weight: bold;
 }
 
-#yqhpupygwd .gt_font_italic {
+#xotjubwjia .gt_font_italic {
   font-style: italic;
 }
 
-#yqhpupygwd .gt_super {
+#xotjubwjia .gt_super {
   font-size: 65%;
 }
 
-#yqhpupygwd .gt_footnote_marks {
+#xotjubwjia .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#yqhpupygwd .gt_asterisk {
+#xotjubwjia .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yqhpupygwd .gt_indent_1 {
+#xotjubwjia .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yqhpupygwd .gt_indent_2 {
+#xotjubwjia .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yqhpupygwd .gt_indent_3 {
+#xotjubwjia .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yqhpupygwd .gt_indent_4 {
+#xotjubwjia .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yqhpupygwd .gt_indent_5 {
+#xotjubwjia .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1492,16 +1493,16 @@ ind_names %&gt;% sample_n(5) %&gt;% gt::gt() </code></pre>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">17.18.3</td>
-<td class="gt_row gt_left">Indicator 17.18.3: Number of countries with a national statistical plan that is fully funded and under implementation, by source of funding</td></tr>
-    <tr><td class="gt_row gt_right">15.6.1</td>
-<td class="gt_row gt_left">Indicator 15.6.1: Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits</td></tr>
-    <tr><td class="gt_row gt_right">11.1.1</td>
-<td class="gt_row gt_left">Indicator 11.1.1: Proportion of urban population living in slums, informal settlements or inadequate housing</td></tr>
-    <tr><td class="gt_row gt_right">2.4.1</td>
-<td class="gt_row gt_left">Indicator 2.4.1: Proportion of agricultural area under productive and sustainable agriculture</td></tr>
-    <tr><td class="gt_row gt_right">4.4.1</td>
-<td class="gt_row gt_left">Indicator 4.4.1: Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill</td></tr>
+    <tr><td class="gt_row gt_right">2.3.2</td>
+<td class="gt_row gt_left">Indicator 2.3.2: Average income of small-scale food producers, by sex and indigenous status</td></tr>
+    <tr><td class="gt_row gt_right">9.4.1</td>
+<td class="gt_row gt_left">Indicator 9.4.1: CO2 emission per unit of value added</td></tr>
+    <tr><td class="gt_row gt_right">17.14.1</td>
+<td class="gt_row gt_left">Indicator 17.14.1: Number of countries with mechanisms in place to enhance policy coherence of sustainable development</td></tr>
+    <tr><td class="gt_row gt_right">10.5.1</td>
+<td class="gt_row gt_left">Indicator 10.5.1: Financial Soundness Indicators</td></tr>
+    <tr><td class="gt_row gt_right">3.1.2</td>
+<td class="gt_row gt_left">Indicator 3.1.2: Proportion of births attended by skilled health personnel </td></tr>
   </tbody>
   
   
@@ -1521,9 +1522,19 @@ visNetwork(small_nodes, small_edges) %&gt;%
                      label = gsub(&quot;-&quot;, &quot; &quot;, label), label = gsub(&quot;color&quot;, &quot;&quot;, label)) %&gt;% 
               unite(label, sdg, label, sep = &quot; &quot;), useGroups = FALSE)</code></pre>
 <div id="htmlwidget-3" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"nodes":{"name":["1.1.1","1.4.1","2.1.2","2.3.2","2.4.1","2.5.1","3.2.1","3.2.2","3.3.2","3.5.1","3.8.1","6.5.2","8.2.1","8.8.2","8.b.1","10.1.1","10.2.1","11.1.1","11.3.1","11.7.1","15.1.1","15.2.1","15.4.2","16.4.1","16.6.2","16.7.2","16.b.1","17.15.1","6.2.1","5.b.1","2.2.1","2.5.1b","3.5.2","13.3.2","16.2.2","17.16.1"],"id":[1,4,9,11,12,13,17,18,19,20,21,46,49,56,58,62,63,68,70,73,88,90,93,97,98,100,101,108,113,116,125,128,133,157,162,191],"label":["1.1.1","1.4.1","2.1.2","2.3.2","2.4.1","2.5.1","3.2.1","3.2.2","3.3.2","3.5.1","3.8.1","6.5.2","8.2.1","8.8.2","8.b.1","10.1.1","10.2.1","11.1.1","11.3.1","11.7.1","15.1.1","15.2.1","15.4.2","16.4.1","16.6.2","16.7.2","16.b.1","17.15.1","6.2.1","5.b.1","2.2.1","2.5.1b","3.5.2","13.3.2","16.2.2","17.16.1"],"value":[8,13,4,1,3,3,1,1,13,1,3,19,4,6,3,3,3,17,7,2,1,1,3,7,13,3,4,2,3,1,2,2,2,1,2,1],"sdg":["1","1","2","2","2","2","3","3","3","3","3","6","8","8","8","10","10","11","11","11","15","15","15","16","16","16","16","17","6","5","2","2","3","13","16","17"],"group_name":["no-poverty","no-poverty","zero-hunger","zero-hunger","zero-hunger","zero-hunger","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","clean-water-and-sanitation","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","reduced-inequalities","reduced-inequalities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","life-on-land","life-on-land","life-on-land","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","partnerships-for-the-goals","clean-water-and-sanitation","gender-equality","zero-hunger","zero-hunger","good-health-and-well-being","climate-change","pease-justice-and-strong-institutions","partnerships-for-the-goals"],"color":["#e5243b","#e5243b","#dda63a","#dda63a","#dda63a","#dda63a","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#26bde2","#a21942","#a21942","#a21942","#dd1367","#dd1367","#fd9d24","#fd9d24","#fd9d24","#56c02b","#56c02b","#56c02b","#00689d","#00689d","#00689d","#00689d","#19486a","#26bde2","#ff3a21","#dda63a","#dda63a","#4c9f38","#3f7e44","#00689d","#19486a"],"title":[null,"Indicator 1.4.1: Proportion of population living in households with access to basic services","Indicator 2.1.2: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)","Indicator 2.3.2: Average income of small-scale food producers, by sex and indigenous status","Indicator 2.4.1: Proportion of agricultural area under productive and sustainable agriculture",null,"Indicator 3.2.1: Under‑5 mortality rate","Indicator 3.2.2: Neonatal mortality rate ","Indicator 3.3.2: Tuberculosis incidence per 100,000 population ","Indicator 3.5.1: Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders ","Indicator 3.8.1: Coverage of essential health services ","Indicator 6.5.2: Proportion of transboundary basin area with an operational arrangement for water cooperation","Indicator 8.2.1: Annual growth rate of real GDP per employed person","Indicator 8.8.2: Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status","Indicator 8.b.1: Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy ","Indicator 10.1.1: Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population","Indicator 10.2.1: Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities","Indicator 11.1.1: Proportion of urban population living in slums, informal settlements or inadequate housing","Indicator 11.3.1: Ratio of land consumption rate to population growth rate","Indicator 11.7.1: Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities","Indicator 15.1.1: Forest area as a proportion of total land area","Indicator 15.2.1: Progress towards sustainable forest management ","Indicator 15.4.2: Mountain Green Cover Index","Indicator 16.4.1: Total value of inward and outward illicit financial flows (in current United States dollars)","Indicator 16.6.2: Proportion of population satisfied with their last experience of public services","Indicator 16.7.2: Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group","Indicator 16.b.1: Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law","Indicator 17.15.1: Extent of use of country-owned results frameworks and planning tools by providers of development cooperation",null,"Indicator 5.b.1: Proportion of individuals who own a mobile telephone, by sex","Indicator 2.2.1: Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age","Indicator 2.5.1: Number of (a) plant and (b) animal genetic resources for food and agriculture secured in either medium- or long-term conservation facilities","Indicator 3.5.2: Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol",null,"Indicator 16.2.2: Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation","Indicator 17.16.1: Number of countries reporting progress in multi-stakeholder development effectiveness monitoring frameworks that support the achievement of the sustainable development goals"]},"edges":{"from":[4,93,13,18,49,20,46,68,90,12,101,97,68,19,108,56,46,73,4,9],"to":[116,88,128,17,1,133,157,63,88,11,98,162,113,62,191,58,100,70,21,125],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["no-poverty","zero-hunger","good-health-and-well-being","clean-water-and-sanitation","decent-work-and-economic-growth","reduced-inequalities","sustainable-sities-and-communities","life-on-land","pease-justice-and-strong-institutions","partnerships-for-the-goals","gender-equality","climate-change"],"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["1 no poverty","2 zero hunger","3 good health and well being","4 quality education","5 gender equality","6 clean water and sanitation","7 affordable and clean energy","8 decent work and economic growth","9 industry innovation and infrastructure","10 reduced inequalities","11 sustainable sities and communities","12 responsible consumption and production","13 climate change","14 life below water","15 life on land","16 pease justice and strong institutions","17 partnerships for the goals"],"color":["#e5243b","#dda63a","#4c9f38","#c5192d","#ff3a21","#26bde2","#fcc30b","#a21942","#fd6925","#dd1367","#fd9d24","#bf8b2e","#3f7e44","#0a97d9","#56c02b","#00689d","#19486a"],"shape":["box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box"],"font.color":["white","white","white","white","white","white","white","white","white","white","white","white","white","white","white","white","white"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
-<p>I hate the legend… let’s turn it off. Other than that, voila, the full network!</p>
-<pre class="r"><code>visNetwork(g$nodes, g$edges %&gt;% select(-value))</code></pre>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"nodes":{"name":["1.1.1","1.2.1","2.1.2","2.A.1","3.9.3","4.2.1","5.1.1","5.5.1","5.5.2","6.4.2","6.5.1","8.2.1","8.3.1","8.4.2","8.5.1","8.5.2","10.1.1","10.2.1","11.1.1","11.2.1","11.3.1","12.1.1","12.3.1","12.4.1","12.5.1","15.2.1","15.3.1","15.9.1","16.7.1","16.7.2","16.b.1","17.1.2","2.2.1","4.2.2","15.a.1"],"id":[1,2,9,15,25,31,32,35,36,44,45,49,50,52,53,54,62,63,68,69,70,75,78,79,81,90,91,94,99,100,101,104,125,138,181],"label":["1.1.1","1.2.1","2.1.2","2.A.1","3.9.3","4.2.1","5.1.1","5.5.1","5.5.2","6.4.2","6.5.1","8.2.1","8.3.1","8.4.2","8.5.1","8.5.2","10.1.1","10.2.1","11.1.1","11.2.1","11.3.1","12.1.1","12.3.1","12.4.1","12.5.1","15.2.1","15.3.1","15.9.1","16.7.1","16.7.2","16.b.1","17.1.2","2.2.1","4.2.2","15.a.1"],"value":[8,1,4,2,1,1,4,1,1,9,26,4,3,3,4,4,3,3,17,3,7,16,3,5,3,1,5,2,3,3,4,1,2,1,1],"sdg":["1","1","2","2","3","4","5","5","5","6","6","8","8","8","8","8","10","10","11","11","11","12","12","12","12","15","15","15","16","16","16","17","2","4","15"],"group_name":["no-poverty","no-poverty","zero-hunger","zero-hunger","good-health-and-well-being","quality-education","gender-equality","gender-equality","gender-equality","clean-water-and-sanitation","clean-water-and-sanitation","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","reduced-inequalities","reduced-inequalities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","life-on-land","life-on-land","life-on-land","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","partnerships-for-the-goals","zero-hunger","quality-education","life-on-land"],"color":["#e5243b","#e5243b","#dda63a","#dda63a","#4c9f38","#c5192d","#ff3a21","#ff3a21","#ff3a21","#26bde2","#26bde2","#a21942","#a21942","#a21942","#a21942","#a21942","#dd1367","#dd1367","#fd9d24","#fd9d24","#fd9d24","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#56c02b","#56c02b","#56c02b","#00689d","#00689d","#00689d","#19486a","#dda63a","#c5192d","#56c02b"],"title":[null,"Indicator 1.2.1: Proportion of population living below the national poverty line, by sex and age","Indicator 2.1.2: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)","Indicator 2.a.1: The agriculture orientation index for government expenditures","Indicator 3.9.3: Mortality rate attributed to unintentional poisoning","Indicator 4.2.1: Proportion of children aged 24–59 months who are developmentally on track in health, learning and psychosocial well-being, by sex","Indicator 5.1.1: Whether or not legal frameworks are in place to promote, enforce and monitor equality and non discrimination on the basis of sex",null,"Indicator 5.5.2: Proportion of women in managerial positions","Indicator 6.4.2: Level of water stress: freshwater withdrawal as a proportion of available freshwater resources","Indicator 6.5.1: Degree of integrated water resources management","Indicator 8.2.1: Annual growth rate of real GDP per employed person","Indicator 8.3.1: Proportion of informal employment in total employment, by sector and sex","Indicator 8.4.2: Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP","Indicator 8.5.1: Average hourly earnings of employees, by sex, age, occupation and persons with disabilities","Indicator 8.5.2: Unemployment rate, by sex, age and persons with disabilities ","Indicator 10.1.1: Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population","Indicator 10.2.1: Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities","Indicator 11.1.1: Proportion of urban population living in slums, informal settlements or inadequate housing","Indicator 11.2.1: Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities","Indicator 11.3.1: Ratio of land consumption rate to population growth rate","Indicator 12.1.1: Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production",null,"Indicator 12.4.1: Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement","Indicator 12.5.1: National recycling rate, tons of material recycled","Indicator 15.2.1: Progress towards sustainable forest management ","Indicator 15.3.1: Proportion of land that is degraded over total land area","Indicator 15.9.1: (a) Number of countries that have established national targets in accordance with or similar to Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011–2020 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting",null,"Indicator 16.7.2: Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group","Indicator 16.b.1: Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law","Indicator 17.1.2: Proportion of domestic budget funded by domestic taxes","Indicator 2.2.1: Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age","Indicator 4.2.2: Participation rate in organized learning (one year before the official primary entry age), by sex","Indicator 15.a.1: (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments"]},"edges":{"from":[44,91,68,70,45,101,91,1,94,68,9,35,79,36,81,31,54,75,15,62],"to":[91,90,63,69,100,32,70,49,181,50,125,99,25,53,78,138,1,52,104,2],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["no-poverty","zero-hunger","good-health-and-well-being","quality-education","gender-equality","clean-water-and-sanitation","decent-work-and-economic-growth","reduced-inequalities","sustainable-sities-and-communities","responsible-consumption-and-production","life-on-land","pease-justice-and-strong-institutions","partnerships-for-the-goals"],"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["1 no poverty","2 zero hunger","3 good health and well being","4 quality education","5 gender equality","6 clean water and sanitation","7 affordable and clean energy","8 decent work and economic growth","9 industry innovation and infrastructure","10 reduced inequalities","11 sustainable sities and communities","12 responsible consumption and production","13 climate change","14 life below water","15 life on land","16 pease justice and strong institutions","17 partnerships for the goals"],"color":["#e5243b","#dda63a","#4c9f38","#c5192d","#ff3a21","#26bde2","#fcc30b","#a21942","#fd6925","#dd1367","#fd9d24","#bf8b2e","#3f7e44","#0a97d9","#56c02b","#00689d","#19486a"],"shape":["box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box"],"font.color":["white","white","white","white","white","white","white","white","white","white","white","white","white","white","white","white","white"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<p>I hate the legend… let’s turn it off. Other than that, voila, the full network (might take some time to display in some computers, give it a sec)! Let’s also create a <a href="full_network.html">full html version</a> suitable to be viewed independently.</p>
+<pre class="r"><code>visNetwork(g$nodes, g$edges %&gt;% select(-value), 
+           main = &quot;Network of SDG indicators&quot;,
+           submain = &quot;As inferred by &#39;related indicator&#39; metadata tags. See bit.ly/sdg_network for more info.&quot;, width = &quot;1200&quot;, height = &quot;700&quot;) %&gt;% 
+  visLegend(addNodes = sdg_cols %&gt;% rename(label=group_name) %&gt;%  
+              mutate(shape = &quot;box&quot;, font.color = &quot;white&quot;, 
+                     label = gsub(&quot;-&quot;, &quot; &quot;, label), label = gsub(&quot;color&quot;, &quot;&quot;, label)) %&gt;% 
+              unite(label, sdg, label, sep = &quot; &quot;), useGroups = FALSE) %&gt;% 
+  visSave(&quot;full_network.html&quot;, selfcontained = TRUE)
+  
+
+visNetwork(g$nodes, g$edges %&gt;% select(-value))</code></pre>
 <div id="htmlwidget-4" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
 <script type="application/json" data-for="htmlwidget-4">{"x":{"nodes":{"name":["1.1.1","1.2.1","1.3.1","1.4.1","1.4.2","1.a.2","1.b.1","2.1.1","2.1.2","2.3.1","2.3.2","2.4.1","2.5.1","2.5.2","2.A.1","3.1.1","3.2.1","3.2.2","3.3.2","3.5.1","3.8.1","3.8.2","3.9.1","3.9.2","3.9.3","3.a.1","3.b.1","3.B.3","4.1.1","4.1.2","4.2.1","5.1.1","5.2.1","5.2.2","5.5.1","5.5.2","5.6.1","5.6.2","5.a.1","5.A.2","6.3.1","6.3.2","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","7.1.2","8.2.1","8.3.1","8.4.1","8.4.2","8.5.1","8.5.2","8.8.1","8.8.2","8.9.1","8.b.1","9.2.2","9.3.1","9.3.2","10.1.1","10.2.1","10.3.1","10.4.1","10.7.2","10.7.3","11.1.1","11.2.1","11.3.1","11.6.1","11.6.2","11.7.1","11.7.2","12.1.1","12.2.1","12.2.2","12.3.1","12.4.1","12.4.2","12.5.1","12.7.1","12.b.1","14.3.1","14.4.1","14.5.1","14.7.1","15.1.1","15.1.2","15.2.1","15.3.1","15.4.1","15.4.2","15.9.1","16.1.2","16.1.4","16.4.1","16.6.2","16.7.1","16.7.2","16.b.1","16.10.1","17.1.1","17.1.2","17.3.1","17.5.1","17.13.1","17.15.1","17.18.3","17.19.1","1.a.1","6.1.1","6.2.1","9.1.1","7.1.1","5.b.1","9.c.1","3.7.1","5.a.2","4.5.3","4.5.4","4.5.5","4.a.1","4.b.1","2.2.1","2.2.2","2.2.3","2.5.1b","2.5.1a","3.1.2","3.3.1","3.4.1","3.5.2","8.1.1","3.d.1","3.b.2","4.5.1","4.2.2","16.1.3","16.2.3","6.2.1a","14.1.1","1.5.1","11.5.1","4.7.1","6.a.1","6.b.1","11.3.2","13.2.1","13.2.2","16.3.1","16.3.2","16.5.1","16.5.2","7.2.1","11.5.2","13.3.2","14.2.1","17.9.1","17.14.1","8.6.1","16.2.2","16.a.1","8.7.1","10.7.1","10.7.4","10.c.1","1.1.2","16.1.1","11.a.1","11.b.1","12.6.1","12.8.1","12.A.1","12.c.1","14.c.1","14.6.1","15.8.1","12.3.1b","14.a.1","15.a.1","15.b.1","16.4.2","15.7.1","15.c.1","16.10.2","10.b.1","17.2.1","17.3.2","17.4.1","17.16.1","5.c.1"],"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192],"label":["1.1.1","1.2.1","1.3.1","1.4.1","1.4.2","1.a.2","1.b.1","2.1.1","2.1.2","2.3.1","2.3.2","2.4.1","2.5.1","2.5.2","2.A.1","3.1.1","3.2.1","3.2.2","3.3.2","3.5.1","3.8.1","3.8.2","3.9.1","3.9.2","3.9.3","3.a.1","3.b.1","3.B.3","4.1.1","4.1.2","4.2.1","5.1.1","5.2.1","5.2.2","5.5.1","5.5.2","5.6.1","5.6.2","5.a.1","5.A.2","6.3.1","6.3.2","6.4.1","6.4.2","6.5.1","6.5.2","6.6.1","7.1.2","8.2.1","8.3.1","8.4.1","8.4.2","8.5.1","8.5.2","8.8.1","8.8.2","8.9.1","8.b.1","9.2.2","9.3.1","9.3.2","10.1.1","10.2.1","10.3.1","10.4.1","10.7.2","10.7.3","11.1.1","11.2.1","11.3.1","11.6.1","11.6.2","11.7.1","11.7.2","12.1.1","12.2.1","12.2.2","12.3.1","12.4.1","12.4.2","12.5.1","12.7.1","12.b.1","14.3.1","14.4.1","14.5.1","14.7.1","15.1.1","15.1.2","15.2.1","15.3.1","15.4.1","15.4.2","15.9.1","16.1.2","16.1.4","16.4.1","16.6.2","16.7.1","16.7.2","16.b.1","16.10.1","17.1.1","17.1.2","17.3.1","17.5.1","17.13.1","17.15.1","17.18.3","17.19.1","1.a.1","6.1.1","6.2.1","9.1.1","7.1.1","5.b.1","9.c.1","3.7.1","5.a.2","4.5.3","4.5.4","4.5.5","4.a.1","4.b.1","2.2.1","2.2.2","2.2.3","2.5.1b","2.5.1a","3.1.2","3.3.1","3.4.1","3.5.2","8.1.1","3.d.1","3.b.2","4.5.1","4.2.2","16.1.3","16.2.3","6.2.1a","14.1.1","1.5.1","11.5.1","4.7.1","6.a.1","6.b.1","11.3.2","13.2.1","13.2.2","16.3.1","16.3.2","16.5.1","16.5.2","7.2.1","11.5.2","13.3.2","14.2.1","17.9.1","17.14.1","8.6.1","16.2.2","16.a.1","8.7.1","10.7.1","10.7.4","10.c.1","1.1.2","16.1.1","11.a.1","11.b.1","12.6.1","12.8.1","12.A.1","12.c.1","14.c.1","14.6.1","15.8.1","12.3.1b","14.a.1","15.a.1","15.b.1","16.4.2","15.7.1","15.c.1","16.10.2","10.b.1","17.2.1","17.3.2","17.4.1","17.16.1","5.c.1"],"value":[8,1,6,13,5,5,1,4,4,1,1,3,3,1,2,1,1,1,13,1,3,3,2,1,1,1,1,4,1,1,1,4,4,4,1,1,1,1,1,3,2,3,1,9,26,19,6,1,4,3,3,3,4,4,1,6,1,3,1,1,1,3,3,4,2,6,4,17,3,7,4,1,2,4,16,3,3,3,5,2,3,1,2,1,1,2,1,1,2,1,5,2,3,2,8,4,7,13,3,3,4,8,1,1,6,3,7,2,1,1,1,3,3,2,3,1,1,2,3,1,1,1,2,1,2,2,2,2,1,1,1,2,2,2,1,1,1,1,9,3,1,2,1,2,2,1,1,1,2,1,3,2,3,2,1,1,1,1,2,1,3,2,5,1,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,2,2,1,1],"sdg":["1","1","1","1","1","1","1","2","2","2","2","2","2","2","2","3","3","3","3","3","3","3","3","3","3","3","3","3","4","4","4","5","5","5","5","5","5","5","5","5","6","6","6","6","6","6","6","7","8","8","8","8","8","8","8","8","8","8","9","9","9","10","10","10","10","10","10","11","11","11","11","11","11","11","12","12","12","12","12","12","12","12","12","14","14","14","14","15","15","15","15","15","15","15","16","16","16","16","16","16","16","16","17","17","17","17","17","17","17","17","1","6","6","9","7","5","9","3","5","4","4","4","4","4","2","2","2","2","2","3","3","3","3","8","3","3","4","4","16","16","6","14","1","11","4","6","6","11","13","13","16","16","16","16","7","11","13","14","17","17","8","16","16","8","10","10","10","1","16","11","11","12","12","12","12","14","14","15","12","14","15","15","16","15","15","16","10","17","17","17","17","5"],"group_name":["no-poverty","no-poverty","no-poverty","no-poverty","no-poverty","no-poverty","no-poverty","zero-hunger","zero-hunger","zero-hunger","zero-hunger","zero-hunger","zero-hunger","zero-hunger","zero-hunger","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","quality-education","quality-education","quality-education","gender-equality","gender-equality","gender-equality","gender-equality","gender-equality","gender-equality","gender-equality","gender-equality","gender-equality","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","clean-water-and-sanitation","affordable-and-clean-energy","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","decent-work-and-economic-growth","industry-innovation-and-infrastructure","industry-innovation-and-infrastructure","industry-innovation-and-infrastructure","reduced-inequalities","reduced-inequalities","reduced-inequalities","reduced-inequalities","reduced-inequalities","reduced-inequalities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","sustainable-sities-and-communities","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","life-below-water","life-below-water","life-below-water","life-below-water","life-on-land","life-on-land","life-on-land","life-on-land","life-on-land","life-on-land","life-on-land","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","no-poverty","clean-water-and-sanitation","clean-water-and-sanitation","industry-innovation-and-infrastructure","affordable-and-clean-energy","gender-equality","industry-innovation-and-infrastructure","good-health-and-well-being","gender-equality","quality-education","quality-education","quality-education","quality-education","quality-education","zero-hunger","zero-hunger","zero-hunger","zero-hunger","zero-hunger","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","good-health-and-well-being","decent-work-and-economic-growth","good-health-and-well-being","good-health-and-well-being","quality-education","quality-education","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","clean-water-and-sanitation","life-below-water","no-poverty","sustainable-sities-and-communities","quality-education","clean-water-and-sanitation","clean-water-and-sanitation","sustainable-sities-and-communities","climate-change","climate-change","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","affordable-and-clean-energy","sustainable-sities-and-communities","climate-change","life-below-water","partnerships-for-the-goals","partnerships-for-the-goals","decent-work-and-economic-growth","pease-justice-and-strong-institutions","pease-justice-and-strong-institutions","decent-work-and-economic-growth","reduced-inequalities","reduced-inequalities","reduced-inequalities","no-poverty","pease-justice-and-strong-institutions","sustainable-sities-and-communities","sustainable-sities-and-communities","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","responsible-consumption-and-production","life-below-water","life-below-water","life-on-land","responsible-consumption-and-production","life-below-water","life-on-land","life-on-land","pease-justice-and-strong-institutions","life-on-land","life-on-land","pease-justice-and-strong-institutions","reduced-inequalities","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","partnerships-for-the-goals","gender-equality"],"color":["#e5243b","#e5243b","#e5243b","#e5243b","#e5243b","#e5243b","#e5243b","#dda63a","#dda63a","#dda63a","#dda63a","#dda63a","#dda63a","#dda63a","#dda63a","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#c5192d","#c5192d","#c5192d","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#ff3a21","#26bde2","#26bde2","#26bde2","#26bde2","#26bde2","#26bde2","#26bde2","#fcc30b","#a21942","#a21942","#a21942","#a21942","#a21942","#a21942","#a21942","#a21942","#a21942","#a21942","#fd6925","#fd6925","#fd6925","#dd1367","#dd1367","#dd1367","#dd1367","#dd1367","#dd1367","#fd9d24","#fd9d24","#fd9d24","#fd9d24","#fd9d24","#fd9d24","#fd9d24","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#0a97d9","#0a97d9","#0a97d9","#0a97d9","#56c02b","#56c02b","#56c02b","#56c02b","#56c02b","#56c02b","#56c02b","#00689d","#00689d","#00689d","#00689d","#00689d","#00689d","#00689d","#00689d","#19486a","#19486a","#19486a","#19486a","#19486a","#19486a","#19486a","#19486a","#e5243b","#26bde2","#26bde2","#fd6925","#fcc30b","#ff3a21","#fd6925","#4c9f38","#ff3a21","#c5192d","#c5192d","#c5192d","#c5192d","#c5192d","#dda63a","#dda63a","#dda63a","#dda63a","#dda63a","#4c9f38","#4c9f38","#4c9f38","#4c9f38","#a21942","#4c9f38","#4c9f38","#c5192d","#c5192d","#00689d","#00689d","#26bde2","#0a97d9","#e5243b","#fd9d24","#c5192d","#26bde2","#26bde2","#fd9d24","#3f7e44","#3f7e44","#00689d","#00689d","#00689d","#00689d","#fcc30b","#fd9d24","#3f7e44","#0a97d9","#19486a","#19486a","#a21942","#00689d","#00689d","#a21942","#dd1367","#dd1367","#dd1367","#e5243b","#00689d","#fd9d24","#fd9d24","#bf8b2e","#bf8b2e","#bf8b2e","#bf8b2e","#0a97d9","#0a97d9","#56c02b","#bf8b2e","#0a97d9","#56c02b","#56c02b","#00689d","#56c02b","#56c02b","#00689d","#dd1367","#19486a","#19486a","#19486a","#19486a","#ff3a21"],"title":[null,"Indicator 1.2.1: Proportion of population living below the national poverty line, by sex and age",null,"Indicator 1.4.1: Proportion of population living in households with access to basic services","Indicator 1.4.2: Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure","Indicator 1.a.2: Proportion of total government spending on essential services (education, health and social protection)","Indicator 1.b.1: Pro-poor public social spending","Indicator 2.1.1: Prevalence of undernourishment","Indicator 2.1.2: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)","Indicator 2.3.1: Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size","Indicator 2.3.2: Average income of small-scale food producers, by sex and indigenous status","Indicator 2.4.1: Proportion of agricultural area under productive and sustainable agriculture",null,"Indicator 2.5.2: Proportion of local breeds classified as being at risk of extinction","Indicator 2.a.1: The agriculture orientation index for government expenditures","Indicator 3.1.1: Maternal mortality ratio","Indicator 3.2.1: Under‑5 mortality rate","Indicator 3.2.2: Neonatal mortality rate ","Indicator 3.3.2: Tuberculosis incidence per 100,000 population ","Indicator 3.5.1: Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders ","Indicator 3.8.1: Coverage of essential health services ","Indicator 3.8.2: Proportion of population with large household expenditures on health as a share of total household expenditure or income","Indicator 3.9.1: Mortality rate attributed to household and ambient air pollution ","Indicator 3.9.2: Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services) ","Indicator 3.9.3: Mortality rate attributed to unintentional poisoning","Indicator 3.a.1: Age-standardized prevalence of current tobacco use among persons aged 15 years and older","Indicator 3.b.1: Proportion of the target population covered by all vaccines included in their national programme ","Indicator 3.b.3: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis ","Indicator 4.1.1: Proportion of children and young people (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex","Indicator 4.1.2: Completion rate (primary education, lower secondary education, upper secondary education)","Indicator 4.2.1: Proportion of children aged 24–59 months who are developmentally on track in health, learning and psychosocial well-being, by sex","Indicator 5.1.1: Whether or not legal frameworks are in place to promote, enforce and monitor equality and non discrimination on the basis of sex","Indicator 5.2.1: Proportion of ever-partnered women and girls aged 15 years and older subjected to physical, sexual or psychological violence by a current or former intimate partner in the previous 12 months, by form of violence and by age","Indicator 5.2.2: Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence",null,"Indicator 5.5.2: Proportion of women in managerial positions","Indicator 5.6.1: Proportion of women aged 15–49 years who make their own informed decisions regarding sexual relations, contraceptive use and reproductive health care","Indicator 5.6.2: Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education","Indicator 5.a.1: (a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure","Indicator 5.a.2: Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control","Indicator 6.3.1: Proportion of domestic and industrial wastewater flows safely treated","Indicator 6.3.2: Proportion of bodies of water with good ambient water quality","Indicator 6.4.1: Change in water-use efficiency over time","Indicator 6.4.2: Level of water stress: freshwater withdrawal as a proportion of available freshwater resources","Indicator 6.5.1: Degree of integrated water resources management","Indicator 6.5.2: Proportion of transboundary basin area with an operational arrangement for water cooperation",null,"Indicator 7.1.2: Proportion of population with primary reliance on clean fuels and technology","Indicator 8.2.1: Annual growth rate of real GDP per employed person","Indicator 8.3.1: Proportion of informal employment in total employment, by sector and sex","Indicator 8.4.1: Material Footprint, material footprint per capita, and material footprint per GDP","Indicator 8.4.2: Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP","Indicator 8.5.1: Average hourly earnings of employees, by sex, age, occupation and persons with disabilities","Indicator 8.5.2: Unemployment rate, by sex, age and persons with disabilities ","Indicator 8.8.1: Fatal and non-fatal occupational injuries per 100,000 workers, by sex and migrant status","Indicator 8.8.2: Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status","Indicator 8.9.1: Tourism direct GDP as a proportion of total GDP and in growth rate ","Indicator 8.b.1: Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy ","Indicator 9.2.2: Manufacturing employment as a proportion of total employment","Indicator 9.3.1: Proportion of small-scale industries in total industry value added","Indicator 9.3.2: Proportion of small-scale industries with a loan or line of credit","Indicator 10.1.1: Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population","Indicator 10.2.1: Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities","Indicator 10.3.1: Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law","Indicator 10.4.1: Labour share of GDP","Indicator 10.7.2: Number of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people","Indicator 10.7.3: Number of people who died or disappeared in the process of migration towards an international destination","Indicator 11.1.1: Proportion of urban population living in slums, informal settlements or inadequate housing","Indicator 11.2.1: Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities","Indicator 11.3.1: Ratio of land consumption rate to population growth rate","Indicator 11.6.1: Proportion of municipal solid waste collected and managed in controlled facilities out of total municipal waste generated, by cities","Indicator 11.6.2: Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)","Indicator 11.7.1: Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities","Indicator 11.7.2: Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months","Indicator 12.1.1: Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production","Indicator 12.2.1: Material Footprint, material footprint per capita, and material footprint per GDP","Indicator 12.2.2: Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",null,"Indicator 12.4.1: Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement","Indicator 12.4.2: (a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment","Indicator 12.5.1: National recycling rate, tons of material recycled","Indicator 12.7.1: Number of countries implementing sustainable public procurement policies and action plans","Indicator 12.b.1: Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability","Indicator 14.3.1: Average marine acidity (pH) measured at agreed suite of representative sampling stations","Indicator 14.4.1: Proportion of fish stocks within biologically sustainable levels","Indicator 14.5.1: Coverage of protected areas in relation to marine areas","Indicator 14.7.1: Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries","Indicator 15.1.1: Forest area as a proportion of total land area","Indicator 15.1.2: Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type","Indicator 15.2.1: Progress towards sustainable forest management ","Indicator 15.3.1: Proportion of land that is degraded over total land area","Indicator 15.4.1: Coverage by protected areas of important sites for mountain biodiversity","Indicator 15.4.2: Mountain Green Cover Index","Indicator 15.9.1: (a) Number of countries that have established national targets in accordance with or similar to Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011–2020 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting","Indicator 16.1.2: Conflict-related deaths per 100,000 population, by sex, age and cause","Indicator 16.1.4: Proportion of population that feel safe walking alone around the area they live after dark","Indicator 16.4.1: Total value of inward and outward illicit financial flows (in current United States dollars)","Indicator 16.6.2: Proportion of population satisfied with their last experience of public services",null,"Indicator 16.7.2: Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group","Indicator 16.b.1: Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law","Indicator 16.10.1: Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months","Indicator 17.1.1: Total government revenue as a proportion of GDP, by source","Indicator 17.1.2: Proportion of domestic budget funded by domestic taxes","17.3.1 Additional financial resources mobilized for developing countries from multiple sources ","Indicator 17.5.1: Number of countries that adopt and implement investment promotion regimes for developing countries, including the least developed countries","Indicator 17.13.1: Macroeconomic Dashboard","Indicator 17.15.1: Extent of use of country-owned results frameworks and planning tools by providers of development cooperation","Indicator 17.18.3: Number of countries with a national statistical plan that is fully funded and under implementation, by source of funding","Indicator 17.19.1: Dollar value of all resources made available to strengthen statistical capacity in developing countries","Indicator 1.a.1: Total official development assistance grants from all donors that focus on poverty reduction as a share of the recipient country’s gross national income","Indicator 6.1.1: Proportion of population using safely managed drinking water services",null,"Indicator 9.1.1: Proportion of the rural population who live within 2 km of an all-season road","Indicator 7.1.1: Proportion of population with access to electricity","Indicator 5.b.1: Proportion of individuals who own a mobile telephone, by sex","Indicator 9.c.1: Proportion of population covered by a mobile network, by technology","Indicator 3.7.1: Proportion of women of reproductive age (aged 15–49 years) who have their need for family planning satisfied with modern methods",null,null,null,null,"Indicator 4.a.1: Proportion of schools offering basic services, by type of service",null,"Indicator 2.2.1: Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age",null,"Indicator 2.2.3: Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)","Indicator 2.5.1: Number of (a) plant and (b) animal genetic resources for food and agriculture secured in either medium- or long-term conservation facilities","Indicator 2.5.1: Number of (a) plant and (b) animal genetic resources for food and agriculture secured in either medium- or long-term conservation facilities","Indicator 3.1.2: Proportion of births attended by skilled health personnel ","Indicator 3.3.1: Number of new HIV infections per 1,000 uninfected population, by sex, age and key populations ","Indicator 3.4.1: Mortality rate attributed to cardiovascular disease, cancer, diabetes or chronic respiratory disease","Indicator 3.5.2: Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol","Indicator 8.1.1: Annual growth rate of real GDP per capita","Indicator 3.d.1: International Health Regulations (IHR) capacity and health emergency preparedness",null,"Indicator 4.5.1: Parity indices (female/male, rural/urban, bottom/top wealth quintile and others such as disability status, indigenous peoples and conflict-affected, as data become available) for all education indicators on this list that can be disaggregated","Indicator 4.2.2: Participation rate in organized learning (one year before the official primary entry age), by sex","Indicator 16.1.3: Proportion of population subjected to (a) physical violence, (b) psychological violence and (c) sexual violence in the previous 12 months","Indicator 16.2.3: Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18","Indicator 6.2.1: Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water","Indicator 14.1.1: (a) Index of coastal eutrophication; and (b) plastic debris density","Indicator 1.5.1: Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population","Indicator 11.5.1: Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population","Indicator 4.7.1: Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",null,null,"Indicator 11.3.2: Proportion of cities with a direct participation structure of civil society in urban planning and management that operates regularly and democratically","Indicator 13.2.1: Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change","Indicator 13.2.2: Total greenhouse gas emissions per year","Indicator 16.3.1: Proportion of victims of violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms","Indicator 16.3.2: Unsentenced detainees as a proportion of overall prison population","Indicator 16.5.1: Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months","Indicator 16.5.2: Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months","Indicator 7.2.1: Renewable energy share in the total final energy consumption","Indicator 11.5.2: Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters",null,"Indicator 14.2.1: Number of countries using ecosystem-based approaches to managing marine areas","Indicator 17.9.1: Dollar value of financial and technical assistance (including through North-South, South‑South and triangular cooperation) committed to developing countries","Indicator 17.14.1: Number of countries with mechanisms in place to enhance policy coherence of sustainable development","Indicator 8.6.1: Proportion of youth (aged 15–24 years) not in education, employment or training","Indicator 16.2.2: Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation",null,"Indicator 8.7.1: Proportion and number of children aged 5–17 years engaged in child labour, by sex and age","Indicator 10.7.1: Recruitment cost borne by employee as a proportion of monthly income earned in country of destination","Indicator 10.7.4: Proportion of the population who are refugees, by country of origin",null,null,"Indicator 16.1.1: Number of victims of intentional homicide per 100,000 population, by sex and age","Indicator 11.a.1: Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space",null,"Indicator 12.6.1: Number of companies publishing sustainability reports","Indicator 12.8.1: Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",null,"Indicator 12.c.1: Amount of fossil-fuel subsidies (production and consumption) per unit of GDP","Indicator 14.c.1: Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources","Indicator 14.6.1: Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing","Indicator 15.8.1: Proportion of countries adopting relevant national legislation and adequately resourcing the prevention or control of invasive alien species",null,"Indicator 14.a.1: Proportion of total research budget allocated to research in the field of marine technology","Indicator 15.a.1: (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments",null,"Indicator 16.4.2: Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments","Indicator 15.7.1: Proportion of traded wildlife that was poached or illicitly trafficked",null,"Indicator 16.10.2: Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information",null,"Indicator 17.2.1: Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)","Indicator 17.3.2: Volume of remittances (in United States dollars) as a proportion of total GDP","Indicator 17.4.1: Debt service as a proportion of exports of goods and services","Indicator 17.16.1: Number of countries reporting progress in multi-stakeholder development effectiveness monitoring frameworks that support the achievement of the sustainable development goals","Indicator 5.c.1: Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment"]},"edges":{"from":[1,1,1,1,1,1,1,1,2,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,7,8,8,8,8,9,9,9,9,10,11,12,12,12,13,13,13,14,15,15,16,17,18,19,19,19,19,19,19,19,19,19,19,19,19,19,20,21,21,21,22,22,22,23,23,24,25,26,27,28,28,28,28,29,30,31,32,32,33,33,33,33,34,34,34,34,35,36,37,38,39,40,40,40,41,41,42,42,42,43,44,44,44,44,44,44,44,44,44,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,47,47,47,47,47,47,48,49,49,49,49,50,50,50,51,51,51,52,52,52,53,53,53,53,54,54,54,54,55,56,56,56,56,56,56,57,58,58,58,59,60,61,62,62,62,63,63,63,64,64,64,64,65,65,66,66,66,66,66,66,67,67,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,69,69,69,70,70,70,70,70,70,70,71,71,71,71,72,73,73,74,74,74,74,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,76,76,76,77,77,77,78,78,78,79,79,79,79,79,80,80,81,81,81,82,83,83,84,85,86,86,87,88,89,89,90,91,91,91,91,91,92,92,93,93,93,94,94,95,95,95,95,95,95,95,95,96,96,96,96,97,97,97,97,97,97,97,98,98,98,98,98,98,98,98,99,100,100,100,101,101,101,101,102,102,102,102,102,102,102,102,103,104,105,105,105,105,105,105,106,106,107,107,107,107,107,107,107,108,108,109,110],"to":[2,3,49,50,53,62,63,65,1,6,7,21,22,111,21,29,48,69,71,112,113,114,115,116,117,118,10,11,12,39,119,120,121,122,123,124,2,9,125,126,127,8,125,126,127,11,10,9,11,39,14,128,129,128,103,104,130,18,17,1,3,8,21,22,26,48,62,68,131,132,133,134,133,22,26,135,1,2,21,48,72,48,48,132,21,21,22,27,136,137,29,138,38,119,34,74,139,140,33,74,139,140,99,53,38,37,5,5,32,39,42,141,41,47,142,44,12,41,43,45,47,91,112,143,144,4,5,10,11,35,36,47,48,53,54,63,70,94,99,100,115,145,146,147,148,149,150,151,152,153,154,1,4,12,24,36,45,48,89,90,95,100,142,145,155,156,157,158,159,160,42,43,44,45,46,91,23,1,50,54,65,1,3,54,52,76,77,51,76,77,1,36,49,65,1,49,65,161,3,55,58,101,102,162,163,83,54,161,164,49,61,60,1,2,63,1,2,62,32,98,139,163,49,53,55,56,67,165,166,167,55,66,1,50,54,62,63,69,71,73,74,112,113,115,139,144,161,168,169,70,73,114,69,72,73,74,89,170,171,4,41,78,81,23,69,70,33,34,139,140,51,52,76,77,78,81,82,83,149,172,173,174,175,176,177,178,51,52,77,51,52,76,71,81,179,23,24,25,80,81,71,81,71,78,80,75,57,94,180,87,89,92,85,90,86,92,88,12,47,70,88,90,86,89,47,88,90,181,182,34,64,96,101,139,163,169,183,95,139,151,169,66,153,154,162,183,184,185,4,21,29,63,64,118,123,153,35,63,64,99,32,98,139,163,95,96,139,151,152,163,169,186,104,103,106,159,187,188,189,190,105,187,54,62,103,105,134,189,190,191,192,110,109],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["no-poverty","zero-hunger","good-health-and-well-being","quality-education","gender-equality","clean-water-and-sanitation","affordable-and-clean-energy","decent-work-and-economic-growth","industry-innovation-and-infrastructure","reduced-inequalities","sustainable-sities-and-communities","responsible-consumption-and-production","life-below-water","life-on-land","pease-justice-and-strong-institutions","partnerships-for-the-goals","climate-change"],"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <p>It’s cool for sure, but we have a few problems… it’s a bit messy and we can see many one-way relationships (IE A-&gt;B, but not B-&gt;A). Let’s check the “reciprocity” of these links.</p>
@@ -1536,19 +1547,20 @@ reciprocity(ig)</code></pre>
 <p>Oof… pretty low! Ok, so maybe we leave it as is…</p>
 <p>The other thing we can do is move the SDG category to the node, and aggregate at that point to come up with a visual representation of how the SDGs are related.</p>
 <pre class="r"><code>g$nodes &lt;- g$nodes %&gt;% 
-  mutate(sdg = str_pad(sdg, width = 2,pad = &quot;0&quot;),
-         group_name = paste0(sdg, &quot; - &quot;, group_name))
+  mutate(sdg = str_pad(sdg, width = 2,pad = &quot;0&quot;) %&gt;% 
+           paste(&quot;SDG&quot;,.) 
+         )
 
 top_g &lt;- g$edges %&gt;% 
-  left_join(g$nodes %&gt;% select(from = id, from_group = group_name), by = &quot;from&quot;) %&gt;% 
-  left_join(g$nodes %&gt;% select(to = id, to_group = group_name), by = &quot;to&quot;) %&gt;% 
+  left_join(g$nodes %&gt;% select(from = id, from_group = sdg), by = &quot;from&quot;) %&gt;% 
+  left_join(g$nodes %&gt;% select(to = id, to_group = sdg), by = &quot;to&quot;) %&gt;% 
   select(from = from_group, to = to_group) %&gt;% 
   # filter(from != to) %&gt;% 
   count(from, to) %&gt;% 
   pivot_wider(id_cols = from, names_from = to, values_from = n)  
   
 ## huh... climate action doesn&#39;t have a &quot;from&quot;. Interesting! but let&#39;s create one for it or it&#39;ll get angry later cause the matrix isn&#39;t &quot;square&quot;
-top_g[17,1]  &lt;- &quot;13 - climate-change&quot;
+top_g[17,1]  &lt;- &quot;SDG 13&quot;
 
 suppressPackageStartupMessages(library(chorddiag)) ## devtools::install_github(&quot;mattflor/chorddiag&quot;)
 
@@ -1557,11 +1569,11 @@ top_g_square &lt;- top_g %&gt;% select(-from) %&gt;% as.data.frame %&gt;% unname
 dimnames(top_g_square) &lt;- list(from = top_g$from, to = top_g$from)
   
 
-chorddiag(top_g_square, groupColors = sdg_cols$color)</code></pre>
+chorddiag(top_g_square, groupColors = sdg_cols$color )</code></pre>
 <div id="htmlwidget-5" style="width:672px;height:480px;" class="chorddiag html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5">{"x":{"matrix":[[7,3,4,6,3,2,2,3,2,3,2,null,null,null,null,null,null],[null,16,null,null,1,null,null,null,null,null,null,2,null,null,null,null,null],[4,1,20,null,null,null,4,1,null,1,2,null,null,null,null,null,null],[null,null,null,3,null,null,null,null,null,null,null,null,null,null,null,null,null],[2,null,null,null,8,null,null,1,null,null,2,null,5,null,null,null,null],[5,4,1,2,3,19,4,2,null,1,4,2,8,3,3,5,null],[null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[6,null,null,null,1,null,null,13,null,3,null,null,4,null,null,null,5],[null,null,null,null,null,null,null,1,2,null,null,null,null,null,null,null,null],[4,null,null,null,1,null,null,5,null,7,null,null,3,null,null,null,null],[3,null,1,null,2,3,1,3,1,2,15,null,4,null,null,1,2],[null,null,3,null,null,null,null,7,null,null,3,null,null,1,2,2,20],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,3,2,null],[null,1,null,null,null,2,null,null,null,null,1,null,null,null,2,10,null],[1,null,2,2,3,null,null,null,null,6,null,null,27,null,null,2,null],[null,null,null,null,1,null,null,2,null,3,null,15,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"options":{"type":"directional","width":null,"height":null,"margin":100,"showGroupnames":true,"groupNames":["01 - no-poverty","02 - zero-hunger","03 - good-health-and-well-being","04 - quality-education","05 - gender-equality","06 - clean-water-and-sanitation","07 - affordable-and-clean-energy","08 - decent-work-and-economic-growth","09 - industry-innovation-and-infrastructure","10 - reduced-inequalities","11 - sustainable-sities-and-communities","12 - responsible-consumption-and-production","14 - life-below-water","15 - life-on-land","16 - pease-justice-and-strong-institutions","17 - partnerships-for-the-goals","13 - climate-change"],"groupColors":["#e5243b","#dda63a","#4c9f38","#c5192d","#ff3a21","#26bde2","#fcc30b","#a21942","#fd6925","#dd1367","#fd9d24","#bf8b2e","#3f7e44","#0a97d9","#56c02b","#00689d","#19486a"],"groupThickness":0.1,"groupPadding":0.0349065850398866,"groupnamePadding":[30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30],"groupnameFontsize":18,"groupedgeColor":null,"chordedgeColor":"#808080","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":true,"tickInterval":null,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["01 - no-poverty","02 - zero-hunger","03 - good-health-and-well-being","04 - quality-education","05 - gender-equality","06 - clean-water-and-sanitation","07 - affordable-and-clean-energy","08 - decent-work-and-economic-growth","09 - industry-innovation-and-infrastructure","10 - reduced-inequalities","11 - sustainable-sities-and-communities","12 - responsible-consumption-and-production","14 - life-below-water","15 - life-on-land","16 - pease-justice-and-strong-institutions","17 - partnerships-for-the-goals","13 - climate-change"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":" &#x25B6; ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"matrix":[[7,3,4,6,3,2,2,3,2,3,2,null,null,null,null,null,null],[null,16,null,null,1,null,null,null,null,null,null,2,null,null,null,null,null],[4,1,20,null,null,null,4,1,null,1,2,null,null,null,null,null,null],[null,null,null,3,null,null,null,null,null,null,null,null,null,null,null,null,null],[2,null,null,null,8,null,null,1,null,null,2,null,5,null,null,null,null],[5,4,1,2,3,19,4,2,null,1,4,2,8,3,3,5,null],[null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[6,null,null,null,1,null,null,13,null,3,null,null,4,null,null,null,5],[null,null,null,null,null,null,null,1,2,null,null,null,null,null,null,null,null],[4,null,null,null,1,null,null,5,null,7,null,null,3,null,null,null,null],[3,null,1,null,2,3,1,3,1,2,15,null,4,null,null,1,2],[null,null,3,null,null,null,null,7,null,null,3,null,null,1,2,2,20],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,3,2,null],[null,1,null,null,null,2,null,null,null,null,1,null,null,null,2,10,null],[1,null,2,2,3,null,null,null,null,6,null,null,27,null,null,2,null],[null,null,null,null,1,null,null,2,null,3,null,15,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"options":{"type":"directional","width":null,"height":null,"margin":100,"showGroupnames":true,"groupNames":["SDG 01","SDG 02","SDG 03","SDG 04","SDG 05","SDG 06","SDG 07","SDG 08","SDG 09","SDG 10","SDG 11","SDG 12","SDG 14","SDG 15","SDG 16","SDG 17","SDG 13"],"groupColors":["#e5243b","#dda63a","#4c9f38","#c5192d","#ff3a21","#26bde2","#fcc30b","#a21942","#fd6925","#dd1367","#fd9d24","#bf8b2e","#3f7e44","#0a97d9","#56c02b","#00689d","#19486a"],"groupThickness":0.1,"groupPadding":0.0349065850398866,"groupnamePadding":[30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30],"groupnameFontsize":18,"groupedgeColor":null,"chordedgeColor":"#808080","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":true,"tickInterval":null,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["SDG 01","SDG 02","SDG 03","SDG 04","SDG 05","SDG 06","SDG 07","SDG 08","SDG 09","SDG 10","SDG 11","SDG 12","SDG 14","SDG 15","SDG 16","SDG 17","SDG 13"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":" &#x25B6; ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script>
 <p>Wonderful! It becomes very clear to see the relationships.</p>
-<p>If this network data weren’t subjective, the next logical step would be to just look at the network and run statistics… “What indicator has the highest Authority score? What about the highest PageRank centrality, or Betweenness? All these would help us identify identify some key take-aways. We could run some neighborhood detection to identify”clusters”, but I’m not sure the quality of this data merits that level of rigor, let’s not forget… this was all just text data.</p>
-<p>Of course… we <em>could</em> actually measure the effects to see if “causal links” (in the loosest sense of the words) could be found…</p>
+<p>If this network data weren’t subjective, the next logical step would be to just look at the network and run statistics… “What indicator has the highest Authority score? What about the highest PageRank centrality, or Betweenness? All these would help us identify some key take-aways. We could run some neighborhood detection to identify”clusters”, but I’m not sure the quality of this data merits that level of rigour. Let’s not forget… this was all just text data.</p>
+<p>Of course… we <em>could</em> actually measure the effects to see if there are any “causal links” (in the loosest sense of the words)…</p>
 <p>But that’s for another post.</p>
 </div>
