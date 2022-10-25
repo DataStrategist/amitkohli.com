@@ -674,25 +674,30 @@
 					This section is a work in progress, check back often!<br><br>
                         <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
                         <a class="button" data-filter=".top"><span>BEST</span></a>
-						<a class="button" data-filter=".fun"><span>¯\_(ツ)_/¯</span></a><br><br>
-						
-						<a class="button" data-filter=".talks"><span>TALKS</span></a>
-						<a class="button" data-filter=".viz"><span>VISUALIZATIONS</span></a>
-						<a class="button" data-filter=".analysis"><span>ANALYSIS</span></a>
-						<a class="button" data-filter=".package"><span>R PACKAGES</span></a><br><br>
-						
-						<a class="button" data-filter=".arch"><span>ARCHITECTURE</span></a>
-						<a class="button" data-filter=".ml"><span>MACHINE LEARNING</span></a>
-						<a class="button" data-filter=".humans"><span>HUMANS</span></a>
-						<a class="button" data-filter=".sna"><span>SNA/ONA/NA</span></a>
+            						<a class="button" data-filter=".fun"><span>¯\_(ツ)_/¯</span></a><br><br>
+            						
+            						<a class="button" data-filter=".talks"><span>TALKS</span></a>
+            						<a class="button" data-filter=".viz"><span>VISUALIZATIONS</span></a>
+            						<a class="button" data-filter=".analysis"><span>ANALYSIS</span></a>
+            						<a class="button" data-filter=".package"><span>R PACKAGES</span></a><br><br>
+            						
+            						<a class="button" data-filter=".arch"><span>ARCHITECTURE</span></a>
+            						<a class="button" data-filter=".ml"><span>MACHINE LEARNING</span></a>
+            						<a class="button" data-filter=".humans"><span>HUMANS</span></a>
+            						<a class="button" data-filter=".sna"><span>SNA/ONA/NA</span></a>
                         <a class="button" data-filter=".nlp"><span>NLP</span></a>
                         <a class="button" data-filter=".training"><span>TRAINING</span></a>
                         <a class="button" data-filter=".me"><span>M&E</span></a>
                     </div> <!-- end of button group -->
                     <div class="grid">
+						<div class="element-item analysis nlp sna talks">
+                            <a class="popup-with-move-anim" href="#kno_graph"><div class="element-item-overlay"><span>Knowledge graphs but, like, for everything</span></div>
+							<img src="images/new/knowledge_graph.png" alt="knowledge graph"></a>
+                        </div>
+                    <div class="grid">
 						<div class="element-item analysis ml nlp">
                             <a class="popup-with-move-anim" href="#sma"><div class="element-item-overlay"><span>Prioritizing Environmental Complaints</span></div>
-							<img src="images/new/sma_.jpg" alt="network analysis"></a>
+							<img src="images/new/sma_.jpg" alt="environmental complaints"></a>
                         </div>
 						<div class="element-item analysis sna talks">
                             <a class="popup-with-move-anim" href="#t-earl_net"><div class="element-item-overlay"><span>Introduction to Network Analysis</span></div>
@@ -800,6 +805,28 @@
 
     <!-- Project Lightboxes -->
 	<!-- Lightbox -->
+     <div id="kno_graph" class="lightbox-basic zoom-anim-dialog mfp-hide">
+         <div class="row">
+             <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+             <div class="col-lg-8">
+                 <img class="img-fluid" src="images/new/knowledge_graph.png" alt="knowledge graph">
+             </div> <!-- end of col -->
+             <div class="col-lg-4">
+                 <h3>Knowledge graphs but, like, for everything</h3>
+                 <hr class="line-heading">
+                 <h6>Presented at EARL 2022</h6>
+                 <p>Knowledge Graphs provide a graphical simplification of a specific topic. Not only that, they allow us to use network analysis to transverse a topic, and in so doing, new insight becomes ripe for the picking.</p>
+				 <p>The problem I was trying to solve though, was that I wanted to create a knowledge graph out of any corpus. That would allow me to feed in a pdf, and have a knowledge graph pop out. In this talk, I describe my attempts to make this a reality.</p>
+				 </br></br>
+ 				
+				<a target = "_blank" href="https://videos.ctfassets.net/k26sw1bgepr3/4ZVDyQlDzkMjeOKOXDtZ7l/718e65919b952f56f2b2ce8f63cae533/EARL2022-Stream_3_Amit_Kohli.mp4"><img  alt="see video" height="30px" src="images/vid.png"></a>
+                <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+             </div> <!-- end of col -->
+         </div> <!-- end of row -->
+     </div> <!-- end of lightbox-basic -->
+     <!-- end of lightbox -->
+     
+     <!-- Lightbox -->
      <div id="sma" class="lightbox-basic zoom-anim-dialog mfp-hide">
          <div class="row">
              <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
@@ -811,7 +838,7 @@
                  <hr class="line-heading">
                  <h6>A project of the Data Science for Social Good (DSSGx-UK)</h6>
                  <p>This project was a collaboration with the Superintendency of the Environment (SMA) in Chile. SMA must respond to all citizen complaints, but needed a better way to prioritize where to allocate its efforts.</p>
-				 <p>The project used a mix of structured (e.g., facility information) and unstructured (e.g., description of environmental problems) data to prioritise complaints by identifying those that are more likely to lead to grave sanctions as well as those that are outside of the SMA remit. The two models we developed, now in production, help SMA be more expedient, and more effective.
+				 <p>The project used a mix of structured (e.g., facility information) and unstructured (e.g., description of environmental problems) data to prioritise complaints by identifying those that are more likely to lead to grave sanctions as well as those that are outside of the SMA remit. The two models we developed, now in production, help SMA be more expedient, and more effective.</p>
 				 </br></br>
  				
 				<a target = "_blank" href="https://warwick.ac.uk/research/data-science/warwick-data/dssgx/projects_2021/"><img height="30px" src = "images/more.png"></a>-
