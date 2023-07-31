@@ -1,0 +1,268 @@
+ind_code,ind,indicators,mean_sent,n,why,up_is,reviewed_up_is
+SI_COV_BENFTS,1.3.1,"[ILO] Proportion of population covered by at least one social protection benefit, by sex (%)",1,13,protect_positive; benefit_positive,good,good
+SI_COV_CHLD,1.3.1,"[ILO] Proportion of children/households receiving child/family cash benefit, by sex (%)",1,12,benefit_positive,good,good
+SI_COV_DISAB,1.3.1,"[ILO] Proportion of population with severe disabilities receiving disability cash benefit, by sex (%)",-0.333333333,12,sever_negative; disabl_negative; benefit_positive,bad,good
+SI_COV_LMKT,1.3.1,[World Bank] Proportion of population covered by labour market programs (%),NA,10,,NA,good
+SI_COV_PENSN,1.3.1,"[ILO] Proportion of population above statutory pensionable age receiving a pension, by sex (%)",NA,12,,NA,good
+SI_COV_POOR,1.3.1,"[ILO] Proportion of poor population receiving social assistance cash benefit, by sex (%)",0,12,poor_negative; benefit_positive,bad,good
+SI_COV_SOCAST,1.3.1,[World Bank] Proportion of population covered by social assistance programs (%),NA,10,,NA,good
+SI_COV_SOCINS,1.3.1,[World Bank] Proportion of population covered by social insurance programs (%),NA,10,,NA,good
+SI_COV_UEMP,1.3.1,"[ILO] Proportion of unemployed persons receiving unemployment cash benefit, by sex (%)",0.333333333,11,unemploi_negative; person_positive; benefit_positive,good,good
+SI_COV_VULN,1.3.1,"[ILO] Proportion of vulnerable population receiving social assistance cash benefit, by sex (%)",0,12,vulner_negative; benefit_positive,bad,good
+SI_COV_WKINJRY,1.3.1,"[ILO] Proportion of employed population covered in the event of work injury, by sex (%)",0.333333333,13,event_positive; work_positive; injuri_negative,good,good
+SP_ACS_BSRVH2O,1.4.1,"Proportion of population using basic drinking water services, by location (%)",1,10,us_positive,good,good
+SP_ACS_BSRVSAN,1.4.1,"Proportion of population using basic sanitation services, by location (%)",1,9,us_positive,good,good
+SP_LGL_LNDDOC,1.4.2,"Proportion of people with legally recognized documentation of their rights to land out of total adult population, by sex (%)",1,17,right_positive,good,good
+SP_LGL_LNDSEC,1.4.2,"Proportion of people who perceive their rights to land as secure out of total adult population, by sex (%)",1,17,right_positive; secur_positive,good,good
+SP_LGL_LNDSTR,1.4.2,"Proportion of people with secure tenure rights to land out of total adult population, by sex (%)",1,15,secur_positive; right_positive,good,good
+VC_DSR_AFFCT,1.5.1,Number of people affected by disaster (number),0,6,affect_positive; disast_negative,bad,bad
+VC_DSR_DAFF,1.5.1,"Number of directly affected persons attributed to disasters per 100,000 population (number)",0.333333333,11,affect_positive; person_positive; disast_negative,good,bad
+VC_DSR_IJILN,1.5.1,Number of injured or ill people attributed to disasters (number),-1,9,injur_negative; ill_negative; disast_negative,bad,bad
+VC_DSR_MISS,1.5.1,Number of missing persons due to disaster (number),-0.333333333,7,miss_negative; person_positive; disast_negative,bad,bad
+VC_DSR_MMHN,1.5.1,Number of deaths and missing persons attributed to disasters (number),-0.5,9,death_negative; miss_negative; person_positive; disast_negative,bad,bad
+VC_DSR_MORT,1.5.1,Number of deaths due to disaster (number),-1,6,death_negative; disast_negative,bad,bad
+VC_DSR_MTMP,1.5.1,"Number of deaths and missing persons attributed to disasters per 100,000 population (number)",-0.5,12,death_negative; miss_negative; person_positive; disast_negative,bad,bad
+VC_DSR_PDAN,1.5.1,Number of people whose damaged dwellings were attributed to disasters (number),-1,10,damag_negative; disast_negative,bad,bad
+VC_DSR_PDLN,1.5.1,"Number of people whose livelihoods were disrupted or destroyed, attributed to disasters (number)",-1,12,disrupt_negative; destroi_negative; disast_negative,bad,bad
+VC_DSR_PDYN,1.5.1,Number of people whose destroyed dwellings were attributed to disasters (number),-1,10,destroi_negative; disast_negative,bad,bad
+VC_DSR_AGLH,1.5.2,Direct agriculture loss attributed to disasters (current United States dollars),-0.333333333,10,loss_negative; disast_negative; state_positive,bad,bad
+VC_DSR_CHLN,1.5.2,Direct economic loss to cultural heritage damaged or destroyed attributed to disasters (millions of current United States dollars),-0.333333333,17,econom_positive; loss_negative; damag_negative; destroi_negative; disast_negative; state_positive,bad,bad
+VC_DSR_CILN,1.5.2,Direct economic loss resulting from damaged or destroyed critical infrastructure attributed to disasters (current United States dollars),-0.428571429,17,econom_positive; loss_negative; damag_negative; destroi_negative; critic_negative; disast_negative; state_positive,bad,bad
+VC_DSR_DDPA,1.5.2,Direct economic loss to other damaged or destroyed productive assets attributed to disasters (current United States dollars),-0.142857143,16,econom_positive; loss_negative; damag_negative; destroi_negative; product_positive; disast_negative; state_positive,bad,bad
+VC_DSR_GDPLS,1.5.2,Direct economic loss attributed to disasters (current United States dollars),0,10,econom_positive; loss_negative; disast_negative; state_positive,bad,bad
+VC_DSR_HOLH,1.5.2,Direct economic loss in the housing sector attributed to disasters (current United States dollars),0,14,econom_positive; loss_negative; disast_negative; state_positive,bad,bad
+VC_DSR_LSGP,1.5.2,Direct economic loss attributed to disasters relative to GDP (%),-0.333333333,8,econom_positive; loss_negative; disast_negative,bad,bad
+SG_DSR_LGRGSR,1.5.3,Score of adoption and implementation of national DRR strategies in line with the Sendai Framework,NA,14,,NA,good
+SG_DSR_SFDRR,1.5.3,Number of countries that reported having a National DRR Strategy which is aligned to the Sendai Framework,NA,17,,NA,good
+SG_DSR_SILN,1.5.4,Number of local governments that adopt and implement local DRR strategies in line with national strategies (number),NA,14,,NA,good
+SG_DSR_SILS,1.5.4,Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies (%),-1,16,disast_negative; risk_negative,bad,good
+SG_GOV_LOGV,1.5.4,Number of local governments (number),NA,4,,NA,NA
+DC_ODA_POVDLG,1.a.1,"Official development assistance grants for poverty reduction, by donor countries (percentage of GNI)",-1,13,offici_negative; poverti_negative,bad,good
+DC_ODA_POVG,1.a.1,Official development assistance grants for poverty reduction (percentage of GNI),-1,10,offici_negative; poverti_negative,bad,good
+DC_ODA_POVLG,1.a.1,"Official development assistance grants for poverty reduction, by recipient countries (percentage of GNI)",-1,13,offici_negative; poverti_negative,bad,good
+SD_XPD_ESED,1.a.2,"Proportion of total government spending on essential services, education (%)",1,9,educ_positive,good,good
+VC_VOV_GDSD,10.3.1,"Proportion of population reporting having felt discriminated against, by grounds of discrimination, sex and disability (%)",-1,13,discrimin_negative; disabl_negative,bad,bad
+SL_EMP_GTOTL,10.4.1,Labour share of GDP (%),NA,4,,NA,NA
+SL_EMP_RCOST_MO,10.7.1,Migrant recruitment costs (number of months of earnings),NA,7,,NA,bad
+SG_CPA_MIGRP,10.7.2,"Proportion of countries with migration policies to facilitate orderly, safe, regular and responsible migration and mobility of people, by policy domain (%)",1,17,facilit_positive; orderli_positive; safe_positive; respons_positive,good,good
+SG_CPA_MIGRS,10.7.2,"Countries with migration policies to facilitate orderly, safe, regular and responsible migration and mobility of people, by policy domain (1 = Requires further progress; 2 = Partially meets; 3 = Meets; 4 = Fully meets)",0.666666667,26,facilit_positive; orderli_positive; safe_positive; respons_positive; progress_positive; partial_negative,good,good
+EN_REF_WASCOL,11.6.1,"Municipal Solid Waste collection coverage, by cities (%)",0,7,solid_positive; wast_negative,bad,good
+EN_ATM_PM25,11.6.2,"Annual mean levels of fine particulate matter (population-weighted), by location (micrograms per cubic meter)",0,15,mean_negative; fine_positive,bad,bad
+SD_CPA_UPRDP,11.a.1,Countries that have national urban policies or regional development plans that respond to population dynamics; ensure balanced territorial development; and increase local fiscal space (1 = YES; 0 = NO),1,26,dynam_positive; balanc_positive,good,good
+AG_FLS_ID,12.3.1,XFood loss percentage (%),-1,3,loss_negative,bad,bad
+AG_FOOD_WST,12.3.1,Food waste (Tonnes),-1,3,wast_negative,bad,bad
+AG_FOOD_WST_PC,12.3.1,Food waste per capita (KG),-1,5,wast_negative,bad,bad
+SG_HAZ_CMRBASEL,12.4.1,"Parties meeting their commitments and obligations in transmitting information as required by Basel Convention on hazardous waste, and other chemicals",-0.333333333,19,commit_positive; hazard_negative; wast_negative,bad,good
+SG_HAZ_CMRMNMT,12.4.1,"Parties meeting their commitments and obligations in transmitting information as required by Minamata Convention on hazardous waste, and other chemicals (%)",-0.333333333,19,commit_positive; hazard_negative; wast_negative,bad,good
+SG_HAZ_CMRMNTRL,12.4.1,"Parties meeting their commitments and obligations in transmitting information as required by Montreal Protocol on hazardous waste, and other chemicals",-0.333333333,19,commit_positive; hazard_negative; wast_negative,bad,good
+SG_HAZ_CMRROTDAM,12.4.1,"Parties meeting their commitments and obligations in transmitting information as required by Rotterdam Convention on hazardous waste, and other chemicals",-0.333333333,19,commit_positive; hazard_negative; wast_negative,bad,good
+SG_HAZ_CMRSTHOLM,12.4.1,"Parties meeting their commitments and obligations in transmitting information as required by Stockholm Convention on hazardous waste, and other chemicals",-0.333333333,19,commit_positive; hazard_negative; wast_negative,bad,good
+EN_EWT_COLLPCAP,12.4.2,"Electronic waste collected, per capita (KG)",-1,6,wast_negative,bad,bad
+EN_EWT_COLLR,12.4.2,Electronic waste collection rate (%),-1,4,wast_negative,bad,bad
+EN_EWT_COLLV,12.4.2,Electronic waste collected (Tonnes),-1,4,wast_negative,bad,bad
+EN_EWT_GENPCAP,12.4.2,"Electronic waste generated, per capita (Kg)",0,6,wast_negative; gener_positive,bad,bad
+EN_EWT_GENV,12.4.2,Electronic waste generated (Tonnes),0,4,wast_negative; gener_positive,bad,bad
+EN_HAZ_EXP,12.4.2,"Hazardous waste exported, (Tonnes)",-1,4,hazard_negative; wast_negative,bad,bad
+EN_HAZ_GENGDP,12.4.2,"Hazardous waste generated, per unit of GDP (kilograms per constant 2015 United States dollars)",0,12,hazard_negative; wast_negative; gener_positive; state_positive,bad,bad
+EN_HAZ_GENV,12.4.2,Hazardous waste generated (Tonnes),-0.333333333,4,hazard_negative; wast_negative; gener_positive,bad,bad
+EN_HAZ_IMP,12.4.2,"Hazardous waste imported, (Tonnes)",-0.333333333,4,hazard_negative; wast_negative; import_positive,bad,bad
+EN_HAZ_PCAP,12.4.2,"Hazardous waste generated, per capita (Kg)",-0.333333333,6,hazard_negative; wast_negative; gener_positive,bad,bad
+EN_HAZ_TREATV,12.4.2,"Hazardous waste treated, by type of treatment (Tonnes)",-1,8,hazard_negative; wast_negative,bad,bad
+EN_HAZ_TRTDISR,12.4.2,"Hazardous waste treated or disposed, rate (%)",-1,6,hazard_negative; wast_negative,bad,bad
+EN_HAZ_TRTDISV,12.4.2,Hazardous waste treated or disposed (Tonnes),-1,6,hazard_negative; wast_negative,bad,NA
+EN_MWT_COLLV,12.4.2,Municipal waste collected (Tonnes),-1,4,wast_negative,bad,good
+EN_MWT_GENV,12.4.2,Municipal waste generated (Tonnes),0,4,wast_negative; gener_positive,bad,bad
+EN_MWT_TREATR,12.4.2,"Municipal waste treated, by type of treatment (%)",-1,7,wast_negative,bad,good
+EN_TWT_GENV,12.4.2,"Total waste generation, by activity (Tonnes)",0,6,wast_negative; gener_positive,bad,bad
+EN_ADAP_COM,13.2.1,Number of countries with adaptation communications (Number),1,6,adapt_positive,good,good
+EN_BIUREP_AIP,13.2.1,"Number of countries with biennial reports, Annex I Parties (Number)",NA,9,,NA,good
+EN_BIUREP_NAIP,13.2.1,"Number of countries with biennial update reports, non-Annex I Parties (Number)",NA,11,,NA,good
+EN_NAA_PLAN,13.2.1,Number of countries with national adaptation plans (Number),1,7,adapt_positive,good,good
+EN_NACOM_AIP,13.2.1,"Number of countries with national communications, Annex I Parties (Number)",NA,9,,NA,good
+EN_NACOM_NAIP,13.2.1,"Number of countries with national communications, non-Annex I Parties (Number)",NA,10,,NA,good
+EN_NAD_CONTR,13.2.1,Number of countries with nationally determined contributions (Number),1,7,contribut_positive,good,good
+ER_H2O_FWTL,14.4.1,Proportion of fish stocks within biologically sustainable levels (not overexploited) (%),1,10,sustain_positive,good,good
+VC_DTH_TOCV,16.1.2,"Number of conflict-related deaths (civilians) per 100,000 population (Per 100,000 population)",-1,9,conflict_negative; death_negative,bad,bad
+VC_DTH_TOCVN,16.1.2,"Number of conflict-related deaths (civilians), by sex, age and cause of death (Number)",-1,11,conflict_negative; death_negative,bad,bad
+VC_DTH_TOCVR,16.1.2,"Conflict-related death rate (civilians), by sex, age and cause of death (%)",-1,11,conflict_negative; death_negative,bad,bad
+VC_VOV_PHYL,16.1.3,"Proportion of population subjected to physical violence in the previous 12 months, by sex (%)",-1,14,subject_negative,bad,bad
+VC_VOV_ROBB,16.1.3,"Proportion of population subjected to robbery in the previous 12 months, by sex (%)",-1,13,subject_negative,bad,bad
+,16.1.3,"Proportion of population subjected to sexual violence in the previous 12 months, by sex (%)",-1,14,subject_negative,bad,bad
+VC_SNS_WALN,16.1.4,Proportion of population that feel safe walking alone around the area they live (%),1,13,safe_positive; live_positive,good,good
+VC_VAW_MTUHRA,16.10.1,"Number of cases of killings of human rights defenders, journalists and trade unionists",0.5,11,kill_negative; human_positive; right_positive; defend_positive,good,bad
+VC_VOC_ENFDIS,16.10.1,"Number of cases of enforced disappearance of human rights defenders, journalists and trade unionists (Number)",1,12,human_positive; right_positive; defend_positive,good,bad
+SG_INF_ACCSS,16.10.2,"Countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information",1,15,guarante_positive; access_positive,good,good
+VC_HTF_DETV,16.2.2,"Detected victims of human trafficking, by age and sex (number)",0,10,victim_negative; human_positive,bad,bad
+VC_HTF_DETVOP,16.2.2,"Detected victims of human trafficking for other purposes, by age and sex (number)",0.333333333,13,victim_negative; human_positive; purpos_positive,good,bad
+VC_PRR_PHYV,16.3.1,"Police reporting rate for physical assault, by sex (%)",-1,8,assault_negative,bad,good
+VC_PRR_ROBB,16.3.1,"Police reporting rate for robbery, by sex (%)",NA,7,,NA,good
+VC_PRR_SEXV,16.3.1,"Police reporting rate for sexual assault, by sex (%)",-1,8,assault_negative,bad,good
+VC_PRS_UNSNT,16.3.2,Unsentenced detainees as a proportion of overall prison population (%),-1,8,prison_negative,bad,bad
+IU_COR_BRIB,16.5.1,"Prevalence rate of bribery, by sex (%)",-1,6,briberi_negative,bad,bad
+IC_FRM_BRIB,16.5.2,Bribery incidence (% of firms experiencing at least one bribe payment request),-1,11,briberi_negative,bad,bad
+GF_XPD_GBPC,16.6.1,Primary government expenditures as a proportion of original approved budget (%),1,9,origin_positive; approv_positive,good,bad
+SG_DMK_JDC,16.7.1,Proportions of positions in the judiciary compared to national distributions (ratio),1,11,posit_positive,good,NA
+SG_DMK_PSRVC,16.7.1,Proportions of positions in the public service compared to national distributions (ratio),1,12,posit_positive,good,NA
+,16.7.1,"Ratio for female members of parliaments (Ratio of the proportion of women in parliament in the proportion of women in the national population with the age of eligibility as a lower bound boundary), Lower Chamber or Unicameral",NA,22,,NA,good
+,16.7.1,"Ratio for female members of parliaments (Ratio of the proportion of women in parliament in the proportion of women in the national population with the age of eligibility as a lower bound boundary), Upper Chamber",NA,21,,NA,good
+SG_NHR_IMPL,16.a.1,Proportion of countries with independent National Human Rights Institutions in compliance with the Paris Principles (%),1,14,human_positive; right_positive; principl_positive,good,good
+SG_NHR_IMPLN,16.a.1,"Countries with National Human Rights Institutions in compliance with the Paris Principles, A status (1 = YES; 0 = NO)",1,17,human_positive; right_positive; principl_positive,good,good
+SG_NHR_INTEXST,16.a.1,Proportion of countries that applied for accreditation as independent National Human Rights Institutions in compliance with the Paris Principles (%),1,19,human_positive; right_positive; principl_positive,good,good
+SG_NHR_INTEXSTN,16.a.1,"Countries with National Human Rights Institutions not fully compliant with the Paris Principles, B status (1 = YES; 0 = NO)",0.6,18,human_positive; right_positive; compliant_positive; principl_positive; b_negative,good,good
+SG_NHR_NOAPPLN,16.a.1,"Countries with no application for accreditation with the Paris Principles, D status  (1 = YES; 0 = NO)",1,14,principl_positive,good,good
+SG_NHR_NOSTUSN,16.a.1,"Countries with National Human Rights Institutions and no status with the Paris Principles, C status (1 = YES; 0 = NO)",1,16,human_positive; right_positive; principl_positive,good,good
+GF_COM_PPPI,17.17.1,"Amount of United States dollars committed to public-private partnerships for infrastructure, million USD nominal",1,15,state_positive; commit_positive,good,good
+GF_COM_PPPI_KD,17.17.1,"Amount of United States dollars committed to public-private partnerships for infrastructure, million USD real",1,15,state_positive; commit_positive,good,good
+SG_STT_FPOS,17.18.2,Countries with national statistical legislation exists that complies with the Fundamental Principles of Official Statistics (1 = YES; 0 = NO),-0.333333333,17,fundament_negative; principl_positive; offici_negative,bad,good
+SG_STT_NSDSFDDNR,17.18.3,Countries with national statistical plans with funding from donors (1 = YES; 0 = NO),NA,12,,NA,good
+SG_STT_NSDSFDGVT,17.18.3,Countries with national statistical plans with funding from Government (1 = YES; 0 = NO),NA,12,,NA,good
+SG_STT_NSDSFDOTHR,17.18.3,Countries with national statistical plans with funding from others (1 = YES; 0 = NO),NA,12,,NA,good
+SG_STT_NSDSFND,17.18.3,Countries with national statistical plans that are fully funded (1 = YES; 0 = NO),NA,13,,NA,good
+SG_STT_NSDSIMPL,17.18.3,Countries with national statistical plans that are under implementation (1 = YES; 0 = NO),NA,13,,NA,good
+SG_STT_CAPTY,17.19.1,Dollar value of all resources made available to strengthen statistical capacity in developing countries (current United States dollars),1,17,resourc_positive; avail_positive; state_positive,good,good
+GF_FRN_FDI,17.3.1,Foreign direct investment (FDI) inflows (millions of US dollars),NA,9,,NA,good
+IT_NET_BBNDN,17.6.1,"Number of fixed Internet broadband subscriptions, by speed (number)",NA,8,,NA,good
+,17.6.1,"Fixed Internet broadband subscriptions per 100 inhabitants, by speed (per 100 inhabitants)",NA,9,,NA,good
+IT_USE_ii99,17.8.1,Internet users per 100 inhabitants,NA,5,,NA,good
+SN_ITK_DEFC,2.1.1,Prevalence of undernourishment (%),NA,3,,NA,bad
+SN_ITK_DEFCN,2.1.1,Number of undernourish people (millions),NA,5,,NA,bad
+AG_PRD_FIESMS,2.1.2,Prevalence of moderate or severe food insecurity in the adult population (%),-1,11,sever_negative; insecur_negative,bad,bad
+AG_PRD_FIESMSN,2.1.2,Total population in moderate or severe food insecurity (thousands of people),-1,11,sever_negative; insecur_negative,bad,bad
+AG_PRD_FIESS,2.1.2,Prevalence of severe food insecurity in the adult population (%),-1,9,sever_negative; insecur_negative,bad,bad
+AG_PRD_FIESSN,2.1.2,Total population in severe food insecurity (thousands of people),-1,9,sever_negative; insecur_negative,bad,bad
+PD_AGR_LSFP,2.3.1,"Productivity of large-scale food producers (agricultural output per labour day, PPP) (constant 2011 international $)",1,15,product_positive,good,good
+PD_AGR_SSFP,2.3.1,"Productivity of small-scale food producers (agricultural output per labour day, PPP) (constant 2011 international $)",1,15,product_positive,good,good
+SI_AGR_LSFP,2.3.2,"Average income of large-scale food producers, PPP (constant 2011 international $)",NA,11,,NA,good
+SI_AGR_SSFP,2.3.2,"Average income of small-scale food producers, PPP (constant 2011 international $)",NA,11,,NA,good
+AG_PRD_AGVAS,2.a.1,Agriculture value added share of GDP (%),NA,6,,NA,NA
+AG_PRD_ORTIND,2.a.1,Agriculture orientation index for government expenditures,NA,6,,NA,NA
+AG_XPD_AGSGB,2.a.1,Agriculture share of Government Expenditure (%),NA,5,,NA,NA
+DC_TOF_AGRL,2.a.2,"Total official flows (disbursements) for agriculture, by recipient countries (millions of constant 2019 United States dollars)",0,16,offici_negative; state_positive,bad,good
+AG_PRD_XSUBDY,2.b.1,Agricultural export subsidies (millions of current United States dollars),1,9,state_positive,good,bad
+AG_FPA_CFPI,2.c.1,"Indicator of Food Price Anomalies (IFPA), by Consumer Food Price Index",-1,9,anomali_negative,bad,bad
+AG_FPA_COMM,2.c.1,"Indicator of Food Price Anomalies (IFPA), by type of product",0,9,anomali_negative; product_positive,bad,bad
+AG_FPA_HMFP,2.c.1,"Proportion of countries recording abnormally high or moderately high food prices, according to the Indicator of Food Price Anomalies (%)",-1,15,abnorm_negative; anomali_negative,bad,bad
+SH_STA_BRTC,3.1.2,Proportion of births attended by skilled health personnel (%),1,8,skill_positive; health_positive,good,good
+SH_TRP_INTVN,3.3.5,Number of people requiring interventions against neglected tropical diseases (number),-1,9,neglect_negative,bad,bad
+SH_DTH_NCD,3.4.1,"Number of deaths attributed to non-communicable diseases, by type of disease and sex (number)",-1,12,death_negative,bad,bad
+SH_STA_SCIDE,3.4.2,"Suicide mortality rate, by sex (deaths per 100,000 population)",-1,9,suicid_negative; death_negative,bad,bad
+SH_STA_SCIDEN,3.4.2,"Number of deaths attributed to suicide, by sex (number)",-1,8,death_negative; suicid_negative,bad,bad
+SH_SUD_TREAT,3.5.1,"Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders (%)",0,14,us_positive; disord_negative,bad,good
+SH_STA_TRAF,3.6.1,"Death rate due to road traffic injuries, by sex (per 100,000 population)",-1,12,death_negative; injuri_negative,bad,bad
+SH_ACS_UNHC,3.8.1,Universal health coverage (UHC) service coverage index,1,6,health_positive,good,good
+SH_XPD_EARN10,3.8.2,Proportion of population with large household expenditures on health (greater than 10%) as a share of total household expenditure or income (%),1,17,health_positive,good,bad
+SH_XPD_EARN25,3.8.2,Proportion of population with large household expenditures on health (greater than 25%) as a share of total household expenditure or income (%),1,17,health_positive,good,bad
+SH_AAP_ASMORT,3.9.1,"Age-standardized mortality rate attributed to ambient air pollution (deaths per 100,000 population)",-1,13,pollut_negative; death_negative,bad,bad
+SH_AAP_MORT,3.9.1,"Crude death rate attributed to ambient air pollution (deaths per 100,000 population)",-1,11,crude_negative; death_negative; pollut_negative,bad,bad
+SH_HAP_ASMORT,3.9.1,"Age-standardized mortality rate attributed to household air pollution (deaths per 100,000 population)",-1,13,pollut_negative; death_negative,bad,bad
+SH_HAP_MORT,3.9.1,"Crude death rate attributed to household air pollution (deaths per 100,000 population)",-1,11,crude_negative; death_negative; pollut_negative,bad,bad
+SH_STA_AIRP,3.9.1,"Crude death rate attributed to household and ambient air pollution (deaths per 100,000 population)",-1,13,crude_negative; death_negative; pollut_negative,bad,bad
+SH_STA_ASAIRP,3.9.1,"Age-standardized mortality rate attributed to household and ambient air pollution (deaths per 100,000 population)",-1,15,pollut_negative; death_negative,bad,bad
+SH_STA_WASH,3.9.2,"Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (deaths per 100,000 population)",-1,15,unsaf_negative; lack_negative; death_negative,bad,bad
+SH_STA_POISN,3.9.3,"Mortality rate attributed to unintentional poisonings, by sex (deaths per 100,000 population)",-1,12,poison_negative; death_negative,bad,bad
+SH_ACS_DTP3,3.b.1,Proportion of the target population with access to 3 doses of diphtheria-tetanus-pertussis (DTP3) (%),1,14,access_positive,good,good
+SH_ACS_HPV,3.b.1,"Proportion of the target population with access to affordable medicines and vaccines on a sustainable basis, human papillomavirus (HPV) (%)",1,19,access_positive; afford_positive; sustain_positive; human_positive,good,good
+SH_ACS_MCV2,3.b.1,Proportion of the target population with access to measles-containing-vaccine second-dose (MCV2) (%),1,14,access_positive,good,good
+SH_ACS_PCV3,3.b.1,Proportion of the target population with access to pneumococcal conjugate 3rd dose (PCV3) (%),1,13,access_positive,good,good
+DC_TOF_HLTHL,3.b.2,"Total official development assistance to medical research and basic heath sectors, gross disbursement, by recipient countries (millions of constant 2019 United States dollars)",-0.333333333,23,offici_negative; gross_negative; state_positive,bad,good
+DC_TOF_HLTHNT,3.b.2,"Total official development assistance to medical research and basic heath sectors, net disbursement, by recipient countries (millions of constant 2019 United States dollars)",0,23,offici_negative; state_positive,bad,good
+SH_HLF_EMED,3.b.3,Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis (%),1,18,health_positive; avail_positive; afford_positive; sustain_positive,good,good
+SH_MED_DEN,3.c.1,"Health worker density, by type of occupation (per 10,000 population)",1,10,health_positive,good,good
+SH_IHR_CAPS,3.d.1,"International Health Regulations (IHR) capacity, by type of IHR capacity (%)",1,8,health_positive,good,good
+SE_PRE_PARTN,4.2.2,"Participation rate in organized learning (one year before the official primary entry age), by sex (%)",-1,15,offici_negative,bad,good
+SE_ADT_EDUCTRN,4.3.1,"Participation rate in formal and non-formal education and training, by sex (%)",1,10,educ_positive,good,good
+SE_ADT_ACTS,4.4.1,"Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",1,14,youth_positive; skill_positive,good,good
+SE_AGP_CPRA,4.5.1,"Adjusted gender parity index for completion rate, by location, wealth quintile and education level",1,14,adjust_positive; educ_positive,good,good
+SE_ALP_CPLR,4.5.1,"Adjusted location parity index for completion rate, by sex, wealth quintile and education level",1,14,adjust_positive; educ_positive,good,good
+SE_AWP_CPRA,4.5.1,"Adjusted wealth parity index for completion rate, by sex, location and education level",1,13,adjust_positive; educ_positive,good,good
+SE_GPI_ICTS,4.5.1,"Gender parity index for youth/adults with information and communications technology (ICT) skills, by type of skill (ratio)",1,17,youth_positive; skill_positive,good,good
+SE_GPI_PART,4.5.1,Adjusted gender parity index for participation rate in formal and non-formal education and training (ratio),1,14,adjust_positive; educ_positive,good,good
+SE_GPI_PTNPRE,4.5.1,"Adjusted gender parity index for participation rate in organized learning (one year before the official primary entry age), (ratio)",0,19,adjust_positive; offici_negative,bad,good
+SE_GPI_TCAQ,4.5.1,"Adjusted gender parity index for the proportion of teachers with the minimum required qualifications, by education level (ratio)",1,17,adjust_positive; educ_positive,good,good
+SE_LGP_ACHI,4.5.1,Adjusted language test parity index for achieving a minimum proficiency level in reading and mathematics (ratio),1,16,adjust_positive; achiev_positive; profici_positive,good,good
+SE_NAP_ACHI,4.5.1,Adjusted immigration status parity index for achieving a minimum proficiency level in reading and mathematics (ratio),1,16,adjust_positive; achiev_positive; profici_positive,good,good
+SE_TOT_GPI,4.5.1,Adjusted gender parity index for achieving a minimum proficiency level in reading and mathematics (ratio),1,15,adjust_positive; achiev_positive; profici_positive,good,good
+SE_TOT_RUPI,4.5.1,Adjusted rural to urban parity index for achieving a minimum proficiency level in reading and mathematics (ratio),1,17,adjust_positive; achiev_positive; profici_positive,good,good
+SE_TOT_SESPI,4.5.1,Adjusted low to high socio-economic parity index for achieving a minimum proficiency level in reading and mathematics (ratio),1,19,adjust_positive; econom_positive; achiev_positive; profici_positive,good,good
+SE_GCEDESD_CUR,4.7.1,Extent to which global citizenship education and education for sustainable development are mainstreamed in curricula,1,14,educ_positive; sustain_positive,good,good
+SE_GCEDESD_NEP,4.7.1,Extent to which global citizenship education and education for sustainable development are mainstreamed in national education policies,1,15,educ_positive; sustain_positive,good,good
+SE_GCEDESD_SAS,4.7.1,Extent to which global citizenship education and education for sustainable development are mainstreamed in student assessment,1,15,educ_positive; sustain_positive,good,good
+SE_GCEDESD_TED,4.7.1,Extent to which global citizenship education and education for sustainable development are mainstreamed in teacher education,1,14,educ_positive; sustain_positive,good,good
+SE_ACC_HNDWSH,4.a.1,"Proportion of schools with basic handwashing facilities, by education level (%)",1,10,educ_positive,good,good
+SE_ACS_H2O,4.a.1,"Proportion of schools with access to basic drinking water, by education level (%)",1,12,access_positive; educ_positive,good,good
+SE_ACS_INTNT,4.a.1,"Proportion of schools with access to the internet for pedagogical purposes, by education level (%)",1,14,access_positive; purpos_positive; educ_positive,good,good
+SE_INF_DSBL,4.a.1,"Proportion of schools with access to adapted infrastructure and materials for students with disabilities, by education level (%)",0.5,16,access_positive; adapt_positive; disabl_negative; educ_positive,good,good
+,4.a.1,"Proportion of schools with access to access to single-sex basic sanitation, by education level (%)",1,13,access_positive; educ_positive,good,good
+,4.a.1,"Proportion of schools with access to computers for pedagogical purposes, by education level (%)",1,13,access_positive; purpos_positive; educ_positive,good,good
+,4.a.1,"Proportion of schools with access to electricity, by education level (%)",1,10,access_positive; educ_positive,good,good
+DC_TOF_SCHIPSL,4.b.1,"Total official flows for scholarships, by recipient countries (millions of constant 2019 United States dollars)",0,15,offici_negative; state_positive,bad,good
+SE_TRA_GRDL,4.c.1,"Proportion of teachers with the minimum required qualifications, by education level and sex (%)",1,13,educ_positive,good,good
+SG_LGL_GENEQEMP,5.1.1,"Legal frameworks that promote, enforce and monitor gender equality (percentage of achievement, 0 - 100) -- Area 3: employment and economic benefits",1,19,promot_positive; achiev_positive; econom_positive; benefit_positive,good,good
+SG_LGL_GENEQLFP,5.1.1,"Legal frameworks that promote, enforce and monitor gender equality (percentage of achievement, 0 - 100) -- Area 1: overarching legal frameworks and public life",1,19,promot_positive; achiev_positive,good,good
+SG_LGL_GENEQMAR,5.1.1,"Legal frameworks that promote, enforce and monitor gender equality (percentage of achievement, 0 - 100) -- Area 4: marriage and family",1,18,promot_positive; achiev_positive,good,good
+SG_LGL_GENEQVAW,5.1.1,"Legal frameworks that promote, enforce and monitor gender equality (percentage of achievement, 0 - 100) --  Area 2: violence against women",1,19,promot_positive; achiev_positive,good,good
+SG_GEN_PARLNT,5.5.1,Current number of seats in national parliaments (number),NA,7,,NA,NA
+SH_LGR_ACSRHE,5.6.2,"Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education (%)",1,25,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC1,5.6.2,"(S.1.C.1) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 1: Maternity Care (%)",1,30,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC10,5.6.2,"(S.4.C.10) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 10: HIV Counselling and Test Services",1,34,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC11,5.6.2,"(S.4.C.11) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 11: HIV Treatment and Care Services (%)",1,33,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC12,5.6.2,"(S.4.C.12) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 12: HIV Confidentiality (%)",1,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC13,5.6.2,"(S.4.C.13) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 13: HPV Vaccine (%)",1,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC2,5.6.2,"(S.1.C.2) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 2: Life Saving Commodities (%)",1,33,law_positive; guarante_positive; access_positive; health_positive; educ_positive; save_positive,good,good
+SH_LGR_ACSRHEC3,5.6.2,"(S.1.C.3) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 3: Abortion",0.666666667,31,law_positive; guarante_positive; access_positive; health_positive; educ_positive; abort_negative,good,good
+SH_LGR_ACSRHEC4,5.6.2,"(S.1.C.4) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 4: Post-Abortion Care (%)",0.666666667,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive; abort_negative,good,good
+SH_LGR_ACSRHEC5,5.6.2,"(S.2.C.5) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 5: Contraceptive Services (%)",1,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC6,5.6.2,"(S.2.C.6) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 6: Contraceptive Consent (%)",1,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC7,5.6.2,"(S.2.C.7) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 7: Emergency Contraception (%)",0.666666667,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive; emerg_negative,good,good
+SH_LGR_ACSRHEC8,5.6.2,"(S.3.C.8) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 8: Sexuality Education Curriculum Laws (%)",1,31,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHEC9,5.6.2,"(S.3.C.9) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Component 9: Sexuality Education Curriculum Topics (%)",1,32,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHES1,5.6.2,"(S.1) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Section 1: Maternity Care (%)",1,29,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHES2,5.6.2,"(S.2) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Section 2: Contraceptive and Family Planning (%)",1,31,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHES3,5.6.2,"(S.3) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Section 3: Sexuality Education (%)",1,28,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SH_LGR_ACSRHES4,5.6.2,"(S.4) Extent to which countries have laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education: Section 4: HIV and HPV (%)",1,30,law_positive; guarante_positive; access_positive; health_positive; educ_positive,good,good
+SP_GNP_WNOWNS,5.a.1,"Share of women among owners or rights-bearers of agricultural land, by type of tenure (%)",1,13,right_positive,good,good
+SP_LGL_LNDAGSEC,5.a.1,"Proportion of people with ownership or secure rights over agricultural land (out of total agricultural population), by sex (%)",1,16,secur_positive; right_positive,good,good
+,5.a.2,Degree to which the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control (1=No evidence to 6=Highest levels of guarantees),1,25,law_positive; guarante_positive; right_positive,good,good
+SG_GEN_EQPWN,5.c.1,Proportion of countries with systems to track and make public allocations for gender equality and women's empowerment (%),1,16,empower_positive,good,good
+SH_H2O_SAFE,6.1.1,"Proportion of population using safely managed drinking water services, by urban/rural (%)",1,12,us_positive; safe_positive; manag_positive,good,good
+SH_SAN_DEFECT,6.2.1,"Proportion of population practicing open defecation, by urban/rural (%)",1,9,open_positive,good,bad
+SH_SAN_HNDWSH,6.2.1,"Proportion of population with basic handwashing facilities on premises, by urban/rural (%)",NA,12,,NA,good
+SH_SAN_SAFE,6.2.1,"Proportion of population using safely managed sanitation services, by urban/rural (%)",1,11,us_positive; safe_positive; manag_positive,good,good
+EN_WWT_GEN,6.3.1,Total wastewater generated (million m3/year),1,6,gener_positive,good,bad
+EN_WWT_TREAT,6.3.1,Total wastewater treated (million m3/year),NA,6,,NA,NA
+EN_WWT_TREATR,6.3.1,"Proportion of wastewater treated, by activity and location (%)",NA,8,,NA,good
+EN_WWT_WWDS,6.3.1,Proportion of safely treated domestic wastewater flows (%),1,7,safe_positive,good,good
+EN_H2O_GRAMBQ,6.3.2,Proportion of groundwater bodies with good ambient water quality (%),1,9,good_positive,good,good
+EN_H2O_OPAMBQ,6.3.2,Proportion of open water bodies with good ambient water quality (%),1,9,open_positive; good_positive,good,good
+EN_H2O_RVAMBQ,6.3.2,Proportion of river water bodies with good ambient water quality (%),1,9,good_positive,good,good
+EN_H2O_WBAMBQ,6.3.2,Proportion of bodies of water with good ambient water quality (%),1,8,good_positive,good,good
+ER_H2O_WUEYST,6.4.1,Water Use Efficiency (United States dollars per cubic meter),1,9,us_positive; effici_positive; state_positive,good,good
+DC_TOF_WASHL,6.a.1,"Total official development assistance (gross disbursement) for water supply and sanitation, by recipient countries (millions of constant 2019 United States dollars)",-0.333333333,21,offici_negative; gross_negative; state_positive,bad,good
+ER_WAT_PART,6.b.1,"Countries with users/communities participating in planning programs in water resources planning and management, by level of participation (3 = High; 2 = Moderate; 1 = Low; 0 = NA)",1,23,resourc_positive; manag_positive,good,good
+ER_WAT_PARTIC,6.b.1,Proportion of countries with high level of users/communities participating in planning programs in water resources planning and management (%),1,16,resourc_positive; manag_positive,good,good
+ER_WAT_PRDU,6.b.1,"Countries with procedures in law or policy for participation by service users/communities in planning program in water resources planning and management, by level of definition in procedures (10 = Clearly defined; 5 = Not clearly defined ; 0 = NA)",1,29,law_positive; resourc_positive; manag_positive; clearli_positive,good,good
+ER_WAT_PROCED,6.b.1,Proportion of countries with clearly defined procedures in law or policy for participation by service users/communities in planning program in water resources planning and management (%),1,23,clearli_positive; law_positive; resourc_positive; manag_positive,good,good
+EG_ACS_ELEC,7.1.1,"Proportion of population with access to electricity, by urban/rural (%)",1,10,access_positive,good,good
+EG_EGY_CLEAN,7.1.2,Proportion of population with primary reliance on clean fuels and technology (%),1,11,clean_positive,good,good
+EG_IFF_RANDN,7.a.1,"International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems (millions of constant United States dollars)",1,23,support_positive; clean_positive; renew_positive; product_positive; state_positive,good,good
+,7.b.1,Installed renewable electricity-generating capacity (watts per capita),1,8,renew_positive; gener_positive,good,good
+SL_ISV_IFEM,8.3.1,"Proportion of informal employment, by sector and sex (ILO harmonized estimates) (%)",1,11,harmon_positive,good,good
+SL_EMP_EARN,8.5.1,Average hourly earnings of employees by sex and occupation (local currency),NA,11,,NA,good
+SL_TLF_UEMDIS,8.5.2,"Unemployment rate, by sex and disability (%)",-1,6,disabl_negative,bad,bad
+SL_EMP_FTLINJUR,8.8.1,"Fatal occupational injuries among employees, by sex and migrant status (per 100,000 employees)",-1,12,fatal_negative; injuri_negative,bad,bad
+SL_EMP_INJUR,8.8.1,"Non-fatal occupational injuries among employees, by sex and migrant status (per 100,000 employees)",-1,13,fatal_negative; injuri_negative,bad,bad
+SL_LBR_NTLCPL,8.8.2,Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation,1,20,right_positive; freedom_positive; bargain_positive,good,good
+DC_TOF_TRDCMDL,8.a.1,"Total official flows (commitments) for Aid for Trade, by donor countries (millions of constant 2019 United States dollars)",0.333333333,17,offici_negative; commit_positive; state_positive,good,good
+DC_TOF_TRDCML,8.a.1,"Total official flows (commitments) for Aid for Trade, by recipient countries (millions of constant 2019 United States dollars)",0.333333333,17,offici_negative; commit_positive; state_positive,good,good
+DC_TOF_TRDDBMDL,8.a.1,"Total official flows (disbursement) for Aid for Trade, by donor countries (millions of constant 2019 United States dollars)",0,17,offici_negative; state_positive,bad,good
+DC_TOF_TRDDBML,8.a.1,"Total official flows (disbursement) for Aid for Trade, by recipient countries (millions of constant 2019 United States dollars)",0,17,offici_negative; state_positive,bad,good
+SL_CPA_YEMP,8.b.1,"Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy",1,14,youth_positive; distinct_positive,good,good
+SL_TLF_MANF,9.2.2,Manufacturing employment as a proportion of total employment (%),NA,6,,NA,NA
+FC_ACC_SSID,9.3.2,Proportion of small-scale industries with a loan or line of credit (%),1,11,industri_positive,good,NA
+EN_ATM_CO2,9.4.1,Carbon dioxide emissions from fuel combustion (millions of tonnes),-1,9,combust_negative,bad,bad
+EN_ATM_CO2GDP,9.4.1,Carbon dioxide emissions per unit of GDP PPP (kilogrammes of CO2 per constant 2017 United States dollars),1,14,state_positive,good,bad
+EN_ATM_CO2MVA,9.4.1,Carbon dioxide emissions per unit of manufacturing value added (kilogrammes of CO2 per constant 2015 United States dollars),1,15,state_positive,good,bad
+GB_XPD_RSDV,9.5.1,Research and development expenditure as a proportion of GDP (%),NA,8,,NA,good
+IT_MOB_2GNTWK,9.c.1,Proportion of population covered by at least a 2G mobile network (%),NA,11,,NA,good
+IT_MOB_3GNTWK,9.c.1,Proportion of population covered by at least a 3G mobile network (%),NA,11,,NA,good
+IT_MOB_4GNTWK,9.c.1,Proportion of population covered by at least a 4G mobile network (%),NA,11,,NA,good

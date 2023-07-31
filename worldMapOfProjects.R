@@ -11,6 +11,13 @@ library(htmltools)
 # system("unzip -o data_mine/world_shape_file.zip -d data_mine")
 
 
+## base map
+world_spdf <- rgdal::readOGR( 
+  dsn= paste0(getwd(), "/data_mine") , 
+  layer="TM_WORLD_BORDERS_SIMPL-0.3",
+  verbose=FALSE
+)
+
 run <- readline("SIMPLE (s) or DETAILED (d) map? >")
 
 ## Create data
@@ -65,13 +72,6 @@ if (run == "s"){
   qpal <- colorFactor("Set3", countries$group, n = length(countries$group))
   countries$color <- qpal(countries$group)
 }
-
-## base map
-world_spdf <- rgdal::readOGR( 
-  dsn= paste0(getwd(), "/data_mine") , 
-  layer="TM_WORLD_BORDERS_SIMPL-0.3",
-  verbose=FALSE
-)
 
 ## add data
 world_spdf@data <- world_spdf@data %>% 

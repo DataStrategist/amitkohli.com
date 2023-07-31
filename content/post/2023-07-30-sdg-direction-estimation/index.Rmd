@@ -1,0 +1,83 @@
+---
+title: SDG Indicator Direction Estimation
+author: Amit
+date: '2023-07-30'
+slug: sdg-indicator-direction-estimation
+categories:
+  - Analysis
+tags:
+  - SDG
+---
+
+This is the second blog post about thinking of the Sustainable Development Goals(SDGs) in network terms. Please see [the first one](https://www.amitkohli.com/2022/07/20/how-are-sdg-indicators-interconnected/) to understand the general context of my interest in the SDGs.
+
+Anyway, so the big list is 17 Goals. Each goal, has numeric Targets to achieve. Targets have indicators, also numeric (and many of the indicators can be calculated in many ways, but let's not worry about that for now). I think the idea is loosely based around a temporal, or cause-and-effect (dare I say "causal") structure, where we can measure indicators quarterly or yearly, measure the target progress every few years, and Goals I guess in 2030, when we either hit them or not. Or a causal version of that. I don't want to get into the theory of the structure just yet... there's a simpler question to consider:
+
+How can we evaluate the effect of a specific indicator, or a collection of indicators, if the concept of a "target" maps to a separate location in the ontology? Said another way... if "the proportion of people catching a disease goes up... is this good or bad?" Answering that question is easy, but there's over 250 indicators, and I want to know if "up is good or bad" for them all indicators. You will see why I wanted this in my next blogpost.
+
+For this one, let's just say I wanted to come up with a mapping of whether each indicator was "up is bad" or "up is good". But I'm also lazy and don't want to manually map 250+ indicators. How would you accomplish this task?
+
+## Bing!
+
+Well, sentiment analysis, that's how! At least that was my fist port of call, and by golly was it a good one! 
+
+Sentiment analysis basically determines whether the "sentiment" of a group of words is either good or bad... although there are other types that map out to more nuanced feelings. For this purpose, I just evaluated each indicator name, and if it was negative, I assigned it the title "up is bad", and viceversa. I used the "Bing" library, for those of you that might be interested.
+
+After I finished this first pass, I did look at every single indicator and mapped a few corrections. In the end, the sentiment analysis approach was right **over 70% of the time**!
+
+Just goes to show that even poorly utilized tools can save a ton of time! Here are a few examples:
+
+```{r}
+library(tidyverse)
+library(gt)
+df <- read_csv("data/indicator_directionality_final.csv")
+
+df %>% sample_n(10) %>% gt()
+
+```
+
+And the full list [can be downloaded here](data/). I'm providing the internal analysis columns for fun, but the column that contains the final directions* are "reviewed_up_is". 
+
+* Please use caution, I did the check rapidly and thus I don't guarantee the accuracy of the indicator directions. Use at your own risk.
+
+
+## Gratuitous Viz
+
+Let's take a look at what these directions look like, organized by goal. Just for fun!
+
+
+```{r}
+## First, create a df for the nodes to coexist:
+df_proc <- df %>% select(ind, up_is = reviewed_up_is) %>% 
+  mutate(root = gsub("\\..+", "", ind),
+         second_level = gsub("..$", "", ind))
+
+## Then the full edgelist is as follows.. but also give it a friendly start so they aren't all individual
+edgelist <- bind_rows(
+ df_proc %>% select(from = root, to = second_level),
+ df_proc %>% select(from = second_level, to = ind),
+ tibble(from = "SDGs", to = 1:17 %>% as.character)
+)
+
+## and easy-processed, it's:
+g <- easyNetwork::edgeListToNodesEdges(edgelist)
+
+## now, finally, let's correct the color... adding red if it's bad to go up, and green if it's good. In several cases, indicators have multiple directions due to different series. Since it doesn't REEEALLY matter, this is just visual candy, just select the first indicator row for each (but do use the full csv file for anything actually important).
+
+g$nodes <- g$nodes %>% select(-color) %>% 
+  left_join(df_proc %>% select(ind, color = up_is) %>% 
+              mutate(color = ifelse(color == "good", "green", "red")) %>% 
+              group_by(ind) %>% slice(1) %>% ungroup, by = c("name" = "ind")) %>% 
+  ## and clean up colors for non-indicators, and sizes for all:
+  mutate(color = ifelse(is.na(color), "grey", color), value = 1)
+
+g$edges$value <- 1
+
+library(visNetwork)
+visNetwork(g$nodes, g$edges)
+
+```
+
+## Conclusion
+
+So there you have it.. indicator directions! Done. Useful on their own? No, I don't think so... but I have plans for them! Stay tuned for the subsequent post in this series!
