@@ -27,12 +27,12 @@ After I finished this first pass, I did look at every single indicator and mappe
 
 Just goes to show that even poorly utilized tools can save a ton of time! Here are a few examples:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 suppressMessages(library(tidyverse))
 suppressMessages(library(gt))
 df <- read_csv("data/indicator_directionality_final.csv")
 
-df %>% sample_n(10)
+df %>% sample_n(10) %>% gt::gt()
 
 ```
 
@@ -45,8 +45,10 @@ And the full list [can be downloaded here](data/indicator_directionality_final.c
 
 Let's take a look at what these directions look like, organized by goal. Just for fun!
 
+Zoom in to see the Indicator numbers!
 
-```{r}
+
+```{r message=FALSE, warning=FALSE}
 ## First, create a df for the nodes to coexist:
 df_proc <- df %>% select(ind, up_is = reviewed_up_is) %>% 
   mutate(root = gsub("\\..+", "", ind),

@@ -25,42 +25,516 @@ tags:
 <p>Sentiment analysis basically determines whether the “sentiment” of a group of words is either good or bad… although there are other types that map out to more nuanced feelings. For this purpose, I just evaluated each indicator name, and if it was negative, I assigned it the title “up is bad”, and viceversa. I used the “Bing” library, for those of you that might be interested.</p>
 <p>After I finished this first pass, I did look at every single indicator and mapped a few corrections. In the end, the sentiment analysis approach was right <strong>over 70% of the time</strong>!</p>
 <p>Just goes to show that even poorly utilized tools can save a ton of time! Here are a few examples:</p>
-<pre class="r"><code>suppressMessages(library(tidyverse))</code></pre>
-<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.1.3</code></pre>
-<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.1.3</code></pre>
-<pre class="r"><code>suppressMessages(library(gt))</code></pre>
-<pre><code>## Warning: package &#39;gt&#39; was built under R version 4.1.3</code></pre>
-<pre class="r"><code>df &lt;- read_csv(&quot;data/indicator_directionality_final.csv&quot;)</code></pre>
-<pre><code>## Rows: 267 Columns: 8
-## -- Column specification --------------------------------------------------------
-## Delimiter: &quot;,&quot;
-## chr (6): ind_code, ind, indicators, why, up_is, reviewed_up_is
-## dbl (2): mean_sent, n
-## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>df %&gt;% sample_n(10)</code></pre>
-<pre><code>## # A tibble: 10 x 8
-##    ind_code         ind    indicators          mean_~1     n why   up_is revie~2
-##    &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;                 &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  
-##  1 EN_WWT_GEN       6.3.1  Total wastewater g~   1         6 gene~ good  bad    
-##  2 VC_DSR_PDAN      1.5.1  Number of people w~  -1        10 dama~ bad   bad    
-##  3 AG_FOOD_WST_PC   12.3.1 Food waste per cap~  -1         5 wast~ bad   bad    
-##  4 EN_ATM_CO2GDP    9.4.1  Carbon dioxide emi~   1        14 stat~ good  bad    
-##  5 VC_PRR_ROBB      16.3.1 Police reporting r~  NA         7 &lt;NA&gt;  &lt;NA&gt;  good   
-##  6 SG_CPA_MIGRP     10.7.2 Proportion of coun~   1        17 faci~ good  good   
-##  7 EN_H2O_WBAMBQ    6.3.2  Proportion of bodi~   1         8 good~ good  good   
-##  8 SH_AAP_ASMORT    3.9.1  Age-standardized m~  -1        13 poll~ bad   bad    
-##  9 SG_HAZ_CMRSTHOLM 12.4.1 Parties meeting th~  -0.333    19 comm~ bad   good   
-## 10 PD_AGR_LSFP      2.3.1  Productivity of la~   1        15 prod~ good  good   
-## # ... with abbreviated variable names 1: mean_sent, 2: reviewed_up_is</code></pre>
+<pre class="r"><code>suppressMessages(library(tidyverse))
+suppressMessages(library(gt))
+df &lt;- read_csv(&quot;data/indicator_directionality_final.csv&quot;)
+
+df %&gt;% sample_n(10) %&gt;% gt::gt()</code></pre>
+<div id="fmthjzytik" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#fmthjzytik .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fmthjzytik .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fmthjzytik .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fmthjzytik .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fmthjzytik .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fmthjzytik .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fmthjzytik .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fmthjzytik .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fmthjzytik .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fmthjzytik .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fmthjzytik .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fmthjzytik .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fmthjzytik .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmthjzytik .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fmthjzytik .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fmthjzytik .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmthjzytik .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fmthjzytik .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmthjzytik .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fmthjzytik .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmthjzytik .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fmthjzytik .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmthjzytik .gt_left {
+  text-align: left;
+}
+
+#fmthjzytik .gt_center {
+  text-align: center;
+}
+
+#fmthjzytik .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fmthjzytik .gt_font_normal {
+  font-weight: normal;
+}
+
+#fmthjzytik .gt_font_bold {
+  font-weight: bold;
+}
+
+#fmthjzytik .gt_font_italic {
+  font-style: italic;
+}
+
+#fmthjzytik .gt_super {
+  font-size: 65%;
+}
+
+#fmthjzytik .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#fmthjzytik .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fmthjzytik .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fmthjzytik .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fmthjzytik .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fmthjzytik .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fmthjzytik .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">ind_code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">ind</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">indicators</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">mean_sent</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">n</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">why</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">up_is</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">reviewed_up_is</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">SL_ISV_IFEM</td>
+<td class="gt_row gt_left">8.3.1</td>
+<td class="gt_row gt_left">Proportion of informal employment, by sector and sex (ILO harmonized estimates) (%)</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_left">harmon_positive</td>
+<td class="gt_row gt_left">good</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">SP_ACS_BSRVH2O</td>
+<td class="gt_row gt_left">1.4.1</td>
+<td class="gt_row gt_left">Proportion of population using basic drinking water services, by location (%)</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_left">us_positive</td>
+<td class="gt_row gt_left">good</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">SG_NHR_IMPLN</td>
+<td class="gt_row gt_left">16.a.1</td>
+<td class="gt_row gt_left">Countries with National Human Rights Institutions in compliance with the Paris Principles, A status (1 = YES; 0 = NO)</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_left">human_positive; right_positive; principl_positive</td>
+<td class="gt_row gt_left">good</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">DC_TOF_TRDDBMDL</td>
+<td class="gt_row gt_left">8.a.1</td>
+<td class="gt_row gt_left">Total official flows (disbursement) for Aid for Trade, by donor countries (millions of constant 2019 United States dollars)</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_left">offici_negative; state_positive</td>
+<td class="gt_row gt_left">bad</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">SG_STT_NSDSIMPL</td>
+<td class="gt_row gt_left">17.18.3</td>
+<td class="gt_row gt_left">Countries with national statistical plans that are under implementation (1 = YES; 0 = NO)</td>
+<td class="gt_row gt_right">NA</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">GB_XPD_RSDV</td>
+<td class="gt_row gt_left">9.5.1</td>
+<td class="gt_row gt_left">Research and development expenditure as a proportion of GDP (%)</td>
+<td class="gt_row gt_right">NA</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">SE_GCEDESD_CUR</td>
+<td class="gt_row gt_left">4.7.1</td>
+<td class="gt_row gt_left">Extent to which global citizenship education and education for sustainable development are mainstreamed in curricula</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_left">educ_positive; sustain_positive</td>
+<td class="gt_row gt_left">good</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">DC_ODA_POVDLG</td>
+<td class="gt_row gt_left">1.a.1</td>
+<td class="gt_row gt_left">Official development assistance grants for poverty reduction, by donor countries (percentage of GNI)</td>
+<td class="gt_row gt_right">-1</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_left">offici_negative; poverti_negative</td>
+<td class="gt_row gt_left">bad</td>
+<td class="gt_row gt_left">good</td></tr>
+    <tr><td class="gt_row gt_left">VC_DSR_HOLH</td>
+<td class="gt_row gt_left">1.5.2</td>
+<td class="gt_row gt_left">Direct economic loss in the housing sector attributed to disasters (current United States dollars)</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_left">econom_positive; loss_negative; disast_negative; state_positive</td>
+<td class="gt_row gt_left">bad</td>
+<td class="gt_row gt_left">bad</td></tr>
+    <tr><td class="gt_row gt_left">EG_IFF_RANDN</td>
+<td class="gt_row gt_left">7.a.1</td>
+<td class="gt_row gt_left">International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems (millions of constant United States dollars)</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_left">support_positive; clean_positive; renew_positive; product_positive; state_positive</td>
+<td class="gt_row gt_left">good</td>
+<td class="gt_row gt_left">good</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 <p>And the full list <a href="data/indicator_directionality_final.csv">can be downloaded here</a>. I’m providing the internal analysis columns for fun, but the column that contains the final directions* are “reviewed_up_is”.</p>
 <ul>
 <li>Please use caution, I did the check rapidly and thus I don’t guarantee the accuracy of the indicator directions. Use at your own risk.</li>
@@ -69,6 +543,7 @@ tags:
 <div id="gratuitous-viz" class="section level2">
 <h2>Gratuitous Viz</h2>
 <p>Let’s take a look at what these directions look like, organized by goal. Just for fun!</p>
+<p>Zoom in to see the Indicator numbers!</p>
 <pre class="r"><code>## First, create a df for the nodes to coexist:
 df_proc &lt;- df %&gt;% select(ind, up_is = reviewed_up_is) %&gt;% 
   mutate(root = gsub(&quot;\\..+&quot;, &quot;&quot;, ind),
@@ -82,10 +557,9 @@ edgelist &lt;- bind_rows(
 )
 
 ## and easy-processed, it&#39;s:
-g &lt;- easyNetwork::edgeListToNodesEdges(edgelist)</code></pre>
-<pre><code>## Warning in easyNetwork::edgeListToNodesEdges(edgelist): The same nodes are found in &#39;from&#39;&#39; and &#39;to&#39;.
-##             Node colors/sizes might not be representative</code></pre>
-<pre class="r"><code>## now, finally, let&#39;s correct the color... adding red if it&#39;s bad to go up, and green if it&#39;s good. In several cases, indicators have multiple directions due to different series. Since it doesn&#39;t REEEALLY matter, this is just visual candy, just select the first indicator row for each (but do use the full csv file for anything actually important).
+g &lt;- easyNetwork::edgeListToNodesEdges(edgelist)
+
+## now, finally, let&#39;s correct the color... adding red if it&#39;s bad to go up, and green if it&#39;s good. In several cases, indicators have multiple directions due to different series. Since it doesn&#39;t REEEALLY matter, this is just visual candy, just select the first indicator row for each (but do use the full csv file for anything actually important).
 
 g$nodes &lt;- g$nodes %&gt;% select(-color) %&gt;% 
   left_join(df_proc %&gt;% select(ind, color = up_is) %&gt;% 
@@ -96,9 +570,8 @@ g$nodes &lt;- g$nodes %&gt;% select(-color) %&gt;%
 
 g$edges$value &lt;- 1
 
-library(visNetwork)</code></pre>
-<pre><code>## Warning: package &#39;visNetwork&#39; was built under R version 4.1.3</code></pre>
-<pre class="r"><code>visNetwork(g$nodes, g$edges)</code></pre>
+library(visNetwork)
+visNetwork(g$nodes, g$edges)</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"nodes":{"name":["1","10","11","12","13","14","16","17","2","3","4","5","6","7","8","9","1.3","1.4","1.5","1.a","10.3","10.4","10.7","11.6","11.a","12.3","12.4","13.2","14.4","16.1","16.10","16.2","16.3","16.5","16.6","16.7","16.a","17.17","17.18","17.19","17.3","17.6","17.8","2.1","2.3","2.a","2.b","2.c","3.1","3.3","3.4","3.5","3.6","3.8","3.9","3.b","3.c","3.d","4.2","4.3","4.4","4.5","4.7","4.a","4.b","4.c","5.1","5.5","5.6","5.a","5.c","6.1","6.2","6.3","6.4","6.a","6.b","7.1","7.a","7.b","8.3","8.5","8.8","8.a","8.b","9.2","9.3","9.4","9.5","9.c","SDGs","1.3.1","1.4.1","1.4.2","1.5.1","1.5.2","1.5.3","1.5.4","1.a.1","1.a.2","10.3.1","10.4.1","10.7.1","10.7.2","11.6.1","11.6.2","11.a.1","12.3.1","12.4.1","12.4.2","13.2.1","14.4.1","16.1.2","16.1.3","16.1.4","16.10.1","16.10.2","16.2.2","16.3.1","16.3.2","16.5.1","16.5.2","16.6.1","16.7.1","16.a.1","17.17.1","17.18.2","17.18.3","17.19.1","17.3.1","17.6.1","17.8.1","2.1.1","2.1.2","2.3.1","2.3.2","2.a.1","2.a.2","2.b.1","2.c.1","3.1.2","3.3.5","3.4.1","3.4.2","3.5.1","3.6.1","3.8.1","3.8.2","3.9.1","3.9.2","3.9.3","3.b.1","3.b.2","3.b.3","3.c.1","3.d.1","4.2.2","4.3.1","4.4.1","4.5.1","4.7.1","4.a.1","4.b.1","4.c.1","5.1.1","5.5.1","5.6.2","5.a.1","5.a.2","5.c.1","6.1.1","6.2.1","6.3.1","6.3.2","6.4.1","6.a.1","6.b.1","7.1.1","7.1.2","7.a.1","7.b.1","8.3.1","8.5.1","8.5.2","8.8.1","8.8.2","8.a.1","8.b.1","9.2.2","9.3.2","9.4.1","9.5.1","9.c.1","15"],"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194],"label":["1","10","11","12","13","14","16","17","2","3","4","5","6","7","8","9","1.3","1.4","1.5","1.a","10.3","10.4","10.7","11.6","11.a","12.3","12.4","13.2","14.4","16.1","16.10","16.2","16.3","16.5","16.6","16.7","16.a","17.17","17.18","17.19","17.3","17.6","17.8","2.1","2.3","2.a","2.b","2.c","3.1","3.3","3.4","3.5","3.6","3.8","3.9","3.b","3.c","3.d","4.2","4.3","4.4","4.5","4.7","4.a","4.b","4.c","5.1","5.5","5.6","5.a","5.c","6.1","6.2","6.3","6.4","6.a","6.b","7.1","7.a","7.b","8.3","8.5","8.8","8.a","8.b","9.2","9.3","9.4","9.5","9.c","SDGs","1.3.1","1.4.1","1.4.2","1.5.1","1.5.2","1.5.3","1.5.4","1.a.1","1.a.2","10.3.1","10.4.1","10.7.1","10.7.2","11.6.1","11.6.2","11.a.1","12.3.1","12.4.1","12.4.2","13.2.1","14.4.1","16.1.2","16.1.3","16.1.4","16.10.1","16.10.2","16.2.2","16.3.1","16.3.2","16.5.1","16.5.2","16.6.1","16.7.1","16.a.1","17.17.1","17.18.2","17.18.3","17.19.1","17.3.1","17.6.1","17.8.1","2.1.1","2.1.2","2.3.1","2.3.2","2.a.1","2.a.2","2.b.1","2.c.1","3.1.2","3.3.5","3.4.1","3.4.2","3.5.1","3.6.1","3.8.1","3.8.2","3.9.1","3.9.2","3.9.3","3.b.1","3.b.2","3.b.3","3.c.1","3.d.1","4.2.2","4.3.1","4.4.1","4.5.1","4.7.1","4.a.1","4.b.1","4.c.1","5.1.1","5.5.1","5.6.2","5.a.1","5.a.2","5.c.1","6.1.1","6.2.1","6.3.1","6.3.2","6.4.1","6.a.1","6.b.1","7.1.1","7.1.2","7.a.1","7.b.1","8.3.1","8.5.1","8.5.2","8.8.1","8.8.2","8.a.1","8.b.1","9.2.2","9.3.2","9.4.1","9.5.1","9.c.1","15"],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"color":["grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","green","green","green","red","red","green","green","green","green","red","grey","red","green","green","red","green","red","green","red","green","green","red","red","green","red","green","red","green","red","red","red","red","grey","green","green","green","green","green","green","green","green","red","red","green","green","grey","green","red","red","green","red","red","red","green","red","green","red","red","red","red","green","green","green","green","green","green","green","green","green","green","green","green","green","green","grey","green","green","green","green","green","red","red","green","green","green","green","green","green","green","green","green","green","red","red","green","green","green","grey","grey","red","green","green","grey"]},"edges":{"from":[1,1,1,1,2,2,2,3,3,4,4,5,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,12,12,12,12,12,13,13,13,13,13,13,14,14,14,15,15,15,15,15,16,16,16,16,16,17,18,18,19,19,19,19,20,20,21,22,23,23,24,24,25,26,27,27,28,29,30,30,30,31,31,32,33,33,34,34,35,36,37,38,39,39,40,41,42,43,44,44,45,45,46,46,47,48,49,50,51,51,52,53,54,54,55,55,55,56,56,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,70,71,72,73,74,74,75,76,77,78,78,79,80,81,82,82,83,83,84,85,86,87,88,89,90,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91],"to":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,194],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 </div>
