@@ -28,15 +28,15 @@ After I finished this first pass, I did look at every single indicator and mappe
 Just goes to show that even poorly utilized tools can save a ton of time! Here are a few examples:
 
 ```{r}
-library(tidyverse)
-library(gt)
+suppressMessages(library(tidyverse))
+suppressMessages(library(gt))
 df <- read_csv("data/indicator_directionality_final.csv")
 
-df %>% sample_n(10) %>% gt()
+df %>% sample_n(10)
 
 ```
 
-And the full list [can be downloaded here](data/). I'm providing the internal analysis columns for fun, but the column that contains the final directions* are "reviewed_up_is". 
+And the full list [can be downloaded here](data/indicator_directionality_final.csv). I'm providing the internal analysis columns for fun, but the column that contains the final directions* are "reviewed_up_is". 
 
 * Please use caution, I did the check rapidly and thus I don't guarantee the accuracy of the indicator directions. Use at your own risk.
 
