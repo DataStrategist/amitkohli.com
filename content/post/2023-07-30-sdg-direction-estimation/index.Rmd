@@ -82,4 +82,4 @@ visNetwork(g$nodes, g$edges)
 
 ## Conclusion
 
-So there you have it.. indicator directions! Done. Useful on their own? No, I don't think so... but I have plans for them! Stay tuned for the subsequent post in this series!
+So there you have it.. indicator directions! Done. Useful on their own? No, I don't think so... but I have plans for them! Stay tuned for the subsequent post in this series, coming soon!

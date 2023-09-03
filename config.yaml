@@ -29,6 +29,8 @@ menu:
 params:
   intro: true
   headline: "AmitKohli.com"
+  header: "Amit Kohli's blog"
+  author: "Amit Kohli"
   description: "you are data"
   github: "https://github.com/datastrategist"
   linkedin: "https://www.linkedin.com/in/akohli"
