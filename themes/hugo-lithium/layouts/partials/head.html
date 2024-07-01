@@ -26,14 +26,6 @@
 <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
 {{ end }}
 
-{{ with .OutputFormats.Get "RSS" }}
-<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-{{ end }}
-{{ partial "head_highlightjs" . }}
-<link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" media="all">
-<link rel="stylesheet" href="{{ "css/main.css" | relURL }}" media="all">
-{{ range .Site.Params.customCSS }}
-
 <!-- Hotjar Tracking Code for Site 5043135 (name missing) -->
 <script>
     (function(h,o,t,j,a,r){
@@ -46,5 +38,14 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <link rel="stylesheet" href="{{ . | relURL }}">
+
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{ end }}
+{{ partial "head_highlightjs" . }}
+<link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" media="all">
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}" media="all">
+{{ range .Site.Params.customCSS }}
+
 {{ end }}
 {{ partial "head_custom" . }}
