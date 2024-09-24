@@ -41,17 +41,11 @@ OK, now that you&#8217;re all set and you know your new pc can do the connection
 
   1. On Computer A, open the Registry Editor by typing &#8220;regedit&#8221; in the Windows search box under the Start menu and selecting regedit.exe
   2. Navigate to the following registry key : **HKEY\_CURRENT\_USER > Software > ODBC**
-  3. Right-click on the ODBC.INI folder, choose Export, and save the .reg file to the location of your choice
-  
-    4. Copy the .reg file (or files if you have both User and System DSN data sources) to any location Computer B
-  
-    5. On Computer B, double click the .reg file(s) to import the DSN data sources to the registry (select &#8220;Yes&#8221; and &#8220;OK&#8221; when prompted)
-
-&nbsp;
+  3. Right-click on the ODBC.INI folder, choose Export, and save the .reg file to the location of your choice  
+  4. Copy the .reg file (or files if you have both User and System DSN data sources) to any location Computer B
+  5. On Computer B, double click the .reg file(s) to import the DSN data sources to the registry (select &#8220;Yes&#8221; and &#8220;OK&#8221; when prompted)
 
 done!
-
-&nbsp;
 
 ### **EDIT: What if we are going from a Computer to a Server?**
 
