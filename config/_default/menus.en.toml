@@ -1,24 +1,24 @@
 [[main]]
   name = "Talks"
-  pageRef = "talks"
+  url = "/talks/"
   weight = 10
 
 [[main]]
   name = "Series"
-  pageRef = "series"
+  url = "/series/"
   weight = 20
 
 [[main]]
   name = "About"
-  pageRef = "about"
+  url = "/about/"
   weight = 30
 
 [[main]]
   name = "Contact"
-  pageRef = "contact"
+  url = "/contact/"
   weight = 40
 
 [[main]]
   name = "Archive"
-  pageRef = "archive"
+  url = "/archive/"
   weight = 50
