@@ -23,4 +23,4 @@ description: Get in touch — book a call or send a message.
 
 - [LinkedIn](https://www.linkedin.com/in/akohli)
 - [GitHub](https://github.com/datastrategist)
-- [YouTube](https://www.youtube.com/@amitkohli)
+- [YouTube](https://youtube.com/@dataintherealworld)

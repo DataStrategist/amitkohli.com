@@ -3,8 +3,40 @@
   <header class="max-w-prose">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
-    {{ with .Description }}<p class="text-lg opacity-70">{{ . }}</p>{{ end }}
   </header>
+
+  {{/* ---- Speaker intro ---- */}}
+  <section class="speaker-intro">
+    <p class="speaker-intro-text">
+      I speak at conferences, meetups, and internal events on data strategy, knowledge graphs, RAG, and the messy reality of making data useful. Whether it's a keynote, a panel, or a hands-on workshop — I bring energy, real-world stories, and practical takeaways.
+    </p>
+  </section>
+
+  {{/* ---- Speaker bio card ---- */}}
+  <section class="speaker-bio">
+    <div class="speaker-bio-photo">
+      <img src="{{ "img/about.jpg" | relURL }}" alt="Amit Kohli speaking">
+    </div>
+    <div class="speaker-bio-text">
+      <h2>About the speaker</h2>
+      <p>
+        <strong>Amit Kohli</strong> is the Head of Data at Access Social Care, where he builds knowledge graphs and data systems for the social care sector. His career spans UN water resources, international development (ACDI/VOCA, CRS), and data science consulting.
+      </p>
+      <p>
+        He has spoken at EARL, LegalGeek, Humentum, MERL Tech, Charity Digital, and numerous other events. Topics range from RAG and knowledge graphs to data governance and making international development data not useless.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        <a href="{{ "about/" | relURL }}">Full bio</a>
+        {{ with site.Params.author.links }}
+          {{ range . }}
+            {{ range $k, $v := . }}
+              {{ if eq $k "linkedin" }} &middot; <a href="{{ $v }}">LinkedIn</a>{{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </p>
+    </div>
+  </section>
 
   {{ .Content }}
 
@@ -27,14 +59,39 @@
         </div>
         {{ end }}
         <div class="talk-icons">
-          {{ with $.Params.recording_url }}&#9654; Recording{{ end }}
-          {{ with $.Params.deck_url }}&#128196; Slides{{ end }}
+          {{ with .Params.recording_url }}&#9654; Recording{{ end }}
+          {{ with .Params.deck_url }}&#128196; Slides{{ end }}
         </div>
       </a>
       {{ end }}
     </div>
   </section>
   {{ end }}
+
+  {{/* ---- Testimonials ---- */}}
+  <section class="testimonials">
+    <h2>What people say</h2>
+    <div class="testimonial">
+      <blockquote>"Amit, and the team he led, helped us to better understand the processes behind the data we were working with. Furthermore, he was able to give us an end-to-end model prototype to prioritize our future actions."</blockquote>
+      <cite>Francisco Donoso — Environmental Intelligence Manager (gov't)</cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"Amit is incredibly resourceful and working with him has been a real pleasure. He contributed to our Data Science for Social Good programme not only technically, but also as a mentor. Five stars!"</blockquote>
+      <cite>Juergen Branke — Professor of Operational Research and Systems (academia)</cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"He spotted the need for the training, created a 12 week curriculum, and delivered it single-handedly. He brought an amazing energy, was inclusive and supportive — and remained committed throughout."</blockquote>
+      <cite>Giselle Cory — Executive Director (NGO)</cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"Amit helped us understand what works and what doesn't on our website. We now know where to focus our efforts for maximum impact."</blockquote>
+      <cite>Sofie Maddens — Department Head (UN)</cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"A BIG thank you to Amit who gave our Insight and Analytics team @ParkinsonsUK a pro bono presentation about #NLP. The team and I learned something new."</blockquote>
+      <cite>Mor Rubinstein — Data Director (NGO)</cite>
+    </div>
+  </section>
 
   {{/* ---- Topic filters (Alpine.js) ---- */}}
   {{ $allTopics := slice }}
@@ -46,6 +103,8 @@
     {{ end }}
   {{ end }}
   {{ $uniqueTopics := $allTopics | uniq | sort }}
+
+  <h2>All talks</h2>
 
   <section x-data="{ filter: 'all' }">
     <div class="topic-filters">

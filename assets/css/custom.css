@@ -2,10 +2,41 @@
    Custom CSS for amitkohli.com — Blowfish theme extensions
    ========================================================================== */
 
-/* --- Homepage Hero --- */
+/* --- Homepage Hero with animated gradient background --- */
+@keyframes hero-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 .homepage-hero {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 4rem 1rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 195, 247, 0.08),
+    rgba(186, 104, 200, 0.08),
+    rgba(255, 183, 77, 0.08),
+    rgba(77, 182, 172, 0.08),
+    rgba(79, 195, 247, 0.08)
+  );
+  background-size: 400% 400%;
+  animation: hero-gradient 20s ease infinite;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+.dark .homepage-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 195, 247, 0.05),
+    rgba(186, 104, 200, 0.05),
+    rgba(255, 183, 77, 0.05),
+    rgba(77, 182, 172, 0.05),
+    rgba(79, 195, 247, 0.05)
+  );
+  background-size: 400% 400%;
+  animation: hero-gradient 20s ease infinite;
 }
 .hero-title {
   font-size: 2.5rem;
@@ -85,6 +116,52 @@
   font-size: 0.9rem;
   opacity: 0.75;
   margin: 0;
+}
+
+/* --- Speaker Intro + Bio --- */
+.speaker-intro {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+}
+.speaker-intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+.speaker-bio {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.speaker-bio-photo {
+  flex-shrink: 0;
+  width: 160px;
+}
+.speaker-bio-photo img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+.speaker-bio-text h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+.speaker-bio-text p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 640px) {
+  .speaker-bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .speaker-bio-photo { width: 120px; }
 }
 
 /* --- Talk Cards --- */
