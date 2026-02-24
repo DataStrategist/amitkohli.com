@@ -1,0 +1,86 @@
+{{ define "main" }}
+<article>
+  <header class="max-w-prose">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="text-lg opacity-70">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ .Content }}
+
+  {{/* ---- Featured talks ---- */}}
+  {{ $featured := where .Pages "Params.featured" true }}
+  {{ with $featured }}
+  <section class="featured-talks">
+    <h2>Featured</h2>
+    <div class="talks-grid">
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" class="talk-card">
+        <h3>{{ .Title }}</h3>
+        <div class="talk-meta">
+          {{ with .Params.event }}{{ . }}{{ end }}
+          {{ with .Params.date }} &middot; {{ dateFormat "Jan 2006" . }}{{ end }}
+        </div>
+        {{ with .Params.topic }}
+        <div class="talk-topics">
+          {{ range . }}<span class="topic-tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+        <div class="talk-icons">
+          {{ with $.Params.recording_url }}&#9654; Recording{{ end }}
+          {{ with $.Params.deck_url }}&#128196; Slides{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* ---- Topic filters (Alpine.js) ---- */}}
+  {{ $allTopics := slice }}
+  {{ range .Pages }}
+    {{ with .Params.topic }}
+      {{ range . }}
+        {{ $allTopics = $allTopics | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $uniqueTopics := $allTopics | uniq | sort }}
+
+  <section x-data="{ filter: 'all' }">
+    <div class="topic-filters">
+      <button class="filter-btn" :class="{ 'active': filter === 'all' }" @click="filter = 'all'">All</button>
+      {{ range $uniqueTopics }}
+      <button class="filter-btn"
+        :class="{ 'active': filter === '{{ . }}' }"
+        @click="filter = '{{ . }}'">{{ . }}</button>
+      {{ end }}
+    </div>
+
+    {{/* ---- All talks grid ---- */}}
+    <div class="talks-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}" class="talk-card"
+        x-show="filter === 'all'{{ with .Params.topic }}{{ range . }} || filter === '{{ . }}'{{ end }}{{ end }}"
+        x-transition>
+        <h3>{{ .Title }}</h3>
+        <div class="talk-meta">
+          {{ with .Params.event }}{{ . }}{{ end }}
+          {{ with .Params.date }} &middot; {{ dateFormat "Jan 2006" . }}{{ end }}
+          {{ with .Params.location }} &middot; {{ . }}{{ end }}
+        </div>
+        {{ with .Params.topic }}
+        <div class="talk-topics">
+          {{ range . }}<span class="topic-tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+        <div class="talk-icons">
+          {{ with .Params.recording_url }}&#9654; Recording {{ end }}
+          {{ with .Params.deck_url }}&#128196; Slides{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{ end }}

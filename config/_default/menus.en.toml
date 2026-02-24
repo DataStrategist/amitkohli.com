@@ -1,0 +1,24 @@
+[[main]]
+  name = "Talks"
+  pageRef = "talks"
+  weight = 10
+
+[[main]]
+  name = "Series"
+  pageRef = "series"
+  weight = 20
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 30
+
+[[main]]
+  name = "Contact"
+  pageRef = "contact"
+  weight = 40
+
+[[main]]
+  name = "Archive"
+  pageRef = "archive"
+  weight = 50

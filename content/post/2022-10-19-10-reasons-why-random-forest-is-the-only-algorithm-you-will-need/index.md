@@ -3,8 +3,8 @@ title: "10 reasons why Random Forest is the only algorithm you will need"
 author: "Amit"
 date: "2022-10-19"
 slug: "10-reasons-why-random-forest-is-the-only-algorithm-you-will-need"
-categories: Machine Learning
-tags: Random Forest
+categories: ["Machine Learning"]
+tags: ["Random Forest"]
 ---
 
 Quick disclaimer, Random Forests, or RF, don't solve all problems. If you want to identify cats in an image, or do text stuff like figure out what political candidate mentioned "pudding" more often, or reinforcement learning, RFs can't help you. But for regression or classification tasks with numerical data, RFs are the best tool around.

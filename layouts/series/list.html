@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article>
+  <header class="max-w-prose">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="text-lg opacity-70">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ .Content }}
+
+  {{/* ---- Track descriptions ---- */}}
+  <div class="series-tracks">
+    <div class="track-section">
+      <h3><span class="track-badge track-a">Track A</span> Tactical</h3>
+      <p>Ground-level data pain — Excel sprawl, dashboards, disaggregation. The stuff that keeps you up at night.</p>
+    </div>
+    <div class="track-section">
+      <h3><span class="track-badge track-b">Track B</span> Governance</h3>
+      <p>Systems thinking, data strategy, and the organisational decisions that shape (or break) your data.</p>
+    </div>
+    <div class="track-section">
+      <h3><span class="track-badge track-c">Track C</span> AI &amp; Advanced</h3>
+      <p>Knowledge graphs, ontologies, and AI — demystified, practical, and honest about what works.</p>
+    </div>
+  </div>
+
+  {{/* ---- Latest videos ---- */}}
+  <h2>Episodes</h2>
+  <div class="talks-grid">
+    {{ range .Pages.ByParam "number" }}
+    <a href="{{ .RelPermalink }}" class="talk-card">
+      <div>
+        {{ with .Params.track }}
+        <span class="track-badge track-{{ lower . }}">Track {{ . }}</span>
+        {{ end }}
+        <span class="talk-meta">#{{ .Params.number }}</span>
+      </div>
+      <h3 style="margin-top: 0.5rem;">{{ .Title }}</h3>
+      {{ with .Params.topic }}<div class="talk-topics"><span class="topic-tag">{{ . }}</span></div>{{ end }}
+      <div class="talk-icons">
+        {{ with .Params.youtube_url }}&#9654; YouTube {{ end }}
+        {{ with .Params.linkedin_url }}&#128279; LinkedIn{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  {{/* CTA */}}
+  <div style="text-align: center; margin: 2rem 0;">
+    <p>
+      <a href="https://www.youtube.com/@amitkohli" style="font-weight: 600;">Watch the full series on YouTube</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.linkedin.com/in/akohli" style="font-weight: 600;">Follow on LinkedIn</a>
+    </p>
+  </div>
+</article>
+{{ end }}

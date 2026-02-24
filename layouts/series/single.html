@@ -1,0 +1,39 @@
+{{ define "main" }}
+<article class="max-w-prose">
+  {{ partial "breadcrumbs.html" . }}
+
+  <div style="margin-bottom: 0.75rem;">
+    {{ with .Params.track }}
+    <span class="track-badge track-{{ lower . }}">Track {{ . }}</span>
+    {{ end }}
+    <span class="talk-meta">Episode #{{ .Params.number }}</span>
+  </div>
+
+  <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
+
+  {{ with .Params.date }}
+  <div class="talk-meta" style="margin-bottom: 1rem;">{{ dateFormat "2 January 2006" . }}</div>
+  {{ end }}
+
+  {{/* YouTube embed */}}
+  {{ with .Params.youtube_url }}
+    {{ $videoId := replaceRE `.*(?:v=|youtu\.be/)([^&?]+).*` "$1" . }}
+    <div class="youtube-embed">
+      <iframe src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  {{ end }}
+
+  {{ with .Params.topic }}<div class="talk-topics" style="margin: 1rem 0;"><span class="topic-tag">{{ . }}</span></div>{{ end }}
+
+  {{ with .Params.abstract }}
+  <p>{{ . }}</p>
+  {{ end }}
+
+  <div class="video-links" style="margin: 1.5rem 0;">
+    {{ with .Params.youtube_url }}<a href="{{ . }}">Watch on YouTube</a>{{ end }}
+    {{ with .Params.linkedin_url }}<a href="{{ . }}">View LinkedIn post</a>{{ end }}
+  </div>
+
+  {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,50 @@
+{{ define "main" }}
+<article class="max-w-prose">
+  {{ partial "breadcrumbs.html" . }}
+  <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
+
+  <div class="talk-meta" style="margin-bottom: 1rem;">
+    {{ with .Params.event }}<strong>{{ . }}</strong>{{ end }}
+    {{ with .Params.date }} &middot; {{ dateFormat "2 January 2006" . }}{{ end }}
+    {{ with .Params.location }} &middot; {{ . }}{{ end }}
+    {{ with .Params.status }}<br><span class="topic-tag">{{ . }}</span>{{ end }}
+  </div>
+
+  {{ with .Params.topic }}
+  <div class="talk-topics" style="margin-bottom: 1.5rem;">
+    {{ range . }}<span class="topic-tag">{{ . }}</span>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.abstract }}
+  <div style="margin-bottom: 1.5rem;">
+    <h2>Abstract</h2>
+    <p>{{ . }}</p>
+  </div>
+  {{ end }}
+
+  {{ with .Params.recording_url }}
+  <div style="margin-bottom: 1rem;">
+    {{/* Check if it's a YouTube link for embed */}}
+    {{ if findRE "youtube\\.com|youtu\\.be" . }}
+      {{ $videoId := replaceRE `.*(?:v=|youtu\.be/)([^&?]+).*` "$1" . }}
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {{ else }}
+      <p><a href="{{ . }}">Watch Recording</a></p>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.deck_url }}
+  <p><a href="{{ . }}">View Slides</a></p>
+  {{ end }}
+
+  {{ with .Params.host_org }}
+  <p style="opacity: 0.7; font-size: 0.9rem;">Hosted by {{ . }}</p>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+{{ end }}

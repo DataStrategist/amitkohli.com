@@ -1,0 +1,23 @@
+baseURL = "https://www.amitkohli.com/"
+languageCode = "en"
+title = "Amit Kohli"
+theme = "blowfish"
+
+enableRobotsTXT = true
+paginate = 12
+summaryLength = 30
+buildDrafts = false
+
+[taxonomies]
+  tag = "tags"
+  topic = "topics"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+  [permalinks.page]
+    talks = "/talks/:slug/"
+    series = "/series/:slug/"
+  [permalinks.section]
+    archive = "/archive/"

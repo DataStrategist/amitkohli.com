@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## From Fragmentation to Transparency - Using AI to Democratise Social Care Data
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## What we will cover
+- Who we are and what we're trying to do
+- Let's get nerdy about ETL
+- How we used AI
+- What next
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Context & why
+
+What does Access Social Care do?
+
+* Helps individuals:
+	* Casework
+	* AccessAva chatbot
+* Changes the system
+	* FOI case
+	* Uni work
+	* communities work
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --><span style="color: red;">_but what is the system?_</span>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-62.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-63.png" alt="" style="object-fit: scale-down">
+
+
+<style>
+	.white{		background-color: white; 	}
+	.strike {   text-decoration: line-through; }
+	.small {font-size:15px}
+</style>
+https://www.mentimeter.com/app/presentation/ala622tuetj2govc1tt1v22knhvegy8f/results<!-- .element: class="small" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Casework
+
+- We have clinics, interns, paralegals, caseworkers supervised by solicitors
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->The cases coming in are so complex, our caseworkers struggle sometimes!
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+(back to Menti)
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## System Change
+
+<img src="Files/attachments/diagram data model conceptual.svg" alt="" style="object-fit: scale-down" class="white">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-85.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-84.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Fragmented data - Official stats
+
+<img src="Files/attachments/image-65.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-66.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Fragmented data - Voluntary sector and other stats
+<img src="Files/attachments/image-67.png" alt="" style="width: 400px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## UNMET NEED
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-78.png" alt="" style="object-fit: scale-down" class="white">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+(menti)
+</div></div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ETL
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Helplines Collaboration
+
+<img src="Files/attachments/image-69.png" alt="" style="width: 900px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Other data sources
+
+- Find data
+- Obtain data
+- Find correct data rectangle
+- Validate rectangle
+- "transform" rectangle
+- Create downstream assets
+- Insert assets in report
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Find data
+https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Obtain
+- API access
+- Excel download
+- JS artifact
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Get the rectangle
+<img src="Files/attachments/image-71.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Data Puller Helper Thingie
+
+<img src="Files/attachments/image-72.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Validate... 😠
+
+- Total Population
+- Total Population<sup>12</sup>
+- Total Population *
+- total population
+- total_population
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Exemplar ftw!
+
+```r
+exemplar(mtcars, wt, mpg)
+#> validate_mtcars <- function(data) {
+#>   stopifnot(exprs = {
+#>     is.data.frame(data)
+#>     # The data is potentially being subsetted so this assertion has been disabled:
+#>     # identical(colnames(data), c("wt", "mpg"))
+#> 
+#>     "wt" %in% colnames(data)
+#>     is.double(data"wt")
+#>     !any(is.na(data is.null(data[["wt"))
+#>     # Duplicate values were detected so this assertion has been disabled:
+#>     # !any(duplicated(data"wt"))
+#>     min(data"wt", na.rm = TRUE) > 0 # all positive
+#>     # (Un)comment or modify the below range assertions if needed:
+#>     # max(data"wt", na.rm = TRUE) <= 5.424
+#>     # 1.513 <= min(data"wt", na.rm = TRUE)
+#>     # (Un)comment or modify the below deviance assertions if needed.
+#>     # The mean is 3.22 and the standard deviation is 0.98:
+#>     # max(data"wt", na.rm = TRUE) <= 3.22 + 4 * 0.98
+#>     # 3.22 - 4 * 0.98 <= max(data"wt", na.rm = TRUE)
+#> 
+#>     "mpg" %in% colnames(data)
+#>     is.double(data"mpg")
+#>     !any(is.na(data is.null(data[["mpg"))
+#>     # Duplicate values were detected so this assertion has been disabled:
+#>     # !any(duplicated(data"mpg"))
+#>     min(data"mpg", na.rm = TRUE) > 0 # all positive
+#>     # (Un)comment or modify the below range assertions if needed:
+#>     # max(data"mpg", na.rm = TRUE) <= 33.9
+#>     # 10.4 <= min(data"mpg", na.rm = TRUE)
+#>     # (Un)comment or modify the below deviance assertions if needed.
+#>     # The mean is 20.09 and the standard deviation is 6.03:
+#>     # max(data"mpg", na.rm = TRUE) <= 20.09 + 4 * 6.03
+#>     # 20.09 - 4 * 6.03 <= max(data"mpg", na.rm = TRUE)
+#>   })
+#>   invisible(TRUE)
+#> }
+```
+
+<img src="Files/attachments/image-73.png" alt="" style="width: 170px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/image-70.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template">
+(menti)
+</script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# AI
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## AI-assisted ETL pipeline?
+## 🤔
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### What percent of adults can interpret bar charts?
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->70%
+	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->So 30% can't?
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->What about in disability communities?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 30%+ of disabled people can't understand the official information about them
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## AI-assisted chart summarization
+<img src="Files/attachments/image-80.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```
+prompt = f"""
+    You are a chart explainer for a social care data portal.
+     Your job is to write a clear summary for disabled 
+     people. The text will appear under a section called 
+     “why this is important.”
+Write a very simple summary of the data below about {topic}
+ in {la_name}:
+{json.dumps(data, indent=2)}
+Write in plain English at CEFR A1 level, with a maximum of
+ 200 words.
+Write one paragraph only, with no line breaks, no bullet 
+points, and no numbers at the start of sentences.
+Do not list things. Instead, connect up to three important
+ points into a smooth, natural paragraph.
+Rules:
+Use short sentences (under 15 words)
+Use easy words only
+Explain numbers in simple terms
+If the data uses value_per100k, say it means "per 100,000 
+people"
+If there are many features, focus on the highest values 
+and the biggest differences from the England average
+If the England average is in the data, say if {la_name} 
+is higher, lower, or the same as the England average
+If no England average, don’t mention England
+If the data clearly shows change over time, say if 
+things got better or worse
+If no trend, do not mention change or time
+Do not say “The data shows” or similar — just write 
+the key points
+Use a warm, clear tone. Keep it simple and helpful, and 
+avoid m-dashes.
+    """
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### High-level Analyser
+- Normalise on population
+- Consider proxies for "how easy to provide care" - population density, deprivation, rurality
+
+<img src="Files/attachments/image-76.png" alt="" style="width: 400px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## OK... but...
+
+- Causal pathways?
+- Regression?
+- Structured Equation Modelling (SEM)?
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Batch mode
+
+- OpenAI increases the costs of old models! ⚠️
+- 50% price cut if models run in batch mode (not real-time)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+``` mermaid
+graph TD
+    A[Raw Text Files<br></br>openai_out/*.txt] --> B[Prepare JSONL<br></br>Split by model type]
+    B --> C[Batch Files<br></br>biggies & smallies]
+    C --> D[Start Batch Job<br></br>via Python API]
+    D --> E[Check Status<br></br>Monitor progress]
+    E --> F[Download Results<br></br>Parse responses]
+    F --> G[Individual Files<br></br>subnational_ai_thingies]
+    
+    
+```
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Next steps?
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Data -> Text pipeline
+	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->suitable for genAI applications. RAG?
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Reports
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Expand Helpline
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Compare to "similar" LAs
+- &shy;<!-- .element: class="fragment" data-fragment-index="6" -->Improve causality
+- &shy;<!-- .element: class="fragment" data-fragment-index="7" -->Remove nasty 🐍Python dependency w/ new LLM for R suite
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Thank you
+<img src="Files/attachments/Fancy QR code to Linkedin.png" alt="" style="width: 400px; object-fit: fill">
+
+#### Amit Kohli<br>
+data@amitkohli.com
+</div></script></section><section  data-markdown><script type="text/template">
+
+
+</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"fast"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>

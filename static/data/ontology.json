@@ -1,0 +1,3121 @@
+{
+  "nodes": [
+    {
+      "id": "center",
+      "label": "Amit Kohli",
+      "size": 30,
+      "color": "#FFFFFF",
+      "font": {
+        "size": 16,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "cat-technical-stack",
+      "label": "Technical Stack",
+      "size": 20,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-technical-stack-languages",
+      "label": "Languages",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-r-package",
+      "label": "r-package",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "r-package (50 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-r",
+      "label": "r",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "r (29 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-python",
+      "label": "python",
+      "size": 20,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "python (7 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-javascript",
+      "label": "javascript",
+      "size": 8,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "javascript (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-sql",
+      "label": "sql",
+      "size": 8,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "sql (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-vba",
+      "label": "vba",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "vba (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-stack-frameworks",
+      "label": "Frameworks",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-shiny",
+      "label": "shiny",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "shiny (20 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-django",
+      "label": "django",
+      "size": 8,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "django (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-flask",
+      "label": "flask",
+      "size": 6,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "flask (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-streamlit",
+      "label": "streamlit",
+      "size": 6,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "streamlit (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-rmarkdown",
+      "label": "rmarkdown",
+      "size": 22,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "rmarkdown (8 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-plumber",
+      "label": "plumber",
+      "size": 10,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "plumber (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-stack-infrastructure",
+      "label": "Infrastructure",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-database",
+      "label": "database",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "database (27 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-api",
+      "label": "api",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "api (10 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-cloud",
+      "label": "cloud",
+      "size": 6,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "cloud (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-web-app",
+      "label": "web-app",
+      "size": 16,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "web-app (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-web",
+      "label": "web",
+      "size": 26,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "web (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-server-config",
+      "label": "server-config",
+      "size": 12,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "server-config (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-devops",
+      "label": "devops",
+      "size": 12,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "devops (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-stack-static-site-generators",
+      "label": "Static Site Generators",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-hugo",
+      "label": "hugo",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "hugo (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-jekyll",
+      "label": "jekyll",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "jekyll (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-static-site",
+      "label": "static-site",
+      "size": 20,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "static-site (7 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-stack-tools",
+      "label": "Tools",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-git",
+      "label": "git",
+      "size": 10,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "git (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-obsidian",
+      "label": "obsidian",
+      "size": 12,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "obsidian (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-stack-data-collection",
+      "label": "Data Collection",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-odk",
+      "label": "odk",
+      "size": 14,
+      "color": "#4FC3F7",
+      "font": {
+        "size": 10
+      },
+      "title": "odk (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-organizations",
+      "label": "Organizations",
+      "size": 20,
+      "color": "#81C784",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-organizations-international-development",
+      "label": "International Development",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-acdi-voca",
+      "label": "acdi-voca",
+      "size": 26,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "acdi-voca (85 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-organizations-human-rights",
+      "label": "Human Rights",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-ohchr",
+      "label": "ohchr",
+      "size": 26,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "ohchr (10 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-asc",
+      "label": "asc",
+      "size": 26,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "asc (15 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-organizations-water-resources",
+      "label": "Water Resources",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-aquastat",
+      "label": "aquastat",
+      "size": 26,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "aquastat (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-fao",
+      "label": "fao",
+      "size": 26,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "fao (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-organizations-telecommunications",
+      "label": "Telecommunications",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-itu",
+      "label": "itu",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "itu (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-organizations-healthcare",
+      "label": "Healthcare",
+      "size": 14,
+      "color": "#81C784",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-nchep",
+      "label": "nchep",
+      "size": 10,
+      "color": "#81C784",
+      "font": {
+        "size": 10
+      },
+      "title": "nchep (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-domain-areas",
+      "label": "Domain Areas",
+      "size": 20,
+      "color": "#FFB74D",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-domain-areas-international-development",
+      "label": "International Development",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-monitoring-evaluation",
+      "label": "monitoring-evaluation",
+      "size": 26,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "monitoring-evaluation (43 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-indicators",
+      "label": "indicators",
+      "size": 16,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "indicators (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-tracking",
+      "label": "tracking",
+      "size": 24,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "tracking (9 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-leap",
+      "label": "leap",
+      "size": 22,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "leap (8 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-project-management",
+      "label": "project-management",
+      "size": 20,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "project-management (7 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-agriculture",
+      "label": "agriculture",
+      "size": 26,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "agriculture (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-human-rights",
+      "label": "Human Rights",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-human-rights",
+      "label": "human-rights",
+      "size": 18,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "human-rights (6 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-anti-slavery",
+      "label": "anti-slavery",
+      "size": 10,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "anti-slavery (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-water-resources",
+      "label": "Water Resources",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-water-resources",
+      "label": "water-resources",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "water-resources (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-water",
+      "label": "water",
+      "size": 8,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "water (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-telecommunications",
+      "label": "Telecommunications",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-telecom",
+      "label": "telecom",
+      "size": 6,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "telecom (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-ict",
+      "label": "ict",
+      "size": 6,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "ict (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-healthcare",
+      "label": "Healthcare",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-health",
+      "label": "health",
+      "size": 8,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "health (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-epidemiology",
+      "label": "epidemiology",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "epidemiology (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-public-health",
+      "label": "public-health",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "public-health (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-education",
+      "label": "Education",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-education",
+      "label": "education",
+      "size": 24,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "education (9 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-finance",
+      "label": "Finance",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-finance",
+      "label": "finance",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "finance (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-trading",
+      "label": "trading",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "trading (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-cryptocurrency",
+      "label": "cryptocurrency",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "cryptocurrency (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-security",
+      "label": "Security",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-security",
+      "label": "security",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "security (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-risk-management",
+      "label": "risk-management",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "risk-management (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-policy",
+      "label": "Policy",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-policy",
+      "label": "policy",
+      "size": 12,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "policy (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-domain-areas-media",
+      "label": "Media",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-movies",
+      "label": "movies",
+      "size": 14,
+      "color": "#FFB74D",
+      "font": {
+        "size": 10
+      },
+      "title": "movies (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-technical-approaches",
+      "label": "Technical Approaches",
+      "size": 20,
+      "color": "#E57373",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-technical-approaches-data-science",
+      "label": "Data Science",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-ml",
+      "label": "ml",
+      "size": 24,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "ml (9 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-ai",
+      "label": "ai",
+      "size": 8,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "ai (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-llm",
+      "label": "llm",
+      "size": 18,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "llm (6 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-rag",
+      "label": "rag",
+      "size": 12,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "rag (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-nlp",
+      "label": "nlp",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "nlp (26 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-text-analysis",
+      "label": "text-analysis",
+      "size": 18,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "text-analysis (6 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-text-mining",
+      "label": "text-mining",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "text-mining (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-sentiment-analysis",
+      "label": "sentiment-analysis",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "sentiment-analysis (13 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-classification",
+      "label": "classification",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "classification (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-approaches-geospatial",
+      "label": "Geospatial",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-spatial-analysis",
+      "label": "spatial-analysis",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "spatial-analysis (16 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-gis",
+      "label": "gis",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "gis (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-mapping",
+      "label": "mapping",
+      "size": 24,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "mapping (9 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-leaflet",
+      "label": "leaflet",
+      "size": 10,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "leaflet (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-approaches-data-processing",
+      "label": "Data Processing",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-etl",
+      "label": "etl",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "etl (32 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-data-pipeline",
+      "label": "data-pipeline",
+      "size": 10,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "data-pipeline (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-data-cleaning",
+      "label": "data-cleaning",
+      "size": 12,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "data-cleaning (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-scraping",
+      "label": "scraping",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "scraping (11 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-automation",
+      "label": "automation",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "automation (33 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-approaches-visualization",
+      "label": "Visualization",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-visualization",
+      "label": "visualization",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "visualization (70 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-dataviz",
+      "label": "dataviz",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "dataviz (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-dashboard",
+      "label": "dashboard",
+      "size": 26,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "dashboard (20 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-plotly",
+      "label": "plotly",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "plotly (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-ggplot2",
+      "label": "ggplot2",
+      "size": 8,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "ggplot2 (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-charts",
+      "label": "charts",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "charts (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-sankey",
+      "label": "sankey",
+      "size": 16,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "sankey (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-technical-approaches-statistics",
+      "label": "Statistics",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-statistics",
+      "label": "statistics",
+      "size": 14,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "statistics (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-statistical-analysis",
+      "label": "statistical-analysis",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "statistical-analysis (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-regression",
+      "label": "regression",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "regression (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-modeling",
+      "label": "modeling",
+      "size": 6,
+      "color": "#E57373",
+      "font": {
+        "size": 10
+      },
+      "title": "modeling (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-functional-areas",
+      "label": "Functional Areas",
+      "size": 20,
+      "color": "#BA68C8",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-functional-areas-network-analysis",
+      "label": "Network Analysis",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-network-analysis",
+      "label": "network-analysis",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "network-analysis (15 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-sna",
+      "label": "sna",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "sna (15 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-tools",
+      "label": "Tools",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-tooling",
+      "label": "tooling",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "tooling (24 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-utility",
+      "label": "utility",
+      "size": 8,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "utility (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-utilities",
+      "label": "utilities",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "utilities (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-helper-functions",
+      "label": "helper-functions",
+      "size": 6,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "helper-functions (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-template",
+      "label": "template",
+      "size": 6,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "template (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-content",
+      "label": "Content",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-documentation",
+      "label": "documentation",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "documentation (21 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-reporting",
+      "label": "reporting",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "reporting (12 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-content-management",
+      "label": "content-management",
+      "size": 6,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "content-management (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-blog",
+      "label": "blog",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "blog (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-presentations",
+      "label": "presentations",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "presentations (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-data-management",
+      "label": "Data Management",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-data-management",
+      "label": "data-management",
+      "size": 10,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "data-management (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-data-collection",
+      "label": "data-collection",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "data-collection (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-survey",
+      "label": "survey",
+      "size": 8,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "survey (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-forms",
+      "label": "forms",
+      "size": 10,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "forms (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-analysis",
+      "label": "Analysis",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-analysis",
+      "label": "analysis",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "analysis (43 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-testing",
+      "label": "Testing",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-testing",
+      "label": "testing",
+      "size": 24,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "testing (9 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-validation",
+      "label": "validation",
+      "size": 18,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "validation (6 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-data-quality",
+      "label": "data-quality",
+      "size": 22,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "data-quality (8 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-knowledge-management",
+      "label": "Knowledge Management",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-knowledge-graphs",
+      "label": "knowledge-graphs",
+      "size": 26,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "knowledge-graphs (12 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-knowledge-base",
+      "label": "knowledge-base",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "knowledge-base (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-knowledge-management",
+      "label": "knowledge-management",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "knowledge-management (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-hierarchy",
+      "label": "hierarchy",
+      "size": 20,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "hierarchy (7 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-functional-areas-administration",
+      "label": "Administration",
+      "size": 14,
+      "color": "#BA68C8",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-admin",
+      "label": "admin",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "admin (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-email",
+      "label": "email",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "email (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-command-center",
+      "label": "command-center",
+      "size": 12,
+      "color": "#BA68C8",
+      "font": {
+        "size": 10
+      },
+      "title": "command-center (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-work-context",
+      "label": "Work Context",
+      "size": 20,
+      "color": "#FFD54F",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-work-context-client-projects",
+      "label": "Client Projects",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-client-work",
+      "label": "client-work",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "client-work (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-consulting",
+      "label": "consulting",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "consulting (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-contract",
+      "label": "contract",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "contract (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-helpline",
+      "label": "helpline",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "helpline (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-work-context-personal-projects",
+      "label": "Personal Projects",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-personal",
+      "label": "personal",
+      "size": 26,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "personal (22 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-learning",
+      "label": "learning",
+      "size": 12,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "learning (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-tutorial",
+      "label": "tutorial",
+      "size": 20,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "tutorial (7 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-experiment",
+      "label": "experiment",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "experiment (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-prototype",
+      "label": "prototype",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "prototype (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-creative",
+      "label": "creative",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "creative (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-portfolio",
+      "label": "portfolio",
+      "size": 12,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "portfolio (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-work-context-archive",
+      "label": "Archive",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-archived",
+      "label": "archived",
+      "size": 8,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "archived (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-deprecated",
+      "label": "deprecated",
+      "size": 6,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "deprecated (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-legacy",
+      "label": "legacy",
+      "size": 8,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "legacy (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-backup",
+      "label": "backup",
+      "size": 12,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "backup (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-work-context-community",
+      "label": "Community",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-r-community",
+      "label": "r-community",
+      "size": 14,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "r-community (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-community",
+      "label": "community",
+      "size": 12,
+      "color": "#FFD54F",
+      "font": {
+        "size": 10
+      },
+      "title": "community (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-data-sources",
+      "label": "Data Sources",
+      "size": 20,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-data-sources-external-apis",
+      "label": "External APIs",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-rest-api",
+      "label": "rest-api",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "rest-api (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-api-client",
+      "label": "api-client",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "api-client (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-third-party-api",
+      "label": "third-party-api",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "third-party-api (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-openai",
+      "label": "openai",
+      "size": 10,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "openai (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-data-sources-file-formats",
+      "label": "File Formats",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-excel",
+      "label": "excel",
+      "size": 16,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "excel (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-csv",
+      "label": "csv",
+      "size": 8,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "csv (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-json",
+      "label": "json",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "json (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-xml",
+      "label": "xml",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "xml (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-pdf",
+      "label": "pdf",
+      "size": 8,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "pdf (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-data-sources-databases",
+      "label": "Databases",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-mysql",
+      "label": "mysql",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "mysql (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-postgresql",
+      "label": "postgresql",
+      "size": 10,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "postgresql (2 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-sqlite",
+      "label": "sqlite",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "sqlite (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-mongodb",
+      "label": "mongodb",
+      "size": 6,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "mongodb (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-odbc",
+      "label": "odbc",
+      "size": 12,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "odbc (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-data-sources-social-media",
+      "label": "Social Media",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-social-media",
+      "label": "social-media",
+      "size": 16,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "social-media (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-data-sources-country-specific",
+      "label": "Country-Specific",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-uk-data",
+      "label": "uk-data",
+      "size": 14,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "uk-data (4 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-ghana",
+      "label": "ghana",
+      "size": 12,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "ghana (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-country-specific",
+      "label": "country-specific",
+      "size": 12,
+      "color": "#4DB6AC",
+      "font": {
+        "size": 10
+      },
+      "title": "country-specific (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "cat-delivery",
+      "label": "Delivery",
+      "size": 20,
+      "color": "#F06292",
+      "font": {
+        "size": 14,
+        "bold": true
+      },
+      "shape": "box"
+    },
+    {
+      "id": "sub-delivery-applications",
+      "label": "Applications",
+      "size": 14,
+      "color": "#F06292",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-web-application",
+      "label": "web-application",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "web-application (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-desktop-app",
+      "label": "desktop-app",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "desktop-app (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-mobile",
+      "label": "mobile",
+      "size": 8,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "mobile (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-interactive",
+      "label": "interactive",
+      "size": 16,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "interactive (5 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-delivery-documents",
+      "label": "Documents",
+      "size": 14,
+      "color": "#F06292",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-pdf-generation",
+      "label": "pdf-generation",
+      "size": 8,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "pdf-generation (1 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-word-doc",
+      "label": "word-doc",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "word-doc (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-presentation",
+      "label": "presentation",
+      "size": 12,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "presentation (3 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "sub-delivery-code",
+      "label": "Code",
+      "size": 14,
+      "color": "#F06292",
+      "font": {
+        "size": 11
+      },
+      "shape": "box"
+    },
+    {
+      "id": "tag-package",
+      "label": "package",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "package (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-library",
+      "label": "library",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "library (0 projects)",
+      "shape": "dot"
+    },
+    {
+      "id": "tag-module",
+      "label": "module",
+      "size": 6,
+      "color": "#F06292",
+      "font": {
+        "size": 10
+      },
+      "title": "module (0 projects)",
+      "shape": "dot"
+    }
+  ],
+  "edges": [
+    {
+      "from": "center",
+      "to": "cat-technical-stack"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-languages"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-r-package"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-r"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-python"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-javascript"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-sql"
+    },
+    {
+      "from": "sub-technical-stack-languages",
+      "to": "tag-vba"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-frameworks"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-shiny"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-django"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-flask"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-streamlit"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-rmarkdown"
+    },
+    {
+      "from": "sub-technical-stack-frameworks",
+      "to": "tag-plumber"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-infrastructure"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-database"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-api"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-cloud"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-web-app"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-web"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-server-config"
+    },
+    {
+      "from": "sub-technical-stack-infrastructure",
+      "to": "tag-devops"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-static-site-generators"
+    },
+    {
+      "from": "sub-technical-stack-static-site-generators",
+      "to": "tag-hugo"
+    },
+    {
+      "from": "sub-technical-stack-static-site-generators",
+      "to": "tag-jekyll"
+    },
+    {
+      "from": "sub-technical-stack-static-site-generators",
+      "to": "tag-static-site"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-tools"
+    },
+    {
+      "from": "sub-technical-stack-tools",
+      "to": "tag-git"
+    },
+    {
+      "from": "sub-technical-stack-tools",
+      "to": "tag-obsidian"
+    },
+    {
+      "from": "cat-technical-stack",
+      "to": "sub-technical-stack-data-collection"
+    },
+    {
+      "from": "sub-technical-stack-data-collection",
+      "to": "tag-odk"
+    },
+    {
+      "from": "center",
+      "to": "cat-organizations"
+    },
+    {
+      "from": "cat-organizations",
+      "to": "sub-organizations-international-development"
+    },
+    {
+      "from": "sub-organizations-international-development",
+      "to": "tag-acdi-voca"
+    },
+    {
+      "from": "cat-organizations",
+      "to": "sub-organizations-human-rights"
+    },
+    {
+      "from": "sub-organizations-human-rights",
+      "to": "tag-ohchr"
+    },
+    {
+      "from": "sub-organizations-human-rights",
+      "to": "tag-asc"
+    },
+    {
+      "from": "cat-organizations",
+      "to": "sub-organizations-water-resources"
+    },
+    {
+      "from": "sub-organizations-water-resources",
+      "to": "tag-aquastat"
+    },
+    {
+      "from": "sub-organizations-water-resources",
+      "to": "tag-fao"
+    },
+    {
+      "from": "cat-organizations",
+      "to": "sub-organizations-telecommunications"
+    },
+    {
+      "from": "sub-organizations-telecommunications",
+      "to": "tag-itu"
+    },
+    {
+      "from": "cat-organizations",
+      "to": "sub-organizations-healthcare"
+    },
+    {
+      "from": "sub-organizations-healthcare",
+      "to": "tag-nchep"
+    },
+    {
+      "from": "center",
+      "to": "cat-domain-areas"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-international-development"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-monitoring-evaluation"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-indicators"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-tracking"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-leap"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-project-management"
+    },
+    {
+      "from": "sub-domain-areas-international-development",
+      "to": "tag-agriculture"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-human-rights"
+    },
+    {
+      "from": "sub-domain-areas-human-rights",
+      "to": "tag-human-rights"
+    },
+    {
+      "from": "sub-domain-areas-human-rights",
+      "to": "tag-anti-slavery"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-water-resources"
+    },
+    {
+      "from": "sub-domain-areas-water-resources",
+      "to": "tag-water-resources"
+    },
+    {
+      "from": "sub-domain-areas-water-resources",
+      "to": "tag-water"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-telecommunications"
+    },
+    {
+      "from": "sub-domain-areas-telecommunications",
+      "to": "tag-telecom"
+    },
+    {
+      "from": "sub-domain-areas-telecommunications",
+      "to": "tag-ict"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-healthcare"
+    },
+    {
+      "from": "sub-domain-areas-healthcare",
+      "to": "tag-health"
+    },
+    {
+      "from": "sub-domain-areas-healthcare",
+      "to": "tag-epidemiology"
+    },
+    {
+      "from": "sub-domain-areas-healthcare",
+      "to": "tag-public-health"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-education"
+    },
+    {
+      "from": "sub-domain-areas-education",
+      "to": "tag-education"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-finance"
+    },
+    {
+      "from": "sub-domain-areas-finance",
+      "to": "tag-finance"
+    },
+    {
+      "from": "sub-domain-areas-finance",
+      "to": "tag-trading"
+    },
+    {
+      "from": "sub-domain-areas-finance",
+      "to": "tag-cryptocurrency"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-security"
+    },
+    {
+      "from": "sub-domain-areas-security",
+      "to": "tag-security"
+    },
+    {
+      "from": "sub-domain-areas-security",
+      "to": "tag-risk-management"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-policy"
+    },
+    {
+      "from": "sub-domain-areas-policy",
+      "to": "tag-policy"
+    },
+    {
+      "from": "cat-domain-areas",
+      "to": "sub-domain-areas-media"
+    },
+    {
+      "from": "sub-domain-areas-media",
+      "to": "tag-movies"
+    },
+    {
+      "from": "center",
+      "to": "cat-technical-approaches"
+    },
+    {
+      "from": "cat-technical-approaches",
+      "to": "sub-technical-approaches-data-science"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-ml"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-ai"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-llm"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-rag"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-nlp"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-text-analysis"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-text-mining"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-sentiment-analysis"
+    },
+    {
+      "from": "sub-technical-approaches-data-science",
+      "to": "tag-classification"
+    },
+    {
+      "from": "cat-technical-approaches",
+      "to": "sub-technical-approaches-geospatial"
+    },
+    {
+      "from": "sub-technical-approaches-geospatial",
+      "to": "tag-spatial-analysis"
+    },
+    {
+      "from": "sub-technical-approaches-geospatial",
+      "to": "tag-gis"
+    },
+    {
+      "from": "sub-technical-approaches-geospatial",
+      "to": "tag-mapping"
+    },
+    {
+      "from": "sub-technical-approaches-geospatial",
+      "to": "tag-leaflet"
+    },
+    {
+      "from": "cat-technical-approaches",
+      "to": "sub-technical-approaches-data-processing"
+    },
+    {
+      "from": "sub-technical-approaches-data-processing",
+      "to": "tag-etl"
+    },
+    {
+      "from": "sub-technical-approaches-data-processing",
+      "to": "tag-data-pipeline"
+    },
+    {
+      "from": "sub-technical-approaches-data-processing",
+      "to": "tag-data-cleaning"
+    },
+    {
+      "from": "sub-technical-approaches-data-processing",
+      "to": "tag-scraping"
+    },
+    {
+      "from": "sub-technical-approaches-data-processing",
+      "to": "tag-automation"
+    },
+    {
+      "from": "cat-technical-approaches",
+      "to": "sub-technical-approaches-visualization"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-visualization"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-dataviz"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-dashboard"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-plotly"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-ggplot2"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-charts"
+    },
+    {
+      "from": "sub-technical-approaches-visualization",
+      "to": "tag-sankey"
+    },
+    {
+      "from": "cat-technical-approaches",
+      "to": "sub-technical-approaches-statistics"
+    },
+    {
+      "from": "sub-technical-approaches-statistics",
+      "to": "tag-statistics"
+    },
+    {
+      "from": "sub-technical-approaches-statistics",
+      "to": "tag-statistical-analysis"
+    },
+    {
+      "from": "sub-technical-approaches-statistics",
+      "to": "tag-regression"
+    },
+    {
+      "from": "sub-technical-approaches-statistics",
+      "to": "tag-modeling"
+    },
+    {
+      "from": "center",
+      "to": "cat-functional-areas"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-network-analysis"
+    },
+    {
+      "from": "sub-functional-areas-network-analysis",
+      "to": "tag-network-analysis"
+    },
+    {
+      "from": "sub-functional-areas-network-analysis",
+      "to": "tag-sna"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-tools"
+    },
+    {
+      "from": "sub-functional-areas-tools",
+      "to": "tag-tooling"
+    },
+    {
+      "from": "sub-functional-areas-tools",
+      "to": "tag-utility"
+    },
+    {
+      "from": "sub-functional-areas-tools",
+      "to": "tag-utilities"
+    },
+    {
+      "from": "sub-functional-areas-tools",
+      "to": "tag-helper-functions"
+    },
+    {
+      "from": "sub-functional-areas-tools",
+      "to": "tag-template"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-content"
+    },
+    {
+      "from": "sub-functional-areas-content",
+      "to": "tag-documentation"
+    },
+    {
+      "from": "sub-functional-areas-content",
+      "to": "tag-reporting"
+    },
+    {
+      "from": "sub-functional-areas-content",
+      "to": "tag-content-management"
+    },
+    {
+      "from": "sub-functional-areas-content",
+      "to": "tag-blog"
+    },
+    {
+      "from": "sub-functional-areas-content",
+      "to": "tag-presentations"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-data-management"
+    },
+    {
+      "from": "sub-functional-areas-data-management",
+      "to": "tag-data-management"
+    },
+    {
+      "from": "sub-functional-areas-data-management",
+      "to": "tag-data-collection"
+    },
+    {
+      "from": "sub-functional-areas-data-management",
+      "to": "tag-survey"
+    },
+    {
+      "from": "sub-functional-areas-data-management",
+      "to": "tag-forms"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-analysis"
+    },
+    {
+      "from": "sub-functional-areas-analysis",
+      "to": "tag-analysis"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-testing"
+    },
+    {
+      "from": "sub-functional-areas-testing",
+      "to": "tag-testing"
+    },
+    {
+      "from": "sub-functional-areas-testing",
+      "to": "tag-validation"
+    },
+    {
+      "from": "sub-functional-areas-testing",
+      "to": "tag-data-quality"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-knowledge-management"
+    },
+    {
+      "from": "sub-functional-areas-knowledge-management",
+      "to": "tag-knowledge-graphs"
+    },
+    {
+      "from": "sub-functional-areas-knowledge-management",
+      "to": "tag-knowledge-base"
+    },
+    {
+      "from": "sub-functional-areas-knowledge-management",
+      "to": "tag-knowledge-management"
+    },
+    {
+      "from": "sub-functional-areas-knowledge-management",
+      "to": "tag-hierarchy"
+    },
+    {
+      "from": "cat-functional-areas",
+      "to": "sub-functional-areas-administration"
+    },
+    {
+      "from": "sub-functional-areas-administration",
+      "to": "tag-admin"
+    },
+    {
+      "from": "sub-functional-areas-administration",
+      "to": "tag-email"
+    },
+    {
+      "from": "sub-functional-areas-administration",
+      "to": "tag-command-center"
+    },
+    {
+      "from": "center",
+      "to": "cat-work-context"
+    },
+    {
+      "from": "cat-work-context",
+      "to": "sub-work-context-client-projects"
+    },
+    {
+      "from": "sub-work-context-client-projects",
+      "to": "tag-client-work"
+    },
+    {
+      "from": "sub-work-context-client-projects",
+      "to": "tag-consulting"
+    },
+    {
+      "from": "sub-work-context-client-projects",
+      "to": "tag-contract"
+    },
+    {
+      "from": "sub-work-context-client-projects",
+      "to": "tag-helpline"
+    },
+    {
+      "from": "cat-work-context",
+      "to": "sub-work-context-personal-projects"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-personal"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-learning"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-tutorial"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-experiment"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-prototype"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-creative"
+    },
+    {
+      "from": "sub-work-context-personal-projects",
+      "to": "tag-portfolio"
+    },
+    {
+      "from": "cat-work-context",
+      "to": "sub-work-context-archive"
+    },
+    {
+      "from": "sub-work-context-archive",
+      "to": "tag-archived"
+    },
+    {
+      "from": "sub-work-context-archive",
+      "to": "tag-deprecated"
+    },
+    {
+      "from": "sub-work-context-archive",
+      "to": "tag-legacy"
+    },
+    {
+      "from": "sub-work-context-archive",
+      "to": "tag-backup"
+    },
+    {
+      "from": "cat-work-context",
+      "to": "sub-work-context-community"
+    },
+    {
+      "from": "sub-work-context-community",
+      "to": "tag-r-community"
+    },
+    {
+      "from": "sub-work-context-community",
+      "to": "tag-community"
+    },
+    {
+      "from": "center",
+      "to": "cat-data-sources"
+    },
+    {
+      "from": "cat-data-sources",
+      "to": "sub-data-sources-external-apis"
+    },
+    {
+      "from": "sub-data-sources-external-apis",
+      "to": "tag-rest-api"
+    },
+    {
+      "from": "sub-data-sources-external-apis",
+      "to": "tag-api-client"
+    },
+    {
+      "from": "sub-data-sources-external-apis",
+      "to": "tag-third-party-api"
+    },
+    {
+      "from": "sub-data-sources-external-apis",
+      "to": "tag-openai"
+    },
+    {
+      "from": "cat-data-sources",
+      "to": "sub-data-sources-file-formats"
+    },
+    {
+      "from": "sub-data-sources-file-formats",
+      "to": "tag-excel"
+    },
+    {
+      "from": "sub-data-sources-file-formats",
+      "to": "tag-csv"
+    },
+    {
+      "from": "sub-data-sources-file-formats",
+      "to": "tag-json"
+    },
+    {
+      "from": "sub-data-sources-file-formats",
+      "to": "tag-xml"
+    },
+    {
+      "from": "sub-data-sources-file-formats",
+      "to": "tag-pdf"
+    },
+    {
+      "from": "cat-data-sources",
+      "to": "sub-data-sources-databases"
+    },
+    {
+      "from": "sub-data-sources-databases",
+      "to": "tag-mysql"
+    },
+    {
+      "from": "sub-data-sources-databases",
+      "to": "tag-postgresql"
+    },
+    {
+      "from": "sub-data-sources-databases",
+      "to": "tag-sqlite"
+    },
+    {
+      "from": "sub-data-sources-databases",
+      "to": "tag-mongodb"
+    },
+    {
+      "from": "sub-data-sources-databases",
+      "to": "tag-odbc"
+    },
+    {
+      "from": "cat-data-sources",
+      "to": "sub-data-sources-social-media"
+    },
+    {
+      "from": "sub-data-sources-social-media",
+      "to": "tag-social-media"
+    },
+    {
+      "from": "cat-data-sources",
+      "to": "sub-data-sources-country-specific"
+    },
+    {
+      "from": "sub-data-sources-country-specific",
+      "to": "tag-uk-data"
+    },
+    {
+      "from": "sub-data-sources-country-specific",
+      "to": "tag-ghana"
+    },
+    {
+      "from": "sub-data-sources-country-specific",
+      "to": "tag-country-specific"
+    },
+    {
+      "from": "center",
+      "to": "cat-delivery"
+    },
+    {
+      "from": "cat-delivery",
+      "to": "sub-delivery-applications"
+    },
+    {
+      "from": "sub-delivery-applications",
+      "to": "tag-web-application"
+    },
+    {
+      "from": "sub-delivery-applications",
+      "to": "tag-desktop-app"
+    },
+    {
+      "from": "sub-delivery-applications",
+      "to": "tag-mobile"
+    },
+    {
+      "from": "sub-delivery-applications",
+      "to": "tag-interactive"
+    },
+    {
+      "from": "cat-delivery",
+      "to": "sub-delivery-documents"
+    },
+    {
+      "from": "sub-delivery-documents",
+      "to": "tag-pdf-generation"
+    },
+    {
+      "from": "sub-delivery-documents",
+      "to": "tag-word-doc"
+    },
+    {
+      "from": "sub-delivery-documents",
+      "to": "tag-presentation"
+    },
+    {
+      "from": "cat-delivery",
+      "to": "sub-delivery-code"
+    },
+    {
+      "from": "sub-delivery-code",
+      "to": "tag-package"
+    },
+    {
+      "from": "sub-delivery-code",
+      "to": "tag-library"
+    },
+    {
+      "from": "sub-delivery-code",
+      "to": "tag-module"
+    }
+  ]
+}
