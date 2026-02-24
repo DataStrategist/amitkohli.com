@@ -12,7 +12,7 @@
     </div>
     <div class="speaker-hero-content">
       <p class="speaker-hero-lede">
-        I speak at conferences, meetups, and internal events on data strategy, knowledge graphs, RAG, and the messy reality of making data useful. Whether it's a keynote, a panel, or a hands-on workshop — I bring energy, real-world stories, and practical takeaways.
+        I speak at conferences, meetups, and internal events on data strategy, knowledge graphs, RAG, and the messy reality of making data useful. Whether it's a keynote, a panel, or a hands-on workshop, I bring energy, real-world stories, and practical takeaways.
       </p>
       <p class="speaker-hero-bio">
         Head of Data at Access Social Care. Previously: UN water resources, international development (ACDI/VOCA, CRS), and data science consulting. Speaker at EARL, LegalGeek, Humentum, MERL Tech, Charity Digital, and more.
@@ -41,6 +41,9 @@
     <div class="talks-grid">
       {{ range . }}
       <a href="{{ .RelPermalink }}" class="talk-card">
+        <div class="talk-card-visual">
+          {{ partial "talk-icon.html" .Params.topic }}
+        </div>
         <h3>{{ .Title }}</h3>
         <div class="talk-meta">
           {{ with .Params.event }}{{ . }}{{ end }}
@@ -88,6 +91,9 @@
       <a href="{{ .RelPermalink }}" class="talk-card"
         x-show="filter === 'all'{{ with .Params.topic }}{{ range . }} || filter === '{{ . }}'{{ end }}{{ end }}"
         x-transition>
+        <div class="talk-card-visual">
+          {{ partial "talk-icon.html" .Params.topic }}
+        </div>
         <h3>{{ .Title }}</h3>
         <div class="talk-meta">
           {{ with .Params.event }}{{ . }}{{ end }}
