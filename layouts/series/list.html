@@ -3,28 +3,42 @@
   <header class="max-w-prose">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
-    {{ with .Description }}<p class="text-lg opacity-70">{{ . }}</p>{{ end }}
   </header>
+
+  <div class="series-intro">
+    <p>
+      This is an experiment. Most data content is made either for analysts deep in the weeds or for executives who want the five-slide version. The gap between Excel users, hardcore technocrats, and management is where most data projects actually fail.
+    </p>
+    <p>
+      This series tries to bridge that gap: short, honest videos about real data problems that anyone in the data chain can watch and actually learn from, regardless of where they sit in the org chart.
+    </p>
+  </div>
 
   {{ .Content }}
 
-  {{/* ---- Track descriptions ---- */}}
-  <div class="series-tracks">
-    <div class="track-section">
-      <h3><span class="track-badge track-a">Track A</span> Tactical</h3>
-      <p>Ground-level data pain: Excel sprawl, dashboards, disaggregation. The stuff that keeps you up at night.</p>
-    </div>
-    <div class="track-section">
-      <h3><span class="track-badge track-b">Track B</span> Governance</h3>
-      <p>Systems thinking, data strategy, and the organisational decisions that shape (or break) your data.</p>
-    </div>
-    <div class="track-section">
-      <h3><span class="track-badge track-c">Track C</span> AI &amp; Advanced</h3>
-      <p>Knowledge graphs, ontologies, and AI: demystified, practical, and honest about what works.</p>
+  {{/* ---- Track legend ---- */}}
+  <div class="track-legend">
+    <h2>Three tracks, one conversation</h2>
+    <div class="track-legend-grid">
+      <div class="track-legend-item">
+        <span class="track-badge track-a">Track A</span>
+        <strong>Tactical</strong>
+        <p>Ground-level data pain: Excel sprawl, dashboards, disaggregation. The stuff that keeps you up at night.</p>
+      </div>
+      <div class="track-legend-item">
+        <span class="track-badge track-b">Track B</span>
+        <strong>Governance</strong>
+        <p>Systems thinking, data strategy, and the organisational decisions that shape (or break) your data.</p>
+      </div>
+      <div class="track-legend-item">
+        <span class="track-badge track-c">Track C</span>
+        <strong>AI &amp; Advanced</strong>
+        <p>Knowledge graphs, ontologies, and AI: demystified, practical, and honest about what works.</p>
+      </div>
     </div>
   </div>
 
-  {{/* ---- Latest videos ---- */}}
+  {{/* ---- Episodes ---- */}}
   <h2>Episodes</h2>
   <div class="talks-grid">
     {{ range .Pages.ByParam "number" }}
