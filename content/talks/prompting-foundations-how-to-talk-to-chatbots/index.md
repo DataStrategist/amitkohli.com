@@ -6,7 +6,6 @@ host_org: Charity Digital
 location: London, UK
 topic:
 - AI
-- chatbot
 audience: Charity sector workers, non-technical
 abstract: Foundational skills for effective AI chatbot interaction. Covers prompt
   engineering principles, how to get better responses from ChatGPT and similar tools,

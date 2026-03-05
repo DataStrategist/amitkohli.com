@@ -5,7 +5,7 @@ event: LegalGeek
 host_org: LegalGeek
 location: TBD
 topic:
-- Legal Tech
+- Social Care
 audience: Legal professionals, technology innovators, policymakers
 abstract: 'Panel discussion on the role of technology in the legal sector and its
   impact on access to justice. Key themes: investment in lawtech, AI regulation, risk
@@ -13,4 +13,5 @@ abstract: 'Panel discussion on the role of technology in the legal sector and it
   in tech teams and leadership to serve marginalized communities effectively.'
 status: delivered
 featured: false
+image: /img/lawtech_panel.jpg
 ---

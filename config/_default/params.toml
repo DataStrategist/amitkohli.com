@@ -13,7 +13,7 @@ enableCodeCopy = true
   showRecent = false
 
 [article]
-  showDate = true
+  showDate = false
   showAuthor = false
   showBreadcrumbs = true
   showTableOfContents = false

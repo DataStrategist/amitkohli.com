@@ -1,4 +1,4 @@
 ---
 title: "Amit Kohli"
-description: "Data Generalist. Systems Thinker. Builder."
+description: "Head of Data. Knowledge graph builder. Talks about what actually works."
 ---

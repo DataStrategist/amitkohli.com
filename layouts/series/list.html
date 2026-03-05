@@ -7,7 +7,7 @@
 
   <div class="series-intro">
     <p>
-      This is an experiment. Most data content is made either for analysts deep in the weeds or for executives who want the five-slide version. The gap between Excel users, hardcore technocrats, and management is where most data projects actually fail.
+      This is an experiment. Most data content is made either for analysts deep in the weeds or for executives who want the five-slide version. The gap between Excel users, modern-data-stack technocrats, and management is where most data projects actually fail.
     </p>
     <p>
       This series tries to bridge that gap: short, honest videos about real data problems that anyone in the data chain can watch and actually learn from, regardless of where they sit in the org chart.
@@ -44,13 +44,13 @@
     {{ range .Pages.ByParam "number" }}
     <a href="{{ .RelPermalink }}" class="talk-card">
       <div>
-        {{ with .Params.track }}
-        <span class="track-badge track-{{ lower . }}">Track {{ . }}</span>
-        {{ end }}
         <span class="talk-meta">#{{ .Params.number }}</span>
       </div>
       <h3 style="margin-top: 0.5rem;">{{ .Title }}</h3>
-      {{ with .Params.topic }}<div class="talk-topics"><span class="topic-tag">{{ . }}</span></div>{{ end }}
+      <div class="talk-topics">
+        {{ with .Params.track }}<span class="track-badge track-{{ lower . }}">Track {{ . }}</span>{{ end }}
+        {{ with .Params.topic }}<span class="topic-tag">{{ . }}</span>{{ end }}
+      </div>
       <div class="talk-icons">
         {{ with .Params.youtube_url }}&#9654; YouTube {{ end }}
         {{ with .Params.linkedin_url }}&#128279; LinkedIn{{ end }}

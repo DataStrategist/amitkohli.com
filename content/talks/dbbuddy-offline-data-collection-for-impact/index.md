@@ -4,9 +4,7 @@ date: '2019-01-01'
 event: Society for International Development (SID)
 host_org: Society for International Development
 topic:
-- Data Collection
-- Mobile Data Collection
-- ODK
+- International Development
 abstract: The DBBUDDY tool allows synchronization of robust offline data gathering
   tech (ODK) with cloud databases in a completely ad hoc way. This allows users maximum
   flexibility to gather offline data for any database table, with full assurance that
@@ -14,4 +12,5 @@ abstract: The DBBUDDY tool allows synchronization of robust offline data gatheri
 deck_url: presentations/SID%20DB%20Buddy%20presentation.pptx
 recording_url: https://youtu.be/Nb5yL3bihAA
 featured: false
+image: /img/new/dbbuddy.jpg
 ---

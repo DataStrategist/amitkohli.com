@@ -5,7 +5,7 @@ event: LondonR
 host_org: LondonR
 location: Virtual
 topic:
-- Software Testing
+- Data Engineering
 audience: R developers, software engineers
 abstract: Introduction to software testing in R covering differences between unit
   tests and integration tests. Demonstrates practical testing frameworks (testthat,
@@ -15,4 +15,5 @@ deck_url: https://www.londonr.org/wp-content/uploads/sites/2/2020/06/Testing-Tes
 recording_url: https://youtu.be/MxW0EfgD_wo?t=3535
 status: delivered
 featured: false
+image: /img/new/testingTesting.jpg
 ---

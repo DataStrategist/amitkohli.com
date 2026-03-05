@@ -5,7 +5,7 @@ event: Charity Digital AI Summit 2025
 host_org: Charity Digital
 location: London, UK
 topic:
-- RAG
+- AI
 audience: Charity professionals, nonprofit technical staff
 abstract: In this quickfire session, we explore several of the reasons why Retrieval
   Augmented Generation projects technically work, but yield "results of variable quality".
@@ -14,4 +14,5 @@ abstract: In this quickfire session, we explore several of the reasons why Retri
 deck_url: https://www.amitkohli.com/consulting/what%20is%20rag%20and%20how%20to%20get%20it%20right/#/
 status: delivered
 featured: false
+image: /decks/what-is-rag/Files/attachments/image-37.png
 ---

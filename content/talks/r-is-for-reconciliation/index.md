@@ -5,7 +5,7 @@ event: EARL London
 host_org: EARL
 location: London, UK
 topic:
-- R Programming
+- Data Engineering
 audience: R developers, data scientists, international development practitioners
 abstract: Technical case study documenting R-based optimizations to reconciliation
   efforts in post-conflict Colombia. Demonstrates how statistical programming and
@@ -15,4 +15,5 @@ deck_url: https://earlconf.com/assets/slides/Thurs%2012%20Sept/Session%201/Amit%
 recording_url: https://www.youtube.com/watch?v=j2Vr26vIbnY
 status: delivered
 featured: false
+image: /img/new/earl2019.jpg
 ---

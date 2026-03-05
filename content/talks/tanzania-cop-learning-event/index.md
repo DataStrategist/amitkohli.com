@@ -5,7 +5,7 @@ event: MERL COP Learning Event
 host_org: MERL Community of Practice
 location: Tanzania
 topic:
-- M&E
+- International Development
 audience: M&E practitioners, program staff, MERL community members
 abstract: Learning event focused on using project monitoring systems to measure impact
   through data cleaning methodologies and the LEAP (Learning, Evaluation & Analysis
@@ -14,4 +14,5 @@ abstract: Learning event focused on using project monitoring systems to measure 
   of Practice in Tanzania.
 status: delivered
 featured: false
+image: /img/new/Tanz.jpg
 ---

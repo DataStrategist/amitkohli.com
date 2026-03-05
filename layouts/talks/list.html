@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article>
+<article x-data="{ filter: 'all', modal: null }">
   <header>
     {{ partial "breadcrumbs.html" . }}
     <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
@@ -33,6 +33,31 @@
 
   {{ .Content }}
 
+  {{/* ---- Venue strip ---- */}}
+  <div class="venue-strip" aria-label="Conferences and events">
+    <span class="venue-strip-label">Spoke at</span>
+    <div class="venue-ticker-wrapper">
+      <div class="venue-ticker">
+        <span class="venue-badge">EARL</span>
+        <span class="venue-badge">LegalGeek</span>
+        <span class="venue-badge">Humentum DC</span>
+        <span class="venue-badge">MERL Tech</span>
+        <span class="venue-badge">Charity Digital</span>
+        <span class="venue-badge">LondonR</span>
+        <span class="venue-badge">AI Engineers UK</span>
+        <span class="venue-badge">Gloucestershire Data Day</span>
+        <span class="venue-badge">EARL</span>
+        <span class="venue-badge">LegalGeek</span>
+        <span class="venue-badge">Humentum DC</span>
+        <span class="venue-badge">MERL Tech</span>
+        <span class="venue-badge">Charity Digital</span>
+        <span class="venue-badge">LondonR</span>
+        <span class="venue-badge">AI Engineers UK</span>
+        <span class="venue-badge">Gloucestershire Data Day</span>
+      </div>
+    </div>
+  </div>
+
   {{/* ---- Featured talks ---- */}}
   {{ $featured := where .Pages "Params.featured" true }}
   {{ with $featured }}
@@ -40,9 +65,19 @@
     <h2>Featured</h2>
     <div class="talks-grid">
       {{ range . }}
-      <a href="{{ .RelPermalink }}" class="talk-card">
+      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
+      <div class="talk-card talk-card-clickable"
+        data-talk="{{ $td | jsonify | base64Encode }}"
+        @click="modal = JSON.parse(atob($el.dataset.talk))"
+        @keydown.enter="modal = JSON.parse(atob($el.dataset.talk))"
+        tabindex="0"
+        role="button">
         <div class="talk-card-visual">
-          {{ partial "talk-icon.html" .Params.topic }}
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb">
+          {{ else }}
+            {{ partial "talk-icon.html" .Params.topic }}
+          {{ end }}
         </div>
         <h3>{{ .Title }}</h3>
         <div class="talk-meta">
@@ -58,7 +93,7 @@
           {{ with .Params.recording_url }}<span class="talk-icon-item">&#9654;&#xFE0E; Recording</span>{{ end }}
           {{ with .Params.deck_url }}<span class="talk-icon-item">&#128196;&#xFE0E; Slides</span>{{ end }}
         </div>
-      </a>
+      </div>
       {{ end }}
     </div>
   </section>
@@ -75,7 +110,7 @@
   {{ end }}
   {{ $uniqueTopics := $allTopics | uniq | sort }}
 
-  <section x-data="{ filter: 'all' }">
+  <section>
     <h2>All talks</h2>
     <div class="topic-filters">
       <button class="filter-btn" :class="{ 'active': filter === 'all' }" @click="filter = 'all'">All</button>
@@ -88,11 +123,21 @@
 
     <div class="talks-grid">
       {{ range .Pages.ByDate.Reverse }}
-      <a href="{{ .RelPermalink }}" class="talk-card"
+      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
+      <div class="talk-card talk-card-clickable"
+        data-talk="{{ $td | jsonify | base64Encode }}"
+        @click="modal = JSON.parse(atob($el.dataset.talk))"
+        @keydown.enter="modal = JSON.parse(atob($el.dataset.talk))"
+        tabindex="0"
+        role="button"
         x-show="filter === 'all'{{ with .Params.topic }}{{ range . }} || filter === '{{ . }}'{{ end }}{{ end }}"
         x-transition>
         <div class="talk-card-visual">
-          {{ partial "talk-icon.html" .Params.topic }}
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb">
+          {{ else }}
+            {{ partial "talk-icon.html" .Params.topic }}
+          {{ end }}
         </div>
         <h3>{{ .Title }}</h3>
         <div class="talk-meta">
@@ -109,9 +154,54 @@
           {{ with .Params.recording_url }}<span class="talk-icon-item">&#9654;&#xFE0E; Recording</span>{{ end }}
           {{ with .Params.deck_url }}<span class="talk-icon-item">&#128196;&#xFE0E; Slides</span>{{ end }}
         </div>
-      </a>
+      </div>
       {{ end }}
     </div>
   </section>
+
+  {{/* ---- Modal overlay ---- */}}
+  <div class="talk-modal-overlay"
+    x-show="modal !== null"
+    @click.self="modal = null"
+    @keydown.escape.window="modal = null"
+    style="display: none;">
+    <div class="talk-modal-box" @click.stop>
+      <button class="talk-modal-close" @click="modal = null" aria-label="Close">&times;</button>
+      <template x-if="modal">
+        <div>
+          <template x-if="modal.image">
+            <img :src="modal.image" :alt="modal.title" class="talk-modal-img">
+          </template>
+          <h2 x-text="modal.title" class="talk-modal-title"></h2>
+          <div class="talk-meta talk-modal-meta">
+            <span x-text="modal.event"></span>
+            <template x-if="modal.date"><span>&nbsp;&middot;&nbsp;<span x-text="modal.date"></span></span></template>
+            <template x-if="modal.location"><span>&nbsp;&middot;&nbsp;<span x-text="modal.location"></span></span></template>
+          </div>
+          <template x-if="modal.abstract">
+            <p x-text="modal.abstract" class="talk-modal-abstract"></p>
+          </template>
+          <div class="talk-modal-actions">
+            <template x-if="modal.recording_url">
+              <a :href="modal.recording_url" class="talk-action-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                Watch Recording
+              </a>
+            </template>
+            <template x-if="modal.deck_url">
+              <a :href="modal.deck_url" class="talk-action-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                View Slides
+              </a>
+            </template>
+            <a :href="modal.url" class="talk-action-link talk-action-link-ghost">
+              Full details &rarr;
+            </a>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
 </article>
 {{ end }}

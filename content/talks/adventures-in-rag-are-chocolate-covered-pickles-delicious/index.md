@@ -3,6 +3,7 @@ title: Adventures in RAG - Are Chocolate Covered Pickles Delicious
 date: '2024-10-19'
 event: Oktoberfest
 topic:
-- RAG
+- AI
 featured: false
+image: /decks/what-is-rag/Files/attachments/image-35.png
 ---

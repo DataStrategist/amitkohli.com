@@ -5,7 +5,7 @@ event: Data4Good Conference
 host_org: Data4Good
 location: London, UK
 topic:
-- Data Management
+- Data Strategy
 audience: Charity data practitioners, NGO staff
 abstract: Training and discussion on data management practices at ACDI/VOCA. Covers
   database design principles, CRM system selection and implementation, data governance

@@ -5,7 +5,7 @@ event: EARL 2021
 host_org: EARL
 location: Virtual
 topic:
-- Network Analysis
+- Knowledge Graphs
 audience: R developers, data scientists
 abstract: Introduction to network analysis principles and R implementation. Emphasizes
   that network statistics are more important than visualization - covering fundamental
@@ -14,4 +14,5 @@ abstract: Introduction to network analysis principles and R implementation. Emph
 recording_url: https://youtu.be/1eivLT6_qgI?t=11459
 status: delivered
 featured: false
+image: /img/new/networkEarl_.jpg
 ---

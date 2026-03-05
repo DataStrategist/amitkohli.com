@@ -10,4 +10,5 @@ abstract: Data is wonderful and very powerful; however, converting data into act
   this transformation.
 recording_url: https://youtu.be/7YRucXThJrs
 featured: false
+image: /img/data_useless.jpg
 ---

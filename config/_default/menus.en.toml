@@ -24,6 +24,6 @@
   weight = 40
 
 [[main]]
-  name = "Archive"
-  url = "/archive/"
+  name = "Blog"
+  url = "/blog/"
   weight = 50

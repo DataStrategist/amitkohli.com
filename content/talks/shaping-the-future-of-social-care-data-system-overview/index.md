@@ -5,7 +5,7 @@ event: Shaping the future of Social Care Data
 host_org: Access Social Care
 location: London, UK
 topic:
-- ASC Data Portal
+- Social Care
 audience: Local authority data teams, social care sector stakeholders
 abstract: System architecture overview of Access Social Care's data infrastructure
   for collecting, processing, and disseminating social care data. Covers ETL pipelines,
@@ -13,4 +13,5 @@ abstract: System architecture overview of Access Social Care's data infrastructu
   care information across the UK.
 status: delivered
 featured: false
+image: /decks/earl2025/Files/attachments/diagram%20data%20model%20conceptual.svg
 ---

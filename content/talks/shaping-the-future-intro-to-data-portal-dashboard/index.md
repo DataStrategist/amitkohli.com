@@ -5,7 +5,7 @@ event: Shaping the future of Social Care Data
 host_org: Access Social Care
 location: London, UK
 topic:
-- ASC Data Portal
+- Social Care
 audience: Local authority data teams, social care sector stakeholders
 abstract: Introduction to Access Social Care's new data portal and dashboard for sharing
   social care information with local authorities and citizens. Demonstrates the portal's
@@ -13,4 +13,5 @@ abstract: Introduction to Access Social Care's new data portal and dashboard for
   social care data accessible and actionable for the sector.
 status: delivered
 featured: false
+image: /decks/earl2025/Files/attachments/image-65.png
 ---

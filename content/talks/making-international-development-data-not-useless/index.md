@@ -5,7 +5,7 @@ event: EARL London
 host_org: EARL
 location: London, UK
 topic:
-- Data Quality
+- Data Strategy
 audience: R developers, data scientists, international development practitioners
 abstract: International development data is often incomparable, error-prone, and incomplete
   - making interpretation frustrating and unreliable. This presentation explains the
@@ -16,4 +16,5 @@ deck_url: https://slides.com/amitkohli/earl
 recording_url: https://www.youtube.com/watch?v=vxIVs7VtRFY
 status: delivered
 featured: false
+image: /img/new/earl-2017.jpg
 ---
