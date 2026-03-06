@@ -65,7 +65,7 @@
     <h2>Featured</h2>
     <div class="talks-grid">
       {{ range . }}
-      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
+      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "event_url" (.Params.event_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
       <div class="talk-card talk-card-clickable"
         data-talk="{{ $td | jsonify | base64Encode }}"
         @click="modal = JSON.parse(atob($el.dataset.talk))"
@@ -123,7 +123,7 @@
 
     <div class="talks-grid">
       {{ range .Pages.ByDate.Reverse }}
-      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
+      {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "event_url" (.Params.event_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
       <div class="talk-card talk-card-clickable"
         data-talk="{{ $td | jsonify | base64Encode }}"
         @click="modal = JSON.parse(atob($el.dataset.talk))"
@@ -192,6 +192,12 @@
               <a :href="modal.deck_url" class="talk-action-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                 View Slides
+              </a>
+            </template>
+            <template x-if="modal.event_url">
+              <a :href="modal.event_url" class="talk-action-link talk-action-link-ghost" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Event Page
               </a>
             </template>
           </div>
