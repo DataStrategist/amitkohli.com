@@ -126,7 +126,7 @@ I guess maybe "who I am" is best answered with quotations that have held meaning
 
 
 > "If your plan is for one year plant rice. If your plan is for ten years plant trees. If your plan is for one hundred years educate children. "
-— Confucius
+- Confucius
 
 
 > "You can't keep a determined man from success. Put stumbling blocks in his way and he takes them for stepping stones"

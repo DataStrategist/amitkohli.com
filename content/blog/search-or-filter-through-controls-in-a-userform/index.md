@@ -18,7 +18,7 @@ This bit might be useful if you have a lot of controls on a form, and need a qui
 
 I uploaded a video tutorial, you can see it here (please view in fullscreen mode, or watch the video in youtube by clicking on the youtube logo):[http://www.youtube.com/watch?v=5RtV9msZ2RE].
 
-Download the file here ([Search on vba][1]), or just copypaste the code below in a userform or your own:
+Download the file here ([Search on vba][1]), or just copypaste the code below in a userform or your own:
 
 <pre>Private Sub Searcher_Change()
 Dim c As Control

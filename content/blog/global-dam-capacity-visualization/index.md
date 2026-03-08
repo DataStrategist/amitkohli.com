@@ -1,4 +1,4 @@
-﻿---
+---
 title: Global dam capacity visualization
 author: Amit
 type: post

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Heart-shaped wordcloud, celebrating Colombia peace treaty
 author: Amit
 type: post

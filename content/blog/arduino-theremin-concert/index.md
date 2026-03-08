@@ -23,7 +23,7 @@ Enjoy!
 
 [![Watch the video](https://img.youtube.com/vi/oKbEwok25CE/maxresdefault.jpg)](https://youtu.be/oKbEwok25CE)
 
-Arduino code follows (prolly doesn't make TOO much sense without the wiring schematic… if there's interest I'll put up a picture).
+Arduino code follows (prolly doesn't make TOO much sense without the wiring schematic... if there's interest I'll put up a picture).
 
 <pre>int sensorValue;
 int sensorLow=1023;

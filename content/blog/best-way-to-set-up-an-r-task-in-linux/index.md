@@ -1,4 +1,4 @@
-﻿---
+---
 title: Best way to set up an R task in linux
 author: Amit
 date: '2019-01-23'

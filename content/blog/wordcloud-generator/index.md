@@ -1,4 +1,4 @@
-﻿---
+---
 title: Wordcloud generator
 author: Amit
 type: post

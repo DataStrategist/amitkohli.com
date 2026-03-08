@@ -1,4 +1,4 @@
-﻿---
+---
 title: How to create an R package, easy mode
 author: amit
 date: '2020-01-07'

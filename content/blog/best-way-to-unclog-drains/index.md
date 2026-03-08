@@ -1,4 +1,4 @@
-﻿---
+---
 title: Best way to unclog drains
 author: Amit
 type: post

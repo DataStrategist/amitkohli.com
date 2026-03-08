@@ -1,5 +1,5 @@
 ---
-title: Sentiment analysis on my girlfriend’s text messages
+title: Sentiment analysis on my girlfriend's text messages
 author: Amit
 type: post
 date: 2015-09-11T13:22:14+00:00
@@ -20,7 +20,7 @@ tags:
   - Sentiment
 
 ---
-When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah… well… CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:
+When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah... well... CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:
 
 [<img class="alignnone size-medium wp-image-372" src="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=300%2C100" alt="senAn" width="300" height="100" srcset="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=300%2C100 300w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=700%2C234 700w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?w=932 932w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
 

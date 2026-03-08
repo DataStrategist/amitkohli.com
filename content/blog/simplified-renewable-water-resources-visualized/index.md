@@ -26,7 +26,7 @@ A visualization prepared for FAO AQUASTAT:
 
 In an interest to simplify the information about renewable water resources in all countries in the world, we prepared simplified visualizations of water flows through a country.
 
-Please navigate to the [AQUASTAT Water Resources page][2] and use the &#8220;Figures&#8221; dropdown to see the flow for each country (as well as the definitions of the abbreviations.
+Please navigate to the [AQUASTAT Water Resources page][2] and use the &#8220;Figures&#8221; dropdown to see the flow for each country (as well as the definitions of the abbreviations.
 
  [1]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/07/WR.Cviz_.header_eng.png
  [2]: http://www.fao.org/nr/water/aquastat/water_res/index.stm#ab

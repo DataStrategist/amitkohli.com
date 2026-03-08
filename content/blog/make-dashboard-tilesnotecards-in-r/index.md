@@ -29,17 +29,17 @@ _Due to the popularity of this script, I released it as a package. To install it
   
 
 
-Dashboard Tiles/Notecards are a great way to visualize just one number, and make it big and pretty. They can emphasize results in an easily digestible and colourful format. I was surprised that there was no way to create tiles offline (there is however a very good online version in [shinydashboards][1]), so i made one.
+Dashboard Tiles/Notecards are a great way to visualize just one number, and make it big and pretty. They can emphasize results in an easily digestible and colourful format. I was surprised that there was no way to create tiles offline (there is however a very good online version in [shinydashboards][1]), so i made one.
 
-I wanted something that would look pretty, but also be flexible. Hrm&#8230; if only there was a flexible tool that made pretty webpages&#8230; Of course I&#8217;m talking about the ever-awesome [Bootstrap!][2]  In case you&#8217;ve been living under a rock and don&#8217;t know what that is, it&#8217;s the most popular framework for developing AWESOME mobile-friendly webpages around. Think of it as &#8220;webpage lego&#8221;, only when you&#8217;re done, things actually _look good_.
+I wanted something that would look pretty, but also be flexible. Hrm&#8230; if only there was a flexible tool that made pretty webpages&#8230; Of course I&#8217;m talking about the ever-awesome [Bootstrap!][2]  In case you&#8217;ve been living under a rock and don&#8217;t know what that is, it&#8217;s the most popular framework for developing AWESOME mobile-friendly webpages around. Think of it as &#8220;webpage lego&#8221;, only when you&#8217;re done, things actually _look good_.
 
-All I needed to do was figure out how to get data from R, select what features to include (ranging from a base template to link-enabled multi-sized buttons that change color based on values) and stuff all of it into a webpage enriched by Bootstrap&#8217;s CSS tags, and boom! This is what I got (full code to produce this example below):
+All I needed to do was figure out how to get data from R, select what features to include (ranging from a base template to link-enabled multi-sized buttons that change color based on values) and stuff all of it into a webpage enriched by Bootstrap&#8217;s CSS tags, and boom! This is what I got (full code to produce this example below):
 
 <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ -->
 
 &#8230;which is suitable for any dashboard you choose!
 
-Also, because it&#8217;s a webpage, it&#8217;s got that nice mouse-over highlighting effect (yes, it&#8217;ll do tooltips too). All you have to do is source the R file [from the github repo][3], or   <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ --> your own version.
+Also, because it&#8217;s a webpage, it&#8217;s got that nice mouse-over highlighting effect (yes, it&#8217;ll do tooltips too). All you have to do is source the R file [from the github repo][3], or   <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ --> your own version.
 
 I allowed for many settings to be passed from R, check the Repo readme for an explanation&#8230; but in the meantime, let&#8217;s see how we did that example above:
 
@@ -97,7 +97,7 @@ browseURL("buttons.html")</pre>
 
 
 
-This is just the beginning. This method can be pretty powerful... for example, doing the same thing with [Bootcards][4], or with Bootstap v.4 coming up... the [Statcards][5] look AWESOME (I would use that, but **a)** I don't want to use code that's still in alpha, and **b)** I'm not sure if it's cool to take code from a paid template... could someone tell me please?).
+This is just the beginning. This method can be pretty powerful... for example, doing the same thing with [Bootcards][4], or with Bootstap v.4 coming up... the [Statcards][5] look AWESOME (I would use that, but **a)** I don't want to use code that's still in alpha, and **b)** I'm not sure if it's cool to take code from a paid template... could someone tell me please?).
 
 For anyone out there willing to add functionality, I'm welcoming pull-requests from one and all!
 
@@ -114,17 +114,17 @@ _Due to the popularity of this script, I released it as a package. To install it
   
 
 
-Dashboard Tiles/Notecards are a great way to visualize just one number, and make it big and pretty. They can emphasize results in an easily digestible and colourful format. I was surprised that there was no way to create tiles offline (there is however a very good online version in [shinydashboards][1]), so i made one.
+Dashboard Tiles/Notecards are a great way to visualize just one number, and make it big and pretty. They can emphasize results in an easily digestible and colourful format. I was surprised that there was no way to create tiles offline (there is however a very good online version in [shinydashboards][1]), so i made one.
 
-I wanted something that would look pretty, but also be flexible. Hrm&#8230; if only there was a flexible tool that made pretty webpages&#8230; Of course I&#8217;m talking about the ever-awesome [Bootstrap!][2]  In case you&#8217;ve been living under a rock and don&#8217;t know what that is, it&#8217;s the most popular framework for developing AWESOME mobile-friendly webpages around. Think of it as &#8220;webpage lego&#8221;, only when you&#8217;re done, things actually _look good_.
+I wanted something that would look pretty, but also be flexible. Hrm&#8230; if only there was a flexible tool that made pretty webpages&#8230; Of course I&#8217;m talking about the ever-awesome [Bootstrap!][2]  In case you&#8217;ve been living under a rock and don&#8217;t know what that is, it&#8217;s the most popular framework for developing AWESOME mobile-friendly webpages around. Think of it as &#8220;webpage lego&#8221;, only when you&#8217;re done, things actually _look good_.
 
-All I needed to do was figure out how to get data from R, select what features to include (ranging from a base template to link-enabled multi-sized buttons that change color based on values) and stuff all of it into a webpage enriched by Bootstrap&#8217;s CSS tags, and boom! This is what I got (full code to produce this example below):
+All I needed to do was figure out how to get data from R, select what features to include (ranging from a base template to link-enabled multi-sized buttons that change color based on values) and stuff all of it into a webpage enriched by Bootstrap&#8217;s CSS tags, and boom! This is what I got (full code to produce this example below):
 
 <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ -->
 
 &#8230;which is suitable for any dashboard you choose!
 
-Also, because it&#8217;s a webpage, it&#8217;s got that nice mouse-over highlighting effect (yes, it&#8217;ll do tooltips too). All you have to do is source the R file [from the github repo][3], or   <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ --> your own version.
+Also, because it&#8217;s a webpage, it&#8217;s got that nice mouse-over highlighting effect (yes, it&#8217;ll do tooltips too). All you have to do is source the R file [from the github repo][3], or   <!-- iframe plugin v.4.3 wordpress.org/plugins/iframe/ --> your own version.
 
 I allowed for many settings to be passed from R, check the Repo readme for an explanation&#8230; but in the meantime, let&#8217;s see how we did that example above:
 
@@ -182,7 +182,7 @@ browseURL("buttons.html")</pre>
 
 
 
-This is just the beginning. This method can be pretty powerful... for example, doing the same thing with [Bootcards][4], or with Bootstap v.4 coming up... the [Statcards][5] look AWESOME (I would use that, but **a)** I don't want to use code that's still in alpha, and **b)** I'm not sure if it's cool to take code from a paid template... could someone tell me please?).
+This is just the beginning. This method can be pretty powerful... for example, doing the same thing with [Bootcards][4], or with Bootstap v.4 coming up... the [Statcards][5] look AWESOME (I would use that, but **a)** I don't want to use code that's still in alpha, and **b)** I'm not sure if it's cool to take code from a paid template... could someone tell me please?).
 
 For anyone out there willing to add functionality, I'm welcoming pull-requests from one and all!
 

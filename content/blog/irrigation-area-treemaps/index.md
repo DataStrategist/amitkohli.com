@@ -1,4 +1,4 @@
-﻿---
+---
 title: Irrigation area treemaps
 author: Amit
 type: post

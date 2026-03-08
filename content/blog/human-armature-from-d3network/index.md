@@ -1,4 +1,4 @@
-﻿---
+---
 title: Human armature from d3Network!
 author: Amit
 type: post

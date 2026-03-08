@@ -1,4 +1,4 @@
-﻿---
+---
 title: Problems with data
 author: amit
 date: '2020-01-07'

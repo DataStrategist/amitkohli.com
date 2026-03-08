@@ -1,4 +1,4 @@
-﻿---
+---
 title: Interactive COVID map by LSOA
 author: Amit Kohli
 date: '2020-11-08'
