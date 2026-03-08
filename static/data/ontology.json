@@ -3,10 +3,10 @@
     {
       "id": "center",
       "label": "Amit Kohli",
-      "size": 30,
+      "size": 90,
       "color": "#FFFFFF",
       "font": {
-        "size": 16,
+        "size": 48,
         "bold": true
       },
       "shape": "box"
@@ -14,10 +14,10 @@
     {
       "id": "cat-technical-stack",
       "label": "Technical Stack",
-      "size": 20,
+      "size": 40,
       "color": "#4FC3F7",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -360,10 +360,10 @@
     {
       "id": "cat-organizations",
       "label": "Organizations",
-      "size": 20,
+      "size": 40,
       "color": "#81C784",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -498,10 +498,10 @@
     {
       "id": "cat-domain-areas",
       "label": "Domain Areas",
-      "size": 20,
+      "size": 40,
       "color": "#FFB74D",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -862,10 +862,10 @@
     {
       "id": "cat-technical-approaches",
       "label": "Technical Approaches",
-      "size": 20,
+      "size": 40,
       "color": "#E57373",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -1242,10 +1242,10 @@
     {
       "id": "cat-functional-areas",
       "label": "Functional Areas",
-      "size": 20,
+      "size": 40,
       "color": "#BA68C8",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -1630,10 +1630,10 @@
     {
       "id": "cat-work-context",
       "label": "Work Context",
-      "size": 20,
+      "size": 40,
       "color": "#FFD54F",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -1868,10 +1868,10 @@
     {
       "id": "cat-data-sources",
       "label": "Data Sources",
-      "size": 20,
+      "size": 40,
       "color": "#4DB6AC",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
@@ -2127,10 +2127,10 @@
     {
       "id": "cat-delivery",
       "label": "Delivery",
-      "size": 20,
+      "size": 40,
       "color": "#F06292",
       "font": {
-        "size": 14,
+        "size": 28,
         "bold": true
       },
       "shape": "box"
