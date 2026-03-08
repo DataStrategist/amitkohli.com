@@ -8,5 +8,5 @@ topic:
 - Data Strategy
 abstract: "The sequel. Data is still wonderful, still very powerful, and still very difficult to turn into action. An updated provocation on why so much data work fails to land - and what to actually do about it."
 featured: false
-image: /img/new/slide.jpg
+image: /img/new/covid-chart.png
 ---

@@ -1,5 +1,5 @@
 ---
-title: Growing Pains in RAG
+title: "Growing Pains in RAG (super-techie version)"
 date: '2025-01-16'
 event: AI Engineer London Meetup 4
 host_org: AI Engineer London

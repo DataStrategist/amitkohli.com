@@ -8,14 +8,14 @@ description: Get in touch.
 
 - Conference talks and keynotes
 - Advisory and strategy work
-- Workshops and internal events
 
 </div>
 
 <div class="available-for available-for-past">
 <h3>Previously offered</h3>
-<p class="available-for-note">Things I've done, know well, and have deliberately moved on from.</p>
+<p class="available-for-note">Things I've done, but don't have time for while doing a fulltime job.</p>
 
+- ~~Workshops and internal events~~
 - ~~Certified R & Python instruction~~
 - ~~Power BI and Excel/VBA training~~
 - ~~Data science delivery (NLP, SNA, visualisations)~~

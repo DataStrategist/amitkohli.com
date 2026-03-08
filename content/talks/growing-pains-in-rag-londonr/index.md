@@ -1,5 +1,5 @@
 ---
-title: Growing Pains in RAG
+title: "Growing Pains in RAG (intro level)"
 date: '2025-01-28'
 event: London Data Intelligence Network (LondonR)
 host_org: LondonR
