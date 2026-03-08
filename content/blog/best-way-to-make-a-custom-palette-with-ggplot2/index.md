@@ -1,4 +1,4 @@
-﻿---
+---
 title: Best way to make a custom palette with ggplot2
 author: Amit
 type: post
@@ -123,7 +123,7 @@ See that black/blue pattern in the bars but not in the dots? We did that.
   
 We passed 20 colors for 20 observations just for show.
   
-PRO TIP: don't pass colors like thisΓÇª its kinda lame.
+PRO TIP: don't pass colors like this… its kinda lame.
 
 and
 
@@ -142,7 +142,7 @@ for points and lines
 
 Now you see the 2-color pattern in the points but not the bars.
 
-So coolΓÇª but not EXACTLY userfriendly. Heres where the palette comes in!
+So cool… but not EXACTLY userfriendly. Heres where the palette comes in!
 
 Now use the palette you made in ggplot, and color both bars and dots:
 

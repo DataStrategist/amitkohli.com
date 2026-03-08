@@ -2,8 +2,8 @@
 # https://blowfish.page/docs/configuration/
 
 colorScheme = "blowfish"
-defaultAppearance = "dark"
-autoSwitchAppearance = true
+defaultAppearance = "light"
+autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true

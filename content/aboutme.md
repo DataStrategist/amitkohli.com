@@ -55,7 +55,7 @@ I guess maybe "who I am" is best answered with quotations that have held meaning
 -Mario Benedetti
 
 
-> Life doesn’t have to reflect your potential or abilities; instead it should reflect your priorities and values.
+> Life doesn't have to reflect your potential or abilities; instead it should reflect your priorities and values.
 -T. Kohli
 
 
@@ -145,7 +145,7 @@ I guess maybe "who I am" is best answered with quotations that have held meaning
 -RATM, based on G. Orwell
 
 
-> "They used to call me ‘needy’ then they said it was too degrading and I had to be called ‘poor’. Then came ‘impoverished’ followed by ‘underprivileged’. I now have a great vocabulary but I am still hungry."
+> "They used to call me 'needy' then they said it was too degrading and I had to be called 'poor'. Then came 'impoverished' followed by 'underprivileged'. I now have a great vocabulary but I am still hungry."
 -?
 
 

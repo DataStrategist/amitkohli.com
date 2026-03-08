@@ -1,4 +1,4 @@
-﻿---
+---
 title: Compare lists and identify matches macro
 author: Amit
 type: post
@@ -19,11 +19,11 @@ tags:
   - vlookup
 
 ---
-This macro provides an alternative to vlookup (which looks at two lists and provides data from one list to the second) that retains similar functionality while providing certain benefits. It accomplishes this by physically moving one list to the other. It&#8217;s impossible to get a false positive, and it doesn&#8217;t provide that annoying #N/A that messes up calculations.
+This macro provides an alternative to vlookup (which looks at two lists and provides data from one list to the second) that retains similar functionality while providing certain benefits. It accomplishes this by physically moving one list to the other. It's impossible to get a false positive, and it doesn't provide that annoying #N/A that messes up calculations.
 
-Additionally, it let&#8217;s you decide whether to identify the matches and move them to the top (useful for quickly working with data), or not (useful in identifying holes in each list and working with that).
+Additionally, it let's you decide whether to identify the matches and move them to the top (useful for quickly working with data), or not (useful in identifying holes in each list and working with that).
 
-And here is the macro itself. Copy/paste the code, or┬á<a title="Compare lists macro file" href="https://www.amitkohli.com/excel/compare_lists.bas" target="_blank">download the file here</a>┬á(if it opens as text, right click and &#8220;Save link as&#8221;).
+And here is the macro itself. Copy/paste the code, or <a title="Compare lists macro file" href="https://www.amitkohli.com/excel/compare_lists.bas" target="_blank">download the file here</a> (if it opens as text, right click and &#8220;Save link as&#8221;).
 
 <pre>Sub compare_lists()
 ' Author: Amit Kohli

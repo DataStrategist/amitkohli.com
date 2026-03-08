@@ -1,5 +1,5 @@
-﻿---
-title: Excel is how I do mapsΓÇª
+---
+title: Excel is how I do maps…
 author: Amit
 type: post
 date: 2015-07-08T15:15:55+00:00
@@ -17,7 +17,7 @@ tags:
   - Reference
 
 ---
-Following the footsteps of [this cool post I saw][1] by┬á<a href="https://www.twitter.com/JohnNelsonIDV" target="_blank" rel="nofollow">JohnNelsonIDV</a>, I wanted to try to and make a map using Excel.
+Following the footsteps of [this cool post I saw][1] by <a href="https://www.twitter.com/JohnNelsonIDV" target="_blank" rel="nofollow">JohnNelsonIDV</a>, I wanted to try to and make a map using Excel.
 
 Fast forward 2 days and the opportunity came up. Lo and behold, a Map of Reference Evapotranspiration built in Excel!
 
@@ -32,7 +32,7 @@ Instructions:
 
 Download the whole excel file here:
 
->>┬á[Reference Evapotranspiration Map][3]┬á<<
+>> [Reference Evapotranspiration Map][3] <<
 
 Based on FAO data
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Introducing the Monitoring and Evaluation Bullet Chart
 author: Amit
 type: post
@@ -10,29 +10,29 @@ categories:
 tags:
   - Bullet chart
   - KPI
-  - 'M&amp;E'
+  - 'M&E'
   - Visualization
 
 ---
-_Cross-posted from:┬á<http://www.acdivoca.org/2018/03/introducing-the-monitoring-and-evaluation-bullet-chart/>_.
+_Cross-posted from: <http://www.acdivoca.org/2018/03/introducing-the-monitoring-and-evaluation-bullet-chart/>_.
 
-This edition of Data Digest is for the monitoring and evaluation**┬á**(M&E) people out there, or monitoring, evaluation, and learning (MEL), monitoring, evaluation, research, and learning (MERL), or whatever else the cool kids are calling themselves these days! This post will focus on M&E deliverables, which are called┬á**indicators**. But it will also come in handy for anyone who depends on key performance indicators (KPIs) or needs to track progress against a target.
+This edition of Data Digest is for the monitoring and evaluation** **(M&E) people out there, or monitoring, evaluation, and learning (MEL), monitoring, evaluation, research, and learning (MERL), or whatever else the cool kids are calling themselves these days! This post will focus on M&E deliverables, which are called **indicators**. But it will also come in handy for anyone who depends on key performance indicators (KPIs) or needs to track progress against a target.
 
-The too long, wonΓÇÖt read (TL;WR) version is that we recommend a hacked version of the bullet chart and provide a link to the┬á[R package┬á`bulletchartr`┬ádeveloped by ACDI/VOCA][1], so that you can use these charts in your company!
+The too long, won't read (TL;WR) version is that we recommend a hacked version of the bullet chart and provide a link to the [R package `bulletchartr` developed by ACDI/VOCA][1], so that you can use these charts in your company!
 
 ## So, how should we track indicators?
 
 For those unfamiliar with ACDI/VOCAΓÇÖs work, we implement economic development projects around the world. To ensure we implement them correctly and make an impact, we set indicators that have yearly targets and track progress against these indicators.
 
-The**┬áfirst problem****┬á**you may run into is a lack of real-time data to monitor. If you donΓÇÖt have a real-time data system, please come back once you do! As ACDI/VOCA does have a near real-time data management system, we can proceed.
+The** first problem**** **you may run into is a lack of real-time data to monitor. If you don't have a real-time data system, please come back once you do! As ACDI/VOCA does have a near real-time data management system, we can proceed.
 
-The┬á**second problem**┬áis that not all indicators receive data throughout the year. A detailed schedule governs what gets collected and when, but a good amount of data comes in at the end of the year. M&E folks have several classifications for indicators, but, because we are data people, we divide them into two groups:┬á**routine**┬áindicators and┬á**yearly**┬áindicators.
+The **second problem** is that not all indicators receive data throughout the year. A detailed schedule governs what gets collected and when, but a good amount of data comes in at the end of the year. M&E folks have several classifications for indicators, but, because we are data people, we divide them into two groups: **routine** indicators and **yearly** indicators.
 
-By throwing away yearly indicators, weΓÇÖre left with an indicator set that should be updated frequently, and thus, we can use these to figure out if weΓÇÖre falling behind. ThatΓÇÖs not to say that the yearly data isnΓÇÖt important; it is the most┬áimportant! But yearly data measures impact more or lessΓÇönot implementationΓÇöand cannot be used for quick corrections.
+By throwing away yearly indicators, we're left with an indicator set that should be updated frequently, and thus, we can use these to figure out if we're falling behind. That's not to say that the yearly data isn't important; it is the most important! But yearly data measures impact more or less—not implementation—and cannot be used for quick corrections.
 
-The┬á**third problem**┬áis that measuring progress against a year-end target would mean that, for most of the year, the percent accomplishment is low. ThatΓÇÖs because the year isnΓÇÖt over yet, and weΓÇÖre still doing stuff! A trick that can be employed is to expect that indicator accomplishment to be more or less linear.
+The **third problem** is that measuring progress against a year-end target would mean that, for most of the year, the percent accomplishment is low. That's because the year isn't over yet, and we're still doing stuff! A trick that can be employed is to expect that indicator accomplishment to be more or less linear.
 
-Assuming so, if we divided the indicator accomplishment by the percent of the year elapsed, we would expect all indicators to be at 100 percent. (For example, when we are┬á`25 percent through the year`, we can assume we should be┬á`25 percent through the target`. In that case, 25 percent divided by 25 percent equals 100 percent. Make sense?)
+Assuming so, if we divided the indicator accomplishment by the percent of the year elapsed, we would expect all indicators to be at 100 percent. (For example, when we are `25 percent through the year`, we can assume we should be `25 percent through the target`. In that case, 25 percent divided by 25 percent equals 100 percent. Make sense?)
 
 This is a problematic assumption, especially for agricultural development projects, where project activities are not linear by design. Some indicators may require the distribution of money or inputs, which should be done early in the year, while some activities occur later in the year, perhaps right before seeding, harvest, or sales. These curves might look like this:
 
@@ -46,7 +46,7 @@ One way to deal with this is to assign projections and track each indicator agai
   </h2>
   
   <p>
-    <a href="https://www.perceptualedge.com/articles/misc/Bullet_Graph_Design_Spec.pdf">Stephen Few</a>┬áinvented the bullet chart as a way to show tons of information in KPIs in a condensed form.
+    <a href="https://www.perceptualedge.com/articles/misc/Bullet_Graph_Design_Spec.pdf">Stephen Few</a> invented the bullet chart as a way to show tons of information in KPIs in a condensed form.
   </p>
   
   <p>
@@ -54,11 +54,11 @@ One way to deal with this is to assign projections and track each indicator agai
   </p>
   
   <p>
-    The bullet chart is a variation on the bar graph that has a dark bar showing an important point for that indicator, benchmark, or performance target, and other bars in the background signifying different levels of performance. The bullet chart makes it easy to compare between related measures, like presenting current status versus status at a similar time in the past.┬áACDI/VOCA uses them so much, we created an R package called ΓÇ£<a href="https://github.com/ACDIVOCATech/bulletchartr">bulletchartr</a>ΓÇ¥ that takes a Microsoft Excel file of indicators, their actual value, and their targets as an input, and produces a bullet chart. The different types of charts mentioned in this article can be accessed from functions in this package. For example, the above chart was produced with the function┬á<code>bullet_chart</code>. We encourage you to install the package, collaborate, and bring up any issues or feature requests. To start:┬á<code>devtools::install_github("ACDIVOCATech/bulletchartr")</code>.
+    The bullet chart is a variation on the bar graph that has a dark bar showing an important point for that indicator, benchmark, or performance target, and other bars in the background signifying different levels of performance. The bullet chart makes it easy to compare between related measures, like presenting current status versus status at a similar time in the past. ACDI/VOCA uses them so much, we created an R package called "<a href="https://github.com/ACDIVOCATech/bulletchartr">bulletchartr</a>" that takes a Microsoft Excel file of indicators, their actual value, and their targets as an input, and produces a bullet chart. The different types of charts mentioned in this article can be accessed from functions in this package. For example, the above chart was produced with the function <code>bullet_chart</code>. We encourage you to install the package, collaborate, and bring up any issues or feature requests. To start: <code>devtools::install_github("ACDIVOCATech/bulletchartr")</code>.
   </p>
   
   <p>
-    Below is the bullet chart style that ACDI/VOCA uses. You can find it in the┬á<code>bulletchartr</code>┬ápackage (function┬á<code>bullet_chart_symbols</code>).<code></code>
+    Below is the bullet chart style that ACDI/VOCA uses. You can find it in the <code>bulletchartr</code> package (function <code>bullet_chart_symbols</code>).<code></code>
   </p>
   
   <p>
@@ -70,7 +70,7 @@ One way to deal with this is to assign projections and track each indicator agai
   </p>
   
   <p>
-    Each bar is color-coded green when the indicator is near or past the ΓÇ£TodayΓÇ¥ line, orange when it is close, and red when it is not close. Instead of showing a vertical tick mark on each bar, we show a constant line that progresses from zero to 100 percent of the year. However, if you prefer to show individual targets based on projects, you could easily do this by showing individual lines, as illustrated below, which can be accomplished via function┬á<code>bullet_chart_vline</code>┬áof the package.
+    Each bar is color-coded green when the indicator is near or past the "Today" line, orange when it is close, and red when it is not close. Instead of showing a vertical tick mark on each bar, we show a constant line that progresses from zero to 100 percent of the year. However, if you prefer to show individual targets based on projects, you could easily do this by showing individual lines, as illustrated below, which can be accomplished via function <code>bullet_chart_vline</code> of the package.
   </p>
   
   <p>
@@ -78,11 +78,11 @@ One way to deal with this is to assign projections and track each indicator agai
   </p>
   
   <p>
-    Returning to the original chart, there are two symbols displayed in addition to the bars: a circle and a diamond. The diamond shows where we were last week, two weeks ago, or some configurable short-term indicator, and can be used┬áto show ongoing progress. The circle shows where we were on todayΓÇÖs date last year, which is important because last yearΓÇÖs value represents a standard that takes into consideration the potential non-linearity of indicator accomplishment. In other words, you always plant the crops at the same time of year, so knowing where you are compared to last year can help you determine whether you are ahead or behind as well. This is much more transparent and efficient than comparison to projections.
+    Returning to the original chart, there are two symbols displayed in addition to the bars: a circle and a diamond. The diamond shows where we were last week, two weeks ago, or some configurable short-term indicator, and can be used to show ongoing progress. The circle shows where we were on today's date last year, which is important because last year's value represents a standard that takes into consideration the potential non-linearity of indicator accomplishment. In other words, you always plant the crops at the same time of year, so knowing where you are compared to last year can help you determine whether you are ahead or behind as well. This is much more transparent and efficient than comparison to projections.
   </p>
   
   <p>
-    We use diamond and circle symbols, instead of the additional bars typically used in a bullet chart because we think itΓÇÖs easier to understand. But below is a more traditional example, using differently sized bars to compare last week and last year (function┬á<code>bullet_chart_wide</code>).
+    We use diamond and circle symbols, instead of the additional bars typically used in a bullet chart because we think it's easier to understand. But below is a more traditional example, using differently sized bars to compare last week and last year (function <code>bullet_chart_wide</code>).
   </p>
   
   <p>
@@ -98,7 +98,7 @@ One way to deal with this is to assign projections and track each indicator agai
   </p>
   
   <p>
-    Many thanks to┬á<a href="https://ryo-n7.github.io/aboutme/">Ryo Nakagawara</a>,┬áour data analytics and visualization intern, who coauthored this post.
+    Many thanks to <a href="https://ryo-n7.github.io/aboutme/">Ryo Nakagawara</a>, our data analytics and visualization intern, who coauthored this post.
   </p>
 </div>
 

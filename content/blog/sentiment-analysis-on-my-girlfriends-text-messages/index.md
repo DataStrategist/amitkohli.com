@@ -1,4 +1,4 @@
-﻿---
+---
 title: Sentiment analysis on my girlfriendΓÇÖs text messages
 author: Amit
 type: post
@@ -20,7 +20,7 @@ tags:
   - Sentiment
 
 ---
-When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah&#8230; well&#8230; CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:
+When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah… well… CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:
 
 [<img class="alignnone size-medium wp-image-372" src="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=300%2C100" alt="senAn" width="300" height="100" srcset="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=300%2C100 300w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?resize=700%2C234 700w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/08/senAn.png?w=932 932w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
 
@@ -48,7 +48,7 @@ I typically post my analyses to github, but I won't this time for obvious reason
 
   1. Find someone to love. Write lots of text messages to each other for a year.
   2. Get the logs. I used whatsapp (email yourself the whole log, it's in the settings) and skype (at the time I did the analysis you could get up to 6 months of history. Just copy paste it into a text file)
-  3. Clean the logs. This part is super annoying. Every time we were texting and anyone pasted in something from somewhere else (like a link or copypasting from another conversation), it breaks the line-number scheme. There might be better ways to clean it, but for me it was a bit of regex, a LOT of manual cleaning and iterating. There are also a lot of encoding problems if your logs are in more than one language, and lastly, not all emoji translates to text nicely.  If they didn't, I just deleted them&#8230; which sucks (This is kind of a big deal since there's a lot of sentiment in emojis ≡ƒÖü :'(. Somebody should come up w/ a emoji sentiment valence table for whatsapp). What you want in the end is a text file that has 3 columns: Timestamp, name, clean text, seperated by a unique delimiter, for example "|". Keep munging till you have that.
+  3. Clean the logs. This part is super annoying. Every time we were texting and anyone pasted in something from somewhere else (like a link or copypasting from another conversation), it breaks the line-number scheme. There might be better ways to clean it, but for me it was a bit of regex, a LOT of manual cleaning and iterating. There are also a lot of encoding problems if your logs are in more than one language, and lastly, not all emoji translates to text nicely.  If they didn't, I just deleted them&#8230; which sucks (This is kind of a big deal since there's a lot of sentiment in emojis 🙁 :'(. Somebody should come up w/ a emoji sentiment valence table for whatsapp). What you want in the end is a text file that has 3 columns: Timestamp, name, clean text, seperated by a unique delimiter, for example "|". Keep munging till you have that.
   4. Read Whatsapp log into R 
       1. Realize that the logs within the  current year don't have the year in the timestamp, so add it manually.
   5. Read in Skype logs and combine w/ the Whatsapp
@@ -79,7 +79,7 @@ and end up like this:
   <em>"Did you forget the milk?!"</em>
 </p>
 
-That's just what happens in relationships, because we've all got stuff to do and when you share your life with someone, you become part of a team, and from time to time, the team needs milk and sometimes that milk is forgotten for extremely valid and completely unavoidable reasons. So eventually we will get less sweet via text message and what will that mean? Probably nothing at all. Anyway, what do I care? At least we're getting sweeter now. ≡ƒÖé I'll worry bout tomorrow tomorrow.
+That's just what happens in relationships, because we've all got stuff to do and when you share your life with someone, you become part of a team, and from time to time, the team needs milk and sometimes that milk is forgotten for extremely valid and completely unavoidable reasons. So eventually we will get less sweet via text message and what will that mean? Probably nothing at all. Anyway, what do I care? At least we're getting sweeter now. 🙂 I'll worry bout tomorrow tomorrow.
 
 Joking aside, if nothing else, doing analyses like this force people like me to TRY EXTRA HARD to be sweet even if it's not necessary. And intention when text-messaging is important since there's NEVER any context to text messages and misunderstandings are common.
 

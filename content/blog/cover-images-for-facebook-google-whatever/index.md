@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cover images for facebook, google+, whatever
 author: Amit
 type: post
@@ -18,7 +18,7 @@ tags:
   - Picture
 
 ---
-So I guess everybody let&#8217;s you upload a &#8220;cover picture&#8221;&#8230;. something that should be beautiful, emblematic of you, deep, thoughtful etc. Well&#8230; I found a bunch of my pics that fit the wide format nicely.
+So I guess everybody let's you upload a "cover picture"…. something that should be beautiful, emblematic of you, deep, thoughtful etc. Well… I found a bunch of my pics that fit the wide format nicely.
 
 If you find one you want:
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'kml maker for Excel -> Google Earth'
 author: Amit
 type: post
@@ -14,7 +14,7 @@ tags:
   - Userform
 
 ---
-I made a userform that quickly and easily allows you to make a kml file that&#8217;s readable by google earth based on some excel dataset that has coordinates.
+I made a userform that quickly and easily allows you to make a kml file that's readable by google earth based on some excel dataset that has coordinates.
 
 Features:
 
@@ -26,7 +26,7 @@ Features:
   * Change colours and opacity for points via easy dropdowns
   * Pass data from excel columns to the popup for each point
 
-I&#8217;ve taken the liberty to make an excel file with the form, and some examples and showcasing the features so you know how to do it. Check it out and please provide comments!
+I've taken the liberty to make an excel file with the form, and some examples and showcasing the features so you know how to do it. Check it out and please provide comments!
 
 >> [Google earth kml maker.v.1.3][1] <<
 

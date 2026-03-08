@@ -1,4 +1,4 @@
-﻿---
+---
 title: Announcing ShinyTester ΓÇô a package that helps you build Shiny apps
 author: Amit
 type: post
@@ -14,24 +14,24 @@ tags:
   - Syntax
 
 ---
-Shiny is awesome, but can be a bit daunting and easy to make mistakes in.┬áI recently came back to Shiny after a hiatus of a few years and it was much more challenging than I feel comfortable admitting. I was making bonehead mistakes┬álike writing `something` instead of `output$something`, confusing where to put `Output` commands vs `Render` commands, etc. I would eventually find my mistake, curse myself and move on with a crumpled ego. Then I had the realization that maybe if I was a beginner, I wouldn&#8217;t even know what I was doing wrong. Thusly did I conclude that┬áI was in a unique position to help out the R community: Dumb enough to make mistakes, but experienced enough to eventually remember how to resolve them. So naturally, I wrote an R package that tests the code of the Shiny app itself.
+Shiny is awesome, but can be a bit daunting and easy to make mistakes in. I recently came back to Shiny after a hiatus of a few years and it was much more challenging than I feel comfortable admitting. I was making bonehead mistakes like writing `something` instead of `output$something`, confusing where to put `Output` commands vs `Render` commands, etc. I would eventually find my mistake, curse myself and move on with a crumpled ego. Then I had the realization that maybe if I was a beginner, I wouldn't even know what I was doing wrong. Thusly did I conclude that I was in a unique position to help out the R community: Dumb enough to make mistakes, but experienced enough to eventually remember how to resolve them. So naturally, I wrote an R package that tests the code of the Shiny app itself.
 
-&nbsp;
+ 
 
-To install:┬á`install.packages("ShinyTester")`┬ácause yes, it&#8217;s on CRAN (my first!!! Shoutout to┬á[@jbkunst][1]┬áfor invaluable help!)
+To install: `install.packages("ShinyTester")` cause yes, it's on CRAN (my first!!! Shoutout to [@jbkunst][1] for invaluable help!)
 
-&nbsp;
+ 
 
-**Quick caveat**: Since this package parses code and everyone writes code differently, it will necessarily be super buggy.┬áIf this package doesn&#8217;t work for your app (after reading the full list of caveats at the bottom of this post), please help by [opening an Issue on the github repo][2].
+**Quick caveat**: Since this package parses code and everyone writes code differently, it will necessarily be super buggy. If this package doesn't work for your app (after reading the full list of caveats at the bottom of this post), please help by [opening an Issue on the github repo][2].
 
-&nbsp;
+ 
 
 The package consists of two functions that analyze the code itself:
 
-  * `ShinyDummyCheck()` &#8211; checks┬áhow items are created in `server.R` and then how they are called in `ui.R`┬áand runs┬ásome fairly naive checks
-  * `ShinyHierarchy()` &#8211; to create an _ad hoc_ hirearchy of the structure of the Shiny Apps &#8211; ie &#8211; what inputs go to what reactives, what reactives go to other reactives, and what then gets pushed back out to the UI as an output.
+  * `ShinyDummyCheck()` – checks┬áhow items are created in `server.R` and then how they are called in `ui.R`┬áand runs┬ásome fairly naive checks
+  * `ShinyHierarchy()` – to create an _ad hoc_ hirearchy of the structure of the Shiny Apps – ie – what inputs go to what reactives, what reactives go to other reactives, and what then gets pushed back out to the UI as an output.
 
-It is my hope that both of these combined minimize the intrinsic boneheadedness in us all. This is really quite beta though&#8230; please do check the Caveats! In the meantime, some examples:
+It is my hope that both of these combined minimize the intrinsic boneheadedness in us all. This is really quite beta though… please do check the Caveats! In the meantime, some examples:
 
 ### Examples for `ShinyDummyCheck`:
 
@@ -40,11 +40,11 @@ It is my hope that both of these combined minimize the intrinsic boneheadedness 
 
 Provides this table:
 
-&nbsp;
+ 
 
 [<img class="alignnone size-medium wp-image-728" src="https://i1.wp.com/amitkohli.com/wp-content/uploads/2017/02/shinyDummyCheck.png?resize=300%2C139" alt="" width="300" height="139" srcset="https://i1.wp.com/amitkohli.com/wp-content/uploads/2017/02/shinyDummyCheck.png?resize=300%2C139 300w, https://i1.wp.com/amitkohli.com/wp-content/uploads/2017/02/shinyDummyCheck.png?w=467 467w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][3]
 
-Which shows that there are no┬áerrors in the Shiny app, oh except for the fact that I defined an object twice&#8230; whoops (Yeah, see that&#8217;s exactly the boneheadedness I&#8217;m talkin bout). The structure of the table is as follows:
+Which shows that there are no errors in the Shiny app, oh except for the fact that I defined an object twice&#8230; whoops (Yeah, see that&#8217;s exactly the boneheadedness I&#8217;m talkin bout). The structure of the table is as follows:
 
 &nbsp;
 
@@ -89,7 +89,7 @@ If you want to suppress the shift in reactive nodes, use `offsetReactives = F`
 
 ### Caveats:
 
-This is a very naive app, and in early stages at that&#8230; it works best with my style of programming and will probably take significant work to universalize (since we&#8217;re talking about code&#8230; maybe it&#8217;s impossible to fully universalize). ┬áSome other caveats:
+This is a very naive app, and in early stages at that&#8230; it works best with my style of programming and will probably take significant work to universalize (since we&#8217;re talking about code&#8230; maybe it&#8217;s impossible to fully universalize).  Some other caveats:
 
   * For now only works with `<-` assignments, not `=` or `->` assignments
   * <del>For now calling items only works with doublequotes. (ie. <code>plotOutput("thingie")</code> works, <code>plotOutput('thingie')</code> doesn&#8217;t.</del>
@@ -108,7 +108,7 @@ This is a very naive app, and in early stages at that&#8230; it works best with 
 
 Enjoy!
 
-(Thanks to my [rusers community][4], especially to [Joshua Kunst][1] and [Colin Phillips][5]┬áfor discussion, help and encouragement required to push this through to CRAN).
+(Thanks to my [rusers community][4], especially to [Joshua Kunst][1] and [Colin Phillips][5] for discussion, help and encouragement required to push this through to CRAN).
 
  [1]: http://jkunst.com
  [2]: https://github.com/datastrategist/ShinyTester/issues

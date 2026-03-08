@@ -1,4 +1,4 @@
-﻿---
+---
 title: Arduino theremin concert
 author: Amit
 type: post
@@ -23,7 +23,7 @@ Enjoy!
 
 [![Watch the video](https://img.youtube.com/vi/oKbEwok25CE/maxresdefault.jpg)](https://youtu.be/oKbEwok25CE)
 
-Arduino code follows (prolly doesn&#8217;t make TOO much sense without the wiring schematic&#8230; if there&#8217;s interest I&#8217;ll put up a picture).
+Arduino code follows (prolly doesn't make TOO much sense without the wiring schematic… if there's interest I'll put up a picture).
 
 <pre>int sensorValue;
 int sensorLow=1023;

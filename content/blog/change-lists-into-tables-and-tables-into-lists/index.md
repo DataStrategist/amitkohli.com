@@ -1,4 +1,4 @@
-﻿---
+---
 title: Change lists into tables and tables into lists
 author: Amit
 type: post
@@ -77,10 +77,10 @@ Set Y1 = rrange1
 End If
 
 If Me.CB_formatting Then
-'In comments, replace line breaks with unique character ╞Æ, and " with '. (Just cleaning up for later)
+'In comments, replace line breaks with unique character ƒ, and " with '. (Just cleaning up for later)
 For Each cmt In ActiveSheet.Comments
-'fixxed_cmt = Replace(cmt.Text, Chr(10), "╞Æ")
-'fixxed_cmt = Replace(cmt.Text, Chr(13), "╞Æ")
+'fixxed_cmt = Replace(cmt.Text, Chr(10), "ƒ")
+'fixxed_cmt = Replace(cmt.Text, Chr(13), "ƒ")
 fixxed_cmt = Replace(cmt.Text, """", "'")
 cmt.Delete
 cmt.Parent.AddComment Text:=fixxed_cmt

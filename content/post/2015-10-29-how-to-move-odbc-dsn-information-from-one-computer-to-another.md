@@ -30,7 +30,7 @@ Oh crap how do I move the DSN connections that I made on this computer?? This is
   * Build a shortcut on your desktop to: C:\Windows\SysWOW64\odbcad32.exe
   * Add connections from there.
 
-#### **IF IN THE NEW COMPUTER YOU CAN’T ADD THE NEW CONNECTIONS YOU NEED:**
+#### **IF IN THE NEW COMPUTER YOU CAN'T ADD THE NEW CONNECTIONS YOU NEED:**
 
   * You need to download the drivers. In my case, since I want to talk to Azure databases, I need this driver: <http://www.microsoft.com/en-us/download/confirmation.aspx?id=36434>. That worked for me, you get what you need and download it.
   * Install it. It will automatically add the connection type ODBC Driver 11 for SQL Server (or whatever) to your odbcad32.
