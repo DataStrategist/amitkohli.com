@@ -3,19 +3,19 @@ title: "10 reasons why Random Forest is the only algorithm you will need"
 author: "Amit"
 date: "2022-10-19"
 slug: "10-reasons-why-random-forest-is-the-only-algorithm-you-will-need"
-categories: Machine Learning
-tags: Random Forest
+categories: ["Machine Learning"]
+tags: ["Random Forest"]
 ---
 
 Quick disclaimer, Random Forests, or RF, don't solve all problems. If you want to identify cats in an image, or do text stuff like figure out what political candidate mentioned "pudding" more often, or reinforcement learning, RFs can't help you. But for regression or classification tasks with numerical data, RFs are the best tool around.
 
-What are Random Forest models? Imagine trying to predict whether I’d buy an ice cream or not. Well, whether I do or don’t will depend on stuff like the weather, and my finances. Let’s look at a simple decision tree that shows how these determine whether I buy ice cream or not.
+What are Random Forest models? Imagine trying to predict whether I'd buy an ice cream or not. Well, whether I do or don't will depend on stuff like the weather, and my finances. Let's look at a simple decision tree that shows how these determine whether I buy ice cream or not.
 
 ![ice cream decision tree showing that I'll only get ice cream if it's sunny AND if I have money](images/icecream.png)
 
-Our ice cream case is easy, but what if we have 100 columns (also called features), and 10,000,000 rows of data? The random forest algorithm works by making a bunch of decision trees, and then averaging the results of all the trees to get a final answer. Many trees make a forest, get it? :) But not all trees are the same, We haven’t discussed the "random" bit yet. There are two "random" things actually! Each tree only looks at a few rows, and only a few columns. So in our dataset above with 100 columns and 10M rows, each tree might select 4 columns and 1000 rows only, and they all grab columns and rows randomly, which is super important! 
+Our ice cream case is easy, but what if we have 100 columns (also called features), and 10,000,000 rows of data? The random forest algorithm works by making a bunch of decision trees, and then averaging the results of all the trees to get a final answer. Many trees make a forest, get it? :) But not all trees are the same, We haven't discussed the "random" bit yet. There are two "random" things actually! Each tree only looks at a few rows, and only a few columns. So in our dataset above with 100 columns and 10M rows, each tree might select 4 columns and 1000 rows only, and they all grab columns and rows randomly, which is super important! 
 
-You might be thinking: "So averaging a bunch of simple trees that only know a few things, and only look at a portion of the data, somehow arrive at the correct decision? Hrm... sounds fishy!" But it works! Hopefully after reading this blog you’ll know why. Also, I *highly recommend* you check out this [interactive demo](https://mlu-explain.github.io/random-forest/) about RFs. It is really wonderful!
+You might be thinking: "So averaging a bunch of simple trees that only know a few things, and only look at a portion of the data, somehow arrive at the correct decision? Hrm... sounds fishy!" But it works! Hopefully after reading this blog you'll know why. Also, I *highly recommend* you check out this [interactive demo](https://mlu-explain.github.io/random-forest/) about RFs. It is really wonderful!
 
 > _Extra credit: Compare and contrast RFs and the democratic process. People get to vote and decide their country's leadership even if most of them are unable to deeply evaluate the feasibility of policies that will actually affect their lives (things like healthcare, the economy, foreign relations, and the environment). People also tend to have more local knowledge, they don't tend to know a lot about other parts of the country. Does this mean that they act like "trees" in our Random Forest, and thus democracy actually has a mathematical basis? If not, why not?_
 
@@ -69,7 +69,7 @@ In that way, it retains the explainability of a simple model, while retaining th
 
 RFs are not as affected by outliers as other models like linear regression. This is important because it means that the model is less likely to be misled by the _one time that Sarah closed on 3 months worth of sales in one day_, or those 3 record breaking hot days. If the model kind of doesn't consider those events as much, the results are more likely to be accurate when the model has to make predictions against unseen data (although it might have a tough time predicting those anomalies too).
 
-> _As a side thought... just think of _why_ overfitting doesn't matter as much in a RF... It’s because the trees pick randomly and most trees won’t have the anomaly! Isn’t it cool how that works out? That’s why it’s better to poll many "dumb" trees than fewer "smart" ones._
+> _As a side thought... just think of _why_ overfitting doesn't matter as much in a RF... It's because the trees pick randomly and most trees won't have the anomaly! Isn't it cool how that works out? That's why it's better to poll many "dumb" trees than fewer "smart" ones._
 
 ![Orange jacket guy meme: Outliers want attention and Random Forests pay no mind](images/outlier.jpg)
 

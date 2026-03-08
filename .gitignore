@@ -6,3 +6,7 @@
 Thumbs.db
 .hugo_build.lock
 /resources/
+/public/
+
+# Local Netlify folder
+.netlify

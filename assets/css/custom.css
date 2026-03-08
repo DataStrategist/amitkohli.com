@@ -1,0 +1,650 @@
+/* ==========================================================================
+   Custom CSS for amitkohli.com: Blowfish theme extensions
+   ========================================================================== */
+
+/* --- Homepage Hero with animated gradient background --- */
+@keyframes hero-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.homepage-hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 195, 247, 0.08),
+    rgba(186, 104, 200, 0.08),
+    rgba(255, 183, 77, 0.08),
+    rgba(77, 182, 172, 0.08),
+    rgba(79, 195, 247, 0.08)
+  );
+  background-size: 400% 400%;
+  animation: hero-gradient 20s ease infinite;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+.dark .homepage-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 195, 247, 0.05),
+    rgba(186, 104, 200, 0.05),
+    rgba(255, 183, 77, 0.05),
+    rgba(77, 182, 172, 0.05),
+    rgba(79, 195, 247, 0.05)
+  );
+  background-size: 400% 400%;
+  animation: hero-gradient 20s ease infinite;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.hero-tagline {
+  font-size: 1.25rem;
+  opacity: 0.85;
+  margin-bottom: 0.25rem;
+}
+.hero-positioning {
+  font-size: 1rem;
+  opacity: 0.65;
+}
+
+/* --- Ontology Visualization --- */
+.ontology-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.ontology-section h2 {
+  margin-bottom: 0.5rem;
+}
+.ontology-intro {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#ontology-network {
+  width: 100%;
+  height: 500px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* --- Value Proposition Cards --- */
+.value-cards {
+  padding: 2rem 1rem 3rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.value-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid rgba(var(--color-neutral-500), 0.15);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.value-card:hover {
+  border-color: rgba(var(--color-primary-500), 0.35);
+  background: rgba(var(--color-primary-500), 0.03);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+.value-card-icon {
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+.value-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+.value-card p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* --- Speaker Hero (talks page) --- */
+.speaker-hero {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: rgba(var(--color-primary-500), 0.04);
+  border: 1px solid rgba(var(--color-primary-500), 0.12);
+  margin-bottom: 2.5rem;
+}
+.speaker-hero-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0.5rem;
+}
+.speaker-hero-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+.speaker-hero-bio {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  opacity: 0.65;
+  margin-bottom: 1rem;
+}
+.speaker-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.speaker-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: rgba(var(--color-primary-400), 1);
+  transition: color 0.2s;
+}
+.speaker-link:hover {
+  color: rgba(var(--color-primary-300), 1);
+  text-decoration: underline;
+}
+.speaker-link-cta {
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(var(--color-primary-500), 0.4);
+  border-radius: 999px;
+  font-weight: 500;
+}
+.speaker-link-cta:hover {
+  background: rgba(var(--color-primary-500), 0.1);
+  border-color: rgba(var(--color-primary-400), 0.6);
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  .speaker-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .speaker-hero-photo {
+    max-width: 140px;
+    margin: 0 auto;
+  }
+  .speaker-hero-links {
+    justify-content: center;
+  }
+}
+
+/* --- Talk Cards --- */
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+}
+@media (max-width: 640px) {
+  .talks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid rgba(var(--color-neutral-500), 0.15);
+  border-radius: 0.625rem;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.talk-card:hover {
+  border-color: rgba(var(--color-primary-500), 0.4);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: inherit;
+}
+/* Talk card visual / topic icon */
+.talk-card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  margin-bottom: 0;
+  border-radius: 0;
+  background: rgba(var(--color-primary-500), 0.1);
+  flex-shrink: 0;
+}
+.talk-card-icon {
+  width: 64px;
+  height: 64px;
+  opacity: 0.6;
+  color: rgba(var(--color-primary-300), 1);
+  transition: opacity 0.2s;
+}
+.talk-card:hover .talk-card-icon {
+  opacity: 1;
+}
+.talk-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.talk-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+  padding: 1rem 1.25rem 0;
+}
+.talk-meta {
+  font-size: 0.78rem;
+  opacity: 0.55;
+  margin-bottom: 0;
+  padding: 0 1.25rem 0.6rem;
+}
+.talk-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding: 0.5rem 1.25rem;
+}
+.topic-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: rgba(var(--color-primary-500), 0.1);
+  color: rgba(var(--color-primary-300), 1);
+}
+.talk-icons {
+  margin-top: 0;
+  font-size: 0.78rem;
+  opacity: 0.65;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 1.25rem 1rem;
+}
+.talk-icons:empty {
+  display: none;
+}
+.talk-icon-item {
+  white-space: nowrap;
+}
+
+/* Featured talks */
+.featured-talks {
+  margin-bottom: 2rem;
+}
+.featured-talks h2 {
+  margin-bottom: 1rem;
+}
+
+/* --- Topic Filter Buttons --- */
+.topic-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.filter-btn {
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(var(--color-neutral-500), 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover {
+  background: rgba(var(--color-neutral-500), 0.1);
+  border-color: rgba(var(--color-neutral-400), 0.4);
+}
+.filter-btn.active {
+  background: rgba(var(--color-primary-500), 0.15);
+  border-color: rgba(var(--color-primary-400), 0.5);
+  color: rgba(var(--color-primary-300), 1);
+  font-weight: 500;
+}
+
+/* --- Track Badges (Series) --- */
+.track-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.track-a { background: #E3F2FD; color: #1565C0; }
+.track-b { background: #FFF3E0; color: #E65100; }
+.track-c { background: #F3E5F5; color: #7B1FA2; }
+.dark .track-a { background: rgba(21, 101, 192, 0.25); color: #64B5F6; }
+.dark .track-b { background: rgba(230, 81, 0, 0.25); color: #FFB74D; }
+.dark .track-c { background: rgba(123, 31, 162, 0.25); color: #CE93D8; }
+
+/* --- Series Intro --- */
+.series-intro {
+  max-width: 680px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+.series-intro p {
+  margin-bottom: 0.75rem;
+}
+
+/* --- Track Legend --- */
+.track-legend {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: rgba(var(--color-neutral-500), 0.06);
+  border: 1px solid rgba(var(--color-neutral-500), 0.12);
+  margin: 1.5rem 0 2rem;
+}
+.track-legend h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+.track-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+.track-legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.track-legend-item strong {
+  font-size: 1rem;
+}
+.track-legend-item p {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin: 0;
+  line-height: 1.5;
+}
+.video-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(var(--color-neutral-500), 0.1);
+}
+.video-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.video-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.video-links {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.video-links a {
+  margin-right: 0.75rem;
+}
+
+/* --- YouTube embed responsive --- */
+.youtube-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Calendly responsive embed --- */
+.calendly-embed {
+  min-width: 320px;
+  height: 700px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .calendly-embed { height: 600px; }
+}
+
+/* --- Available-for block --- */
+.available-for {
+  padding: 1.5rem;
+  border: 1px solid rgba(var(--color-neutral-500), 0.15);
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+.available-for h3 {
+  margin-bottom: 0.75rem;
+}
+.available-for ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.available-for li {
+  margin-bottom: 0.3rem;
+}
+.available-for-past {
+  opacity: 0.6;
+  border-style: dashed;
+}
+.available-for-past h3 {
+  font-style: italic;
+}
+.available-for-note {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+  margin-top: -0.25rem;
+}
+
+/* --- Talk action links (View Slides, Watch Recording) --- */
+.talk-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(var(--color-primary-500), 0.6);
+  border-radius: 0.4rem;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.25rem 0.5rem 0.5rem 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.talk-action-link:hover {
+  background: rgba(var(--color-primary-500), 0.08);
+  border-color: rgb(var(--color-primary-500));
+  text-decoration: none;
+}
+.dark .talk-action-link {
+  color: rgb(var(--color-primary-400));
+  border-color: rgba(var(--color-primary-400), 0.5);
+}
+.dark .talk-action-link:hover {
+  background: rgba(var(--color-primary-400), 0.1);
+  border-color: rgb(var(--color-primary-400));
+}
+.talk-action-link-ghost {
+  border-color: rgba(var(--color-neutral-500), 0.3);
+  color: inherit;
+  opacity: 0.75;
+}
+.talk-action-link-ghost:hover {
+  opacity: 1;
+  background: rgba(var(--color-neutral-500), 0.06);
+  border-color: rgba(var(--color-neutral-500), 0.5);
+}
+
+/* --- Talk card clickable --- */
+.talk-card-clickable {
+  cursor: pointer;
+}
+
+/* --- Talk modal overlay --- */
+.talk-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+.talk-modal-box {
+  position: relative;
+  background: var(--color-neutral-50, #fff);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.dark .talk-modal-box {
+  background: rgb(var(--color-neutral-800, 30 30 30));
+  color: rgb(var(--color-neutral-100, 240 240 240));
+}
+.talk-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  transition: opacity 0.15s;
+}
+.talk-modal-close:hover { opacity: 1; }
+.talk-modal-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.talk-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  padding-right: 1.5rem;
+}
+.talk-modal-meta {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+}
+.talk-modal-abstract {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0.75rem 0 1rem;
+}
+.talk-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* --- Venue ticker strip (talks page) --- */
+@keyframes venue-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.venue-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  overflow: hidden;
+}
+.venue-strip-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.45;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.venue-ticker-wrapper {
+  overflow: hidden;
+  flex: 1;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.venue-ticker {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: venue-scroll 28s linear infinite;
+}
+.venue-ticker:hover {
+  animation-play-state: paused;
+}
+.venue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(var(--color-neutral-500), 0.2);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+.venue-badge:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.venue-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  object-fit: contain;
+  flex-shrink: 0;
+}

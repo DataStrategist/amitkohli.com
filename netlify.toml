@@ -1,17 +1,53 @@
 [build]
-command = 'hugo'
+command = 'hugo --gc --minify'
 publish = 'public'
+
 [build.environment]
-HUGO_VERSION = '0.101.0'
+HUGO_VERSION = '0.156.0'
+HUGO_EXTENDED = 'true'
 
-
-[context]
 [context.branch-deploy]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
+command = 'hugo --gc --minify -b $DEPLOY_PRIME_URL'
 
 [context.deploy-preview]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
+command = 'hugo --gc --minify -b $DEPLOY_PRIME_URL'
 
-[context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
+
+# Redirects
+
+[[redirects]]
+from = "/aboutme/"
+to = "/about/"
+status = 301
+
+[[redirects]]
+from = "/aboutme"
+to = "/about/"
+status = 301
+
+[[redirects]]
+from = "/comfort/"
+to = "/about/"
+status = 301
+
+[[redirects]]
+from = "/comfort"
+to = "/about/"
+status = 301
+
+[[redirects]]
+from = "/consulting/earl2025/*"
+to = "/decks/earl2025/:splat"
+status = 301
+
+[[redirects]]
+from = "/consulting/gpir/*"
+to = "/decks/gpir/:splat"
+status = 301
+
+[[redirects]]
+from = "/consulting/What is RAG and how to get it right/*"
+to = "/decks/what-is-rag/:splat"
+status = 301

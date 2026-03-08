@@ -1,0 +1,128 @@
+{{/* Custom homepage: hero + ontology viz + value proposition cards */}}
+
+<div class="homepage-hero">
+  <div class="hero-content">
+    <h1 class="hero-title">{{ .Site.Params.displayName | default .Site.Title }}</h1>
+    <p class="hero-tagline">{{ .Site.Params.description }}</p>
+    <p class="hero-positioning">Building systems | AI | data strategies that make messy data actually work.</p>
+  </div>
+</div>
+
+{{/* Ontology visualization */}}
+<section class="ontology-section">
+  <h2>What I Work With</h2>
+  <p class="ontology-intro">An interactive map of technologies, domains, and approaches across 200+ concepts and 296 projects. Hover for details, click to explore.</p>
+  <div id="ontology-network"></div>
+</section>
+
+{{/* Value proposition cards */}}
+<section class="value-cards">
+  <div class="card-grid">
+
+    <a href="{{ "talks/" | relURL }}" class="value-card">
+      <div class="value-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h3>Speaking</h3>
+      <p>Conference talks on RAG, knowledge graphs, data strategy, and AI governance in social care.</p>
+    </a>
+
+    <a href="{{ "series/" | relURL }}" class="value-card">
+      <div class="value-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+          <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+        </svg>
+      </div>
+      <h3>Video Series</h3>
+      <p>"Data in the Real World": short videos on the messy reality of data, from Excel woes to ontology design.</p>
+    </a>
+
+    <a href="{{ "contact/" | relURL }}" class="value-card">
+      <div class="value-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <h3>Get in Touch</h3>
+      <p>Available for speaking and advisory work. Drop me an email.</p>
+    </a>
+
+  </div>
+</section>
+
+{{/* vis-network JS */}}
+<script src="{{ "js/vis-network.min.js" | relURL }}"></script>
+<script>
+(function() {
+  fetch('{{ "data/ontology.json" | relURL }}')
+    .then(r => r.json())
+    .then(data => {
+      const container = document.getElementById('ontology-network');
+      if (!container) return;
+
+      const nodes = new vis.DataSet(data.nodes);
+      const edges = new vis.DataSet(data.edges);
+
+      const options = {
+        nodes: {
+          borderWidth: 1,
+          borderWidthSelected: 3,
+          font: { face: 'system-ui, -apple-system, sans-serif' }
+        },
+        edges: {
+          smooth: { type: 'continuous' },
+          color: { inherit: 'both', opacity: 0.4 },
+          width: 1
+        },
+        physics: {
+          enabled: true,
+          solver: 'repulsion',
+          repulsion: {
+            nodeDistance: 160,
+            centralGravity: 0.15,
+            springLength: 140,
+            springConstant: 0.04
+          },
+          stabilization: { iterations: 200, updateInterval: 25 }
+        },
+        interaction: {
+          hover: true,
+          tooltipDelay: 100,
+          zoomView: true,
+          dragView: true
+        },
+        layout: { improvedLayout: true }
+      };
+
+      const network = new vis.Network(container, { nodes, edges }, options);
+
+      // Click to highlight connected nodes
+      network.on('click', function(params) {
+        if (params.nodes.length > 0) {
+          const nodeId = params.nodes[0];
+          const connected = network.getConnectedNodes(nodeId);
+          const allNodes = nodes.get();
+          allNodes.forEach(n => {
+            if (n.id === nodeId || connected.includes(n.id)) {
+              nodes.update({ id: n.id, opacity: 1.0 });
+            } else {
+              nodes.update({ id: n.id, opacity: 0.15 });
+            }
+          });
+        } else {
+          // Reset
+          nodes.get().forEach(n => {
+            nodes.update({ id: n.id, opacity: 1.0 });
+          });
+        }
+      });
+    })
+    .catch(err => {
+      console.warn('Ontology data not loaded:', err);
+      const el = document.getElementById('ontology-network');
+      if (el) el.style.display = 'none';
+    });
+})();
+</script>

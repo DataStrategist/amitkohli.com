@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article class="max-w-prose">
+  {{ partial "breadcrumbs.html" . }}
+  <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
+
+  <div class="talk-meta" style="margin-bottom: 1rem;">
+    {{ with .Params.event }}<strong>{{ . }}</strong>{{ end }}
+    {{ with .Params.date }} &middot; {{ dateFormat "2 January 2006" . }}{{ end }}
+    {{ with .Params.location }} &middot; {{ . }}{{ end }}
+    {{ with .Params.status }}<br><span class="topic-tag">{{ . }}</span>{{ end }}
+  </div>
+
+  {{ with .Params.topic }}
+  <div class="talk-topics" style="margin-bottom: 1.5rem;">
+    {{ range . }}<span class="topic-tag">{{ . }}</span>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.abstract }}
+  <div style="margin-bottom: 1.5rem;">
+    <h2>Abstract</h2>
+    <p>{{ . }}</p>
+  </div>
+  {{ end }}
+
+  {{ with .Params.recording_url }}
+  <div style="margin-bottom: 1rem;">
+    {{/* Check if it's a YouTube link for embed */}}
+    {{ if findRE "youtube\\.com|youtu\\.be" . }}
+      {{ $videoId := replaceRE `.*(?:v=|youtu\.be/)([^&?]+).*` "$1" . }}
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {{ else }}
+      <a href="{{ . }}" class="talk-action-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        Watch Recording
+      </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.deck_url }}
+  <a href="{{ . }}" class="talk-action-link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    View Slides
+  </a>
+  {{ end }}
+
+  {{ with .Params.host_org }}
+  <p style="opacity: 0.7; font-size: 0.9rem;">Hosted by {{ . }}</p>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,40 @@
+# Blowfish parameters
+# https://blowfish.page/docs/configuration/
+
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+
+enableSearch = true
+enableCodeCopy = true
+
+[homepage]
+  layout = "custom"
+  showRecent = false
+
+[article]
+  showDate = false
+  showAuthor = false
+  showBreadcrumbs = true
+  showTableOfContents = false
+  showTaxonomies = true
+  showWordCount = false
+  showEdit = false
+  showComments = false
+
+[header]
+  layout = "basic"
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[list]
+  showBreadcrumbs = true
+  showTableOfContents = false
+  groupByYear = false
+
+[taxonomy]
+  showTermCount = true

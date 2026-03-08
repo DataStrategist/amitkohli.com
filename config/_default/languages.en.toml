@@ -1,0 +1,19 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Amit Kohli"
+
+[params]
+  displayName = "Amit Kohli"
+  description = "Data Generalist. Systems Thinker. Builder."
+
+[params.author]
+  name = "Amit Kohli"
+  headline = "Head of Data at Access Social Care"
+  bio = "Building knowledge graphs and data systems for social care. Speaker, data generalist, and systems thinker."
+  image = "img/amit.jpg"
+  links = [
+    { github = "https://github.com/datastrategist" },
+    { linkedin = "https://www.linkedin.com/in/akohli" },
+    { youtube = "https://youtube.com/@dataintherealworld" },
+  ]

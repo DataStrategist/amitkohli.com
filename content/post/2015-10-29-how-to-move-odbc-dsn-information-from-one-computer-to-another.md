@@ -30,7 +30,7 @@ Oh crap how do I move the DSN connections that I made on this computer?? This is
   * Build a shortcut on your desktop to: C:\Windows\SysWOW64\odbcad32.exe
   * Add connections from there.
 
-#### **IF IN THE NEW COMPUTER YOU CAN’T ADD THE NEW CONNECTIONS YOU NEED:**
+#### **IF IN THE NEW COMPUTER YOU CAN'T ADD THE NEW CONNECTIONS YOU NEED:**
 
   * You need to download the drivers. In my case, since I want to talk to Azure databases, I need this driver: <http://www.microsoft.com/en-us/download/confirmation.aspx?id=36434>. That worked for me, you get what you need and download it.
   * Install it. It will automatically add the connection type ODBC Driver 11 for SQL Server (or whatever) to your odbcad32.
@@ -52,7 +52,7 @@ done!
 One of the steps of operationalizing scripts is to move them from a computer to a server. When that happens now we have to sync data connections too&#8230; in addition, it&#8217;s possible there&#8217;s a different driver and syntax (if we&#8217;re going from Windows to Linux). Therefore, we propose a workthrough to keep ODBC sources synced.
 
   1. From the server, create a git repo in the folder that contains the `ODBC.ini` file (in my version of Ubuntu 16.04, it&#8217;s `/etc`. You DONT need to add all files to the repo&#8230; only `ODBC.ini`. Back that up to a private repo on github, and clone it to your windows machine.
-  2. Write a `cmd` script that will automatically export the ODBC keys, [from here][2]. Make sure you are in the cloned folder, then startup a Command promt (type Windows Key and then `cmd` ). Inside there, type: `reg export HKEY_CURRENT_USER\Software\ODBC export.reg` This has exported the ODBC sources to a file called `export.reg`. Which is cool! We just need to do some gentle manipulations to get it to work on the server. [<img class="alignnone size-medium wp-image-797" src="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?resize=300%2C267" alt="" width="300" height="267" srcset="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?resize=300%2C267 300w, https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?w=513 513w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][3]
+  2. Write a `cmd` script that will automatically export the ODBC keys, [from here][2]. Make sure you are in the cloned folder, then startup a Command promt (type Windows Key and then `cmd` ). Inside there, type: `reg export HKEY_CURRENT_USER\Software\ODBC export.reg` This has exported the ODBC sources to a file called `export.reg`. Which is cool! We just need to do some gentle manipulations to get it to work on the server. [<img class="alignnone size-medium wp-image-797" src="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?resize=300%2C267" alt="" width="300" height="267" srcset="https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?resize=300%2C267 300w, https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/10/serv.png?w=513 513w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][3]
   3. In order to get this to work on the server, we need to do a few things (this is for me, in Ubuntu 16.04): 
       1. Delete the top stuff (you don&#8217;t see it in the above, but we need to export only the sources)
       2. Remove quotation marks

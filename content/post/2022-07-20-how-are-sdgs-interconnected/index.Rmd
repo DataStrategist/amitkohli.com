@@ -2,7 +2,7 @@
 title: How are SDG Indicators interconnected?
 author: Amit
 date: '2022-07-20'
-slug: []
+slug: "how-are-sdgs-interconnected"
 categories:
   - Analysis
   - Data
