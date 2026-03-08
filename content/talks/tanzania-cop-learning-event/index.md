@@ -5,7 +5,7 @@ event: MERL COP Learning Event
 host_org: MERL Community of Practice
 location: Tanzania
 topic:
-- International Development
+- Data Strategy
 audience: M&E practitioners, program staff, MERL community members
 abstract: Learning event focused on using project monitoring systems to measure impact
   through data cleaning methodologies and the LEAP (Learning, Evaluation & Analysis

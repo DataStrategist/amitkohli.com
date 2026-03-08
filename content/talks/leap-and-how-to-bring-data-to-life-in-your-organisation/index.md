@@ -5,7 +5,7 @@ event: MERL Tech London
 host_org: MERL Tech
 location: London, UK
 topic:
-- International Development
+- Data Strategy
 audience: M&E professionals, international development practitioners, data managers
 abstract: Data is so much more than just numbers for an auditor. This presentation
   demonstrates how the LEAP system transforms organizational data workflows - leveraging

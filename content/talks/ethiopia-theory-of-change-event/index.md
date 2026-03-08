@@ -5,7 +5,7 @@ event: Ethiopia Theory of Change Evaluation TOPS
 host_org: TOPS
 location: Ethiopia
 topic:
-- International Development
+- Data Strategy
 audience: M&E professionals, program managers, field staff
 abstract: Series of presentations on data collection tools, processing phases, and
   modeling efforts supporting theory of change evaluation in Ethiopia. Covers data

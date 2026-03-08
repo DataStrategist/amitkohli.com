@@ -5,7 +5,7 @@ event: LegalGeek
 host_org: LegalGeek
 location: TBD
 topic:
-- Social Care
+- Data Strategy
 audience: Legal professionals, technology innovators, policymakers
 abstract: 'Panel discussion on the role of technology in the legal sector and its
   impact on access to justice. Key themes: investment in lawtech, AI regulation, risk

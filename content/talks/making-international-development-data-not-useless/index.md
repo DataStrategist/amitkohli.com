@@ -5,7 +5,7 @@ event: EARL London
 host_org: EARL
 location: London, UK
 topic:
-- Data Strategy
+- Data Science
 audience: R developers, data scientists, international development practitioners
 abstract: International development data is often incomparable, error-prone, and incomplete
   - making interpretation frustrating and unreliable. This presentation explains the

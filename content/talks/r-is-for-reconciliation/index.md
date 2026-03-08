@@ -5,7 +5,7 @@ event: EARL London
 host_org: EARL
 location: London, UK
 topic:
-- Data Engineering
+- Data Science
 audience: R developers, data scientists, international development practitioners
 abstract: Technical case study documenting R-based optimizations to reconciliation
   efforts in post-conflict Colombia. Demonstrates how statistical programming and
