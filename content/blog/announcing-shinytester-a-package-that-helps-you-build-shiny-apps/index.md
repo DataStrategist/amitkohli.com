@@ -1,5 +1,5 @@
 ---
-title: Announcing ShinyTester ΓÇô a package that helps you build Shiny apps
+title: Announcing ShinyTester – a package that helps you build Shiny apps
 author: Amit
 type: post
 date: 2017-02-01T17:16:57+00:00
@@ -28,7 +28,7 @@ To install: `install.packages("ShinyTester")` cause yes, it's on CRAN (my firs
 
 The package consists of two functions that analyze the code itself:
 
-  * `ShinyDummyCheck()` – checks┬áhow items are created in `server.R` and then how they are called in `ui.R`┬áand runs┬ásome fairly naive checks
+  * `ShinyDummyCheck()` – checks how items are created in `server.R` and then how they are called in `ui.R` and runs some fairly naive checks
   * `ShinyHierarchy()` – to create an _ad hoc_ hirearchy of the structure of the Shiny Apps – ie – what inputs go to what reactives, what reactives go to other reactives, and what then gets pushed back out to the UI as an output.
 
 It is my hope that both of these combined minimize the intrinsic boneheadedness in us all. This is really quite beta though… please do check the Caveats! In the meantime, some examples:

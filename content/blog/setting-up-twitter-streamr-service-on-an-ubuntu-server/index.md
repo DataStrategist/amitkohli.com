@@ -14,7 +14,7 @@ tags:
   - Twitter
 
 ---
-I am working on a **super-secret** project for which I am harvesting a highly confidential source of data: twitter ≡ƒÖé The idea is to gather a small amount of twitter data, but for a long time… maybe a year. I tried to use the package [TwitteR][1], but it can only┬á grab up to a week of tweets… it's not really good for a set-it-and-forget-it ongoing capture since it requires user-based authentication, which means (I guess) that a machine canΓÇÖt authenticate for it. Tangibly this means a human needs to start the process every time. So I could run the script weekly, but of course there's days you miss, or run at different times… plus it's just plain annoying…
+I am working on a **super-secret** project for which I am harvesting a highly confidential source of data: twitter ≡ƒÖé The idea is to gather a small amount of twitter data, but for a long time… maybe a year. I tried to use the package [TwitteR][1], but it can only  grab up to a week of tweets… it's not really good for a set-it-and-forget-it ongoing capture since it requires user-based authentication, which means (I guess) that a machine can’t authenticate for it. Tangibly this means a human needs to start the process every time. So I could run the script weekly, but of course there's days you miss, or run at different times… plus it's just plain annoying…
 
 <blockquote class="twitter-tweet" data-lang="en">
   <p dir="ltr" lang="en">
@@ -22,7 +22,7 @@ I am working on a **super-secret** project for which I am harvesting a highly co
   </p>
   
   <p>
-    ΓÇö amit (@VizMonkey) <a href="https://twitter.com/VizMonkey/status/895191870208434177?ref_src=twsrc%5Etfw">August 9, 2017</a>
+    — amit (@VizMonkey) <a href="https://twitter.com/VizMonkey/status/895191870208434177?ref_src=twsrc%5Etfw">August 9, 2017</a>
   </p>
 </blockquote>
 

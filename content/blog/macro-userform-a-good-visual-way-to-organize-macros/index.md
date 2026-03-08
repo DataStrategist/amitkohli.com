@@ -1,5 +1,5 @@
 ---
-title: Macro userform ΓÇô a good visual way to organize macros
+title: Macro userform – a good visual way to organize macros
 author: Amit
 type: post
 date: 2013-02-07T16:22:10+00:00

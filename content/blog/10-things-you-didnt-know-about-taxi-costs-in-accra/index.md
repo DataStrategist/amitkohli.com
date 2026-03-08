@@ -1,5 +1,5 @@
 ---
-title: 10 things you didnΓÇÖt know about taxi costs in Accra
+title: 10 things you didn’t know about taxi costs in Accra
 author: Laure Belotti
 type: post
 date: 2015-11-16T16:46:47+00:00

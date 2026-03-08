@@ -19,7 +19,7 @@ tags:
   - Target
 
 ---
-So Key Performance Indicators (KPIs) are all the rage in the dashboarding community…┬áwell [So Key Performance Indicators (KPIs) are all the rage in the dashboarding community…┬áwell][1] really. The premise is simple… check a list of measurements against targets and show how they compare using some kind of visualization. I haven't yet seen, however, a version that can utilize animated icons to display indicators that REALLY need attention. So here you go, a tutorial on how to make your very own animated icon KPI, using the googleVis library.
+So Key Performance Indicators (KPIs) are all the rage in the dashboarding community… well [So Key Performance Indicators (KPIs) are all the rage in the dashboarding community… well][1] really. The premise is simple… check a list of measurements against targets and show how they compare using some kind of visualization. I haven't yet seen, however, a version that can utilize animated icons to display indicators that REALLY need attention. So here you go, a tutorial on how to make your very own animated icon KPI, using the googleVis library.
 
 Suppose we have a dataset that looks like this (make sure to set your working directory):
 

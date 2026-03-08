@@ -1,5 +1,5 @@
 ---
-title: IΓÇÖm proudly featured on r-bloggers!
+title: I’m proudly featured on r-bloggers!
 author: Amit
 type: post
 date: 2016-02-05T00:10:08+00:00

@@ -1,5 +1,5 @@
 ---
-title: Sentiment analysis on my girlfriendΓÇÖs text messages
+title: Sentiment analysis on my girlfriend’s text messages
 author: Amit
 type: post
 date: 2015-09-11T13:22:14+00:00
