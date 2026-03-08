@@ -247,6 +247,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 0;
+  pointer-events: none; /* Prevent image from capturing clicks */
 }
 .talk-card h3 {
   font-size: 1.1rem;
@@ -512,6 +513,18 @@
 /* --- Talk card clickable --- */
 .talk-card-clickable {
   cursor: pointer;
+}
+
+/* Prevent medium-zoom from being applied to talk card images */
+.talk-card-thumb,
+.talk-modal-img {
+  cursor: pointer !important;
+}
+
+/* Ensure images in talk cards don't trigger medium-zoom */
+.talk-card img,
+.talk-modal-box img {
+  cursor: pointer !important;
 }
 
 /* --- Talk modal overlay --- */
