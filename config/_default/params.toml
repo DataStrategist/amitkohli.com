@@ -7,6 +7,7 @@ autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true
+enableStructuredBreadcrumbs = true
 
 [homepage]
   layout = "custom"
