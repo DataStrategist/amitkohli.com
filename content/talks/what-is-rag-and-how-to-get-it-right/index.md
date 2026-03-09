@@ -11,7 +11,7 @@ abstract: In this quickfire session, we explore several of the reasons why Retri
   Augmented Generation projects technically work, but yield "results of variable quality".
   This playful presentation will give you tangible things to do in order to bring
   immediate success to build up our confidence and professional curiosity.
-deck_url: https://www.amitkohli.com/decks/what%20is%20rag%20and%20how%20to%20get%20it%20right/#/
+deck_url: https://www.amitkohli.com/decks/what-is-rag/#/
 status: delivered
 featured: false
 image: /decks/what-is-rag/Files/attachments/image-37.png
