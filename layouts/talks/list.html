@@ -74,7 +74,7 @@
         role="button">
         <div class="talk-card-visual">
           {{ if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb" data-zoomable="false">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb nozoom">
           {{ else }}
             {{ partial "talk-icon.html" .Params.topic }}
           {{ end }}
@@ -134,7 +134,7 @@
         x-transition>
         <div class="talk-card-visual">
           {{ if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb" data-zoomable="false">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="talk-card-thumb nozoom">
           {{ else }}
             {{ partial "talk-icon.html" .Params.topic }}
           {{ end }}
@@ -168,9 +168,9 @@
     <div class="talk-modal-box" @click.stop>
       <button class="talk-modal-close" @click="modal = null" aria-label="Close">&times;</button>
       <template x-if="modal">
-        <div>
+        <div class="talk-modal-content">
           <template x-if="modal.image">
-            <img :src="modal.image" :alt="modal.title" class="talk-modal-img" data-zoomable="false">
+            <img :src="modal.image" :alt="modal.title" class="talk-modal-img nozoom">
           </template>
           <h2 x-text="modal.title" class="talk-modal-title"></h2>
           <div class="talk-meta talk-modal-meta">

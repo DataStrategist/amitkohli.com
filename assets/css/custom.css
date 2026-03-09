@@ -515,16 +515,15 @@
   cursor: pointer;
 }
 
-/* Prevent medium-zoom from being applied to talk card images */
-.talk-card-thumb,
-.talk-modal-img {
-  cursor: pointer !important;
+/* Ensure talk card images don't interfere with click events */
+.talk-card-thumb.nozoom {
+  pointer-events: none;
+  cursor: default;
 }
 
-/* Ensure images in talk cards don't trigger medium-zoom */
-.talk-card img,
-.talk-modal-box img {
-  cursor: pointer !important;
+/* Ensure modal images don't have zoom cursor */
+.talk-modal-img.nozoom {
+  cursor: default !important;
 }
 
 /* --- Talk modal overlay --- */
@@ -541,7 +540,8 @@
 }
 .talk-modal-box {
   position: relative;
-  background: var(--color-neutral-50, #fff);
+  background-color: #ffffff !important;
+  background: #ffffff !important;
   border-radius: 0.75rem;
   padding: 1.5rem;
   max-width: 560px;
@@ -549,10 +549,17 @@
   max-height: 85vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  opacity: 1 !important;
 }
 .dark .talk-modal-box {
-  background: rgb(var(--color-neutral-800, 30 30 30));
-  color: rgb(var(--color-neutral-100, 240 240 240));
+  background-color: #1e1e1e !important;
+  background: #1e1e1e !important;
+  color: #f0f0f0;
+}
+.talk-modal-content {
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 .talk-modal-close {
   position: absolute;
