@@ -1,4 +1,4 @@
 ---
 title: "Amit Kohli"
-description: "Head of Data. Knowledge graph builder. Talks about what actually works."
+description: "Systems thinker who ended up in data. Mostly working out why organisations can't answer their own questions."
 ---

@@ -11,6 +11,6 @@ abstract: Knowledge Graphs provide a graphical simplification of a specific topi
   solve was creating a knowledge graph out of any corpus - feeding in a PDF and having
   a knowledge graph pop out.
 recording_url: https://videos.ctfassets.net/k26sw1bgepr3/4ZVDyQlDzkMjeOKOXDtZ7l/718e65919b952f56f2b2ce8f63cae533/EARL2022-Stream_3_Amit_Kohli.mp4
-featured: false
+featured: true
 image: /img/new/knowledge_graph.png
 ---

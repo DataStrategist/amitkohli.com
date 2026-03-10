@@ -14,6 +14,6 @@ abstract: Technical case study documenting R-based optimizations to reconciliati
 deck_url: https://earlconf.com/assets/slides/Thurs%2012%20Sept/Session%201/Amit%20Kohli.pptx
 recording_url: https://www.youtube.com/watch?v=j2Vr26vIbnY
 status: delivered
-featured: false
+featured: true
 image: /img/new/earl2019.jpg
 ---

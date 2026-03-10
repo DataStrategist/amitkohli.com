@@ -9,6 +9,10 @@ description: Get in touch.
 - Conference talks and keynotes
 - Advisory and strategy work
 
+<h3>Who I speak to</h3>
+
+Technical teams wanting production AI reality-checks. Senior managers needing data strategy framed without jargon. Practitioners working in public sector, charities, or international development.
+
 </div>
 
 <div class="available-for available-for-past">

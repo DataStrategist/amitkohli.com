@@ -12,6 +12,6 @@ abstract: >
   is reshaping access to social care information using R, Python, OpenAI's batch mode,
   and smart ETL strategies to drive change at scale.
 deck_url: https://www.amitkohli.com/decks/earl2025/#/
-featured: false
+featured: true
 image: /decks/earl2025/Files/attachments/image-67.png
 ---
