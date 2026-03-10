@@ -1,6 +1,8 @@
 ﻿{{/*
   extend-head-uncached.html
   Called with full page context (not cached), so .RelPermalink and .Section are available.
+  NOTE: All dynamic string values use `jsonify | safeHTML` to prevent Hugo's template
+  engine from double-escaping the JSON quotes inside <script> blocks.
 */}}
 
 {{/*  GAP 1: Event schema for each talk page  */}}
@@ -9,20 +11,20 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": {{ .Title | jsonify }},
-  {{ with .Params.abstract }}"description": {{ . | jsonify }},{{ end }}
+  "name": {{ .Title | jsonify | safeHTML }},
+  {{ with .Params.abstract }}"description": {{ . | jsonify | safeHTML }},{{ end }}
   "startDate": "{{ .Date.Format "2006-01-02" }}",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/{{ if or (not .Params.location) (eq .Params.location "Virtual") }}OnlineEventAttendanceMode{{ else }}OfflineEventAttendanceMode{{ end }}",
-  "location": {{ if or (not .Params.location) (eq .Params.location "Virtual") }}{ "@type": "VirtualLocation" }{{ else }}{ "@type": "Place", "name": {{ .Params.location | jsonify }} }{{ end }},
-  {{ with .Params.host_org }}"organizer": { "@type": "Organization", "name": {{ . | jsonify }} },{{ end }}
+  "location": {{ if or (not .Params.location) (eq .Params.location "Virtual") }}{ "@type": "VirtualLocation" }{{ else }}{ "@type": "Place", "name": {{ .Params.location | jsonify | safeHTML }} }{{ end }},
+  {{ with .Params.host_org }}"organizer": { "@type": "Organization", "name": {{ . | jsonify | safeHTML }} },{{ end }}
   "performer": {
     "@type": "Person",
     "@id": "https://www.amitkohli.com/about/",
     "name": "Amit Kohli"
   },
   "url": "{{ .Permalink }}"{{ with .Params.recording_url }},
-  "subjectOf": { "@type": "VideoObject", "name": {{ $.Title | jsonify }}, "url": {{ . | jsonify }} }{{ end }}
+  "subjectOf": { "@type": "VideoObject", "name": {{ $.Title | jsonify | safeHTML }}, "url": {{ . | jsonify | safeHTML }} }{{ end }}
 }
 </script>
 {{ end }}
