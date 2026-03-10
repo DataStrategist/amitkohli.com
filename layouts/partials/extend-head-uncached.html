@@ -1,3 +1,33 @@
+﻿{{/*
+  extend-head-uncached.html
+  Called with full page context (not cached), so .RelPermalink and .Section are available.
+*/}}
+
+{{/*  GAP 1: Event schema for each talk page  */}}
+{{ if eq .Section "talks" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ .Title | jsonify }},
+  {{ with .Params.abstract }}"description": {{ . | jsonify }},{{ end }}
+  "startDate": "{{ .Date.Format "2006-01-02" }}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/{{ if or (not .Params.location) (eq .Params.location "Virtual") }}OnlineEventAttendanceMode{{ else }}OfflineEventAttendanceMode{{ end }}",
+  "location": {{ if or (not .Params.location) (eq .Params.location "Virtual") }}{ "@type": "VirtualLocation" }{{ else }}{ "@type": "Place", "name": {{ .Params.location | jsonify }} }{{ end }},
+  {{ with .Params.host_org }}"organizer": { "@type": "Organization", "name": {{ . | jsonify }} },{{ end }}
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.amitkohli.com/about/",
+    "name": "Amit Kohli"
+  },
+  "url": "{{ .Permalink }}"{{ with .Params.recording_url }},
+  "subjectOf": { "@type": "VideoObject", "name": {{ $.Title | jsonify }}, "url": {{ . | jsonify }} }{{ end }}
+}
+</script>
+{{ end }}
+
+{{/*  GAP 2 + 3: Enriched Person schema on /about/  */}}
 {{ if eq .RelPermalink "/about/" }}
 <script type="application/ld+json">
 {
@@ -12,24 +42,34 @@
     "https://github.com/datastrategist",
     "https://www.amitkohli.com"
   ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Access Social Care",
+    "url": "https://www.accesscharity.org.uk/"
+  },
+  "memberOf": [
+    { "@type": "Organization", "@id": "http://www.wikidata.org/entity/Q82664",  "name": "International Telecommunication Union" },
+    { "@type": "Organization", "@id": "http://www.wikidata.org/entity/Q208720", "name": "Office of the United Nations High Commissioner for Human Rights" },
+    { "@type": "Organization", "@id": "http://www.wikidata.org/entity/Q746886", "name": "Ministry of Justice" },
+    { "@type": "Organization", "name": "ACDI/VOCA" },
+    { "@type": "Organization", "@id": "http://www.wikidata.org/entity/Q82659",  "name": "Food and Agriculture Organization of the United Nations" }
+  ],
   "knowsAbout": [
-    "AI",
-    "Machine Learning",
-    "LLM",
-    "RAG",
-    "NLP",
-    "AI Agents",
-    "Deep Learning",
-    "Data and AI",
-    "Computer Vision",
-    "AI Fairness",
-    "Data Science",
-    "Data Pipeline",
-    "ETL",
-    "Statistical Analysis",
-    "Dataviz",
-    "Automation",
-    "Data Processing"
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q11660",    "name": "Artificial Intelligence" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q2539",     "name": "Machine Learning" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q108979953","name": "Large Language Models" },
+    { "@type": "Thing",                                                     "name": "Retrieval Augmented Generation" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q30642",    "name": "Natural Language Processing" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q106853799","name": "AI Agents" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q197536",   "name": "Deep Learning" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q155023",   "name": "Computer Vision" },
+    { "@type": "Thing",                                                     "name": "AI Fairness" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q2374463",  "name": "Data Science" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q1195564",  "name": "Extract, Transform, Load" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q2088413",  "name": "Statistical Analysis" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q6504722",  "name": "Data Visualization" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q1448872",  "name": "Automation" },
+    { "@type": "Thing", "@id": "http://www.wikidata.org/entity/Q33002955", "name": "Knowledge Graphs" }
   ]
 }
 </script>
