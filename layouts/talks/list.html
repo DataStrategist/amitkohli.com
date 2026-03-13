@@ -111,7 +111,7 @@
   {{ $uniqueTopics := $allTopics | uniq | sort }}
 
   <section>
-    <h2>All talks</h2>
+    <h2 class="all-talks-heading">All talks</h2>
     <div class="topic-filters">
       <button class="filter-btn" :class="{ 'active': filter === 'all' }" @click="filter = 'all'">All</button>
       {{ range $uniqueTopics }}
@@ -121,7 +121,7 @@
       {{ end }}
     </div>
 
-    <div class="talks-grid">
+    <div class="talks-grid talks-grid-compact">
       {{ range .Pages.ByDate.Reverse }}
       {{ $td := dict "title" .Title "event" (.Params.event | default "") "date" (dateFormat "Jan 2006" .Date) "location" (.Params.location | default "") "abstract" (.Params.abstract | default "") "recording_url" (.Params.recording_url | default "") "deck_url" (.Params.deck_url | default "") "event_url" (.Params.event_url | default "") "url" .RelPermalink "image" (.Params.image | default "") }}
       <div class="talk-card talk-card-clickable"

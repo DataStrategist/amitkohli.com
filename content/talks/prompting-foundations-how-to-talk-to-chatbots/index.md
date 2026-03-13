@@ -12,6 +12,7 @@ abstract: Foundational skills for effective AI chatbot interaction. Covers promp
   common pitfalls to avoid, and practical techniques for using AI assistants in charity
   work. Essential skills for anyone working with generative AI.
 deck_url: https://amitkohli.com/decks/aisummit2026
+image: https://amitkohli.com/decks/aisummit2026/#/10/4
 status: delivered
 featured: false
 tags:
