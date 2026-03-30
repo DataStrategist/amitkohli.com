@@ -15,7 +15,7 @@
     }
   }
   </script>
-{{ else }}
+{{ else if .Title }}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <script type="application/ld+json">
   [{
@@ -51,18 +51,22 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {{- $position := 0 -}}
+      {{- $first := true -}}
       {{- range .Ancestors -}}
-        {{- if not .IsHome -}}
+        {{- if and (not .IsHome) .Title -}}
           {{- $position = add $position 1 -}}
+          {{- if not $first }},{{ end -}}
+          {{- $first = false -}}
           {
             "@type": "ListItem",
             "position": {{ $position }},
             "name": "{{ .Title }}",
             "item": {{ .Permalink }}
-          },
+          }
         {{- end -}}
       {{- end -}}
       {{- $position = add $position 1 -}}
+      {{- if not $first }},{{ end }}
       {
         "@type": "ListItem",
         "position": {{ $position }},

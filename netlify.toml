@@ -48,6 +48,11 @@ to = "/decks/gpir/:splat"
 status = 301
 
 [[redirects]]
+from = "/consulting/What%20is%20RAG%20and%20how%20to%20get%20it%20right/*"
+to = "/decks/what-is-rag/:splat"
+status = 301
+
+[[redirects]]
 from = "/consulting/What is RAG and how to get it right/*"
 to = "/decks/what-is-rag/:splat"
 status = 301
