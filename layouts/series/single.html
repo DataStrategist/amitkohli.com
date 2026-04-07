@@ -35,5 +35,29 @@
   </div>
 
   {{ .Content }}
+
+  {{/* Prev/Next episode navigation */}}
+  {{ $prev := where .CurrentSection.Pages "Params.number" (sub .Params.number 1) }}
+  {{ $next := where .CurrentSection.Pages "Params.number" (add .Params.number 1) }}
+  {{ if or $prev $next }}
+  <nav style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; gap: 1rem;">
+    <div>
+      {{ with index $prev 0 }}
+      <a href="{{ .Permalink }}" style="display: flex; flex-direction: column; text-decoration: none; color: inherit;">
+        <span style="font-size: 0.75rem; color: #6b7280; margin-bottom: 0.25rem;">← Previous</span>
+        <span style="font-size: 0.9rem; font-weight: 600;">#{{ .Params.number }} {{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+    <div style="text-align: right;">
+      {{ with index $next 0 }}
+      <a href="{{ .Permalink }}" style="display: flex; flex-direction: column; align-items: flex-end; text-decoration: none; color: inherit;">
+        <span style="font-size: 0.75rem; color: #6b7280; margin-bottom: 0.25rem;">Next →</span>
+        <span style="font-size: 0.9rem; font-weight: 600;">#{{ .Params.number }} {{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </nav>
+  {{ end }}
 </article>
 {{ end }}
