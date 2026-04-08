@@ -811,11 +811,9 @@
   margin: 1.5rem 0 2rem;
 }
 .kg-callout-icon {
-  font-size: 1.75rem;
-  line-height: 1;
-  opacity: 0.6;
+  color: rgba(var(--color-neutral-500), 0.5);
   flex-shrink: 0;
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
 }
 .kg-callout strong {
   display: block;
@@ -836,4 +834,26 @@
 }
 .kg-callout-link:hover {
   text-decoration: underline;
+}
+
+/* --- LinkedIn Post Body (series episode pages) --- */
+.li-post-section {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid rgba(var(--color-primary-500), 0.3);
+  background: rgba(var(--color-neutral-500), 0.04);
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+.li-post-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  margin: 0 0 0.75rem;
+}
+.li-post-section p {
+  margin-bottom: 0.75rem;
+}
+.li-post-section p:last-child {
+  margin-bottom: 0;
 }

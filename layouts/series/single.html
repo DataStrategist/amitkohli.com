@@ -11,7 +11,7 @@
 
   <h1 class="mt-0 text-4xl font-extrabold">{{ .Title }}</h1>
 
-  {{ with .Params.date }}
+  {{ with .Params.published_date }}
   <div class="talk-meta" style="margin-bottom: 1rem;">{{ dateFormat "2 January 2006" . }}</div>
   {{ end }}
 
@@ -34,7 +34,12 @@
     {{ with .Params.linkedin_url }}<a href="{{ . }}">View LinkedIn post</a>{{ end }}
   </div>
 
-  {{ .Content }}
+  {{ if .Content }}
+  <div class="li-post-section">
+    <p class="li-post-label">What I wrote about it</p>
+    {{ .Content }}
+  </div>
+  {{ end }}
 
   {{/* Prev/Next episode navigation */}}
   {{ $prev := where .CurrentSection.Pages "Params.number" (sub .Params.number 1) }}
