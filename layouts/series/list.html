@@ -38,23 +38,28 @@
     </div>
   </div>
 
+  {{/* ---- Knowledge Graph Callout ---- */}}
+  <div class="kg-callout">
+    <div class="kg-callout-icon">&#9652;</div>
+    <div>
+      <strong>Explore the series knowledge graph</strong>
+      <p>Every concept, topic, and connection across all episodes - mapped as a live graph.</p>
+      <a href="https://data-in-real-world-graph.netlify.app" target="_blank" rel="noopener" class="kg-callout-link">Open knowledge graph &rarr;</a>
+    </div>
+  </div>
+
   {{/* ---- Episodes ---- */}}
   <h2>Episodes</h2>
-  <div class="talks-grid">
+  <div class="episode-grid">
     {{ range .Pages.ByParam "number" }}
-    <a href="{{ .RelPermalink }}" class="talk-card">
-      <div>
-        <span class="talk-meta">#{{ .Params.number }}</span>
+    {{ $trackLower := lower .Params.track }}
+    <a href="{{ .RelPermalink }}" class="episode-tile track-{{ $trackLower }}">
+      <div class="episode-tile-header">
+        <span class="episode-number">#{{ .Params.number }}</span>
+        <span class="episode-track-label">Track {{ .Params.track }}</span>
       </div>
-      <h3 style="margin-top: 0.5rem;">{{ .Title }}</h3>
-      <div class="talk-topics">
-        {{ with .Params.track }}<span class="track-badge track-{{ lower . }}">Track {{ . }}</span>{{ end }}
-        {{ with .Params.topic }}<span class="topic-tag">{{ . }}</span>{{ end }}
-      </div>
-      <div class="talk-icons">
-        {{ with .Params.youtube_url }}&#9654; YouTube {{ end }}
-        {{ with .Params.linkedin_url }}&#128279; LinkedIn{{ end }}
-      </div>
+      <div class="episode-tile-title">{{ .Title }}</div>
+      {{ with .Params.topic }}<span class="episode-topic-tag">{{ . }}</span>{{ end }}
     </a>
     {{ end }}
   </div>
