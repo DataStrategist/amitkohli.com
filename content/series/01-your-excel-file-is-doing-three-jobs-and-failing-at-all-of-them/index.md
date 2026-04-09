@@ -10,3 +10,6 @@ youtube_url: https://www.youtube.com/watch?v=tPpkFi57sqY
 abstract: Your Excel file isn't a spreadsheet anymore - it's an undocumented production
   system doing three jobs and failing at all of them.
 ---
+
+Every organisation has a file that quietly became a production system without anyone acknowledging it. The problem isn't Excel. It's that the system has undeclared architecture - and that means it will fail in ways nobody can debug. This video names what's actually happening, which turns out to be a prerequisite for fixing it.
+

@@ -12,9 +12,5 @@ abstract: '**Data in the Real World [4/52]**
   "Every dataset is an argument you didn''t write down"'
 ---
 
-Last week: ground-level data structure problems (why you can't answer next year's questions). This week: what happens when AI learns concepts not mapped by your dataset.
-
-Every dataset is an argument you didn't write down. What you measure, how you categorise, what gets reconciled - these aren't neutral technical choices. They're political decisions about what matters.
-
-AI trained on your data inherits those arguments.
+An M&E framework built in stable democracies quietly encodes what "functioning governance" looks like. Train AI on it and apply it to fragile states - and you'll confidently defund programs that are working. Your dataset isn't neutral. It's an argument about what success means in a particular context, and this video shows what happens when that argument travels somewhere it doesn't fit.
 

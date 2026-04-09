@@ -9,13 +9,5 @@ published_date: 2026-02-19
 abstract: "The moment you ask 'who decides what your data means,' you're not doing technical work anymore. You're doing governance. Ontology is the formal version of deciding what reality looks like in your data systems."
 ---
 
-Last week: why flat classification fails. This week: the discipline that fixes it.
-
-Is "customer" the same thing as "client"?
-Is Excel a subtype of Spreadsheet?
-Is Data governance an outcome - or a capability that produces outcomes?
-
-Someone has to decide. And write it down.
-
-The moment you ask "who decides," you're not doing technical work. You're doing governance.
+Someone in your organisation has already decided whether "customer" and "client" are the same thing. They just didn't write it down - and now two systems use the same word to mean different things. This video is about the moment a definitional question stops being a technical nit-pick and becomes a governance decision that needs an owner.
 
