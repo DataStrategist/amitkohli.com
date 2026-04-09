@@ -25,20 +25,13 @@
 
   {{ with .Params.topic }}<div class="talk-topics" style="margin: 1rem 0;"><span class="topic-tag">{{ . }}</span></div>{{ end }}
 
-  {{ with .Params.abstract }}
-  <p>{{ . }}</p>
-  {{ end }}
-
   <div class="video-links" style="margin: 1.5rem 0;">
     {{ with .Params.youtube_url }}<a href="{{ . }}">Watch on YouTube</a>{{ end }}
     {{ with .Params.linkedin_url }}<a href="{{ . }}">View LinkedIn post</a>{{ end }}
   </div>
 
   {{ if .Content }}
-  <div class="li-post-section">
-    <p class="li-post-label">What I wrote about it</p>
-    {{ .Content }}
-  </div>
+  {{ .Content }}
   {{ end }}
 
   {{/* Prev/Next episode navigation */}}
