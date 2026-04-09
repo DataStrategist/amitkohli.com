@@ -18,8 +18,12 @@ Earlier in my career I worked on **[AQUASTAT](https://www.fao.org/aquastat)**, F
 
 Before data, I spent five years as an **environmental engineer** - which is where I learned to care about whether models actually reflect reality.
 
-When I'm not working I'm either spending time with my lovely family, teaching myself (currently learning multi-agent systems), milling things on a CNC machine, playing video games, or trying to find someone to throw a frisbee at. Most of my open-source work is on [GitHub](https://github.com/datastrategist).
+When I'm not working I'm either spending time with my lovely family, teaching myself stuff, milling things on a CNC machine, playing video games, or trying to find someone to throw a frisbee at. Take a look at what I'm doing [now](https://www.amitkohli.com/now). 
+
+## Elsewhere
+Here's my [professional profile](https://www.linkedin.com/in/akohli).
+Most of my open-source work is on [GitHub](https://github.com/datastrategist).
 
 ## About this site
 
-Built with [Hugo](https://gohugo.io) and the [Blowfish](https://blowfish.page) theme. Hosted on [Netlify](https://www.netlify.com). Content synced from an [Obsidian](https://obsidian.md) vault via a custom export pipeline.
+Built with [Hugo](https://gohugo.io) and the [Blowfish](https://blowfish.page) theme. Hosted on [Netlify](https://www.netlify.com). Content synced from an [Obsidian](https://obsidian.md) vault via a custom export pipeline. AI has been used carefully in the creation of this website.
