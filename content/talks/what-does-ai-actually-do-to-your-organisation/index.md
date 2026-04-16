@@ -12,5 +12,6 @@ abstract: >
   the human and organisational conditions needed for AI to add value, the real
   catastrophic risks that sit outside their control, and what to actually do next.
 featured: true
+image: 2x2.png
 status: upcoming
 ---
