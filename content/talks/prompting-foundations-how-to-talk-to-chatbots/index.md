@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Prompting Foundations: how to talk to chatbots'
 date: '2026-03-12'
 event: Charity Digital AI Summit 2026
@@ -14,8 +14,9 @@ abstract: Foundational skills for effective AI chatbot interaction. Covers promp
 deck_url: https://amitkohli.com/decks/aisummit2026
 image: https://www.amitkohli.com/decks/aisummit2026/Files/attachments/image-141.png
 status: delivered
-featured: false
+featured: true
 tags:
 - talk
 - level: beginner
 ---
+
