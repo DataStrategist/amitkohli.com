@@ -1,5 +1,5 @@
 ---
-title: Before you build another AI agent, do this
+title: Before you build another AI agent, write a quality charter
 number: 16
 track: C
 date: '2026-04-23'
