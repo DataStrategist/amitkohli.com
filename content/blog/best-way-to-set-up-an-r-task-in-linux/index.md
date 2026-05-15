@@ -19,7 +19,7 @@ Steps:
  2. commit it and push it up to github
  3. clone the repo into the server
 
-``` {bash}
+```bash
 git clone YOURREPONAME
 ```
  4. Test that the code works on the server! You might need to install new packages, so do that
