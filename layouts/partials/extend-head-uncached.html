@@ -28,7 +28,7 @@
     "@type": "VideoObject",
     "name": {{ $.Title | jsonify | safeJS }},
     "url": {{ . | jsonify | safeJS }},
-    "uploadDate": {{ $.Date.Format "2006-01-02" | jsonify | safeJS }}{{ with $.Params.abstract }},
+    "uploadDate": {{ $.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }}{{ with $.Params.abstract }},
     "description": {{ . | jsonify | safeJS }}{{ end }}{{ with $.Params.image }},
     "thumbnailUrl": {{ . | absURL | jsonify | safeJS }}{{ end }},
     {{ if strings.Contains . "youtu" }}"embedUrl": {{ . | replaceRE `.*youtu\.be/([^?&#]+).*` `https://www.youtube.com/embed/$1` | replaceRE `.*youtube\.com/watch\?v=([^&#]+).*` `https://www.youtube.com/embed/$1` | jsonify | safeJS }}{{ else }}"contentUrl": {{ . | jsonify | safeJS }}{{ end }}
