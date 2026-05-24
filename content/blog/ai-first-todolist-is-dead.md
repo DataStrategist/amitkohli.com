@@ -12,7 +12,7 @@ topics:
   - AI Coding Assistants
   - Developer Experience
   - Workflow
-draft: yes
+draft: true
 type: "[[Article]]"
 topic: "[[AI Workflow]]"
 ---
