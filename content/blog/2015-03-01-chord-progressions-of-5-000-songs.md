@@ -1,7 +1,6 @@
 ---
 title: "Chord progressions of 5000 songs!"
 author: Amit
-type: "[[Note]]"
 date: '2015-03-01'
 url: /chord-progressions-of-5-000-songs/
 tags:
@@ -16,7 +15,6 @@ topics:
   - Progressions
   - Sankey
   - Western music
-topic: "[[Big Data Analysis]]"
 ---
 Update: Full analysis and everything you need at my github <https://github.com/datastrategist/Musical-chord-progressions>
 
