@@ -1,7 +1,6 @@
 ---
 title: "Make dashboard Tiles/Notecards in R"
 author: Amit
-type: "[[Note]]"
 date: 2016-02-25T19:47:39+00:00
 url: /make-dashboard-tilesnotecards-in-r/
 switch_like_status:
@@ -15,7 +14,6 @@ topics:
   - Dashboard
   - html
   - Tile
-topic: "[[Data Visualization]]"
 ---
 # Update!!
 

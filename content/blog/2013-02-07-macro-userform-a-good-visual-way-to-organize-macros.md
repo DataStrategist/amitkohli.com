@@ -1,7 +1,6 @@
 ---
 title: Macro userform – a good visual way to organise macros
 author: Amit
-type: "[[Note]]"
 date: 2013-02-07T16:22:10+00:00
 url: /macro-userform-a-good-visual-way-to-organise-macros/
 tags:

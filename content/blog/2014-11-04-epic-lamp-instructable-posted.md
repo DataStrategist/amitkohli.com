@@ -1,7 +1,6 @@
 ---
 title: Epic lamp instructable posted
 author: Amit
-type: "[[Note]]"
 date: 2014-11-04T21:17:31+00:00
 url: /epic-lamp-instructable-posted/
 tags:

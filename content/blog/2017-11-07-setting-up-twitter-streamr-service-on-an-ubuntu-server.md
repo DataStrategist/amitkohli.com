@@ -1,7 +1,6 @@
 ---
 title: Setting up twitter streamR Service on an Ubuntu server
 author: Amit
-type: "[[Note]]"
 date: 2017-11-07T15:56:06+00:00
 url: /setting-up-twitter-streamr-service-on-an-ubuntu-server/
 tags:
@@ -12,7 +11,6 @@ topics:
   - Server
   - Service
   - Twitter
-topic: "[[System Administration]]"
 ---
 I am working on a **super-secret** project for which I am harvesting a highly confidential source of data: twitter 🙂 The idea is to gather a small amount of twitter data, but for a long time... maybe a year. I tried to use the package [TwitteR][1], but it can only  grab up to a week of tweets... it's not really good for a set-it-and-forget-it ongoing capture since it requires user-based authentication, which means (I guess) that a machine can’t authenticate for it. Tangibly this means a human needs to start the process every time. So I could run the script weekly, but of course there's days you miss, or run at different times... plus it's just plain annoying...
 

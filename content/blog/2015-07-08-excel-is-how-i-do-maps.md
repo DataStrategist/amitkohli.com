@@ -1,7 +1,6 @@
 ---
 title: "Excel is how I do maps…"
 author: Amit
-type: "[[Note]]"
 date: 2015-07-08T15:15:55+00:00
 url: /excel-is-how-i-do-maps/
 tags:

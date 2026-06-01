@@ -1,19 +1,16 @@
 ---
-title: The [[Reddit]] effect…
+title: The Reddit effect…
 author: Amit
-type: "[[Note]]"
 date: 2015-05-01T19:32:56+00:00
-url: /the-[[Reddit]]-effect/
+url: /the-Reddit-effect/
 tags:
   - Data
   - R
-  - [[visualization]]
   - Analysis
 topics:
   - Hug of death
   - Log
   - Parsing
-  - [[Reddit]]
 ---
 So I had a happy little blog... no one really paid attention, but I didn't much care because I was happy.
 

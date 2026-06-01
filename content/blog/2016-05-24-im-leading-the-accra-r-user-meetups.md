@@ -1,7 +1,6 @@
 ---
 title: I’m leading the Accra R-User Meetups!
 author: Amit
-type: "[[Note]]"
 date: 2016-05-24T20:06:27+00:00
 url: /im-leading-the-accra-r-user-meetups/
 tags:

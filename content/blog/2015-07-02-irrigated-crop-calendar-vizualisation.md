@@ -1,7 +1,6 @@
 ---
 title: "Irrigated Crop Calendar Vizualisation"
 author: Amit
-type: "[[Note]]"
 date: 2015-07-02T09:37:04+00:00
 url: /irrigated-crop-calendar-vizualisation/
 switch_like_status:
@@ -13,8 +12,6 @@ topics:
   - Crop Calendar
   - Crops
   - Irrigated Crop Calendar
-  - [[irrigation]]
-  - [[visualization]]
 ---
 
 [[Visualization]]s made for [[FAO]] [[AQUASTAT]]:

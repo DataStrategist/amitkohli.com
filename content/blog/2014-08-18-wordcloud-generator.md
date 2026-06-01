@@ -1,7 +1,6 @@
 ---
 title: Wordcloud generator
 author: Amit
-type: "[[Note]]"
 date: 2014-08-18T21:23:34+00:00
 url: /wordcloud-generator/
 tags:
@@ -9,7 +8,6 @@ tags:
 topics:
   - R
   - Shiny
-  - [[Shinyapps]]
   - Wordcloud
 ---
 ![](/post/2014-08-18-wordcloud-generator_files/Rploteng.png)

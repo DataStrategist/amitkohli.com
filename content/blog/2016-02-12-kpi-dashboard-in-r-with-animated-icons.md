@@ -1,7 +1,6 @@
 ---
 title: KPI dashboard in R with animated icons
 author: Amit
-type: "[[Note]]"
 date: 2016-02-12T10:08:04+00:00
 url: /kpi-dashboard-in-r-with-animated-icons/
 tags:
@@ -17,7 +16,6 @@ topics:
   - Measure
   - Table
   - Target
-topic: "[[KPI Dashboarding]]"
 ---
 So Key Performance Indicators (KPIs) are all the rage in the dashboarding community... well [So Key Performance Indicators (KPIs) are all the rage in the dashboarding community... well][1] really. The premise is simple... check a list of measurements against targets and show how they compare using some kind of [[Visualization]]. I haven't yet seen, however, a version that can utilize animated icons to display indicators that REALLY need attention. So here you go, a tutorial on how to make your very own animated icon KPI, using the googleVis library.
 

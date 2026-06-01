@@ -1,7 +1,6 @@
 ---
 title: How to move ODBC DSN information from one computer to another
 author: Amit
-type: "[[Note]]"
 date: 2015-10-29T19:02:49+00:00
 url: /how-to-move-odbc-dsn-information-from-one-computer-to-another/
 switch_like_status:

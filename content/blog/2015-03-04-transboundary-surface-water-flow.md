@@ -1,7 +1,6 @@
 ---
 title: "Transboundary surface water flow"
 author: Amit
-type: "[[Note]]"
 date: 2015-03-04T19:05:38+00:00
 url: /transboundary-surface-water-flow/
 switch_like_status:

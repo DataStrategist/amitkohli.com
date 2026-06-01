@@ -1,9 +1,8 @@
 ---
-title: Global dam capacity [[visualization]]
+title: Global dam capacity visualization
 author: Amit
-type: "[[Note]]"
 date: 2015-03-06T10:04:00+00:00
-url: /global-dam-capacity-[[visualization]]/
+url: /global-dam-capacity-visualization/
 switch_like_status:
   - 1
 tags:

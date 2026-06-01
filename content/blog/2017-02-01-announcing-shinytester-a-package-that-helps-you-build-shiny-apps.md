@@ -1,18 +1,15 @@
 ---
-title: Announcing [[ShinyTester]] – a package that helps you build [[Shiny]] apps
+title: Announcing ShinyTester – a package that helps you build Shiny apps
 author: Amit
-type: "[[Note]]"
 date: 2017-02-01T17:16:57+00:00
 url: /announcing-shinytester-a-package-that-helps-you-build-shiny-apps/
 tags:
   - Data
   - R
 topics:
-  - [[Shiny]]
   - Helper
   - Hierarchy
   - Syntax
-topic: "[[Shiny Application Development]]"
 ---
 [[Shiny]] is awesome, but can be a bit daunting and easy to make mistakes in. I recently came back to [[Shiny]] after a hiatus of a few years and it was much more challenging than I feel comfortable admitting. I was making bonehead mistakes like writing `something` instead of `output$something`, confusing where to put `Output` commands vs `Render` commands, etc. I would eventually find my mistake, curse myself and move on with a crumpled ego. Then I had the realization that maybe if I was a beginner, I wouldn't even know what I was doing wrong. Thusly did I conclude that I was in a unique position to help out the R community: Dumb enough to make mistakes, but experienced enough to eventually remember how to resolve them. So naturally, I wrote an R package that tests the code of the [[Shiny]] app itself.
 

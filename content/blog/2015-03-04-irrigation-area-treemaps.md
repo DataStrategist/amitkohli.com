@@ -1,12 +1,10 @@
 ---
 author: Amit
-type: "[[Note]]"
 date: 2015-03-04T19:16:41+00:00
-url: /[[irrigation]]-area-treemaps/
+url: /irrigation-area-treemaps/
 tags:
   - Data
   - R
-  - [[visualization]]
   - Analysis
 topics:
   - Drip

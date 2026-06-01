@@ -1,7 +1,6 @@
 ---
 title: "Pop quiz! What is this chart saying?"
 author: Amit
-type: "[[Note]]"
 date: 2016-11-09T01:06:19+00:00
 url: /pop-quiz-what-is-this-chart-saying/
 tags:

@@ -1,7 +1,6 @@
 ---
 title: "Best way to make a custom palette with ggplot2"
 author: Amit
-type: "[[Note]]"
 date: 2015-02-27T18:38:44+00:00
 url: /best-way-to-make-a-custom-palette-with-ggplot2/
 tags:

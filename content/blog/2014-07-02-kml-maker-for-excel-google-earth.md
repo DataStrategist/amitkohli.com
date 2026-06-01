@@ -1,7 +1,6 @@
 ---
 title: 'kml maker for Excel -> Google Earth'
 author: Amit
-type: "[[Note]]"
 date: 2014-07-02T12:36:43+00:00
 url: /kml-maker-for-excel-google-earth/
 tags:

@@ -15,8 +15,6 @@ topics:
   - Personal Knowledge
   - Zettelkasten
 draft: true
-type: "[[Article]]"
-topic: "[[AI Knowledge Management]]"
 ---
 
 So I did a thing. I hooked up [[GitHub Copilot]] to my Obsidian vault - you know, that [second brain I wrote about](why-obsidian-ate-my-brain.md) - and now I have an AI agent that can read, write, and reorganize my 2000+ notes.

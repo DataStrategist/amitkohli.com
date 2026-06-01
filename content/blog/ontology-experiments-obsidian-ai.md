@@ -15,8 +15,6 @@ topics:
   - Graph Databases
   - Lessons Learned
 draft: true
-type: "[[Article]]"
-topic: "[[Knowledge Management]]"
 ---
 
 So I had this brilliant idea. Since I've got an AI agent working with my Obsidian vault, why not give it a *formal ontology* to work with? Relationship definitions, semantic triples, property hierarchies - you know, the good stuff from the Semantic Web era.

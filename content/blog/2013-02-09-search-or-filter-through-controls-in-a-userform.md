@@ -1,7 +1,6 @@
 ---
 title: Search or filter through controls in a userform
 author: Amit
-type: "[[Note]]"
 date: 2013-02-09T18:30:30+00:00
 url: /search-or-filter-through-controls-in-a-userform/
 tags:

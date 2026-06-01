@@ -1,7 +1,6 @@
 ---
 title: Track your local R scheduled tasks with CommandCenter2000!!!
 author: Amit
-type: "[[Note]]"
 date: 2016-05-29T17:32:02+00:00
 url: /track-your-local-r-scheduled-tasks-with-commandcenter2000/
 tags:
@@ -13,7 +12,6 @@ topics:
   - Run
   - Schedule
   - Script
-topic: "[[R Programming]]"
 ---
 There are many ways to automate your scripts running, for example using RScript, or [in-R itself][1] (and now even as an [add-in][2] for RStudio) ([check all here][3]). But after a while, it can get a bit overwhelming to track tasks and ensure they are firing as planned. In order to address this, I have developed some futuristic advanced tech that lets us do that. I hereby present to you: the CommandCenter2000!!! Yes, it's Y2K compliant! This is what it looks like:
 

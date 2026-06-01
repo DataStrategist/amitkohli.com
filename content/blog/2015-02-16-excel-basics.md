@@ -1,7 +1,6 @@
 ---
 title: Excel basics
 author: Amit
-type: "[[Note]]"
 date: 2015-02-16T18:32:22+00:00
 url: /excel-basics/
 tags:

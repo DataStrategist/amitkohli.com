@@ -1,7 +1,6 @@
 ---
 title: Introducing the Monitoring and Evaluation Bullet Chart
 author: Amit
-type: "[[Note]]"
 date: 2018-03-16T10:27:20+00:00
 url: /introducing-the-monitoring-and-evaluation-bullet-chart/
 tags:
@@ -11,8 +10,6 @@ topics:
   - Bullet chart
   - KPI
   - 'M&amp;E'
-  - [[visualization]]
-topic: "[[Monitoring And Evaluation]]"
 ---
 _Cross-posted from: <http://www.acdivoca.org/2018/03/introducing-the-monitoring-and-evaluation-bullet-chart/>_.
 

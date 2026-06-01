@@ -1,7 +1,6 @@
 ---
 title: Arduino theremin concert
 author: Amit
-type: "[[Note]]"
 date: 2014-11-11T00:52:47+00:00
 url: /arduino-theremin-concert/
 xyz_smap:

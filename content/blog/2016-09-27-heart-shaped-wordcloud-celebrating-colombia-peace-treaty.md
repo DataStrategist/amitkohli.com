@@ -1,7 +1,6 @@
 ---
 title: Heart-shaped wordcloud, celebrating Colombia peace treaty
 author: Amit
-type: "[[Note]]"
 date: 2016-09-27T03:53:07+00:00
 url: /heart-shaped-wordcloud-celebrating-colombia-peace-treaty/
 arcade_basic_custom_image:

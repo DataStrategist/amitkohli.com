@@ -1,7 +1,6 @@
 ---
 title: "10 things you didn’t know about taxi costs in Accra"
 author: "Laure Belotti"
-type: "[[Note]]"
 date: 2015-11-16T16:46:47+00:00
 url: /10-things-you-didnt-know-about-taxi-costs-in-accra/
 tags:
@@ -12,7 +11,6 @@ topics:
   - Accra
   - Ghana
   - Taxi prices
-topic: "[[Data Analysis]]"
 ---
 &nbsp;
 

@@ -1,7 +1,6 @@
 ---
 title: Locations for 75000 dams
 author: Amit
-type: "[[Note]]"
 date: 2015-10-20T20:30:39+00:00
 url: /locations-for-75000-dams/
 switch_like_status:

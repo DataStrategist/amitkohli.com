@@ -1,7 +1,6 @@
 ---
 title: Simplified renewable water resources, visualized
 author: Amit
-type: "[[Note]]"
 date: 2015-07-01T16:37:00+00:00
 url: /simplified-renewable-water-resources-visualized/
 switch_like_status:

@@ -1,7 +1,6 @@
 ---
 title: Chick flicks vs action movies!
 author: Amit
-type: "[[Note]]"
 date: 2015-10-13T22:41:44+00:00
 url: /chick-flicks-vs-action-movies/
 switch_like_status:

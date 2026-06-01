@@ -1,7 +1,6 @@
 ---
 title: I’m proudly featured on r-bloggers!
 author: Amit
-type: "[[Note]]"
 date: 2016-02-05T00:10:08+00:00
 url: /im-proudly-featured-on-r-bloggers/
 switch_like_status:

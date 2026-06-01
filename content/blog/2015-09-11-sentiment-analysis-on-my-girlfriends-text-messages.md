@@ -1,7 +1,6 @@
 ---
 title: "Sentiment analysis on my girlfriend’s text messages"
 author: Amit
-type: "[[Note]]"
 date: 2015-09-11T13:22:14+00:00
 url: /sentiment-analysis-on-my-girlfriends-text-messages/
 switch_like_status:
@@ -10,7 +9,6 @@ tags:
   - Art
   - Data
   - R
-  - [[visualization]]
   - Analysis
 topics:
   - Analysis

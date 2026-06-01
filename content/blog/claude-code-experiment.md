@@ -14,8 +14,6 @@ topics:
   - Developer Experience
   - Tool Evaluation
 draft: true
-type: "[[Article]]"
-topic: "[[Tool Evaluation]]"
 ---
 
 So Anthropic released [ Claude Code](https://claude.ai/code), their CLI-based agentic coding assistant. And since I'm the kind of person who hooversup new AI tools like they're going out of style, I gave it a proper 3-day trial.

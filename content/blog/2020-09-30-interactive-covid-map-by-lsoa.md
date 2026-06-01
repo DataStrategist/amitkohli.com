@@ -11,8 +11,6 @@ topics:
   - COVID
   - Manchester
 description: ''
-type: "[[Article]]"
-topic: "[[Geospatial Analysis]]"
 ---
 
 Across the world, the COVID 19 pandemic has illustrated how important it is for governments to have the ability to gather, action, and disseminate new case data as close to real time as possible. Luckily in the UK, there is a reasonably good flow of information about new cases. The government has released an [interactive map](https://coronavirus.data.gov.uk/details/interactive-map) of cases, and they do keep it up to date. This map uses the Middle Super Output Area (MSOA) level of granularity (i.e. not SUUUUPER detailed, but a good place to start), and shows the total number of cases to date. This methodology is really excellent as a first step, but has two important drawbacks:

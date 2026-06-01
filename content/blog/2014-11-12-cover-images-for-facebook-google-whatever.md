@@ -1,18 +1,15 @@
 ---
-title: Cover images for [[facebook]], google+, whatever
+title: Cover images for facebook, google+, whatever
 author: Amit
-type: "[[Note]]"
 date: 2014-11-12T00:37:33+00:00
-url: /cover-images-for-[[facebook]]-google-whatever/
+url: /cover-images-for-facebook-google-whatever/
 tags:
   - Art
 topics:
   - Cover
-  - [[facebook]]
   - Google+
   - Photography
   - Picture
-topic: "[[Photography]]"
 ---
 So I guess everybody let's you upload a "cover picture".... something that should be beautiful, emblematic of you, deep, thoughtful etc. Well... I found a bunch of my pics that fit the wide format nicely.
 

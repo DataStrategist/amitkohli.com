@@ -1,7 +1,6 @@
 ---
 title: Human armature from d3Network!
 author: Amit
-type: "[[Note]]"
 date: 2014-11-11T00:17:06+00:00
 url: /human-armature-from-d3network/
 xyz_smap:

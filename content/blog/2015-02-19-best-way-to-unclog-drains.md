@@ -1,7 +1,6 @@
 ---
 title: Best way to unclog drains
 author: Amit
-type: "[[Note]]"
 date: 2015-02-19T18:00:47+00:00
 url: /best-way-to-unclog-drains/
 tags:

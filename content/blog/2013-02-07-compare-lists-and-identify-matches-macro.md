@@ -1,7 +1,6 @@
 ---
 title: Compare lists and identify matches macro
 author: Amit
-type: "[[Note]]"
 date: 2013-02-07T16:24:52+00:00
 url: /compare-lists-and-identify-matches-macro/
 tags:

@@ -1,7 +1,6 @@
 ---
 title: Change lists into tables and tables into lists
 author: Amit
-type: "[[Note]]"
 date: 2013-03-29T15:04:29+00:00
 url: /change-lists-into-tables-and-tables-into-lists/
 tags:
