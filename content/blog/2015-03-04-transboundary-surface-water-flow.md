@@ -31,7 +31,7 @@ The network plot shows the automatic arrangement of countries with their &#821
 
 See interactive versions for all continents as well as a detailed analysis on the [[AQUASTAT]] page:
 
-<a href="http://www.fao.org/nr/water/[[AQUASTAT]]/flow_vis/index.stm" target="_blank">http://www.fao.org/nr/water/[[AQUASTAT]]/flow_vis/index.stm</a>
+<a href="http://www.fao.org/nr/water/AQUASTAT/flow_vis/index.stm" target="_blank">http://www.fao.org/nr/water/[[AQUASTAT]]/flow_vis/index.stm</a>
 
 OK... I paste one here only because it's extra boing-y:
 

@@ -27,4 +27,4 @@ In an interest to simplify the information about renewable water resources in al
 Please navigate to the [[AQUASTAT]] Water Resources page][2] and use the "Figures" dropdown to see the flow for each country (as well as the definitions of the abbreviations.
 
  [1]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/07/WR.Cviz_.header_eng.png
- [2]: http://www.fao.org/nr/water/[[AQUASTAT]]/water_res/index.stm#ab
+ [2]: http://www.fao.org/nr/water/AQUASTAT/water_res/index.stm#ab

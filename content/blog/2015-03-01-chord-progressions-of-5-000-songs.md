@@ -102,8 +102,8 @@ EDIT: I've been getting great feedback on this post. Please check out the great
  [1]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/02/chord.prog_.sankey.png
  [2]: https://github.com/datastrategist/Musical-chord-progressions
  [3]: https://www.youtube.com/watch?v=5pidokakU4I
- [4]: http://www.[[Reddit]].com/r/dataisbeautiful/comments/32ol86/chord_progressions_of_25_000_songs_oc/
- [5]: https://news.[[YCombinator]].com/item?id=9394176
+ [4]: http://www.Reddit.com/r/dataisbeautiful/comments/32ol86/chord_progressions_of_25_000_songs_oc/
+ [5]: https://news.YCombinator.com/item?id=9394176
  [6]: https://www.youtube.com/watch?v=JdxkVQy7QLM
  [7]: http://briancort.com/songviz/
  [8]: http://labrosa.ee.columbia.edu/millionsong/

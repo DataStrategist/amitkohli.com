@@ -95,7 +95,7 @@ UPDATE: For more "Love data", check out other people that analyzed their partner
  [2]: https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107/blob/master/R/sentiment.R
  [3]: https://www.linkedin.com/pub/laure-belotti/18/12/6b3
  [4]: http://www.theatlantic.com/technology/archive/2015/03/re-our-relationship/389030/?utm_source=SFFB
- [5]: https://www.[[Reddit]].com/r/dataisbeautiful/comments/36d3dd/word_cloud_of_100000_messages_from_a_long/
+ [5]: https://www.Reddit.com/r/dataisbeautiful/comments/36d3dd/word_cloud_of_100000_messages_from_a_long/
  [6]: http://adashofdata.com/2014/10/14/how-text-messages-change-from-dating-to-marriage/
  [7]: https://www.youtube.com/watch?v=d6wG_sAdP0U
  [8]: http://www.wired.com/2014/01/how-to-hack-okcupid/

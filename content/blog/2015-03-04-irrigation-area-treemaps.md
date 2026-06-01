@@ -26,6 +26,6 @@ These treemap charts allow for hierarchical organization of information of diffe
 
 View more [[irrigation]] area treemaps, and a detailed analysis on the [[AQUASTAT]] website:
 
-<a href="http://www.fao.org/nr/water/[[AQUASTAT]]/[[irrigation]]drainage/treemap/index.stm" target="_blank">http://www.fao.org/nr/water/[[AQUASTAT]]/[[irrigation]]drainage/treemap/index.stm</a>
+<a href="http://www.fao.org/nr/water/AQUASTAT/irrigationdrainage/treemap/index.stm" target="_blank">http://www.fao.org/nr/water/[[AQUASTAT]]/[[irrigation]]drainage/treemap/index.stm</a>
 
  [1]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2015/03/reltech.png

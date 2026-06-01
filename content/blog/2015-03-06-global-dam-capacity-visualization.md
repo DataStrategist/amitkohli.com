@@ -23,6 +23,6 @@ A [[Visualization]] prepared for [[FAO]] [[AQUASTAT]]:
 
 Using WebGL, which produced by Google for their own purposes, and later converted to a "chrome experiment". Please see the interactive version on the [[AQUASTAT]] webpage:
 
-<http://www.fao.org/nr/water/[[AQUASTAT]]/dams/globe_viz.html>
+<http://www.fao.org/nr/water/AQUASTAT/dams/globe_viz.html>
 
  [1]: https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/03/globe_viz.jpg

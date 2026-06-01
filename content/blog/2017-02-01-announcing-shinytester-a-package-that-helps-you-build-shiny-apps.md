@@ -108,7 +108,7 @@ Enjoy!
 (Thanks to my [rusers community][4], especially to [Joshua Kunst][1] and [Colin Phillips][5] for discussion, help and encouragement required to push this through to CRAN).
 
  [1]: http://jkunst.com
- [2]: https://github.com/datastrategist/[[ShinyTester]]/issues
+ [2]: https://github.com/datastrategist/ShinyTester/issues
  [3]: https://i1.wp.com/amitkohli.com/wp-content/uploads/2017/02/shinyDummyCheck.png
  [4]: http://rusers.co
  [5]: http://www.pivotsciences.com
