@@ -6,7 +6,7 @@
 
     <title></title>
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="css/inter-clean.css" id="theme" />
     <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
 	<link rel="stylesheet" href="css/layout.css" />
 	<link rel="stylesheet" href="plugin/customcontrols/style.css">
@@ -88,81 +88,148 @@
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap');
+
 .reveal {
-  --base-font-size: 3.0em; /* Adjust global base if needed */
-  font-size: var(--base-font-size);
+  --r-background-color: #ffffff;
+  --r-main-color: #111111;
+  --r-heading-color: #111111;
+
+  background: #ffffff !important;
+  color: #111111 !important;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  text-rendering: geometricPrecision;
 }
 
-.reveal h1 { font-size: 2.5em !important; }
-.reveal h2 { font-size: 2em !important; }
-.reveal h3 { font-size: 1.6em !important; }
-.reveal h4 { font-size: 1.4em !important; }
-.reveal h5 { font-size: 1.3em !important; }
-.reveal h6 { font-size: 1.25em !important; }
-
-.reveal p { 
-  font-size: 1.2em !important; 
-  line-height: 1.5; 
+.reveal .slides,
+.reveal .slides section,
+.reveal .slide-background,
+.reveal .slide-background-content,
+.reveal .backgrounds,
+.reveal .backgrounds .slide-background,
+.reveal .reveal-viewport {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
-.reveal ul, .reveal ol { 
-  font-size: 1.1em !important; 
+.reveal .slides {
+  font-size: 1.15em;
 }
 
-.reveal li { 
-  font-size: 1.1em !important; 
-  margin-bottom: 0.3em;
+.reveal section {
+  width: 100%;
+  height: 100%;
+  padding: 0.5em 0.75em;
+  box-sizing: border-box;
 }
 
-/* prevent size compounding */  
-.reveal ul ul,  
-.reveal ul ol,  
-.reveal ol ul,  
-.reveal ol ol {  
-font-size: 0.8em !important;  
+.reveal h1 { font-size: 2.8em; line-height: 0.95; letter-spacing: -0.04em; font-weight: 800; }
+.reveal h2 { font-size: 2.0em; line-height: 1.0; letter-spacing: -0.03em; font-weight: 700; }
+.reveal h3 { font-size: 1.5em; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
+.reveal p, .reveal li { font-size: 1.05em; line-height: 1.5; }
+
+.reveal ul,
+.reveal ol {
+  text-align: left;
+  margin-left: 1.2em;
 }
 
+/* Emphasis — different font, not italic slant */
+.reveal em,
+.reveal i {
+  font-family: 'Lora', Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+  color: #8b8b8b !important;
+}
+
+/* Highlighted text — intentional yellow, properly shaped */
+.reveal mark {
+  background: #ffe04b;
+  color: #111111 !important;
+  padding: 0.05em 0.2em;
+  border-radius: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* em inside a highlight: restore dark so it's legible, not gray-on-yellow */
+.reveal mark em,
+.reveal em mark,
+.reveal mark i,
+.reveal i mark {
+  color: #111111 !important;
+}
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 78%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.reveal .r-stretch {
+  max-width: 78% !important;
+  max-height: 72vh !important;
+}
+
+.reveal .center,
+.reveal .slide-background-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
 ## What does AI actually do to your organisation?
+<img src="Files/attachments/ai_masterclass_slides v4-1778838758264.webp" alt="" style="object-fit: scale-down">
 </div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## If people <mark>feel</mark> AI helps, they will want to use it
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-# Therefore AI will change the shape of every single service job.
+# AI will change <mark>the shape</mark> of every single service job.
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/ai_masterclass_slides-1776073838109.webp" alt="" style="width: 500px; object-fit: fill">
-</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+
+<!-- Notes: Photo of Amit with a terrible blonde mullet. Argument: AI will make hairdressers (and most service workers) more technician-like again — less creative autonomy, more execution. The mullet is the joke; the point is that specialisation collapses under commoditisation. -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Today's agenda
+
+|          | Camp                   | Question                      |
+| -------- | ---------------------- | ----------------------------- |
+| 🚫       | *Not using AI*         | Is abstaining even an option? |
+| 🧑‍🤝‍🧑 | *Are we ready for AI?* | What do we need?              |
+| 🤖       | *Is AI ready for us?*  | Does it even work?            |
+| 💬       | *Discussion*           | What does this mean for us?   |
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## _Should we use AI?_
 
-### <mark>_Hrm.. I'm leaning 'No'..._</mark>
+### Hrm.. I'm leaning 'No'...
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### If people <mark>feel</mark> AI helps, they will want to use it
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Ethical? 
-## Society effects?
+### Society effects?
 
- - &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Will jobs dissapear?
+ - &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Will jobs disappear?
 	 - &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Direct and cancelling stupid work
  - &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Is democracy at risk?
 
 - &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Yes, yes, and we're probably screwed
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-## Does it even work?
- 
-<img src="Files/attachments/image-156.png" alt="" style="object-fit: scale-down">
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<img src="Files/attachments/Pasted image 20260403224240.png" alt="" style="object-fit: scale-down">
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -171,12 +238,68 @@ font-size: 0.8em !important;
 - &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Option 1: Work/volunteer for the solution
 - &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Option 2: 
 <img src="Files/attachments/Pasted image 20260404092943.png" alt="" style="width: 300px; object-fit: fill">
+
+<!-- Notes: A person reading books by candlelight, sitting in a city that is fully electrified outside the window. Argument: choosing not to use the available technology doesn't make the technology go away — it just makes you the person reading by candlelight. Abstaining is a valid personal choice but it doesn't constitute a solution. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-# Lastly...
+## Does it even work?
+ 
+<img src="Files/attachments/image-156.png" alt="" style="object-fit: scale-down">
 
-_Staff will probably use it anyway_
+<!-- Notes: Line chart showing that after an AI-driven hiring dip, companies are hiring humans again. Argument: the early panic about AI replacing all jobs hasn't materialised as predicted — the technology has real limitations and the labour market has adapted. Grounds the "does it even work?" scepticism in data. -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Files/attachments/Pasted image 20260403224240.png" alt="" style="object-fit: scale-down">
+
+<!-- Notes: A man holding a map of Rome while standing in London. The map is useless — not because maps are bad, but because it's the wrong map for the territory. Argument: AI tools are only as useful as the context you give them. Using a general-purpose model on your specific organisation without grounding is like navigating London with a Roman street plan. -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Real AI risks
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### People want to bypass auth / text is insecure
+
+<img src="Files/attachments/ai_masterclass_slides-1776162806048.webp" alt="" style="object-fit: scale-down">
+
+>[...] a fractal number of attack surfaces open up
+ 
+https://www.youtube.com/watch?v=w1s98GykzRI
+<!-- Notes: Picture of Meredith Whittaker, president of Signal. Argument: the person who runs the most secure mainstream messaging platform is warning that text-based AI systems are insecure by design — every prompt is a potential attack surface, and connecting AI to internal systems multiplies that risk fractally. -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Unset (unsettable?) regulations
+<img src="Files/attachments/ai_masterclass_slides-1776246937446.webp" alt="" style="width: 300px; object-fit: fill">
+
+<!-- Notes: Illustrates why top-level AI regulation is structurally very hard — the technology moves faster than legislative cycles and the parameters being regulated are not stable. References research showing the difficulty of specifying safe behaviour in complex systems. -->
+
+https://arxiv.org/abs/2006.05203
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Political / technical intersection
+
+<img src="Files/attachments/ai_masterclass_slides-1776163327183.webp" alt="" style="object-fit: scale-down">
+
+- Mythos... undocumented removal of '_production of radiological and nuclear weapons_' from threat model
+<!-- Notes: Technical and political leadership talking about war — AI infrastructure decisions are now geopolitical decisions. The undocumented removal of 'production of radiological and nuclear weapons' from an AI threat model is the concrete example: the companies setting the rules are also the companies with the most to gain from loosening them. -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Insecure monetization strategy
+
+<split left="1" right="1" gap="1">
+<img src="Files/attachments/ai_masterclass_slides-1776161968665.webp" alt="" style="width: 300px; object-fit: fill">
+
+ 
+<img src="Files/attachments/ai_masterclass_slides-1776161998459.webp" alt="" style="width: 500px; object-fit: fill">
+
+</split>
+<!-- Notes: Left image: what OpenAI says their monetization strategy is (clean, subscription/API model). Right image: what their actual financial behaviour looks like (chaotic, investor-dependent, unclear path to profitability). Argument: the companies you are being asked to trust with your data don't have a stable, principled business model — which creates structural risk for organisations that become dependent on them. -->
 </div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -189,28 +312,35 @@ _Staff will probably use it anyway_
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/ai_masterclass_slides-1776073004143.webp" alt="" style="width: 600px; object-fit: fill">
+
+<!-- Notes: I, Robot quote: "You have to ask the right question." Argument: the question 'should we use AI?' is the wrong question — it's already being used. The right question is 'given that this is happening, are our humans in a position to use it well?' Reframes the whole section. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Actually... how do your humans make decisions?
 <img src="Files/attachments/image-151.png" alt="" style="width: 400px; object-fit: fill">
+
+<!-- Notes: 'This is fine' meme — dog sitting calmly at a table drinking coffee while the room burns around him. Argument: most organisations already have humans making decisions in broken environments and calling it normal. AI doesn't fix that; it accelerates it. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/image-154.png" alt="" style="object-fit: scale-down">
 
-### EFFICIENCY DOESNT FIX BAD IDEAS (GIGO)
+### Problem 1 - EFFICIENCY DOESNT FIX BAD IDEAS (GIGO)
+<!-- Notes: People generating something useless, but measuring output volume and celebrating. Classic GIGO illustration — if the input decisions are bad, making the process faster just produces more bad output faster. Efficiency is not a substitute for quality thinking. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/image-155.png" alt="" style="object-fit: scale-down">
 
-
-### Only changing a system changes the system
+### Problem 2 - Only changing a system changes the system 
+<!-- Notes: A team producing something genuinely useful and celebrating, but the output is creating a bottleneck or overwhelming a downstream system. Argument: optimising one part of a system without changing the system creates new failure modes. You can't fix organisational dysfunction by making one team faster. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/ai_masterclass_slides-1776203816471.webp" alt="" style="width: 300px; object-fit: fill">
+
+<!-- Notes: Cover or key page of 'The Systems Bible' (Gall's Law). Argument: any complex system that works evolved from a simpler system that worked — you can't design a working complex system from scratch. Relevant to AI implementation: bolting AI onto a broken org won't produce a working AI-enabled org. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -218,17 +348,21 @@ _Staff will probably use it anyway_
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<img src="Files/attachments/ai_masterclass_slides-1776164705758.webp" alt="" style="object-fit: scale-down">
+<img src="Files/attachments/ai_masterclass_slides v3-1778663841167.webp" alt="" style="object-fit: scale-down">
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## Problem 1: AI with bad ~~data~~ <mark>_decisions_</mark> will fail
+<img src="Files/attachments/ai_masterclass_slides v3-1778665130397.webp" alt="" style="width: 400px; object-fit: fill">
+
+### Problem 3: Nosce te ipsum
+(AI is designed for normal people and nobody is normal)
+<!-- Notes: Three dials representing people, data, and infrastructure — each showing that success sits in the middle range, not at either extreme. Argument: staffing and investment choices in a constrained environment require balance across all three axes. Over-indexing on any one (e.g. buying expensive AI tools without investing in people) leaves the system out of calibration. -->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## Problem 2: Humans are terrible at documenting
+## Problem 4: Humans are terrible at documenting
 
-- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->_and LLMs need stuff to be written down_
+_...and LLMs need stuff to be written down_
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -239,9 +373,11 @@ _Staff will probably use it anyway_
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## Problem 3: You can't practice winning
+<img src="Files/attachments/ai_masterclass_slides v3-1778666613574.webp" alt="" style="object-fit: scale-down">
 
-- Practice drills
+## Problem 5: You can't practice winning, you practice drills
+
+<!-- an image that represents the concept that you can't practice winning, but you can practice drills.-->
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -253,15 +389,16 @@ How? Agentic workflow
 
 ## What have I learned?
 
-- My brain =  unsqueezed lemon  
-	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->*(More Documentation = more context!)*
-	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->What/How/Why
-- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Agents lie, disobey, and "get pissy"
-- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->ENTIRE problem space changes
+- ENTIRE problem space changes
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->My brain =  unsqueezed lemon  
+	- *(More Documentation = more context!)*
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Agents lie, disobey, and "get pissy"
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Files/attachments/ai_masterclass_slides-1776212018729.webp" alt="" style="object-fit: scale-down">
+
+<!-- Notes: Mermaid diagram showing an agentic workflow loop: AI makes a mistake → that mistake surfaces a documentation gap → fixing the gap improves the context the AI works from → AI improves. Argument: you can use AI failure productively to build the very context that makes AI work better. Mistakes are not just costs, they are inputs. -->
 </div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -277,6 +414,7 @@ How? Agentic workflow
 - hallucinations
 - wrong action
 - reputational risk
+- Limited compute!
 - etcetcetc
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -319,66 +457,16 @@ How? Agentic workflow
 
 ## 💣 Secondary system effects?
 > What does the world look when all charities use AI flawlessly?
-</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-# Real AI risk
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Text is insecure  / access to secured systems
-
-<img src="Files/attachments/ai_masterclass_slides-1776162806048.webp" alt="" style="object-fit: scale-down">
-
->[...] a fractal number of attack surfaces open up
- 
-https://www.youtube.com/watch?v=w1s98GykzRI
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-## Political / technical intersection
-
-<img src="Files/attachments/ai_masterclass_slides-1776163327183.webp" alt="" style="object-fit: scale-down">
-
-
-- Mythos... undocumented removal of '_production of radiological and nuclear weapons_' from threat model
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-## Insecure monetization strategy
-
-<split left="1" right="1" gap="1">
-<img src="Files/attachments/ai_masterclass_slides-1776161968665.webp" alt="" style="width: 300px; object-fit: fill">
-
- 
-<img src="Files/attachments/ai_masterclass_slides-1776161998459.webp" alt="" style="width: 500px; object-fit: fill">
-
-</split>
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-## Unset (unsettable?) regulations
-<img src="Files/attachments/ai_masterclass_slides-1776246937446.webp" alt="" style="width: 300px; object-fit: fill">
-
-
-https://arxiv.org/abs/2006.05203
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-# Summary - Real AI Risk
-
-- Text (and vectors) are insecure
-- Tech is now political
-- What the hell is up w/ the money??
-- We need regulation, but regulation will be tricky
 </div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Conclusion
 
 - AI will change the shape of work
+- 🧑‍🤝‍🧑 will use AI if _they feel_ it helps
 - Work on your humans
 - Strategy/tactics are data too
+- Treat AI like a human
 - This is 💉& risky stuff! Be careful
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -387,8 +475,9 @@ https://arxiv.org/abs/2006.05203
 
 <img src="Files/attachments/Fancy QR code to Linkedin.png" alt="" style="width: 300px; object-fit: fill">
 
+<!-- Notes: QR code linking to Amit's LinkedIn profile. Audience can connect to receive the slide deck. -->
 <sub><sub><sub>^ connect on LinkedIn for slides!</sub></sub></sub>
-</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 # Checklist of how to start
@@ -399,13 +488,13 @@ https://arxiv.org/abs/2006.05203
 4. What does your staff think of using AI? 
 5. Get requirements
 	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->"What have you done more than 20 times?"
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### How it's going for us
 
 <img src="Files/attachments/doc-framework-mermaid-diagram.png" alt="" style="object-fit: scale-down">
-</div></script></section></section></div>
+</div></script></section></div>
     </div>
 
     <script src="dist/reveal.js"></script>
