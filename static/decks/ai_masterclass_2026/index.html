@@ -116,7 +116,7 @@
 }
 
 .reveal .slides {
-  font-size: 1.15em;
+  font-size: 1.6em;
 }
 
 .reveal section {
@@ -126,10 +126,13 @@
   box-sizing: border-box;
 }
 
-.reveal h1 { font-size: 2.8em; line-height: 0.95; letter-spacing: -0.04em; font-weight: 800; }
-.reveal h2 { font-size: 2.0em; line-height: 1.0; letter-spacing: -0.03em; font-weight: 700; }
-.reveal h3 { font-size: 1.5em; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
-.reveal p, .reveal li { font-size: 1.05em; line-height: 1.5; }
+.reveal h1 { font-size: 3.5em; line-height: 0.95; letter-spacing: -0.04em; font-weight: 800; }
+.reveal h2 { font-size: 2.6em; line-height: 1.0; letter-spacing: -0.03em; font-weight: 700; }
+.reveal h3 { font-size: 2.0em; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
+.reveal p, .reveal li { font-size: 1.4em; line-height: 1.5; }
+
+/* Prevent font-size compounding on nested lists */
+.reveal li li { font-size: 1em; }
 
 .reveal ul,
 .reveal ol {
@@ -137,7 +140,7 @@
   margin-left: 1.2em;
 }
 
-/* Emphasis — different font, not italic slant */
+/* Emphasis - different font, not italic slant */
 .reveal em,
 .reveal i {
   font-family: 'Lora', Georgia, serif !important;
@@ -146,7 +149,7 @@
   color: #8b8b8b !important;
 }
 
-/* Highlighted text — intentional yellow, properly shaped */
+/* Highlighted text - intentional yellow, properly shaped */
 .reveal mark {
   background: #ffe04b;
   color: #111111 !important;
@@ -177,6 +180,28 @@
 .reveal .r-stretch {
   max-width: 78% !important;
   max-height: 72vh !important;
+}
+
+.reveal table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.reveal table th,
+.reveal table td {
+  padding: 0.6em 1.2em;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+}
+
+.reveal table th {
+  font-weight: 700;
+}
+
+.reveal table td {
+  font-size: 0.95em;
+  border: 2px solid #111111;
 }
 
 .reveal .center,
