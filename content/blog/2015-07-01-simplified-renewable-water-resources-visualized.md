@@ -13,7 +13,7 @@ topics:
   - Sankey
   - Simple
   - Source
-  - "[[Visualization]]"
+  - Visualization
   - Water
   - Water flows
 ---
