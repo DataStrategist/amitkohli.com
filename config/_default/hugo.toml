@@ -4,6 +4,9 @@ title = "Amit Kohli"
 theme = "blowfish"
 
 enableRobotsTXT = true
+
+[security]
+  allowContent = ['^text/']
 paginate = 12
 summaryLength = 30
 buildDrafts = false
