@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/inter-clean.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap');
+
+.reveal {
+  --r-background-color: #ffffff;
+  --r-main-color: #111111;
+  --r-heading-color: #111111;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.reveal .slides { font-size: 1.6em; }
+
+.reveal section {
+  width: 100%;
+  height: 100%;
+  padding: 0.5em 0.75em;
+  box-sizing: border-box;
+}
+
+.reveal h1 { font-size: 3.5em; line-height: 0.95; letter-spacing: -0.04em; font-weight: 800; }
+.reveal h2 { font-size: 2.6em; line-height: 1.0; letter-spacing: -0.03em; font-weight: 700; }
+.reveal h3 { font-size: 2.0em; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
+.reveal p, .reveal li { font-size: 1.4em; line-height: 1.5; }
+.reveal li li { font-size: 1em; }
+.reveal ul, .reveal ol { text-align: left; margin-left: 1.2em; }
+
+.reveal em, .reveal i {
+  font-family: 'Lora', Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+  color: #8b8b8b !important;
+}
+
+.reveal mark {
+  background: #ffe04b;
+  color: #111111 !important;
+  padding: 0.05em 0.2em;
+  border-radius: 4px;
+}
+
+.reveal mark em, .reveal em mark { color: #111111 !important; }
+
+.reveal table { border-collapse: collapse; margin: 0 auto; }
+.reveal table th, .reveal table td { padding: 0.5em 1em; text-align: left; vertical-align: middle; border: none; }
+.reveal table th { font-weight: 700; border-bottom: 2px solid #111111; }
+.reveal table td { font-size: 0.9em; border-bottom: 1px solid #dddddd; }
+
+.reveal .mermaid { width: 100% !important; text-align: center !important; }
+.reveal .mermaid svg { width: 100% !important; height: auto !important; display: inline-block !important; }
+
+</style>
+
+## Is your data ready for AI?
+
+*Amit Kohli · DSC Charity AI Conference 2026*
+
+<aside class="notes"><p><strong>Title / cameras on / chat &amp; hands-up warning</strong></p>
+<p>Title slide. On Zoom - ask for cameras on early. Say up front: &quot;I&#39;m going to ask you to type in the chat, or put your hand up, a few times during this - I&#39;ll tell you when.&quot;</p>
+</div></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Let's say...
+
+- Use case ✅
+- Budget ✅
+- Permission ✅
+- Data ✅
+- Let's go!
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->😭
+
+<aside class="notes"><p><strong>Checklist all fine / click sad face / Jose story - migration gap, manual Thursday</strong></p>
+<p>&quot;Let&#39;s say you&#39;ve identified a good use case. It&#39;s perfect. It&#39;s ripe.&quot; All five bullets are on screen together - this is the state, not a build. Narrate through them: found the budget, convinced the managers, got permission, data&#39;s there. Let&#39;s go! Then click for the sad face. Tell the Jose story: <strong>half the expected data was never migrated from the old system</strong>. The data that did migrate has old tag names - nobody flagged it because Jose was <strong>fixing it manually for the Powerpoints managers see</strong>. One dataset gets copied manually every Thursday by a reliable, responsible employee <strong>who left three months ago</strong>. Nobody noticed because the only report that uses it - nobody checks anymore.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## AI won't fix your data problem.
+### It will <mark>expose</mark> it.
+
+<aside class="notes"><p><strong>Thesis / today&#39;s five topics</strong></p>
+<p>This is the thesis for the whole talk. Today: five ways bad data becomes bad AI, using the exact topics on the session listing - quality and structure, silos, SharePoint, RAG, and legal basis - then what to actually do about it.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Still worth it.
+### Nobody wants to fix tech debt!
+
+- Budget
+- Buy-in
+- Opportunity
+- Funding
+
+<p class="fragment" style="font-size:1.6em; text-align:center; margin-top:0.3em">The AI project is what unlocks these.</p>
+
+<aside class="notes"><p><strong>Reassurance / can&#39;t fix debt without buy-in / AI project = the unlock</strong></p>
+<p>Before the scary content: everything about to be described is real, but it&#39;s not a reason not to do this. Governance work and tech debt almost never get fixed on their own merits - no budget, no sponsor, no deadline anyone cares about. An AI project brings all of that. So no matter how much of the next 25 minutes sounds like a warning, it&#39;s still worth doing - because it&#39;s often the only lever big enough to get the underlying fixing actually resourced.</p>
+</div></aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Data quality and structure
+
+<aside class="notes"><p><strong>Section header verbatim / 5-6 min</strong></p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## GPT-5 doesn't know:
+- your definition of *"incident"*
+- that *"active"* means something specific here
+- that *"final version"* is a process, not a filename
+
+<aside class="notes"><p><strong>New hire analogy / no brief no context / meaning not numbers</strong></p>
+<p>You wouldn&#39;t give a new hire a task with no brief, no context, no examples, no sense of what &quot;done&quot; looks like - and be surprised when they got it wrong. Raw data has no domain context. It doesn&#39;t know it&#39;s Friday. It doesn&#39;t know three sessions is your threshold. The numbers exist. The meaning doesn&#39;t.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="mermaid">
+
+flowchart LR
+    subgraph Buried["What AI sees"]
+    direction TB
+    F1["Shared Drive"] --> F2["Old Team Stuff"] --> F3["2023"] --> X["final_v2_REAL_final.xlsx"]
+    end
+    subgraph Findable["What AI can use"]
+    direction TB
+    M["Mandate: client outcomes reporting"] --> D["outcomes_master.xlsx"]
+    end
+
+</div>
+
+
+<aside class="notes"><p><strong>No title, let diagram breathe / this filename is real / buried vs findable</strong></p>
+<p>Say the heading live instead of showing it: &quot;final_v2_REAL_final.xlsx.&quot; This filename pattern shows up constantly. Somewhere in your organisation there&#39;s a spreadsheet exactly like this: badly named, three folders deep, encoding real domain knowledge that only one person can find. Doesn&#39;t matter how good the AI is - if a human can&#39;t reliably find it, neither can the system. Left side: buried and unreachable. Right side: the same information, tied to a stated organisational function, so it&#39;s findable.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 💬 Chat: one word that means something different depending which team you ask
+
+<aside class="notes"><p><strong>New chat, distinct from silos one / structure not access</strong></p>
+<p>Give them 30 seconds to type. Read a couple aloud. This is about definitions and structure, not about who has access - keep it clearly distinct from the silos chat prompt coming up in the next section.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Pro move: a data dictionary
+
+### Do now: Text file or Excel or whatevs:
+
+### What/Why/When/Who/Where/How
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->(extra credit: tags 😀 / 
+	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->tags  per field 😀😀 / 
+		- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->stored in dbt 😀😀😀/
+			- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->in an ontology 😎 / 
+				- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->... with field mapping 😎😎 )
+
+<aside class="notes"><p><strong>Full data dictionary = pro move / free version = your data mapped simply</strong></p>
+<p>You don&#39;t need a formal data dictionary to start. The cheap version: write down what your organisation actually does - its functions, its mandates - then write down which folder or dataset fulfils each one. That mapping alone is most of the value, and it costs an afternoon, not a project.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Strategy / ops is data too!
+
+<div class="mermaid">
+
+flowchart LR
+    S["Strategic objective"] --> I["Initiative"]
+    I --> R["Repository"]
+    R --> D["Data"]
+
+</div>
+
+
+<aside class="notes"><p><strong>Strategy is also data / objective to initiative to repository to data</strong></p>
+<p>Say it as the heading: &quot;your strategy is also data.&quot; If your org&#39;s priorities and direction live in someone&#39;s head or an unfindable PDF, your AI has no organisational memory to draw on. Trace it all the way down: a strategic objective drives an initiative, an initiative produces or lives in a repository, and a repository holds the actual data. If any link in that chain isn&#39;t written down and findable, AI can&#39;t trace back to why the data exists at all.</p>
+</div></aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Data silos and integration challenges
+
+<aside class="notes"><p><strong>Section header verbatim / 4-5 min, now includes ID management</strong></p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 💬 Chat: one dataset in your org that only <mark>ONE PERSON</mark> knows where to find
+
+🚌
+
+<aside class="notes"><p><strong>Chat: access not structure / contrast w/ topic 1&#39;s chat</strong></p>
+<p>Give them 30 seconds. Read a couple aloud - &quot;that&#39;s a silo.&quot; Contrast with the earlier chat prompt: this one is about access and people, not file naming.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Jacob's girlfriend has your financial data.
+
+- Permissions?
+- "don't know how to change process?"
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --><mark>Silos are political, not technical</mark>
+
+
+<aside class="notes"><p><strong>Jacob&#39;s girlfriend story / silos are political / AI reproduces access patterns</strong></p>
+<p>The only reason anyone in the org can get current financial data is because Jacob in accounts is dating someone who knows the data engineer, who drops it as a CSV when he gets a chance. Silos are political, not technical. AI faithfully reproduces whatever access pattern already exists - so siloed data stays siloed, and AI is missing context it doesn&#39;t even know it&#39;s missing.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Amit Kohli ≠ A. Kohli
+
+- Same concept, different definition
+
+<aside class="notes"><p><strong>ID resolution / combining entities / governance: definitions drift / temporal mismatch</strong></p>
+<p>Simple example: &quot;Amit Kohli&quot; in one system, &quot;A. Kohli&quot; in another, a typo in a third - is that one person or three? Integrating data means combining entities that should be the same but don&#39;t look the same. The governance point underneath: even once you match the person correctly, &quot;active,&quot; &quot;closed,&quot; &quot;resolved&quot; might not mean the same thing in the two source tables you just merged. And a third layer: combining data collected in different time periods brings its own risk - definitions and processes drift over time, so a 2019 record and a 2024 record labelled the same thing may not actually be comparable.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Harmonise vs Standardise?
+
+- Here's where Excel starts to sweat...
+<img src="Files/attachments/DSC 2026 - Is your data ready for AI (deck)-1783455632480.webp" alt="" style="width: 800px; object-fit: fill">
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Preparing SharePoint and internal systems
+
+<aside class="notes"><p><strong>Section header verbatim / meatiest section, 7-8 min</strong></p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 🖐 Who's already using Copilot?
+
+<aside class="notes"><p><strong>Hands up / expect high / pivot to what it means</strong></p>
+<p>Hands up. Expect it high. &quot;Good. Now here&#39;s what that number means for you.&quot;</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Problem 1: which version is real?
+
+📄📄📄📄📄📄📄📄📄📄📄📃📄📄📄
+
+<p class="fragment" style="text-align:center; font-size:1.3em; margin-top:0.3em">...and one final version. Maybe.</p>
+
+<aside class="notes"><p><strong>15 drafts static / fragment = &quot;the final one, maybe&quot; / Copilot picks with false confidence</strong></p>
+<p>Fifteen drafts on screen at once - that&#39;s the state, not a build. Say: &quot;Copilot - or any AI layered on SharePoint - doesn&#39;t reliably know which of these is current.&quot; Then click for the fragment. It will quote a superseded draft with exactly as much confidence as the signed-off final. This is the &quot;final_v2_REAL_final&quot; problem again, except now the AI is the one making the mistake.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Problem 2: sensitive documents surface.
+
+<p class="fragment" style="text-align:center; font-size:1.3em; margin-top:0.3em">Because security by obfuscation is <mark>over</mark>.</p>
+
+<aside class="notes"><p><strong>Problem stated / fragment reveals obfuscation principle / board papers, HR files, 2021 permissions</strong></p>
+<p>A separate problem from version confusion - board papers, HR files, anything &quot;protected&quot; only by being hard to find, now one Copilot search away from anyone with baseline access. Click for the fragment. Most orgs protect sensitive information by making it hard to find, not by actually restricting who can see it. SharePoint permissions that haven&#39;t been reviewed since 2021. AI doesn&#39;t respect obscurity - it surfaces everything it can technically reach.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Fix for both: metadata tagging
+
+*(huge, continuous task - realistically out of reach for most charities right now)*
+
+<aside class="notes"><p><strong>Same fix for both problems / status, date, sensitivity, owner / honest about the cost</strong></p>
+<p>The fix for version confusion and for sensitive-document exposure is the same thing: proper metadata - status, date, sensitivity, owner - tagged on every document. Just say it plainly - it&#39;s a large, ongoing task, not a one-off project, and for most charities&#39; current resourcing it&#39;s a genuine stretch.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ~~What if you get hacked?~~
+
+## What if <mark>they</mark> get hacked?
+
+<aside class="notes"><p><strong>Blast radius / every link in the chain / stolen laptop = real everyday risk</strong></p>
+<p>Not just your own security posture - every vendor and every device in the chain. If any link is compromised - your systems, the AI vendor&#39;s systems, or literally a stolen laptop with an active session - what can that compromised link now do on your behalf? Connecting a folder to AI doesn&#39;t just add a capability, it adds an attack surface.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Start with <mark>one whitelisted folder</mark>.
+
+*Get that folder right.*
+
+_(or exec only test)_
+
+<aside class="notes"><p><strong>Practical mitigation / one folder = your pilot / can&#39;t do it for one, can&#39;t do it for all</strong></p>
+<p>The practical mitigation for everything just raised. Don&#39;t connect AI to all of SharePoint. Pick one folder - decide what goes in, add metadata, establish which document is authoritative, review the permissions. That IS your pilot. If you can&#39;t do it for one folder, you can&#39;t do it for all of SharePoint.</p>
+</div></aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Introduction to Retrieval Augmented Generation (RAG)
+
+<aside class="notes"><p><strong>Section header verbatim / 5 min / no interactive moment</strong></p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="mermaid">
+
+flowchart LR
+    D["Documents"] -->|split into| C["Chunks"]
+    C -->|convert to numbers| V[("Vector DB")]
+    Q["Question"] -->|also converted| V
+    V -->|most similar chunks| R["Retrieved chunks"]
+    R --> LLM["LLM"]
+    Q --> LLM
+    LLM --> A["Answer"]
+
+</div>
+
+
+<aside class="notes"><p><strong>RAG architecture / chunks to vectors to retrieval to answer / meaning-distance not keyword search</strong></p>
+<p>Documents get split into chunks - paragraphs, roughly. Each chunk becomes a vector of numbers. A question becomes a vector too. The system finds chunks whose vectors are closest to the question&#39;s vector. Those chunks go to the model with the question, and it generates an answer grounded in them. This is meaning-distance in mathematical space, not keyword search - and it&#39;s a completely different system from &quot;AI reading your SharePoint,&quot; even though it often starts with the same documents.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## What goes wrong:
+
+| Problem | What it looks like |
+|---|---|
+| Corpus imbalance | Janice in accounts has 200 docs. Policy team has 3. AI thinks Janice is the expert. |
+| Source confusion | 2019 policy and 2024 update treated as equally valid |
+| Recency failure | AI mixes chunks from 2007 and 2023 |
+| No metadata | Can't filter, can't sort, can't control |
+| Chunks lose position | A heading like "DO NOT" doesn't survive chunking - meaning can flip |
+| Hallucination survives | Grounding doesn't stop the model inventing beyond the chunks |
+| Plagiarism risk | Verbatim text lifted from source unless explicitly prompted against |
+
+<aside class="notes"><p><strong>7 failure modes / Janice example / DO NOT chunking / hallucination survives grounding</strong></p>
+<p>All real, from two years running RAG in social care. Corpus imbalance: whoever writes the most documents dominates what the AI &quot;knows.&quot; Source confusion and recency: similarity scores don&#39;t care about dates or authority - an old document with the right words beats a new one with different phrasing. Chunks lose position: &quot;DO NOT do X&quot; gets split from its heading and the chunk reads as an instruction to do X. Hallucination: even with real source material in front of it, the model can invent details beyond what&#39;s there. Plagiarism: without explicit instruction, the model will lift sentences verbatim from your sources - a real risk if you&#39;re generating anything public-facing.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Wait... where did this chunk come from?
+
+<aside class="notes"><p><strong>Chunks need own permissions / most tools don&#39;t do this automatically</strong></p>
+<p>When a document is split into chunks, each chunk needs to carry its own permissions - most tools don&#39;t do this automatically. A chunk from a restricted document can get retrieved to answer someone who shouldn&#39;t see the source document at all. This has to be designed in, not assumed from your SharePoint folder structure.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Metadata helps.
+### But none of this is as simple as the tech makes it look.
+
+<aside class="notes"><p><strong>Section closer / metadata = partial fix, not a cure / manage expectations</strong></p>
+<p>Metadata solves some of what we just walked through - source, date, permissions. It doesn&#39;t solve all of it. Vendors sell RAG as &quot;point it at your documents, done.&quot; It isn&#39;t. That&#39;s the honest note to close this section on before moving to the legal side.</p>
+</div></aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Ethical data use and consent
+
+<aside class="notes"><p><strong>Section header verbatim, content corrects the framing / 4 min, shorter now</strong></p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Does your original legal basis cover the new use?
+
+<aside class="notes"><p><strong>Purpose limitation, not basis selection / whatever justified collecting it, does it cover AI use</strong></p>
+<p>You already have a legal basis for the data you hold - whatever justified collecting it in the first place, consent or otherwise, most charity data isn&#39;t actually consent-based at all. The real question is whether that existing basis still covers using this data to feed an AI system. That may be a new purpose, and purpose limitation means you can&#39;t assume yes.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Every new process might need a review.
+
+<aside class="notes"><p><strong>Light touch only / DPIA update, not a new document / say briefly, move on</strong></p>
+<p>Keep this light - one line, don&#39;t labour it. Every time you do something genuinely new with AI, it may need a fresh look at your Data Protection Impact Assessment. Not a new document each time, just a habit of checking rather than assuming the old sign-off still covers it.</p>
+</div></aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Use the AI project
+## to surface what needs fixing.
+## <mark>Then fix it.</mark>
+
+<aside class="notes"><p><strong>Governance forcing function / five ways covered / callback to &quot;still worth it&quot; slide</strong></p>
+<p>We opened by saying this is still worth doing even knowing everything you&#39;ve just heard - here&#39;s why. You don&#39;t need to fix everything before you start. AI projects are the best-funded governance initiative most organisations will ever get - a deadline, a sponsor, an outcome the board can see. What separates the organisations that succeed is whether they&#39;re ready to act on what the project exposes.</p>
+</div></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## How you actually start
+
+1. Develop a policy
+2. Ask your board
+3. Ask your people
+4. Get your use cases
+
+<aside class="notes"><p><strong>Policy, board, people, use cases / &quot;what have you done 20+ times&quot;</strong></p>
+<p>Policy first - what&#39;s allowed, what&#39;s not, what happens when something goes wrong. Then your board - have they actually signed off on this direction? Then ask your people - are they already using AI informally, and what do they think of it? Then get use cases - the best question to ask is &quot;what have you done more than 20 times?&quot; That&#39;s where the automation value actually is.</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Then: how you mature
+
+| Level | What it is |
+|---|---|
+| 1 - Write it down | Plain-text documents stating your org's intentions |
+| 2 - Skills & agents | An advanced user builds a scoped agent - or Copilot agent - rolls it out |
+| 3 - Build safely | Human in the loop → evals → scale |
+
+<aside class="notes"><p><strong>L1 markdown docs / L2 scoped agent then rollout / L3 HITL to evals to scale / start small callback</strong></p>
+<p>Level 1 isn&#39;t abstract policy - it&#39;s literally a folder of plain-text documents stating what your org is trying to do. This is the &quot;strategy as data&quot; point from earlier, made into the actual first move. Level 2: don&#39;t let everyone freelance prompts individually - an advanced user builds something scoped and defined, then it&#39;s rolled out. Level 3: human in the loop until you trust it, then automated evaluation, then scale. Whichever level you&#39;re at - start small. One folder. One use case. One data source.</p>
+</div></aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## This week:
+
+1. Pick one use case → list every data source it needs
+2. Does your legal basis cover this new use?
+3. Your documents: who owns them? When last reviewed?
+4. Draft a one-paragraph AI policy
+
+<aside class="notes"><p><strong>4 actions / a day each / saves weeks later</strong></p>
+<p>You don&#39;t need to do all the data work first. These four steps are enough to start safely. None take more than a day each - all of them save weeks later.</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Thank you.
+
+<img src="Files/attachments/Fancy QR code to Linkedin.png" alt="" style="width: 400px; object-fit: fill">
+
+
+<sub><sub><sub>^ connect on LinkedIn for slides (linkedin.com/in/akohli)!</sub></sub></sub>
+
+<aside class="notes"><p><strong>QR to LinkedIn / 10 min Q&amp;A / tiny org, Copilot=RAG, vulnerable data prep</strong></p>
+<p>10 minutes Q&amp;A. Likely questions: &quot;we&#39;re tiny, can we really do this?&quot; - yes, Level 1 is a one-page document, doable this week. &quot;What about Copilot specifically?&quot; - it&#39;s RAG under the hood, same principles apply, Microsoft manages the infrastructure not the governance. &quot;What about vulnerable people&#39;s data?&quot; - legal basis applies harder here, statutory function or explicit consent depending on context, DPIA almost certainly needed.</p>
+</div></aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"fast"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
