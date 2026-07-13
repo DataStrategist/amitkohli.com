@@ -16,6 +16,8 @@ topics:
   - Vba
   - Visual Basic
   - vlookup
+type: "[[Note]]"
+topic: "[[VBA Macro]]"
 ---
 This macro provides an alternative to vlookup (which looks at two lists and provides data from one list to the second) that retains similar functionality while providing certain benefits. It accomplishes this by physically moving one list to the other. It's impossible to get a false positive, and it doesn't provide that annoying /#N/A that messes up calculations.
 

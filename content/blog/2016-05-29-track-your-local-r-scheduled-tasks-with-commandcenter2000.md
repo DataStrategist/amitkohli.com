@@ -12,6 +12,8 @@ topics:
   - Run
   - Schedule
   - Script
+type: "[[Article]]"
+topic: "[[R Script Scheduling]]"
 ---
 There are many ways to automate your scripts running, for example using RScript, or [in-R itself][1] (and now even as an [add-in][2] for RStudio) ([check all here][3]). But after a while, it can get a bit overwhelming to track tasks and ensure they are firing as planned. In order to address this, I have developed some futuristic advanced tech that lets us do that. I hereby present to you: the CommandCenter2000!!! Yes, it's Y2K compliant! This is what it looks like:
 

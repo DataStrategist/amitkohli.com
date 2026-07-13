@@ -14,6 +14,8 @@ topics:
   - Dashboard
   - html
   - Tile
+type: "[[Article]]"
+topic: "[[R Programming]]"
 ---
 # Update!!
 

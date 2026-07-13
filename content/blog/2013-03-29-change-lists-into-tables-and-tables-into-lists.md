@@ -9,6 +9,8 @@ tags:
 topics:
   - Userform
   - Macro
+type: "[[Article]]"
+topic: "[[Excel VBA]]"
 ---
 Designed a userform that converts dimension formats, i.e. information from tabular format to list (or flat) format, and viceversa. Some options include preserving formatting or not, as well as including blank cells or not.
 

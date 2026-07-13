@@ -15,6 +15,8 @@ topics:
   - Peace
   - Wordcloud
   - wordcloud2
+type: "[[Article]]"
+topic: "[[Data Visualization]]"
 ---
 This is a lightening quick post just providing the script to draw a heart-shaped wordcloud, using the awesome [This is a lightening quick post just providing the script to draw a heart-shaped wordcloud, using the awesome][1] package. See the resulting image here:
 

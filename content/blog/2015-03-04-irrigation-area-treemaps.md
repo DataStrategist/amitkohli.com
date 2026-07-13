@@ -16,6 +16,8 @@ topics:
   - Surface
   - Tree-map
   - Treemap
+type: "[[Note]]"
+topic: "[[Irrigation Treemaps]]"
 ---
 
 These [[Visualization]]s were performed for [[FAO]] [[AQUASTAT]].

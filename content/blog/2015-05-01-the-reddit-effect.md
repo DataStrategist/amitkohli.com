@@ -11,6 +11,8 @@ topics:
   - Hug of death
   - Log
   - Parsing
+type: "[[Article]]"
+topic: "[[Data Analysis]]"
 ---
 So I had a happy little blog... no one really paid attention, but I didn't much care because I was happy.
 

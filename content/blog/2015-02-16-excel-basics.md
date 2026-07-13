@@ -6,6 +6,8 @@ url: /excel-basics/
 tags:
   - Excel/VBA
   - Tutorials
+type: "[[Process]]"
+topic: "[[Excel Macros]]"
 ---
 Most of the things posted on this page will make reference to Visual Basic for Applications (VBA).
 

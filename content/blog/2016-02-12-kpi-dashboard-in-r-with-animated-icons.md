@@ -16,6 +16,8 @@ topics:
   - Measure
   - Table
   - Target
+type: "[[Article]]"
+topic: "[[KPI Dashboard]]"
 ---
 So Key Performance Indicators (KPIs) are all the rage in the dashboarding community... well [So Key Performance Indicators (KPIs) are all the rage in the dashboarding community... well][1] really. The premise is simple... check a list of measurements against targets and show how they compare using some kind of [[Visualization]]. I haven't yet seen, however, a version that can utilize animated icons to display indicators that REALLY need attention. So here you go, a tutorial on how to make your very own animated icon KPI, using the googleVis library.
 

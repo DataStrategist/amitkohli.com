@@ -13,6 +13,8 @@ topics:
   - Developer Experience
   - Workflow
 draft: true
+type: "[[Article]]"
+topic: "[[Workflow]]"
 ---
 
 There's a moment in the early stages of developing an AI-first workflow where something clicks. You stop writing things down "to do later" and you just... do them. Not because you've become some productivity monk. Because the cost of doing them NOW dropped to basically zero.

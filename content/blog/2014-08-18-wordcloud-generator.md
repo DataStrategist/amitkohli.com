@@ -9,6 +9,8 @@ topics:
   - R
   - Shiny
   - Wordcloud
+type: "[[Article]]"
+topic: "[[R Programming]]"
 ---
 ![](/post/2014-08-18-wordcloud-generator_files/Rploteng.png)
 

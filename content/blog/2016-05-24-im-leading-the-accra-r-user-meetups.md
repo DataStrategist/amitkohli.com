@@ -12,6 +12,8 @@ topics:
   - Meetup
   - R
   - Training
+type: "[[Article]]"
+topic: "[[R Community]]"
 ---
 I am not sure how, but I found [Data Science Africa][1], whose mission it is to promote data science in Africa. For now, they are limited to organizing and running meetups across Africa, mostly focused on R, although there are higher albeit more ambitious targets. Anyway, since I'm in Accra, I contacted them to see if I could help in any way, and biz, baz, boom... I'm now leading the Accra R-Community!  The community consists of 300+ interested people (another guy set started the meetup and it's been gathering users sans local leadership) with varying levels of ability in R. To learn more about our meetup and our activities, please check:[ http://www.meetup.com/Accra-R-Users-Group/ ][2]
 

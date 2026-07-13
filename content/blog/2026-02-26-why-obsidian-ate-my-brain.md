@@ -1,3 +1,8 @@
+---
+type: "[[Article]]"
+topic: "[[Knowledge Management]]"
+---
+
 ﻿---
 title: Why Obsidian Ate My Brain (And I'm Totally Fine With It)
 author: amit

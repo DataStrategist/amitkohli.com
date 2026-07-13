@@ -15,6 +15,8 @@ topics:
   - AI Assistants
   - Perspective Taking
 draft: true
+type: "[[Article]]"
+topic: "[[AI Documentation]]"
 ---
 
 So I've got this problem. I write technical documentation. Lots of it. And I write it like a technical person writes it, which means:

@@ -12,6 +12,8 @@ topics:
   - Library
 
 draft: no
+type: "[[Article]]"
+topic: "[[R Package Creation]]"
 ---
 
 Creating an R package can be a daunting task, but there are several tools to facilitate this process immensely. Of course, each approach has a series of advantages and drawbacks, so it is very much a subjective thing. Since I have changed my mind and worked on this task frequently, here's a conclusive* guide of the steps I follow. (* This guide will never be finished, so watch this space, I'll be coming back to make edits as they seem appropriate).

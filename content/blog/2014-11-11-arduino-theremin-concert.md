@@ -14,6 +14,8 @@ topics:
   - Music
   - Arduino
   - Theremin
+type: "[[Article]]"
+topic: "[[Arduino Art]]"
 ---
 One of the arduino tutorials was for a theremin. With a few modifications I was able to properly express my sophisticated musical abilities.
 

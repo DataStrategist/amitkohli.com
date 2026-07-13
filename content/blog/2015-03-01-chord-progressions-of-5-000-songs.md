@@ -15,6 +15,8 @@ topics:
   - Progressions
   - Sankey
   - Western music
+type: "[[Article]]"
+topic: "[[Data Analysis]]"
 ---
 Update: Full analysis and everything you need at my github <https://github.com/datastrategist/Musical-chord-progressions>
 

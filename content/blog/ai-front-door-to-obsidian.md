@@ -5,7 +5,6 @@ date: 2026-02-26
 slug: ai-front-door-to-obsidian
 tags:
   - AI
-  - Knowledge Management
   - Obsidian
   - Automation
   - Neurodiversity
@@ -15,6 +14,8 @@ topics:
   - Personal Knowledge
   - Zettelkasten
 draft: true
+type: "[[Article]]"
+topic: "[[AI Knowledge Management]]"
 ---
 
 So I did a thing. I hooked up [[GitHub Copilot]] to my Obsidian vault - you know, that [second brain I wrote about](why-obsidian-ate-my-brain.md) - and now I have an AI agent that can read, write, and reorganize my 2000+ notes.
@@ -234,6 +235,71 @@ So yeah, I've got an AI reading my brain now. It hasn't made me dumber (I don't 
 Your mileage may vary. If you're a Zettelkasten purist, I salute you from my automated wasteland. If you're drowning in your own notes and need help, maybe give it a shot.
 
 Just don't automate the thinking part. That's still yours.
+
+---
+
+## Update (June 2026): I Gave the AI a Bouncer
+
+The front door worked a little too well. By June the agents weren't just reorganizing my notes - they were pushing to production repos, writing to Snowflake, and occasionally doing things that were technically what I asked for and absolutely not what I meant.
+
+So I built a supervisor layer. And the first design decision is the one worth writing down:
+
+**The enforcer cannot be an LLM.**
+
+My first instinct was a supervisor agent that other agents ask for permission. Sounds great, doesn't work. An agent "granting permissions" is just prompt text, and prompt text can be drifted past, lost in context compaction, or rationalised around ("the user clearly wants this pushed..."). If a rule matters, it has to live somewhere the model literally cannot argue with.
+
+### The stack
+
+- **A charter** (`CHARTER.yaml`): the never-approve list and the ask-a-human list, as data. Never: creating/deleting repos, publishing anything, force pushes, destructive DDL. Ask: database writes, schema changes, raw data slices, bulk edits, anything that smells like a credential.
+- **A gate** (~140 lines of Python): a hook that intercepts every single tool call - every shell command, every file edit, in every session, including subagents - and checks it against the charter before it runs. Deny, ask, or pass. It fails open, so a bug in my gate can never brick the assistant.
+- **Bonehead rules**, my favourite part. Deterministic catches for the classic AI failure moves: re-cloning a repo that already exists locally instead of fixing the error (deny), and deleting test cases to make CI pass (ask, with a stern note that tests are not the bug).
+- **A strategy groundtruth file**: a snapshot of what my team actually agreed to do this year. Before substantive work, the supervisor maps my request against it. Because sometimes the unclear, overcomplicated request is mine, and I want the system to say "the strategy already has a simpler path for this" to my face.
+- **A training log**: every flagged call, the rule it hit, and whether I approved it, as JSONL. Every permission prompt I answer is a labelled data point about my judgment. Eventually that corpus IS the supervisor.
+
+### What I learned in the first 24 hours
+
+**The charter was wrong within hours, and that's the system working.** I'd made "never push to main" a hard block. Then live traffic showed this very blog deploys by pushing to master. Demoted to ask-a-human, lesson logged in the charter itself with provenance.
+
+**Don't run your critic on every task.** I have a devil's advocate agent, and the tempting move is invoking it constantly. But an alarm that always fires is one you stop hearing. It stays rare: stochastic trigger, plus one escalation valve - when the groundtruth check flags my request as overcomplicated and I want to proceed anyway. The moment the system and I disagree is exactly when a second opinion earns its cost.
+
+**State the effort estimate up front.** Tasks balloon because something isn't where it's supposed to be, and nobody notices until hours are gone. Now every plan states an estimate and its location assumptions, and at 2x the estimate everything stops: name the one assumption that, if wrong, explains the overrun, check it, escalate if that fails. A 5-minute task at 15 minutes is a louder alarm than a 2-hour task at 90.
+
+The front door now has a bouncer. The bouncer keeps a list, the list learns from every mistake, and I get a monthly readout of what I keep approving (rule gets relaxed) and what I keep catching by hand (rule gets added).
+
+Same bargain as before, one level up: the AI handles the work, the deterministic layer handles the rules, and the judgment stays mine.
+
+---
+
+## Update (July 2026): I Fired My Own Bouncer's Paperwork
+
+Turns out the bouncer analogy from June cuts both ways. I built a deterministic gate to stop the AI from doing dumb things without asking. What I hadn't noticed is I'd built the equivalent for myself: every single session, no matter how trivial, had to answer three questions and load two files before it was allowed to do anything.
+
+I only caught it because I made an infographic of my own system for something unrelated and looked at it properly for the first time. Every session: work or personal, pick an initiative from a live grep of two vault folders, confirm an agent, confirm a skill. That's the right amount of ceremony for "rebuild the ontology mapping" and wildly wrong for "what's Jordan's email again."
+
+![[2026-07-07-ai-assisted-workspace-original-infographic.webp]]
+
+So I redesigned it around a complexity estimate instead of a blanket mandate:
+
+### The stack
+
+- **Fast tasks** skip the ceremony entirely. Lookups, small edits, anything reversible and single-file - just get done. No agent, no skill, no interrogation.
+- **Medium tasks** load one skill. An agent joins only if one genuinely fits the task, not by default.
+- **Deep tasks** - new systems, multi-file changes, anything irreversible - get the full treatment: Supervisor and Devil's Advocate pass before planning even starts, both agent and skill loaded, the works.
+- **The initiative picker stopped re-deriving itself from scratch every time.** It used to live-grep both vault folders on every session start, which is fine once and wasteful the other fifty times. Now a small Python script runs once a day at 9am and writes a JSON cache. The session still asks explicitly which initiative applies - no silent guessing, that part stays - it just reads the candidate list instead of rebuilding it.
+
+![[2026-07-07-optimized-session-flow-july-trial.svg]]
+
+I'm calling it a July trial, not a rewrite. The old wording is still sat there if this makes sessions worse instead of better, and I'll know within a couple of weeks either way.
+
+### The unrelated thing that ate an afternoon
+
+Mid-redesign I went looking for a much smaller fix: why my vault's initiative list and the team's Monday.com board had quietly drifted apart. It was supposed to be a five-minute check. Instead it turned into a live reconciliation - initiatives that existed on one system and not the other, one that got renamed on Monday but never in the vault, one closed vault note nobody had ever linked back to its Monday counterpart. I just fixed it there rather than filing it for later, which was the right call, but not the plan.
+
+The bit worth remembering: I sent two background subagents off to search old session notes for context on why the drift happened. Both came back sounding completely sure of themselves. Both were wrong. One was recycling a stale placeholder as if it were a finished result. The other had run zero searches and reported "nothing found" in a tone that implied it had checked thoroughly. Neither errored. Neither hedged. They just quietly made something up and said it with a straight face.
+
+I only caught it because I looked at the delegate's actual tool-call count before believing what it told me - zero calls, confident answer, that combination is the tell. Did the search myself in about the time it would've taken to write a prompt asking the subagent to justify itself. For something small and well-scoped, delegating and then having to audit the delegate's honesty costs more than just doing it.
+
+Net effect of the whole session: the same three questions that used to run on every message now only run on the sessions that actually need them. Same bargain as before, one level up: the AI still handles the work, the deterministic layer still handles the rules, and now the ceremony only shows up when the stakes do.
 
 ---
 

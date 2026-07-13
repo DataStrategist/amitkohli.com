@@ -14,6 +14,8 @@ topics:
   - Data Pipelines
   - Scheduling
 draft: true
+type: "[[Article]]"
+topic: "[[Linux Scheduling]]"
 ---
 
 You were going to say Airflow, weren't you? And don't get me wrong, it's great, as are all the other tools in this space, but the space between yet another dependency and "just a little bit more than crontab" is really big, especially if you have a small team.

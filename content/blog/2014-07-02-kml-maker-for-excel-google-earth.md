@@ -11,6 +11,8 @@ topics:
   - Excel
   - Map
   - Userform
+type: "[[Article]]"
+topic: "[[KML Maker]]"
 ---
 I made a userform that quickly and easily allows you to make a kml file that's readable by google earth based on some excel dataset that has coordinates.
 

@@ -16,6 +16,8 @@ topics:
   - Visualization
   - Water
   - Water flows
+type: "[[Article]]"
+topic: "[[Renewable water resources]]"
 ---
 
 A [[Visualization]] prepared for [[FAO]] [[AQUASTAT]]:

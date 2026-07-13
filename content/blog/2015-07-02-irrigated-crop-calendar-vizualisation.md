@@ -12,6 +12,8 @@ topics:
   - Crop Calendar
   - Crops
   - Irrigated Crop Calendar
+type: "[[Article]]"
+topic: "[[Data Visualization]]"
 ---
 
 [[Visualization]]s made for [[FAO]] [[AQUASTAT]]:

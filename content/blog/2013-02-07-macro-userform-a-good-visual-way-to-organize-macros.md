@@ -14,6 +14,8 @@ topics:
   - Userform
   - VBA
   - Visual Basic
+type: "[[Article]]"
+topic: "[[Macro Organisation]]"
 ---
 At a certain point it can become challenging to quickly find and run the macro we need. Below are some options to organize our macros. I will focus on using a **pop-up form** because it's the method I prefer, but at the bottom of the article, you can see other options.
 

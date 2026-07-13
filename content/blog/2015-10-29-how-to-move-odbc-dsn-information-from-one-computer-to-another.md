@@ -18,6 +18,8 @@ topics:
   - Windows
   - Database
   - Linux
+type: "[[Article]]"
+topic: "[[ODBC DSN Migration]]"
 ---
 YAAAAAAAAY!!!! I got a new computer!!![<img class="size-medium wp-image-429 alignleft" src="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/Data-transfer.jpg?resize=300%2C169" alt="Data-transfer" width="300" height="169" srcset="https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/Data-transfer.jpg?resize=300%2C169 300w, https://i0.wp.com/amitkohli.com/wp-content/uploads/2015/10/Data-transfer.jpg?w=640 640w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
 

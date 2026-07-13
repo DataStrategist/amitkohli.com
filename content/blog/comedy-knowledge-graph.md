@@ -15,6 +15,8 @@ topics:
   - Network Analysis
   - Visualization
 draft: true
+type: "[[Project]]"
+topic: "[[Knowledge Graphs]]"
 ---
 
 <!-- SKELETON — very rough, fill in later -->

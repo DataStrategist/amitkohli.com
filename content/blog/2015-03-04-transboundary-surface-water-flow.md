@@ -20,6 +20,8 @@ topics:
   - Trans-boundary
   - Transboundary
   - Water
+type: "[[Note]]"
+topic: "[[Transboundary Water Flow]]"
 ---
 A [[Visualization]] generated for [[AQUASTAT]] of [[FAO]].
 

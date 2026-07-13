@@ -10,6 +10,8 @@ topics:
   - Google+
   - Photography
   - Picture
+type: "[[Article]]"
+topic: "[[Photography]]"
 ---
 So I guess everybody let's you upload a "cover picture".... something that should be beautiful, emblematic of you, deep, thoughtful etc. Well... I found a bunch of my pics that fit the wide format nicely.
 

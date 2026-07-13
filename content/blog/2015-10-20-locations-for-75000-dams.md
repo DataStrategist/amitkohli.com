@@ -20,6 +20,8 @@ topics:
   - Map
   - Prensa
   - Reservoir
+type: "[[Article]]"
+topic: "[[Big Data]]"
 ---
 The last task I performed for <a href="http://www.fao.org/nr/AQUASTAT" target="_blank">[[AQUASTAT]]</a> was to try to find the best way to estimate the anthropogenic evaporation from dams. The paper can be found <a href ="http://www.fao.org/3/bc814e/bc814e.pdf">here</a>, but here I provide one of the fun outputs, a map of 75000 dams!
 

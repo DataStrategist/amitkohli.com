@@ -16,6 +16,8 @@ topics:
   - Google+
   - Reservoir
   - WebGL
+type: "[[Article]]"
+topic: "[[Data Visualization]]"
 ---
 A [[Visualization]] prepared for [[FAO]] [[AQUASTAT]]:
 

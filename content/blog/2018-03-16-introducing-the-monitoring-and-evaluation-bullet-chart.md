@@ -10,6 +10,8 @@ topics:
   - Bullet chart
   - KPI
   - 'M&amp;E'
+type: "[[Article]]"
+topic: "[[Monitoring and Evaluation]]"
 ---
 _Cross-posted from: <http://www.acdivoca.org/2018/03/introducing-the-monitoring-and-evaluation-bullet-chart/>_.
 

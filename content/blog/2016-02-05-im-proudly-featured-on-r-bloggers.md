@@ -9,6 +9,8 @@ tags:
   - Data
 topics:
   - R-bloggers
+type: "[[Article]]"
+topic: "[[Knowledge Sharing]]"
 ---
 <a href="https://i1.wp.com/amitkohli.com/wp-content/uploads/2016/02/image.png" rel="attachment wp-att-551"><img class="alignnone size-full wp-image-551" src="https://i1.wp.com/amitkohli.com/wp-content/uploads/2016/02/image.png?resize=290%2C90" alt="image" width="290" height="90" data-recalc-dims="1" /></a>
 

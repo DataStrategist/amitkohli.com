@@ -15,6 +15,8 @@ topics:
   - frame
   - human
   - R
+type: "[[Article]]"
+topic: "[[D3 Network]]"
 ---
 So a little bit of R, a little bit of d3Network and boom! Instant interactive html human!
 

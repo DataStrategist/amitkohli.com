@@ -16,6 +16,8 @@ topics:
   - Data
   - Love
   - Sentiment
+type: "[[Process]]"
+topic: "[[Sentiment Analysis]]"
 ---
 
 When I told my friends that I wanted to give my girlfriend an infographic of us (centered around a sentimental analysis of our texts) as a gift for our first anniversary, most of them told me that was a terrible idea. Yeah... well... CHALLENGE ACCEPTED!! Without further ado, this is what love looks like:

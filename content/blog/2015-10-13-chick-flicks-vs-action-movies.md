@@ -18,6 +18,8 @@ topics:
   - Movies
   - Script
   - Sentiment analysis
+type: "[[Article]]"
+topic: "[[Sentiment Analysis]]"
 ---
 <div class="repository-description">
   I co-wrote this analysis with <a href="https://www.linkedin.com/pub/laure-belotti/18/12/6b3">Laure Belotti</a> to identify the difference between movie scripts for chick flicks and action movies using sentiment analysis, among other stuff. Rather than creating a blog post, we made a freestanding webpage because I wanted to play around w/ bootstrap and make it pretty and stuff.

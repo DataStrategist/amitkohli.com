@@ -13,6 +13,8 @@ topics:
   - Colour
   - ggplot2
   - Manual
+type: "[[Article]]"
+topic: "[[ggplot2]]"
 ---
 <!-- saved from url=(0014)about:internet -->
 

@@ -11,6 +11,8 @@ tags:
   - Data
   - R
   - Analysis
+type: "[[Article]]"
+topic: "[[R Tagosphere]]"
 ---
 
 This post explores the inter-relationships of StackOverflow Tags for R-related questions. So I grabbed all the questions tagged with "r", took the other topics: in each question and made some network charts that show how often each tag is seen with the other topics:. The point is to see the empirical relationships that develop as people organically describe their problems with R. [Full analysis on GitHub][1], as always.

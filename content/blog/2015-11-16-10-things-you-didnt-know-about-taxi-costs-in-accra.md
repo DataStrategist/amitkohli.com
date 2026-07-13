@@ -11,6 +11,8 @@ topics:
   - Accra
   - Ghana
   - Taxi prices
+type: "[[Article]]"
+topic: "[[Data Analysis]]"
 ---
 &nbsp;
 
