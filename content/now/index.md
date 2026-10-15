@@ -4,13 +4,13 @@ description: What I'm working on right now.
 showPagination: false
 ---
 
-*Updated August 2026 - London*
+*Updated October 2026 - London*
 
 ---
 
 ## Creating
 
-Making a video series called [Data in the Real World](/series) - short, honest explanations of how data works in organisations, not how textbooks say it does. Thirty episodes in.
+Starting to run.
 
 Also working to make my existing writing more findable - structured data, schema.org markup, making the work attributable in both search and AI systems.
 
